@@ -38,7 +38,7 @@ class database{
 		
 	}
 	public function put_city_in_db($id,$name,$provinces){
-		$connect->exec("INSERT INTO city VALUES"."('$id','$name','$provinces')");
+		$this->connect->exec("INSERT INTO city VALUES"."('$id','$name','$provinces')");
 	}
 	public function put_grade_in_db($id,$detail){
 		$query = "INSERT INTO grade VALUES"."('$id','$detail')";
