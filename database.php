@@ -7,24 +7,22 @@ class database{
 			$mysql_user,
 			$connect;
 	function __construct(){
-		$mysql_host = "http://w.rdc.sae.sina.com.cn";
-		$mysql_db = "app_hospitalordering";
+		$mysql_host = SAE_MYSQL_HOST_M;
+		$mysql_db = SAE_MYSQL_DB;
 		$mysql_user = SAE_MYSQL_USER;
 		$mysql_password = SAE_MYSQL_PASS;
-		$mysql_port = "3307";
+		$mysql_port = SAE_MYSQL_PORT;
 		$this -> connect_to_db();
 	}
 	function __destruct(){
 		$this -> close_connection();
 	}
 	function connect_to_db(){
-		$connect = new PDO('mysql:host=w.rdc.sae.sina.com.cn;port=3307;dbname=app_hospitalordering',$mysql_user,$mysql_password);
-		if(!$connect){ 
-			die ("Unable to connect to MySQL: ".mysql_error());
-			}
+		$connect = mysql_connect($mysql_host.":".$mysql_port,$mysql_user,$mysql_password,$mysql_db);
+		if(!$connect) die ("Unable to connect to MySQL: ".mysql_error());
 	}
 	function close_connection(){
-		$connect = NULL;
+		mysql_close($connect);
 	}
 	function operation_fail($query){
 		if(!mysql_query($query,$connect)){
@@ -32,12 +30,12 @@ class database{
 		}
 	}
 	function put_user_in_db($id,$name,$password,$email,$role,$id_card,$tel,$status){
-		$connect->$query("INSERT INTO users VALUES".
-		"('$id','$name','$password','$email','$role','$id_card','$tel','$status')");
-		#operation_fail($query);
+		$query = "INSERT INTO users VALUES".
+		"('$id','$name','$password','$email','$role','$id_card','$tel','$status')";
+		operation_fail($query);
 	}
 	function put_city_in_db($id,$name,$provinces){
-		$connect->$query("INSERT INTO city VALUES"."('$id','$name','$provinces')");
+		$query = "INSERT INTO city VALUES"."('$id','$name','$provinces')";
 		operation_fail($query);
 	}
 	function put_grade_in_db($id,$detail){
