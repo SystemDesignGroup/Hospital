@@ -27,13 +27,8 @@ class database{
     		die();
 		}
 	}
-	public function operation_fail($query){
-		if(!mysql_query($query,$connect)){
-			echo "insert into user failed: $query<br />".mysql_error()."<br /><br />";
-		}
-	}
 	public function put_user_in_db($id,$name,$password,$email,$role,$id_card,$tel,$status){
-		$connect->exec("INSERT INTO users VALUES".
+		$this->connect->exec("INSERT INTO users VALUES".
 		"('$id','$name','$password','$email','$role','$id_card','$tel','$status')");
 		
 	}
@@ -41,35 +36,35 @@ class database{
 		$this->connect->exec("INSERT INTO city VALUES"."('$id','$name','$provinces')");
 	}
 	public function put_grade_in_db($id,$detail){
-		$query = "INSERT INTO grade VALUES"."('$id','$detail')";
-		operation_fail($query);
+		$this->connect->exec("INSERT INTO grade VALUES"."('$id','$detail')");
+		
 	}
 	public function put_major_in_db($id,$name,$intro){
-		$query = "INSERT INTO major VALUES"."('$id','$name','$intro')";
-		operation_fail($query);
+		$this->connect->exec( "INSERT INTO major VALUES"."('$id','$name','$intro')");
+		
 	}
 	public function put_hospital_in_db($id,$name,$city,$address,$major_id,$grade_id,$tel,$intro){
-		$query = "INSERT INTO hospital VALUES".
-			"('$id','$name','$city','$address','$major_id','$grade_id','$tel','$intro')";
-			operation_fail($query);
+		$this->connect->exec( "INSERT INTO hospital VALUES".
+			"('$id','$name','$city','$address','$major_id','$grade_id','$tel','$intro')");
+			
 	}
 	public function put_department_in_db($id,$name,$hospital_id,$intro){
-		$query = "INSERT INTO department VALUES"."('$id','$name','$hospital_id','$intro')";
-		operation_fail($query);
+		$this->connect->exec( "INSERT INTO department VALUES"."('$id','$name','$hospital_id','$intro')");
+		
 	}
 	public function put_doctor_in_db($id,$name,$department_id,$major_id,$grade_id,$hospital_id,$intro,$calendar_id){
-		$query = "INSERT INTO department VALUES"."('$id','$name','$department_id','$major_id','$grade_id','$hospital_id','$intro','$calendar_id')";
-		operation_fail($query);
+		$this->connect->exec( "INSERT INTO department VALUES"."('$id','$name','$department_id','$major_id','$grade_id','$hospital_id','$intro','$calendar_id')");
+		
 	}
 	public function put_calendar_in_db($id,$type,$detail,$off_start,$off_end){
-		$query = "INSERT INTO calendar VALUES".
-			"'$id','$type','$detail','$off_start','$off_end')";
-		operation_fail($query);
+		$this->connect->exec( "INSERT INTO calendar VALUES".
+			"'$id','$type','$detail','$off_start','$off_end')");
+		
 	}
 	public function put_order_hospital_in_db($id,$user_id,$doctor_id,$order_date,$order_time,$order_status){
-		$query = "INSERT INTO order_hospital VALUES".
-			"'$id','$user_id','$doctor_id','$order_date','$order_time','$order_status')";
-		operation_fail($query);
+		$this->connect->exec( "INSERT INTO order_hospital VALUES".
+			"'$id','$user_id','$doctor_id','$order_date','$order_time','$order_status')");
+		
 	}
 }
 
