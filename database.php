@@ -18,7 +18,7 @@ class database{
 		$this -> connect = NULL;
 	}
 	public function connect_to_db(){
-		$dns = 'mysql:dbname='.$this->mysql_db.";host=".$this->mysql_host.";port=".$mysql_port;
+		$dns = 'mysql:dbname='.$this->mysql_db.":".$this->mysql_port.";host=".$this->mysql_host;
 		try{
 			$this->connect = new PDO($dns, $this->mysql_user,$this->mysql_password);
 		}
