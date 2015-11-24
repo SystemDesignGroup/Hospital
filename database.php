@@ -18,8 +18,13 @@ class database{
 		$this -> close_connection();
 	}
 	function connect_to_db(){
-		$connect = new PDO($mysql_host,$mysql_user,$mysql_password,$mysql_db);
-		if(!$connect) die ("Unable to connect to MySQL: ".mysql_error());
+		$connect = new PDO($mysql_host,$mysql_user,$mysql_password);
+		if(!$connect){ 
+			die ("Unable to connect to MySQL: ".mysql_error());
+			}
+		else{
+			$connect->$query('use $mysql_db');
+		}
 	}
 	function close_connection(){
 		$connect = NULL;
@@ -30,12 +35,12 @@ class database{
 		}
 	}
 	function put_user_in_db($id,$name,$password,$email,$role,$id_card,$tel,$status){
-		$query = "INSERT INTO users VALUES".
-		"('$id','$name','$password','$email','$role','$id_card','$tel','$status')";
+		$connect->$query("INSERT INTO users VALUES".
+		"('$id','$name','$password','$email','$role','$id_card','$tel','$status')");
 		operation_fail($query);
 	}
 	function put_city_in_db($id,$name,$provinces){
-		$query = "INSERT INTO city VALUES"."('$id','$name','$provinces')";
+		$connect->$query("INSERT INTO city VALUES"."('$id','$name','$provinces')");
 		operation_fail($query);
 	}
 	function put_grade_in_db($id,$detail){
