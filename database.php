@@ -34,7 +34,7 @@ class database{
 	function put_user_in_db($id,$name,$password,$email,$role,$id_card,$tel,$status){
 		$connect->$query("INSERT INTO users VALUES".
 		"('$id','$name','$password','$email','$role','$id_card','$tel','$status')");
-		operation_fail($query);
+		#operation_fail($query);
 	}
 	function put_city_in_db($id,$name,$provinces){
 		$connect->$query("INSERT INTO city VALUES"."('$id','$name','$provinces')");
