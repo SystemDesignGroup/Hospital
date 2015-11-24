@@ -7,11 +7,11 @@ class database{
 			$mysql_user,
 			$connect;
 	function __construct(){
-		$this -> $mysql_host = SAE_MYSQL_HOST_M;
-		$this -> $mysql_db = SAE_MYSQL_DB;
-		$this -> $mysql_user = SAE_MYSQL_USER;
-		$this -> $mysql_password = SAE_MYSQL_PASS;
-		$this -> $mysql_port = SAE_MYSQL_PORT;
+		$mysql_host = SAE_MYSQL_HOST_M;
+		$mysql_db = SAE_MYSQL_DB;
+		$mysql_user = SAE_MYSQL_USER;
+		$mysql_password = SAE_MYSQL_PASS;
+		$mysql_port = SAE_MYSQL_PORT;
 		$this -> connect_to_db();
 	}
 	function __destruct(){
