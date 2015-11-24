@@ -38,8 +38,7 @@ class database{
 		
 	}
 	public function put_city_in_db($id,$name,$provinces){
-		$query = "INSERT INTO city VALUES"."('$id','$name','$provinces')";
-		operation_fail($query);
+		$connect->exec("INSERT INTO city VALUES"."('$id','$name','$provinces')");
 	}
 	public function put_grade_in_db($id,$detail){
 		$query = "INSERT INTO grade VALUES"."('$id','$detail')";
