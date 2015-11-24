@@ -18,7 +18,7 @@ class database{
 		$this -> close_connection();
 	}
 	function connect_to_db(){
-		$this -> $connect = new PDO($this -> $mysql_host,$this -> $mysql_user,$this ->$mysql_password);
+		$connect = new PDO($this -> $mysql_host,$this -> $mysql_user,$this ->$mysql_password);
 		if(!$this ->$connect){ 
 			die ("Unable to connect to MySQL: ".mysql_error());
 			}
