@@ -7,7 +7,7 @@ class database{
 			$mysql_user,
 			$connect;
 	function __construct(){
-		$mysql_host = SAE_MYSQL_HOST_M;
+		$mysql_host = SAE_MYSQL_HOST_S;
 		$mysql_db = SAE_MYSQL_DB;
 		$mysql_user = SAE_MYSQL_USER;
 		$mysql_password = SAE_MYSQL_PASS;
