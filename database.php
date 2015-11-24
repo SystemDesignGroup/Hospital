@@ -7,11 +7,11 @@ class database{
 			$mysql_user,
 			$connect;
 	function __construct(){
-		$mysql_host = SAE_MYSQL_HOST_S;
-		$mysql_db = SAE_MYSQL_DB;
+		$mysql_host = "http://w.rdc.sae.sina.com.cn";
+		$mysql_db = "app_hospitalordering";
 		$mysql_user = SAE_MYSQL_USER;
 		$mysql_password = SAE_MYSQL_PASS;
-		$mysql_port = SAE_MYSQL_PORT;
+		$mysql_port = "3307";
 		$this -> connect_to_db();
 	}
 	function __destruct(){
