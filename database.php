@@ -12,10 +12,10 @@ class database{
 		$mysql_user = SAE_MYSQL_USER;
 		$mysql_password = SAE_MYSQL_PASS;
 		$mysql_port = SAE_MYSQL_PORT;
-		connect_to_db();
+		$this -> connect_to_db();
 	}
 	function __destruct(){
-		close_connection();
+		$this -> close_connection();
 	}
 	function connect_to_db(){
 		$connect = mysql_connect($mysql_host,$mysql_user,$mysql_password,$mysql_db);
