@@ -51,6 +51,7 @@ class database{
 			case 'doctor':$this->put_doctor_in_db($id,$name,$department_id,$major_id,$grade_id,$hospital_id,$intro,$calendar_id);break;
 			case 'calendar':$this->put_calendar_in_db($id,$type,$detail,$off_start,$off_end);break;
 			case 'order_hospital':$this->put_order_hospital_in_db($id,$user_id,$doctor_id,$order_date,$order_time,$order_status);break;
+			default: echo "No Such Table In This Data Base<br />";
 		}
 	}
 	
