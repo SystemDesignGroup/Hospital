@@ -17,12 +17,12 @@ class database{
 			$mysql_port,
 			$mysql_user,
 			$connect;
-	public function __construct(){
-		$this->mysql_host = SAE_MYSQL_HOST_M;
-		$this->mysql_db = SAE_MYSQL_DB;
-		$this->mysql_user = SAE_MYSQL_USER;
-		$this->mysql_password = SAE_MYSQL_PASS;
-		$this->mysql_port = SAE_MYSQL_PORT;	
+	public function __construct(){//本地调试使用注释中的值
+		$this->mysql_host = SAE_MYSQL_HOST_M;//'localhost'
+		$this->mysql_db = SAE_MYSQL_DB;//'hospital'
+		$this->mysql_user = SAE_MYSQL_USER;//'root'
+		$this->mysql_password = SAE_MYSQL_PASS;//''
+		$this->mysql_port = SAE_MYSQL_PORT;	//3306
 		$this -> connect_to_db();
 	}
 	public function __destruct(){
@@ -38,8 +38,8 @@ class database{
     		die();
 		}
 	}
-	
-	public function insert_data_into_table($table,$datavalues){
+	//建议使用以下两个函数存取数据
+	public function insert_data_into_table($table,$datavalues){//$table为表名，$datavalues是所存数据，类型为关联数组，其中变量命名与下面函数一致
 		extract($datavalues);
 		switch($table){
 			case 'users':$this->put_user_in_db($id,$name,$password,$email,$role,$id_card,$tel,$status);break;
@@ -54,13 +54,12 @@ class database{
 			default: echo "No Such Table In This Data Base<br />";
 		}
 	}
-	
-	public function get_field_from_table($table,$field,$key,$key_field){
+	public function get_field_from_table($table,$field,$key,$key_field){//表名，待查询字段（需要的结果），查询依据的字段，查询所依据字段值
 		$result = $this->connect->query("SELECT $field FROM $table WHERE $key_field='$key'");
 		return $result->fetchone();
 	}
 	
-	
+	//以下函数不建议直接使用
 	public function put_user_in_db($id,$name,$password,$email,$role,$id_card,$tel,$status){
 		$this->connect->exec("INSERT INTO users(id,name,password,email,role,id_card,tel,status) VALUES".
 		"('$id','$name','$password','$email','$role','$id_card','$tel','$status')");
