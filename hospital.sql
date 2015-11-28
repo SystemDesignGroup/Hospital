@@ -1,4 +1,4 @@
-//本地调试时，最后一张表可能会报错errorno:150，这个是mysql本身的bug，不用在意。在部署环境中确定没有问题。
+#本地调试时，最后一张表可能会报错errorno:150，这个是mysql本身的bug，不用在意。在部署环境中确定没有问题。
 create database hospital;
 use hospital;
 create table users(
