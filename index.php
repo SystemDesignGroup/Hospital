@@ -1,6 +1,10 @@
 <?php
 require_once 'database.php';
 $db = new database();
-$db->put_city_in_db('1','Beijing','Beijing');
+$values=array(
+	'name' => "Shanghai",
+	'provinces' => "2"
+);
+$db->insert_data_into_table('city',$values);
 echo "Done";
 ?>
