@@ -40,7 +40,7 @@ class database{
 	}
 	
 	public function insert_data_into_table($table,$datavalues){
-		$extract($datavalues);
+		extract($datavalues);
 		switch($table){
 			case 'users':$this->put_user_in_db($id,$name,$password,$email,$role,$id_card,$tel,$status);break;
 			case 'city':$this->put_city_in_db($id,$name,$provinces);break;
