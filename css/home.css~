@@ -1,0 +1,74 @@
+*{box-sizing:border-box}
+body{	word-wrap: break-word;    
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+color: #333;
+background-color: #fff;}
+#head_div
+{
+	width: 100%;
+	height: 30px;
+	display: inline-block;
+	background: yellow;
+}
+#regis_div
+{
+	float: right;
+	margin-right: 15px;
+}
+#head_div span{margin-left: 40px;}
+a{ text-decoration: none;color:black; }
+#regis_div a{ font-size: 15px; }
+
+
+/*-------------------logo div-----------------*/
+#logo_div{
+width: 100%;
+height: 120px;
+display: inline-block;
+background:green;
+}
+#logo_div img{ float:left; }
+
+/*----------------------navigation bar-------------------------*/
+.tabnav {
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+#nav_bar
+{
+	//width: 100%;
+	//height: 40px;
+	//display: inline-block;
+	border-bottom:-1px;
+}
+
+a:link
+ {
+    color: #333;
+    background-color: #fff;
+    border-color: #ddd;
+    border-radius: 3px 3px 0 0;
+}
+
+.tabnav-tab {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #666;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-bottom: 0;
+}
+
+#content_div
+{
+	width:1200px;
+	height: auto;
+	display: inline-block;
+	//margin:0 30px 10px 30px;	
+	background:silver;
+}
+
+footer{ width:100%;height: auto;display: inline-block; background:red }
