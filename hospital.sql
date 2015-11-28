@@ -2,19 +2,19 @@
 create database hospital;
 use hospital;
 create table users(
-id int,
+id int primary key AUTO_INCREMENT,
 name varchar(50),
 password varchar(50),
 email varchar(50),
 role int,
-id_card char(18),
+id_card char(18) unique,
 tel char(11),
 status int,
 create_time timestamp,
 update_time timestamp
 );
 create table calendar(
-id int primary key,
+id int primary key AUTO_INCREMENT,
 type int,
 detail varchar(255),
 off_start date,
@@ -23,27 +23,27 @@ create_time timestamp,
 update_time timestamp
 );
 create table city(
-id int primary key,
+id int primary key AUTO_INCREMENT,
 name varchar(50),
-provinces varchar(50),
+province varchar(50),
 create_time timestamp,
 update_time timestamp
 );
 create table major(
-id int primary key,
+id int primary key AUTO_INCREMENT,
 name varchar(50),
 intro text,
 create_time timestamp,
 update_time timestamp
 );
 create table grade(
-id int primary key,
+id int primary key AUTO_INCREMENT,
 detail varchar(50),
 create_time timestamp,
 update_time timestamp
 );
 create table hospital(
-id int primary key,
+id int primary key AUTO_INCREMENT,
 name varchar(50),
 city int,
 address text,
@@ -57,7 +57,7 @@ foreign key (city) references city(id),
 foreign key (grade_id) references grade(id)
 );
 create table department(
-id int primary key,
+id int primary key AUTO_INCREMENT,
 name varchar(50),
 hospital_id int,
 intro text,
@@ -66,7 +66,7 @@ update_time timestamp,
 foreign key (hospital_id) references hospital(id)
 );
 create table doctor(
-id int primary key,
+id int primary key AUTO_INCREMENT,
 name varchar(20),
 department_id int,
 major_id int,
@@ -83,7 +83,7 @@ foreign key (hospital_id) references hospital(id),
 foreign key (calendar_id) references calendar(id)
 );
 create table order_hospital(
-id int primary key,
+id int primary key AUTO_INCREMENT,
 user_id int,
 doctor_id int,
 order_date Date,
