@@ -56,7 +56,7 @@ class database{
 	}
 	public function get_field_from_table($table,$field,$key,$key_field){//表名，待查询字段（需要的结果），查询依据的字段，查询所依据字段值
 		$result = $this->connect->query("SELECT $field FROM $table WHERE $key_field='$key'");
-		return $result->fetchone();
+		return $result->fetch();
 	}
 	
 	//以下函数不建议直接使用
