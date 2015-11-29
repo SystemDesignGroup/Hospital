@@ -1,1 +1,3 @@
 ./idea/
+*.css~
+*.html~

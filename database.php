@@ -20,8 +20,8 @@ class database{
 	public function __construct(){//本地调试使用注释中的值
 		$this->mysql_host = SAE_MYSQL_HOST_M;//'localhost'
 		$this->mysql_db = SAE_MYSQL_DB;//'hospital'
-		$this->mysql_user = SAE_MYSQL_USER;//'root'
-		$this->mysql_password = SAE_MYSQL_PASS;//''
+		$this->mysql_user = SAE_MYSQL_USER;//'YOURUSERNAME'
+		$this->mysql_password = SAE_MYSQL_PASS;//'YOURPASSWORD'
 		$this->mysql_port = SAE_MYSQL_PORT;	//3306
 		$this -> connect_to_db();
 	}
@@ -38,7 +38,7 @@ class database{
     		die();
 		}
 	}
-	//建议使用以下两个函数存取数据
+	//建议使用以下三个函数存取数据
 	public function insert_data_into_table($table,$datavalues){//$table为表名，$datavalues是所存数据，类型为关联数组，其中变量命名与下面函数一致
 		extract($datavalues);
 		switch($table){
@@ -54,12 +54,16 @@ class database{
 			default					:echo "No Such Table In This Data Base<br />";
 		}
 	}
-	public function get_field_from_table($table,$field,$key_field,$key){//表名，待查询字段（需要的结果），查询依据的字段，查询所依据字段值
+	public function get_field_from_table($value,$table,$field,$key_field,$key){//表名，待查询字段（需要的结果），查询依据的字段，查询所依据字段值
 		$result = $this->connect->query("SELECT $field FROM $table WHERE $key_field='$key'");
-		$var = $result->fetchColumn();
-		return $var;
+		if($value = $result->fetchColumn())
+			return TRUE;
+		else
+			return FALSE;
 	}
-	
+	public function update_table($table,$column,$value,$key_field,$key){//表名，待更改字段，待更改字段值，查询依据字段，查询依据字段值
+		$result = $this->connect->exec("UPDATE $table SET $column='$value' WHERE $key_field='$key'");
+	}
 	//以下函数不建议直接使用
 	public function put_user_in_db($name,$password,$email,$role,$id_card,$tel,$status){
 		$this->connect->exec("INSERT INTO users(name,password,email,role,id_card,tel,status) VALUES".
