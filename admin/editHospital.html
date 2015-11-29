@@ -13,8 +13,8 @@
 				<label>管理信息</label>
 			</div>
 			
-			<div id="btn-div">
-					<div class="normal-btn">
+				<div id="btn-div">
+					<div class="normal-btn" style="margin-left:300px">
 							<a id="fast-reserve-btn" href="javacript:void(0)">编辑医院</a>
 					</div>	
 					<div class="normal-btn">
@@ -23,71 +23,89 @@
 					<div class="normal-btn">
 							<a id="fast-reserve-btn" href="javacript:void(0)">编辑医生</a>
 					</div>	
-			</div>
+				</div>
+				
 			
 			<div id="edit-div">
-					<div id="hos-name-div">
+					<div id="hos-name-div" class="block">
 							<label>医院名称</label>
 							<input type="text" placeholder="请输入医院名称"/>
 					</div>
 								
-					<div id="address-div">
-						<div>
+					<div id="address-div" class="block">
+						<div class="addr">
 							<label>地区：省</label>
 							<select id="provice-select">
 								<option>请选择省/直辖市</option>
 							</select>
 						</div>
-						<div>
+						<div class="addr">
 							<label>地区：市</label>
 							<select id="city-select">
 								<option>请选择市</option>
 							</select>
 						</div>
-						<div>
+						<div class="addr">
 							<label>地区：区/县</label>
 							<select id="county-select">
 								<option>请选择区/县</option>
 							</select>
 						</div>
-					</div>					
-					<div id="hos-grade-div">					
-					
-					<div id="hos-addr-div">				
-						
-					<div id="hos-tel-div">
-						<label>联系电话</label>
-						<input type="text" placeholder="请输入医院联系电话"/>
 					</div>
-					
-					<div id="hos-resume-div">					
-					
-					<div id="hos-photo-div">					
-					
-					<div id="manage-office-div">
-						<div class="office-div">
-							<label>科室1</label>
-							<div class="normal-btn">
-									<a id="fast-reserve-btn" class="edit" href="javacript:void(0)">修改</a>
-							</div>	
-							<div class="normal-btn">
-									<a id="fast-reserve-btn" class="edit" href="javacript:void(0)">删除</a>
-							</div>	
-						</div>
-					</div>
-						<label>医院照片</label>
-						<a href="javascript:void(0)">点此上传照片</a>
-					</div>
-						<label>医院简介</label>
-						<input type="text" placeholder="请输入医院简介"/>
-					</div>
-						<label>医院地址</label>
-						<input type="text" placeholder="请输入医院地址"/>
-					</div>
+										
+					<div id="hos-grade-div" class="block">											
 						<label>选择医院等级</label>
 						<select id="hos-grade-select">
 							<option>请选择医院等级</option>
 						</select>
+					</div>
+					
+					<div id="hos-addr-div" class="block"> 
+						<label>医院地址</label>
+						<input type="text" placeholder="请输入医院地址"/>
+					</div>					
+					<div id="hos-tel-div" class="block">
+						<label>联系电话</label>
+						<input type="text" placeholder="请输入医院联系电话"/>
+					</div>
+					
+					<div id="hos-resume-div" class="block">					
+						<label>医院简介</label>
+						<input type="text" placeholder="请输入医院简介"/>
+					</div>
+					
+					<div id="hos-photo-div" class="block">					
+						<label>医院照片</label>
+						<div id="photo-div">
+							<a href="javascript:void(0)">点此上传照片</a>
+						</div>
+					</div>
+					
+					<div id="manage-office-div" class="block">
+						<label>管理科室</label>
+						<div class="office-div">
+							<div>科室1</div>
+							<div class="l-btn modify-btn">
+									<a id="fast-reserve-btn" class="edit" href="javacript:void(0)">修改</a>
+							</div>	
+							<div class="l-btn delete-btn" >
+									<a id="fast-reserve-btn" class="edit" href="javacript:void(0)">删除</a>
+							</div>	
+						</div>
+						<div class="office-div" >
+							<div id="add-btn-div">
+								<a id="add-office-btn" href="javascript:void(0)"><span></span>添加科室</a>
+							</div>					
+						</div>
+					</div>
+					
+					<div id="complete-div" class="block">
+							<div class="normal-btn" id="save" style="margin-left:300px">
+									<a id="fast-reserve-btn" class="edit" href="javacript:void(0)">保存并关闭</a>
+							</div>	
+							<div class="normal-btn" id="cancel">
+									<a id="fast-reserve-btn" class="edit" href="javacript:void(0)">取消此编辑</a>
+							</div>	
 					</div>
 			</div>
 		</body>

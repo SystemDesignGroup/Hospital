@@ -10,11 +10,11 @@
 			function init()
 			{			
 						var length=document.getElementsByClassName("tabnav-tab").length;
-						console.log(length);
+						//console.log(length);
 						for(var i=0;i<length;i++)
 						{
 							var tab=document.getElementsByClassName("tabnav-tab")[i];
-							console.log(tab);
+							//console.log(tab);
   		  				 	tab.onmousedown=setRefAttribute(tab);
   		  				 	if(tab.getAttribute("selected")=="true") break;
   		  				 }
@@ -27,7 +27,7 @@
 				if(isSelected=="true")
 				{
 						console.log(tab);
-						tab.style.color="#333";
+						tab.style.color="#018bba";
   		  				tab.style.backgroundColor="#fff";
   		  				tab.style.borderColor="#ddd";
   		  				tab.style.borderRadius="3px 3px 0 0";					 		
@@ -80,14 +80,14 @@
 												<input type="text" id="hospital" placeholder="请输入您要预约的医院" />
 												<input type="text" id="office" placeholder="请输入科室" />
 										</form>	
-										<div class="normal-btn">
-												<a id="" href="javacript:void(0)">快速挂号</a>
+										<div class="normal-btn" id="reserve">
+												<a id="fast-reserve-btn" href="javacript:void(0)">快速挂号</a>
 										</div>					
 								</div>					
 							</div>			
 						 <div id="recommend-div">
-								<div class="tabnav">
-									<nav class="navb">
+								<div class="tabnav"  id="l-nav-div">
+									<nav class="navb" id="i-nav">
 											<label>推荐医院</label>
 											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">北京</a>
 											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">上海</a>
@@ -108,6 +108,7 @@
 			</div>
 				
 			<footer>
+				<label>@copyright <a href="javascript:void(0)">北京航空航天大学软件学院</a></label>
 			</footer>
 	</body>
 	
