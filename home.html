@@ -4,8 +4,7 @@
 		<meta charset="UTF-8"/>
 		<title>全国统一挂号系统</title>
 		<link href="css/home.css" type="text/css" rel="stylesheet"/>
-		
-<<<<<<< HEAD
+		<script type="javascript">
 			window.onload=init;
 			function init()
 			{			
@@ -112,113 +111,4 @@
 			</footer>
 	</body>
 	
-=======
-		<script type="text/javascript">
-		
-			window.onload=init;
-			function init()
-			{			
-						var length=document.getElementsByClassName("tabnav-tab").length;
-						console.log(length);
-						for(var i=0;i<length;i++)
-						{
-							var tab=document.getElementsByClassName("tabnav-tab")[i];
-							console.log(tab);
-  		  				 	tab.onmousedown=setRefAttribute(tab);
-  		  				 	if(tab.getAttribute("selected")=="true") break;
-  		  				 }
-			}
-			
-			function setRefAttribute(tab)
-			{
-				var isSelected=tab.getAttribute("selected");
-				console.log(tab.getAttribute("selected"));
-				if(isSelected=="true")
-				{
-						console.log(tab);
-						tab.style.color="#333";
-  		  				tab.style.backgroundColor="#fff";
-  		  				tab.style.borderColor="#ddd";
-  		  				tab.style.borderRadius="3px 3px 0 0";					 		
-				}	
-			}
-
-		</script>
-	</head>
-	
-	<body>
-			<div id="head_div"> 
-				<span>欢迎来到全国统一挂号平台</span>
-				<div id="regis_div">
-					<a href="#">登录</a>|<a href="#">注册</a>
-				</div>
-			</div>
-			
-			<div id="logo_div">
-				<img src="" alt="挂号平台logo"/>
-				<h1>全国统一挂号平台</h1>
-			</div>
-			
-			<!--导航栏-->
-			<div class="tabnav">
-					<nav id="nav-bar" class="navb">
-						<a href="#" class="tabnav-tab" selected="true" role="tab">首页</a>
-						<a href="search" class="tabnav-tab" selected="false" role="tab">按医院预约</a>
-						<a href="ksearch" class="tabnav-tab" selected="false" role="tab">按科室预约</a>
-						<a href="#" class="tabnav-tab" selected="false" role="tab">预约指南</a>
-						<a href="#" class="tabnav-tab" selected="false" role="tab">公告查看</a>
-						<a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a>
-					<nav>			
-			</div>
-			
-			
-			<div id="content-div">
-				<div id="reservation-div">
-					<h3>预约挂号</h2>
-					<div id="area" class="area">
-							<div id="fast-reserve-div">
-								<div id="show-city-div">
-										<div>
-												<span></span>
-												<label id="city-span">北京</label>
-										</div>
-										<div><label>切换</label><span id="change-over"></span></div>
-								</div>
-								<div id="input-text">
-										<form action="">
-												<input type="text" id="hospital" placeholder="请输入您要预约的医院" />
-												<input type="text" id="office" placeholder="请输入科室" />
-										</form>	
-										<div class="normal-btn">
-												<a id="" href="quickorder">快速挂号</a>
-										</div>					
-								</div>					
-							</div>			
-						 <div id="recommend-div">
-								<div class="tabnav">
-									<nav class="navb">
-											<label>推荐医院</label>
-											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">北京</a>
-											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">上海</a>
-											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">广东</a>
-											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">浙江</a>
-											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">江苏</a>
-											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">其他地区</a>
-									</nav>
-								</div>
-						<div class="hospital-info"></div>
-					</div>
-					</div>
-				</div>
-				
-				<div class="area" id="new-notice-div">
-					<h3>最新公告</h2>
-				</div>
-			</div>
-				
-			<footer>
-			</footer>
-	</body>
-	
->>>>>>> de55c6d0c711bbca9ec1e34d6824a4db78a8caac
 </html>
