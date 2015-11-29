@@ -4,6 +4,9 @@
 		<meta charset="UTF-8"/>
 		<title>全国统一挂号系统</title>
 		<link href="css/home.css" type="text/css" rel="stylesheet"/>
+		<script type="text/javascript">
+			
+		</script>
 	</head>
 	
 	<body>
@@ -21,29 +24,57 @@
 			
 			<!--导航栏-->
 			<div class="tabnav">
-					<nav id="nav_bar">
+					<nav id="nav-bar">
 						<a href="#" class="tabnav-tab" aria-selected="true" role="tab">首页</a>
 						<a href="#" class="tabnav-tab" aria-selected="false" role="tab">按医院预约</a>
 						<a href="#" class="tabnav-tab" aria-selected="false" role="tab">按科室预约</a>
 						<a href="#" class="tabnav-tab" aria-selected="false" role="tab">预约指南</a>
 						<a href="#" class="tabnav-tab" aria-selected="false" role="tab">公告查看</a>
 						<a href="#" class="tabnav-tab" aria-selected="false" role="tab">意见反馈</a>
-			<nav>			
+					<nav>			
 			</div>
 			
 			
-			<div id="content_div">
-				<div id="reservation_div">
+			<div id="content-div">
+				<div id="reservation-div">
 					<h3>预约挂号</h2>
-					<div id="fast_reserve_div">
+					<div id="area" class="area">
+							<div id="fast-reserve-div">
+								<div id="show-city-div">
+										<div>
+												<span></span>
+												<label id="city-span">北京</label>
+										</div>
+										<div><label>切换</label><span id="change-over"></span></div>
+								</div>
+								<div id="input-text">
+										<form action="">
+												<input type="text" id="hospital" placeholder="请输入您要预约的医院" />
+												<input type="text" id="office" placeholder="请输入科室" />
+										</form>	
+										<div class="normal-btn">
+												<a id="" href="javacript:void(0)">快速挂号</a>
+										</div>					
+								</div>					
+							</div>			
+						 <div id="recommend-div">
+								<div class="tabnav">
+									<nav>
+											<label>推荐医院</label>
+											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">北京</a>
+											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">上海</a>
+											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">广东</a>
+											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">浙江</a>
+											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">江苏</a>
+											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">其他地区</a>
+									</nav>
+								</div>
+						<div class="hospital-info"></div>
 					</div>
-					
-					<div id="recommend_div">
 					</div>
-					
 				</div>
 				
-				<div id="new_notice_div">
+				<div class="area" id="new-notice-div">
 					<h3>最新公告</h2>
 				</div>
 			</div>
