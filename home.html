@@ -5,7 +5,35 @@
 		<title>全国统一挂号系统</title>
 		<link href="css/home.css" type="text/css" rel="stylesheet"/>
 		<script type="text/javascript">
+		
+			window.onload=init;
+			function init()
+			{			
+						var length=document.getElementsByClassName("tabnav-tab").length;
+						console.log(length);
+						for(var i=0;i<length;i++)
+						{
+							var tab=document.getElementsByClassName("tabnav-tab")[i];
+							console.log(tab);
+  		  				 	tab.onmousedown=setRefAttribute(tab);
+  		  				 	if(tab.getAttribute("selected")=="true") break;
+  		  				 }
+			}
 			
+			function setRefAttribute(tab)
+			{
+				var isSelected=tab.getAttribute("selected");
+				console.log(tab.getAttribute("selected"));
+				if(isSelected=="true")
+				{
+						console.log(tab);
+						tab.style.color="#333";
+  		  				tab.style.backgroundColor="#fff";
+  		  				tab.style.borderColor="#ddd";
+  		  				tab.style.borderRadius="3px 3px 0 0";					 		
+				}	
+			}
+
 		</script>
 	</head>
 	
@@ -24,13 +52,13 @@
 			
 			<!--导航栏-->
 			<div class="tabnav">
-					<nav id="nav-bar">
-						<a href="#" class="tabnav-tab" aria-selected="true" role="tab">首页</a>
-						<a href="#" class="tabnav-tab" aria-selected="false" role="tab">按医院预约</a>
-						<a href="#" class="tabnav-tab" aria-selected="false" role="tab">按科室预约</a>
-						<a href="#" class="tabnav-tab" aria-selected="false" role="tab">预约指南</a>
-						<a href="#" class="tabnav-tab" aria-selected="false" role="tab">公告查看</a>
-						<a href="#" class="tabnav-tab" aria-selected="false" role="tab">意见反馈</a>
+					<nav id="nav-bar" class="navb">
+						<a href="#" class="tabnav-tab" selected="true" role="tab">首页</a>
+						<a href="#" class="tabnav-tab" selected="false" role="tab">按医院预约</a>
+						<a href="#" class="tabnav-tab" selected="false" role="tab">按科室预约</a>
+						<a href="#" class="tabnav-tab" selected="false" role="tab">预约指南</a>
+						<a href="#" class="tabnav-tab" selected="false" role="tab">公告查看</a>
+						<a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a>
 					<nav>			
 			</div>
 			
@@ -59,7 +87,7 @@
 							</div>			
 						 <div id="recommend-div">
 								<div class="tabnav">
-									<nav>
+									<nav class="navb">
 											<label>推荐医院</label>
 											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">北京</a>
 											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">上海</a>
