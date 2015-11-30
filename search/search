@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8" />
-	<link type="text/css" rel="stylesheet" href="search.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/search.css"/>
 	
 	<title>搜索|挂号网</title>
 	<script type="text/javascript">
@@ -42,7 +42,7 @@
 	<div id="head_div"> 
 				<span>欢迎来到全国统一挂号平台</span>
 				<div id="regis_div">
-					<a href="#">登录</a>|<a href="#">注册</a>
+					<a href="../login.html">登录</a>|<a href="../login.html">注册</a>
 				</div>
 			</div>
 			
@@ -62,43 +62,45 @@
 						<a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a>
 					<nav>			
 			</div>	
+	<div id="mainmain">
 	<div class="main-container">
 		<div id="g-breadcrumb">
-	  		<a href="">首页</a>&gt;  
-	 		<span>快速预约</span> 
+	 		<span>>快速预约</span> 
 		</div>
 		<div class="search-wrap">
       	<div class="top-left">
          	<span class="addr-icon"></span>
             <span class="J_Province" id="address">北京 海淀区</span>        
-            <a href="javascript:void(0)" class="gbn gbt-blue addr-btn J_AreaSwitch" id="ad-exc" onclick = "document.getElementById('light').style.display='block';">切换</a>
+            <a href="javascript:void(0)" class="tabnav-tab" onclick = "document.getElementById('light').style.display='block';">切换</a>
          </div>
          <div id="light" class="white_content">
-         	<a href = "javascript:void(0)" style="float:right" onclick = "document.getElementById('light').style.display='none'">关闭</a>
+         	<a href = "javascript:void(0)" style="float:right" class="tabnav-tab" onclick = "document.getElementById('light').style.display='none'">关闭</a>
 				<div class="addr-wrap J_Area" >
     			<a href="javascript:void(0);" class="close"></a>
     			<div class="area-content J_AreaContent">
-    				<p class="content-title">请选择地区:</p>
+    				<p class="content-title" style="font-size:12px">请选择地区:</p>
       			<ul class="J_ProvinceUl"></ul>
      			</div>
    			</div>         	
          	<ul>
-         		<li><a href="javascript:void(0);" class="addr-name">东城区</a></li>
-         		<li><a href="javascript:void(0);" class="addr-name">西城区</a></li>
-         		<li><a href="javascript:void(0);" class="addr-name">朝阳区</a></li>
-         		<li><a href="javascript:void(0);" class="addr-name">海淀区</a></li>
-         		<li><a href="javascript:void(0);" class="addr-name">丰台区</a></li>
-         		<li><a href="javascript:void(0);" class="addr-name">通州区</a></li>
-         		<li><a href="javascript:void(0);" class="addr-name">顺义区</a></li>
-         		<li><a href="javascript:void(0);" class="addr-name">大兴区</a></li>
-         		<li><a href="javascript:void(0);" class="addr-name">昌平区</a></li>
-         		<li><a href="javascript:void(0);" class="addr-name">房山区</a></li>
-         		<li><a href="javascript:void(0);" class="addr-name">怀柔区</a></li>
-         		<li><a href="javascript:void(0);" class="addr-name">平谷区</a></li>
-         		<li><a href="javascript:void(0);" class="addr-name">密云区</a></li>
-         		<li><a href="javascript:void(0);" class="addr-name">延庆区</a></li>
-         		<li><a href="javascript:void(0);" class="addr-name">石景山</a></li>
-         		<li><a href="javascript:void(0);" class="addr-name">门头沟区</a></li>
+					<nav class="navb" id="i-nav">         		
+         		<li><a href="javascript:void(0);" class="addr-name tabnav-tab">东城区</a></li>
+         		<li><a href="javascript:void(0);" class="addr-name tabnav-tab">西城区</a></li>
+         		<li><a href="javascript:void(0);" class="addr-name tabnav-tab">朝阳区</a></li>
+         		<li><a href="javascript:void(0);" class="addr-name tabnav-tab">海淀区</a></li>
+         		<li><a href="javascript:void(0);" class="addr-name tabnav-tab">丰台区</a></li>
+         		<li><a href="javascript:void(0);" class="addr-name tabnav-tab">通州区</a></li>
+         		<li><a href="javascript:void(0);" class="addr-name tabnav-tab">顺义区</a></li>
+         		<li><a href="javascript:void(0);" class="addr-name tabnav-tab">大兴区</a></li>
+         		<li><a href="javascript:void(0);" class="addr-name tabnav-tab">昌平区</a></li>
+         		<li><a href="javascript:void(0);" class="addr-name tabnav-tab">房山区</a></li>
+         		<li><a href="javascript:void(0);" class="addr-name tabnav-tab">怀柔区</a></li>
+         		<li><a href="javascript:void(0);" class="addr-name tabnav-tab">平谷区</a></li>
+         		<li><a href="javascript:void(0);" class="addr-name tabnav-tab">密云区</a></li>
+         		<li><a href="javascript:void(0);" class="addr-name tabnav-tab">延庆区</a></li>
+         		<li><a href="javascript:void(0);" class="addr-name tabnav-tab">石景山</a></li>
+         		<li><a href="javascript:void(0);" class="addr-name tabnav-tab">门头沟区</a></li>
+         		</nav>
          	</ul>
          </div>
          <script>
@@ -126,7 +128,7 @@
 		<div class="filter-new J_Filter">
       	<form name="fform" action="search">
          	<div class="filter-condition-box">
-        			<div class="filter-tip">
+        			<div class="filter-tip" style="border-bottom:1px solid #CDCDB4">
                	<div class="filter-condition" id="J_SelCondition">
               		</div>
                     <span class="result-num">找到<strong id="J_ResultNum">0</strong>家医院</span>
@@ -136,10 +138,12 @@
                   	<div class="condition-title">医院等级</div>
                      <div class="condition-content">
 								<ul>                     	
-                     	<li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYD" data-val="33">三级甲等</a></li>
-                       	<li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYD" data-val="30">三级医院</a></li>
-                       	<li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYD" data-val="20">二级医院</a></li>
-                       	<li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYD" data-val="10">一级医院</a></li>
+								<nav class="navb" id="i-nav">                     	
+                     	<li><a href="javascript:void(0);" class="J_Submit_A tabnav-tab" aria-selected="true" role="tab">三级甲等</a></li>
+                       	<li><a href="javascript:void(0);" class="J_Submit_A tabnav-tab" aria-selected="true" role="tab">三级医院</a></li>
+                       	<li><a href="javascript:void(0);" class="J_Submit_A tabnav-tab" aria-selected="true" role="tab">二级医院</a></li>
+                       	<li><a href="javascript:void(0);" class="J_Submit_A tabnav-tab" aria-selected="true" role="tab">一级医院</a></li>
+								</nav>
 								</ul>                      	
                       	<div class="condition-options">
                       	</div>
@@ -150,32 +154,36 @@
                      <div class="condition-content">               
 								<div class="hostype" id="box">								
 								<ul style="margin-left:20px;">                           	
-                          	<li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="1" name="ht" >综合医院</a></li>
-                          	<li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="2" name="ht" >眼科医院</a></li>
-                          	<li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="3" name="ht" >儿童医院</a></li>
-                          	<li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="4" name="ht" >妇产科医院</a></li>
-                          	<li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="5" name="ht" >肿瘤医院</a></li>
-                          	<li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="6" name="ht" >耳鼻喉科医院</a></li>
-                          	<li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="7" name="ht" >传染病医院</a></li>
-                          	<li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="8" name="ht" >骨科医院</a></li>
-                          	<li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="9" name="ht" >口腔医院</a></li>
-                          	<li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="10" name="ht" >肛肠医院</a></li>
-                           <li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="11" name="ht" >精神病医院</a></li>
-                           <li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="12" name="ht" >皮肤科医院</a></li>
-                           <li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="13" name="ht" >整形医院</a></li>
-                           <li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="14" name="ht" >不孕不育医院</a></li>
-                           <li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="16" name="ht" >心血管医院</a></li>
-                           <li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="18" name="ht" >肺科医院</a></li>
-                           <li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="19" name="ht" >肝胆外科医院</a></li>
-                           <li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="20" name="ht" >泌尿科医院</a></li>
-                           <li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="21" name="ht" >肝病医院</a></li>
-                           <li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="431" name="ht" >脑科医院</a></li>
-                           <li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="501" name="ht" >男科医院</a></li>
-                           <li><a href="javascript:void(0);"   class="J_Submit_A" data-code="SXYL" data-val="502" name="ht" >中医综合医院</a></li>
+									<nav class="navb" id="i-nav">                          	
+                          	<li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="1" name="ht" >综合医院</a></li>
+                          	<li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="2" name="ht" >眼科医院</a></li>
+                          	<li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="3" name="ht" >儿童医院</a></li>
+                          	<li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="4" name="ht" >肿瘤医院</a></li>
+                          	<li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="5" name="ht" >妇产科医院</a></li>
+                          	<li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="6" name="ht" >耳鼻喉科医院</a></li>
+                          	<li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="7" name="ht" >口腔医院</a></li>
+                          	<li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="8" name="ht" >骨科医院</a></li>
+                          	<li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="9" name="ht" >传染病医院</a></li>
+                          	<li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="10" name="ht" >肛肠医院</a></li>
+                           <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="11" name="ht" >精神病医院</a></li>
+                           <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="12" name="ht" >皮肤科医院</a></li>
+                           <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="13" name="ht" >整形医院</a></li>
+                           <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="14" name="ht" >脑科医院</a></li>
+                           <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="16" name="ht" >心血管医院</a></li>
+                           <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="18" name="ht" >肺科医院</a></li>
+                           <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="19" name="ht" >肝胆外科医院</a></li>
+                           <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="20" name="ht" >泌尿科医院</a></li>
+                           <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="21" name="ht" >肝病医院</a></li>
+                           <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="431" name="ht" >男科医院</a></li>
+                           <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="501" name="ht" >不孕不育医院</a></li>
+                           <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="502" name="ht" >中医综合医院</a></li>
+									</nav>							
 								</ul>
 								</div>                         	
-                        <div class="condition-options" >
-                           	<a class="J_More condition-more condition-more-switch"id="icon" href="javascript:;">展开</a>
+                        <div class="condition-options" style="float:right">
+                        <nav class="navb" id="i-nav">
+                           	<a id="icon" href="javascript:;" class="tabnav-tab" style="float:right;margin-top:-30px">展开</a>
+								</nav>                      	
                       	</div>
                       	<script> 
 									function show(){ 
@@ -208,9 +216,11 @@
             </div>
        		<div class="line-gray-bg"></div>
        		<div class="gfm-inline top">
-       			<a href="javascript:;" class="J_Submit_A" data-code="" data-val="0" name="sort">&nbsp;综合排序&nbsp;<i></i></a>
-            	<a href="javascript:;" class="J_Submit_A" data-code="" data-val="8" name="sort">&nbsp;按患者评价&nbsp;<i></i></a>
-           		<a href="javascript:;" class="J_Submit_A" data-code="" data-val="7" name="sort">&nbsp;按预约量&nbsp;<i></i></a>
+					<nav class="navb" id="i-nav">       			
+       			<a href="javascript:;" class="J_Submit_A tabnav-tab" data-code="" data-val="0" name="sort">&nbsp;综合排序&nbsp;<i></i></a>
+            	<a href="javascript:;" class="J_Submit_A tabnav-tab" data-code="" data-val="8" name="sort">&nbsp;按患者评价&nbsp;<i></i></a>
+           		<a href="javascript:;" class="J_Submit_A tabnav-tab" data-code="" data-val="7" name="sort">&nbsp;按预约量&nbsp;<i></i></a>
+           		</nav>
        		</div>
             <input type="hidden" name="q" value="" />
             <input type="hidden" name="pi" value="1" />
@@ -364,6 +374,7 @@
     			</form>
     		</div>
 		</div>             -->
+	</div>
 	</div>			
 		
 		
