@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	 	<meta charset="UTF-8"/>
+	 	<title>管理员-编辑科室</title>
+		 <link type="text/css" rel="stylesheet" href="../css/admin.css"/>
+	</head>
+	
+		<body>
+			<div id="head_div"> 
+				<span>欢迎来到全国统一挂号平台</span>
+				<label>管理信息-编辑科室</label>
+			</div>
+			
+				<div id="btn-div">
+					<div class="normal-btn" style="marign-left:300px">
+						<a id="fast-reserve-btn" href="javacript:void(0)">编辑医院</a>
+					</div>
+					<div class="normal-btn">
+							<a id="fast-reserve-btn" href="javacript:void(0)">编辑科室</a>
+					</div>	
+					<div class="normal-btn">
+							<a id="fast-reserve-btn" href="javacript:void(0)">编辑医生</a>
+					</div>	
+				</div>
+				
+			
+			<div id="edit-div">
+					<div id="office-name-div" class="block">
+							<label>科室名称</label>
+							<input type="text" placeholder="请输入科室名称"/>
+					</div>
+					
+					<div id="office-resume-div" class="block resume">					
+						<label>科室简介</label>
+						<textarea placeholder="请输入科室简介"></textarea>
+					</div>
+										
+					<div id="office-grade-div" class="block">											
+						<div class="m-block">
+								<label>科室等级</label>
+								<select id="office-grade-select">
+									<option>请选择医院等级</option>
+								</select>						
+						</div>
+						<div class="m-block">
+							<label>父级科室</label>			
+							<select>
+								<option>请选择父级科室</option></optgroup>							
+							</select>			
+						</div>
+					</div>
+					
+					
+					<div id="manage-doctor-div" class="block">
+						<label>管理医生</label>
+						<div class="divide-block">
+							<div>医生1</div>
+							<div class="l-btn modify-btn">
+									<a id="fast-reserve-btn" class="edit" href="javacript:void(0)">修改</a>
+							</div>	
+							<div class="l-btn delete-btn" >
+									<a id="fast-reserve-btn" class="edit" href="javacript:void(0)">删除</a>
+							</div>	
+						</div>
+						<div class="divide-block" >
+							<div id="add-btn-div">
+								<a id="add-office-btn" href="javascript:void(0)"><span></span>添加医生</a>
+							</div>					
+						</div>
+					</div>
+					
+					<div id="complete-div" class="block">
+								<div class="normal-btn" id="save" style="margin-left: 300px;">
+										<a id="fast-reserve-btn" class="edit" href="javacript:void(0)">保存并关闭</a>
+								</div>			
+							<div class="normal-btn" id="cancel">
+									<a id="fast-reserve-btn" class="edit" href="javacript:void(0)">取消此编辑</a>
+							</div>	
+					</div>							
+			</div>
+		</body>
+</html>
