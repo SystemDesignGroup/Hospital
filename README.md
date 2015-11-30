@@ -8,4 +8,4 @@
 * 部署环境：新浪云（SAE）
 
 ##项目主页
-[医院挂号系统](http://hospitalordering.sinaapp.com)
+[医院挂号系统](http://hospitalordering.sinaapp.com/home.html)
