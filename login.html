@@ -14,6 +14,7 @@
 </head>
 <body>
 	<div class="login-nav fix">
+        <a>欢迎来到全国统一挂号平台</a>
 		<ul class="f-r">
         <li><a href="home.html">返回首页</a></li>
 		</ul>
@@ -53,6 +54,14 @@
 				</div>
                 <div class="form-group">
 					<input type="text" name="name" placeholder="姓名">
+				</div>
+                 <div class="form-group">
+					<input type="text" name="tel" placeholder="手机号码"  class="email-mobile" onBlur="verify.verifyTel(this)">
+                    <span class="error-notic">手机号码不正确</span>
+				</div>
+                 <div class="form-group">
+					<input type="text" name="card" placeholder="身份证号码" class="email-mobile" onBlur="verify.verifyCard(this)">
+                    <span class="error-notic">身份证号码不正确</span>
 				</div>
 				<div class="signup-email">
 					<div class="form-group">
@@ -121,8 +130,29 @@
             	}else{
             		hideNotic(_this)
             	}
-			},//验证邮箱
+            },//验证邮箱格式
 
+            verifyTel:function(_this){
+                 var telnotice=  /^([0-9])+$/;
+                var _value=$(_this).val();
+                var _length=$(_this).val().length;
+                if(!telnotice.test(_value) || _length!=11){
+            		showNotic(_this)
+            	}else{
+            		hideNotic(_this)
+            	}
+            },//验证手机号码格式
+
+             verifyCard:function(_this){
+                 var cardnotice=  /^([0-9])+$/;
+                var _value=$(_this).val();
+                var _length=$(_this).val().length;
+                if(!cardnotice.test(_value) || _length!=18){
+            		showNotic(_this)
+            	}else{
+            		hideNotic(_this)
+            	}
+            },//验证身份证号码格式
 			PasswordLenght:function(_this){
 				var _length=$(_this).val().length;
 				if(_length<6){
