@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8" />
-	<link type="text/css" rel="stylesheet" href="search.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/search.css"/>
 	<title>科室搜索|挂号网</title>
 	<script type="text/javascript">
 		
@@ -52,7 +52,7 @@
 			<!--导航栏-->
 			<div class="tabnav">
 					<nav id="nav-bar" class="navb">
-						<a href="home.html" class="tabnav-tab" selected="false" role="tab">首页</a>
+						<a href="../home.html" class="tabnav-tab" selected="false" role="tab">首页</a>
 						<a href="search" class="tabnav-tab" selected="false" role="tab">按医院预约</a>
 						<a href="ksearch" class="tabnav-tab" selected="true" role="tab">按科室预约</a>
 						<a href="#" class="tabnav-tab" selected="false" role="tab">预约指南</a>
@@ -92,7 +92,7 @@
 					</li>
 					<li>
 						<div class="">
-							<a href="#" title="儿科"><font>儿科</font></a>
+							<a href="#" title="儿科" class=""><font>儿科</font></a>
 						</div>
 					</li>
 					<li>
