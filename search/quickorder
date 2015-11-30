@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<link type="text/css" rel="stylesheet" href="../css/search.css"/>
+	<title>快速预约|挂号网</title>
+	<script type="text/javascript">
+		
+			window.onload=init;
+			function init()
+			{			
+						var length=document.getElementsByClassName("tabnav-tab").length;
+						console.log(length);
+						for(var i=0;i<length;i++)
+						{
+							var tab=document.getElementsByClassName("tabnav-tab")[i];
+							console.log(tab);
+  		  				 	tab.onmousedown=setRefAttribute(tab);
+  		  				 	if(tab.getAttribute("selected")=="true") break;
+  		  				 }
+			}
+			
+			function setRefAttribute(tab)
+			{
+				var isSelected=tab.getAttribute("selected");
+				console.log(tab.getAttribute("selected"));
+				if(isSelected=="true")
+				{
+						console.log(tab);
+						tab.style.color="#333";
+  		  				tab.style.backgroundColor="#fff";
+  		  				tab.style.borderColor="#ddd";
+  		  				tab.style.borderRadius="3px 3px 0 0";					 		
+				}	
+			}
+
+		</script>
+</head>
+<body>
+	<div id="head_div"> 
+				<span>欢迎来到全国统一挂号平台</span>
+				<div id="regis_div">
+					<a href="#">登录</a>|<a href="#">注册</a>
+				</div>
+			</div>
+			
+			<div id="logo_div">
+				<img src="" alt="挂号平台logo"/>
+				<h1>全国统一挂号平台</h1>
+			</div>
+			
+			<!--导航栏-->
+			<div class="tabnav">
+					<nav id="nav-bar" class="navb">
+						<a href="home.html" class="tabnav-tab" selected="false" role="tab">首页</a>
+						<a href="search" class="tabnav-tab" selected="false" role="tab">按医院预约</a>
+						<a href="ksearch" class="tabnav-tab" selected="false" role="tab">按科室预约</a>
+						<a href="#" class="tabnav-tab" selected="false" role="tab">预约指南</a>
+						<a href="#" class="tabnav-tab" selected="false" role="tab">公告查看</a>
+						<a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a>
+					<nav>			
+			</div>
+
+	<div id="gc"> 
+		<div class="fastOrder gp-fastorder" id="g-cfg">
+			<div class="g-top-box">
+				<div class="g-ads-top J_Promotions" data-pos="1" data-rows="1"></div>
+			</div>
+			<div id="g-breadcrumb" style="margin-left:100px">
+	        	<span>>快速预约</span> 
+	 		</div>
+	 		<div class="content" >
+				<div class="contentLeft" style="float:left"> 
+					<h3 style="color:greenyellow"><i>快速预约</i>帮助普通患者快速找到选定条件下可预约的专家</h3>
+					<p class="note">(目前只支持<label>部分</label>医院)</p>  
+               <span style="font-size:18px">快速筛选</span><p style="color:gray">根据区域、医院、科室快速筛选对应班次</p>
+					<span style="font-size:18px">适用人群</span><p style="color:gray">未确定具体病症，希望尽快就医确诊的普通患者</p> 		
+				</div>
+		      <div class="contentRight" style="float:right">
+		     		<div class="g-fastorder-box"> 
+						<div class="row g-clear" style="margin-top:60px;">
+							<label>地区：</label>
+							<select class="province js-province" name="province" style="width:300px">
+								<option value="">请选择...</option>
+								<option value="">东城区</option>
+								<option value="">西城区</option>
+								<option value="">朝阳区</option>
+								<option value="">海淀区</option>
+								<option value="">石景山区</option>
+								<option value="">丰台区</option>
+								<option value="">通州区</option>
+								<option value="">顺义区</option>
+								<option value="">大兴区</option>
+								<option value="">昌平区</option>
+								<option value="">房山区</option>
+								<option value="">怀柔区</option>
+								<option value="">平谷区</option>
+								<option value="">门头沟区</option>
+								<option value="">密云区</option>
+								<option value="">延庆区</option>
+							</select>	 
+						</div>
+						<div class="row g-clear" style="margin-top:20px;" >
+							<label>医院：</label>
+							<select class="js-hospital disabled" disabled="disabled" name="hospital" style="width:300px">
+								<option value="">请选择...</option>
+							</select>	 	 
+						</div>
+						<div class="row g-clear" style="margin-top:20px;">
+							<label>科室：</label>
+							<select class="js-dept disabled" disabled="disabled" name="hdid" style="width:300px">
+								<option value="">请选择...</option>
+							</select>	  
+						</div>
+						<div class="btn" style="width:200px;margin-left:350px;margin-top:20px;border:1px solid gray;background-color:#66CDAA;border-radius:5px;">
+							<a href="javascript:;" class="gbn gbt-green js-btn">预约挂号</a>
+						</div> 
+					</div>
+	        	</div>
+			 	<div class="clear"></div>
+			</div>			
+    	</div>	 
+	</div>
+</body>
+</html>

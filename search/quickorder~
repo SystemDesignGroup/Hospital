@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8" />
-	<link type="text/css" rel="stylesheet" href="search.css"/>
+	<link type="text/css" rel="stylesheet" href="../Hospital/css/search.css"/>
 	<title>快速预约|挂号网</title>
 	<script type="text/javascript">
 		

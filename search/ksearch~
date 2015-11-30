@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<link type="text/css" rel="stylesheet" href="../css/search.css"/>
+	<title>科室搜索|挂号网</title>
+	<script type="text/javascript">
+		
+			window.onload=init;
+			function init()
+			{			
+						var length=document.getElementsByClassName("tabnav-tab").length;
+						console.log(length);
+						for(var i=0;i<length;i++)
+						{
+							var tab=document.getElementsByClassName("tabnav-tab")[i];
+							console.log(tab);
+  		  				 	tab.onmousedown=setRefAttribute(tab);
+  		  				 	if(tab.getAttribute("selected")=="true") break;
+  		  				 }
+			}
+			
+			function setRefAttribute(tab)
+			{
+				var isSelected=tab.getAttribute("selected");
+				console.log(tab.getAttribute("selected"));
+				if(isSelected=="true")
+				{
+						console.log(tab);
+						tab.style.color="#333";
+  		  				tab.style.backgroundColor="#fff";
+  		  				tab.style.borderColor="#ddd";
+  		  				tab.style.borderRadius="3px 3px 0 0";					 		
+				}	
+			}
+
+		</script>
+</head>
+<body>
+	<div id="head_div"> 
+				<span>欢迎来到全国统一挂号平台</span>
+				<div id="regis_div">
+					<a href="#">登录</a>|<a href="#">注册</a>
+				</div>
+			</div>
+			
+			<div id="logo_div">
+				<img src="" alt="挂号平台logo"/>
+				<h1>全国统一挂号平台</h1>
+			</div>
+			
+			<!--导航栏-->
+			<div class="tabnav">
+					<nav id="nav-bar" class="navb">
+						<a href="../home.html" class="tabnav-tab" selected="false" role="tab">首页</a>
+						<a href="search" class="tabnav-tab" selected="false" role="tab">按医院预约</a>
+						<a href="ksearch" class="tabnav-tab" selected="true" role="tab">按科室预约</a>
+						<a href="#" class="tabnav-tab" selected="false" role="tab">预约指南</a>
+						<a href="#" class="tabnav-tab" selected="false" role="tab">公告查看</a>
+						<a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a>
+					<nav>			
+			</div>
+	<div class="main-container">
+		<div id="g-breadcrumb">
+	 		<span>>按科室找</span> 
+		</div>	
+		<div class="ks-left">
+			<h2 style="text-align:center">
+				科室大全<span class="jb-font-12" style="font-size:14px">（按科室查病挂号）</span>
+			</h2>
+			<div class="ks-type">
+				<ul class="jb-ks g-jb-ks" id="g_menu">
+					<li>
+						<div class="g_menu_ks">
+							<a href="#" title="内科"><font>内科</font></a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="#" title="外科"><font>外科</font></a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="h#" title="骨科"><font>骨科</font></a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="#" title="妇产科"><font>妇产科</font></a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="#" title="儿科" class=""><font>儿科</font></a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="#" title="眼科"><font>眼科</font></a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="#" title="耳鼻咽喉头颈科"><font>耳鼻咽喉头颈科</font></a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="#" title="口腔科"><font>口腔科</font></a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="#" title="皮肤性病科"><font>皮肤性病科</font></a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="#" title="肿瘤科"><font>肿瘤科</font></a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="#" title="麻醉科"><font>麻醉科</font></a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="#" title="疼痛科"><font>疼痛科</font></a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="#" title="医学影像科"><font>医学影像科</font></a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="#" title="中医科"><font>中医科</font></a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="#" title="其他"><font>其他</font></a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- <div class="ks-middle">			
+			<div class="g_jb_right_conect" style="display:block">
+					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
+						class="jb-font-18 jb-color-333">内科二级科室</span>
+					<div class="hide_zoom">
+						<ul class="g_jb_right_ul">
+							<li><a href="#" title="感染科">感染科</a>
+								<a href="#" title="呼吸内科">呼吸内科</a> <a
+								href="#" title="消化内科">消化内科</a> <a
+								href="#" title="神经内科">神经内科</a> <a
+								href="#" title="肾内科">肾内科</a> <a
+								href="#" title="血液科">血液科</a> <a
+								href="#" title="风湿免疫科">风湿免疫科</a> <a
+								href="#" title="心血管内科">心血管内科</a> <a
+								href="#" title="内分泌科">内分泌科</a> <a
+								href="#" title="过敏反应科">过敏反应科</a> <a
+								href="#" title="普通内科">普通内科</a></li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="g_jb_right_conect" style="display:block">
+					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
+						class="jb-font-18 jb-color-333">外科二级科室</span>
+					<div class="hide_zoom">
+						<ul class="g_jb_right_ul">
+							<li><a href="#" title="普外科">普外科</a>
+								<a href="#" title="胸外科">胸外科</a> <a
+								href="#" title="心血管外科">心血管外科</a> <a
+								href="#" title="神经外科">神经外科</a> <a
+								href="#" title="肝胆外科">肝胆外科</a> <a
+								href="#" title="肛肠外科">肛肠外科</a> <a
+								href="#" title="泌尿外科">泌尿外科</a> <a
+								href="#" title="血管外科">血管外科</a> <a
+								href="#" title="整形外科">整形外科</a> <a
+								href="#" title="乳腺外科">乳腺外科</a> <a
+								href="#" title="烧伤科">烧伤科</a> <a
+								href="#" title="器官移植">器官移植</a></li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="g_jb_right_conect" style="display:block">
+					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
+						class="jb-font-18 jb-color-333">骨科二级科室</span>
+					<div class="hide_zoom">
+						<ul class="g_jb_right_ul">
+							<li><a href="#" title="脊柱外科">脊柱外科</a>
+								<a href="#" title="关节外科">关节外科</a> <a
+								href="#" title="手外科">手外科</a> <a
+								href="#" title="创伤骨科">创伤骨科</a> <a
+								href="#" title="矫形骨科">矫形骨科</a> <a
+								href="#" title="骨质疏松科">骨质疏松科</a></li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="g_jb_right_conect" style="display:block">
+					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
+						class="jb-font-18 jb-color-333">妇产科二级科室</span>
+					<div class="hide_zoom">
+						<ul class="g_jb_right_ul">
+							<li><a href="#" title="妇科">妇科</a>
+								<a href="#" title="计划生育科">计划生育科</a>
+								<a href="#" title="产科">产科</a> <a
+								href="#" title="产前检查科">产前检查科</a> <a
+								href="#" title="生殖与遗传">生殖与遗传</a> <a
+								href="#" title="妇女保健科">妇女保健科</a></li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="g_jb_right_conect" style="display:block">
+					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
+						class="jb-font-18 jb-color-333">儿科二级科室</span>
+					<div class="hide_zoom">
+						<ul class="g_jb_right_ul">
+							<li><a href="http://www.guahao.com/search?q=小儿心血管内科"
+								title="小儿心血管内科">小儿心血管内科</a> <a
+								href="#" title="小儿呼吸内科">小儿呼吸内科</a>
+								<a href="#" title="小儿消化科">小儿消化科</a>
+								<a href="#" title="小儿肾内科">小儿肾内科</a>
+								<a href="#" title="小儿免疫科">小儿免疫科</a>
+								<a href="#" title="小儿血液科">小儿血液科</a>
+								<a href="#" title="小儿神经内科">小儿神经内科</a>
+								<a href="#" title="小儿内分泌科">小儿内分泌科</a>
+								<a href="#" title="小儿感染科">小儿感染科</a>
+								<a href="#" title="小儿普外科">小儿普外科</a>							
+								<a href="#" title="小儿精神科">小儿精神科</a>
+								<a href="#" title="新生儿科">新生儿科</a> </li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="g_jb_right_conect" style="display:block">
+					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
+						class="jb-font-18 jb-color-333">眼科二级科室</span>
+					<div class="hide_zoom">
+						<ul class="g_jb_right_ul">
+							<li></li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="g_jb_right_conect" style="display:block">
+					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
+						class="jb-font-18 jb-color-333">耳鼻咽喉头颈科二级科室</span>
+					<div class="hide_zoom">
+						<ul class="g_jb_right_ul">
+							<li><a href="#" title="耳鼻咽喉科">耳鼻咽喉科</a>
+								<a href="#" title="头颈外科">头颈外科</a></li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="g_jb_right_conect" style="display:block">
+					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
+						class="jb-font-18 jb-color-333">口腔科二级科室</span>
+					<div class="hide_zoom">
+						<ul class="g_jb_right_ul">
+							<li><a href="#" title="口腔种植科">口腔种植科</a>
+								<a href="#" title="牙体牙髓科">牙体牙髓科</a>
+								<a href="#" title="牙周病科">牙周病科</a>  
+								<a href="#" title="口腔正畸科">口腔正畸科</a> 
+								<a href="#" title="口腔预防科">口腔预防科</a>
+								<a href="h#" title="口腔病理科">口腔病理科</a>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="g_jb_right_conect" style="display:block">
+					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
+						class="jb-font-18 jb-color-333">皮肤性病科二级科室</span>
+					<div class="hide_zoom">
+						<ul class="g_jb_right_ul">
+							<li><a href="#" title="皮肤科">皮肤科</a>
+								<a href="#" title="性病科">性病科</a></li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="g_jb_right_conect" style="display:block">
+					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
+						class="jb-font-18 jb-color-333">肿瘤科二级科室</span>
+					<div class="hide_zoom">
+						<ul class="g_jb_right_ul">
+							<li>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="g_jb_right_conect" style="display:block">
+					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
+						class="jb-font-18 jb-color-333">麻醉科二级科室</span>
+					<div class="hide_zoom">
+						<ul class="g_jb_right_ul">
+							<li><a href="#" title="麻醉科">麻醉科</a>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="g_jb_right_conect" style="display:block">
+					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
+						class="jb-font-18 jb-color-333">疼痛科二级科室</span>
+					<div class="hide_zoom">
+						<ul class="g_jb_right_ul">
+							<li><a href="http://www.guahao.com/search?q=疼痛科" title="疼痛科">疼痛科</a>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="g_jb_right_conect" style="display:block">
+					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
+						class="jb-font-18 jb-color-333">医学影像科二级科室</span>
+					<div class="hide_zoom">
+						<ul class="g_jb_right_ul">
+							<li></li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="g_jb_right_conect" style="display:block">
+					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
+						class="jb-font-18 jb-color-333">中医科二级科室</span>
+					<div class="hide_zoom">
+						<ul class="g_jb_right_ul">
+							<li></li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="g_jb_right_conect" style="display:block">
+					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
+						class="jb-font-18 jb-color-333">其他二级科室</span>
+					<div class="hide_zoom">
+						<ul class="g_jb_right_ul">
+							<li></li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+		</div> -->
+		<script>
+			
+		</script>
+	</div>
+</body>
+</html>
