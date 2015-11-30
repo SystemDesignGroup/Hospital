@@ -4,6 +4,7 @@
 	<meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="../css/search.css"/>
 	<title>科室搜索|挂号网</title>
+<<<<<<< HEAD
 	<script type="text/javascript">
 		
 			window.onload=init;
@@ -59,6 +60,63 @@
 						<a href="#" class="tabnav-tab" selected="false" role="tab">公告查看</a>
 						<a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a>
 					<nav>			
+=======
+	<script type="text/javascript">
+		
+			window.onload=init;
+			function init()
+			{			
+						var length=document.getElementsByClassName("tabnav-tab").length;
+						console.log(length);
+						for(var i=0;i<length;i++)
+						{
+							var tab=document.getElementsByClassName("tabnav-tab")[i];
+							console.log(tab);
+  		  				 	tab.onmousedown=setRefAttribute(tab);
+  		  				 	if(tab.getAttribute("selected")=="true") break;
+  		  				 }
+			}
+			
+			function setRefAttribute(tab)
+			{
+				var isSelected=tab.getAttribute("selected");
+				console.log(tab.getAttribute("selected"));
+				if(isSelected=="true")
+				{
+						console.log(tab);
+						tab.style.color="#333";
+  		  				tab.style.backgroundColor="#fff";
+  		  				tab.style.borderColor="#ddd";
+  		  				tab.style.borderRadius="3px 3px 0 0";					 		
+				}	
+			}
+
+		</script>
+</head>
+<body>
+	<div id="head_div"> 
+				<span>欢迎来到全国统一挂号平台</span>
+				<div id="regis_div">
+					<a href="#">登录</a>|<a href="#">注册</a>
+				</div>
+			</div>
+			
+			<div id="logo_div">
+				<img src="" alt="挂号平台logo"/>
+				<h1>全国统一挂号平台</h1>
+			</div>
+			
+			<!--导航栏-->
+			<div class="tabnav">
+					<nav id="nav-bar" class="navb">
+						<a href="../home.html" class="tabnav-tab" selected="false" role="tab">首页</a>
+						<a href="search" class="tabnav-tab" selected="false" role="tab">按医院预约</a>
+						<a href="ksearch" class="tabnav-tab" selected="true" role="tab">按科室预约</a>
+						<a href="#" class="tabnav-tab" selected="false" role="tab">预约指南</a>
+						<a href="#" class="tabnav-tab" selected="false" role="tab">公告查看</a>
+						<a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a>
+					<nav>			
+>>>>>>> d7468bcadd1d2fc65754142c4e6048778507ba43
 			</div>
 	<div class="main-container">
 		<div id="g-breadcrumb">

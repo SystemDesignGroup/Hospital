@@ -5,7 +5,6 @@
 	<link type="text/css" rel="stylesheet" href="../css/search.css"/>
 	
 	<title>搜索|挂号网</title>
-<<<<<<< HEAD
 	<script type="text/javascript">
 		
 			window.onload=init;
@@ -36,43 +35,10 @@
 				}	
 			}
 
-=======
-	<script type="text/javascript">
-		
-			window.onload=init;
-			function init()
-			{			
-						var length=document.getElementsByClassName("tabnav-tab").length;
-						console.log(length);
-						for(var i=0;i<length;i++)
-						{
-							var tab=document.getElementsByClassName("tabnav-tab")[i];
-							console.log(tab);
-  		  				 	tab.onmousedown=setRefAttribute(tab);
-  		  				 	if(tab.getAttribute("selected")=="true") break;
-  		  				 }
-			}
-			
-			function setRefAttribute(tab)
-			{
-				var isSelected=tab.getAttribute("selected");
-				console.log(tab.getAttribute("selected"));
-				if(isSelected=="true")
-				{
-						console.log(tab);
-						tab.style.color="#333";
-  		  				tab.style.backgroundColor="#fff";
-  		  				tab.style.borderColor="#ddd";
-  		  				tab.style.borderRadius="3px 3px 0 0";					 		
-				}	
-			}
-
->>>>>>> d7468bcadd1d2fc65754142c4e6048778507ba43
 		</script>
 	
 </head>
 <body>
-<<<<<<< HEAD
 	<div id="head_div"> 
 				<span>欢迎来到全国统一挂号平台</span>
 				<div id="regis_div">
@@ -95,30 +61,6 @@
 						<a href="#" class="tabnav-tab" selected="false" role="tab">公告查看</a>
 						<a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a>
 					<nav>			
-=======
-	<div id="head_div"> 
-				<span>欢迎来到全国统一挂号平台</span>
-				<div id="regis_div">
-					<a href="#">登录</a>|<a href="#">注册</a>
-				</div>
-			</div>
-			
-			<div id="logo_div">
-				<img src="" alt="挂号平台logo"/>
-				<h1>全国统一挂号平台</h1>
-			</div>
-			
-			<!--导航栏-->
-			<div class="tabnav">
-					<nav id="nav-bar" class="navb">
-						<a href="home.html" class="tabnav-tab" selected="false" role="tab">首页</a>
-						<a href="search" class="tabnav-tab" selected="true" role="tab">按医院预约</a>
-						<a href="ksearch" class="tabnav-tab" selected="false" role="tab">按科室预约</a>
-						<a href="#" class="tabnav-tab" selected="false" role="tab">预约指南</a>
-						<a href="#" class="tabnav-tab" selected="false" role="tab">公告查看</a>
-						<a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a>
-					<nav>			
->>>>>>> d7468bcadd1d2fc65754142c4e6048778507ba43
 			</div>	
 	<div class="main-container">
 		<div id="g-breadcrumb">
@@ -221,13 +163,13 @@
                            <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="11" name="ht" >精神病医院</a></li>
                            <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="12" name="ht" >皮肤科医院</a></li>
                            <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="13" name="ht" >整形医院</a></li>
-                           <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="14" name="ht" >不孕不育医院</a></li>
+                           <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="14" name="ht" >脑科医院</a></li>
                            <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="16" name="ht" >心血管医院</a></li>
                            <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="18" name="ht" >肺科医院</a></li>
                            <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="19" name="ht" >肝胆外科医院</a></li>
                            <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="20" name="ht" >泌尿科医院</a></li>
                            <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="21" name="ht" >肝病医院</a></li>
-                           <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="431" name="ht" >脑科医院</a></li>
+                           <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="431" name="ht" >不孕不育医院</a></li>
                            <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="501" name="ht" >男科医院</a></li>
                            <li><a href="javascript:void(0);"   class="J_Submit_A tabnav-tab" data-code="SXYL" data-val="502" name="ht" >中医综合医院</a></li>
 								</ul>
