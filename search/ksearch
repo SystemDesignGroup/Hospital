@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8" />
-	<link type="text/css" rel="stylesheet" href="search.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/search.css"/>
 	<title>科室搜索|挂号网</title>
 	<script type="text/javascript">
 		
@@ -37,12 +37,10 @@
 		</script>
 </head>
 <body>
-<<<<<<< HEAD:search/ksearch
-<<<<<<< HEAD:search/ksearch
 	<div id="head_div"> 
 				<span>欢迎来到全国统一挂号平台</span>
 				<div id="regis_div">
-					<a href="#">登录</a>|<a href="#">注册</a>
+					<a href="../login.html">登录</a>|<a href="../login.html">注册</a>
 				</div>
 			</div>
 			
@@ -61,54 +59,6 @@
 						<a href="#" class="tabnav-tab" selected="false" role="tab">公告查看</a>
 						<a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a>
 					<nav>			
-=======
-	<div id="head_div"> 
-				<span>欢迎来到全国统一挂号平台</span>
-				<div id="regis_div">
-					<a href="#">登录</a>|<a href="#">注册</a>
-				</div>
-			</div>
-			
-			<div id="logo_div">
-				<img src="" alt="挂号平台logo"/>
-				<h1>全国统一挂号平台</h1>
-			</div>
-			
-			<!--导航栏-->
-			<div class="tabnav">
-					<nav id="nav-bar" class="navb">
-						<a href="../home.html" class="tabnav-tab" selected="false" role="tab">首页</a>
-						<a href="search" class="tabnav-tab" selected="false" role="tab">按医院预约</a>
-						<a href="ksearch" class="tabnav-tab" selected="true" role="tab">按科室预约</a>
-						<a href="#" class="tabnav-tab" selected="false" role="tab">预约指南</a>
-						<a href="#" class="tabnav-tab" selected="false" role="tab">公告查看</a>
-						<a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a>
-					<nav>			
->>>>>>> d7468bcadd1d2fc65754142c4e6048778507ba43:search/ksearch
-=======
-	<div id="head_div"> 
-				<span>欢迎来到全国统一挂号平台</span>
-				<div id="regis_div">
-					<a href="#">登录</a>|<a href="#">注册</a>
-				</div>
-			</div>
-			
-			<div id="logo_div">
-				<img src="" alt="挂号平台logo"/>
-				<h1>全国统一挂号平台</h1>
-			</div>
-			
-			<!--导航栏-->
-			<div class="tabnav">
-					<nav id="nav-bar" class="navb">
-						<a href="home.html" class="tabnav-tab" selected="false" role="tab">首页</a>
-						<a href="search" class="tabnav-tab" selected="false" role="tab">按医院预约</a>
-						<a href="ksearch" class="tabnav-tab" selected="true" role="tab">按科室预约</a>
-						<a href="#" class="tabnav-tab" selected="false" role="tab">预约指南</a>
-						<a href="#" class="tabnav-tab" selected="false" role="tab">公告查看</a>
-						<a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a>
-					<nav>			
->>>>>>> parent of 24b1856... 注册时加入身份证号码和手机号码:ksearch
 			</div>
 	<div class="main-container">
 		<div id="g-breadcrumb">
@@ -120,81 +70,83 @@
 			</h2>
 			<div class="ks-type">
 				<ul class="jb-ks g-jb-ks" id="g_menu">
+				<nav class="navb" id="i-nav">
 					<li>
 						<div class="g_menu_ks">
-							<a href="#" title="内科"><font>内科</font></a>
+							<a href="#" title="内科" class="tabnav-tab" aria-selected="true" role="tab"><font>内科</font></a>
 						</div>
 					</li>
 					<li>
 						<div class="">
-							<a href="#" title="外科"><font>外科</font></a>
+							<a href="#" title="外科" class="tabnav-tab" aria-selected="true" role="tab"><font>外科</font></a>
 						</div>
 					</li>
 					<li>
 						<div class="">
-							<a href="h#" title="骨科"><font>骨科</font></a>
+							<a href="#" title="骨科" class="tabnav-tab" aria-selected="true" role="tab"><font>骨科</font></a>
 						</div>
 					</li>
 					<li>
 						<div class="">
-							<a href="#" title="妇产科"><font>妇产科</font></a>
+							<a href="#" title="妇产科" class="tabnav-tab" aria-selected="true" role="tab"><font>妇产科</font></a>
 						</div>
 					</li>
 					<li>
 						<div class="">
-							<a href="#" title="儿科"><font>儿科</font></a>
+							<a href="#" title="儿科" class="tabnav-tab" aria-selected="true" role="tab"><font>儿科</font></a>
 						</div>
 					</li>
 					<li>
 						<div class="">
-							<a href="#" title="眼科"><font>眼科</font></a>
+							<a href="#" title="眼科" class="tabnav-tab" aria-selected="true" role="tab"><font>眼科</font></a>
 						</div>
 					</li>
 					<li>
 						<div class="">
-							<a href="#" title="耳鼻咽喉头颈科"><font>耳鼻咽喉头颈科</font></a>
+							<a href="#" title="耳鼻咽喉头颈科" class="tabnav-tab" aria-selected="true" role="tab"><font>耳鼻咽喉头颈科</font></a>
 						</div>
 					</li>
 					<li>
 						<div class="">
-							<a href="#" title="口腔科"><font>口腔科</font></a>
+							<a href="#" title="口腔科" class="tabnav-tab" aria-selected="true" role="tab"><font>口腔科</font></a>
 						</div>
 					</li>
 					<li>
 						<div class="">
-							<a href="#" title="皮肤性病科"><font>皮肤性病科</font></a>
+							<a href="#" title="皮肤性病科" class="tabnav-tab" aria-selected="true" role="tab"><font>皮肤性病科</font></a>
 						</div>
 					</li>
 					<li>
 						<div class="">
-							<a href="#" title="肿瘤科"><font>肿瘤科</font></a>
+							<a href="#" title="肿瘤科" class="tabnav-tab" aria-selected="true" role="tab"><font>肿瘤科</font></a>
 						</div>
 					</li>
 					<li>
 						<div class="">
-							<a href="#" title="麻醉科"><font>麻醉科</font></a>
+							<a href="#" title="麻醉科" class="tabnav-tab" aria-selected="true" role="tab"><font>麻醉科</font></a>
 						</div>
 					</li>
 					<li>
 						<div class="">
-							<a href="#" title="疼痛科"><font>疼痛科</font></a>
+							<a href="#" title="疼痛科" class="tabnav-tab" aria-selected="true" role="tab"><font>疼痛科</font></a>
 						</div>
 					</li>
 					<li>
 						<div class="">
-							<a href="#" title="医学影像科"><font>医学影像科</font></a>
+							<a href="#" title="医学影像科" class="tabnav-tab" aria-selected="true" role="tab"><font>医学影像科</font></a>
 						</div>
 					</li>
 					<li>
 						<div class="">
-							<a href="#" title="中医科"><font>中医科</font></a>
+							<a href="#" title="中医科" class="tabnav-tab" aria-selected="true" role="tab"><font>中医科</font></a>
 						</div>
 					</li>
 					<li>
 						<div class="">
-							<a href="#" title="其他"><font>其他</font></a>
+							<a href="#" title="其他" class="tabnav-tab" aria-selected="true" role="tab" ><font>其他</font></a>
 						</div>
 					</li>
+				</nav>				
 				</ul>
 			</div>
 		</div>
