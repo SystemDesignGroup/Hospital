@@ -4,16 +4,16 @@
 		<meta charset="UTF-8"/>
 		<title>全国统一挂号系统</title>
 		<link href="css/home.css" type="text/css" rel="stylesheet"/>
-		<script type="javascript">
+		<script type="text/javascript">
 			window.onload=init;
 			function init()
 			{			
 						var length=document.getElementsByClassName("tabnav-tab").length;
-						//console.log(length);
+						console.log(length);
 						for(var i=0;i<length;i++)
 						{
 							var tab=document.getElementsByClassName("tabnav-tab")[i];
-							//console.log(tab);
+							console.log(tab);
   		  				 	tab.onmousedown=setRefAttribute(tab);
   		  				 	if(tab.getAttribute("selected")=="true") break;
   		  				 }
@@ -45,8 +45,17 @@
 			</div>
 			
 			<div id="logo_div">
-				<img src="" alt="挂号平台logo"/>
-				<h1>全国统一挂号平台</h1>
+				<div id="logo-title">
+					<img src="image\logo.jpg" alt="挂号平台logo" id="logo"/>
+					<h1>全国统一挂号平台</h1>				
+				</div>
+				<div id="search-bar">
+					<span class="icon-search"></span>
+					<input type="text"  placeholder="请输入医院名、科室名或医生名"/>
+					<div class="blue-normal-btn" >
+							<a id="search-btn" href="javacript:void(0)">查询</a>
+					</div>	
+				</div>
 			</div>
 			
 			<!--导航栏-->
@@ -69,10 +78,15 @@
 							<div id="fast-reserve-div">
 								<div id="show-city-div">
 										<div>
-												<span></span>
-												<label id="city-span">北京</label>
+												<img src="image/location.png"/>
+												<!--<label id="city-label"><span class="icon-location2"></span>北京</label>-->
+												<label id="city-label">北京</label>
 										</div>
-										<div><label>切换</label><span id="change-over"></span></div>
+										<div>
+										<label>切换</label>
+										<!--<a href="javascript:void(0)" style="color:black;"><span class="icon-grid"></span></a>-->
+										<a href="javascript:void(0)" ><img class="more" src="image/more.png"/></a>
+										</div>
 								</div>
 								<div id="input-text">
 										<form action="">
@@ -93,7 +107,7 @@
 											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">广东</a>
 											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">浙江</a>
 											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">江苏</a>
-											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">其他地区</a>
+											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">其他地区<img class="more" src="image/more.png"/></a>
 									</nav>
 								</div>
 						<div class="hospital-info"></div>
@@ -102,12 +116,27 @@
 				</div>
 				
 				<div class="area" id="new-notice-div">
-					<h3>最新公告</h2>
+					<div id="notice-head">
+						<label><img src="image/notify.png"/>最新公告</label>
+					</div>
+					<div id="notice-content">
+						<ul>
+							<li><a href="javascript:void(0)">公告1</a></li>
+							<li><a href="javascript:void(0)">大家快点儿而写！</a></li>
+							<li><a href="javascript:void(0)">大家快点儿而写！</a></li>
+							<li><a href="javascript:void(0)">大家快点儿而写！</a></li>
+							<li><a href="javascript:void(0)">重要的事情说三遍！</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 				
 			<footer>
-				<label>@copyright <a href="javascript:void(0)">北京航空航天大学软件学院</a></label>
+				<div>
+					<label>@copyright : <a href="javascript:void(0)" target="_blank">北京航空航天大学软件学院</a></label>
+					<label>宏兴闪闪项目组</label>			
+					<span>京2015-12-31</span>
+				</div>
 			</footer>
 	</body>
 	

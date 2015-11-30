@@ -2,14 +2,56 @@
 body{	word-wrap: break-word;    
 font: 15px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 color: #333;background-color: #fff;}
+select{background:transparent;font-size: 15px;}
+@font-face {
+	font-family: 'icomoon';
+	src:url('font/icomoon.eot?jnai50');
+	src:url('font/icomoon.eot?jnai50#iefix') format('embedded-opentype'),
+		url('font/icomoon.ttf?jnai50') format('truetype'),
+		url('font/icomoon.woff?jnai50') format('woff'),
+		url('font/icomoon.svg?jnai50#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'icomoon' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-location2:before {
+	content: "\e900";
+}
+.icon-box-remove:before {
+	content: "\e901";
+}
+.icon-plus:before {
+	content: "\e902";
+}
+.icon-minus:before {
+	content: "\e903";
+}
+
+
 #head_div{width: 100%;height: 30px;display: inline-block;background: #f5f5f5;}
 #head_div span{margin-left: 40px;}
 a{ text-decoration: none;color:white; }
 .normal-btn{width:90px;height: 30px;display:inline-block;border-radius: 3px;background:rgb(10,100,150); text-align:center;font-size:16px;}
 .normal-btn a{ width:90px; line-height:30px;}
-input{ height:30px;width:760px;font-size:18px; }
+textarea,input{ height:30px;width:760px;font-size:18px; }
+textarea{min-height: 100px;resize: none;}
 select{width:230px;height:30px; }
-
+.icon-plus:before {content: "\e902";}
 
 #btn-div{ width:1200px;height: 50px;margin:10px 0 10px 40px; border:1px #e4e4e4 solid;}
 #btn-div div{ display: inline-block;margin:10px 50px;}
@@ -18,8 +60,9 @@ select{width:230px;height:30px; }
 #edit-div{width: 1200px;height: auto;margin:0 0 10px 40px;border:1px #e4e4e4 solid;}
 .block{width: 800px;height:54px;margin:20px 200px;}
 .block label{display: block;}
+.resume{height: 120px;}
 
-.addr{display: inline-block; float:left;width: 240px;height: 54px; /*border:1px #e4e4e4 solid;*/margin-right:20px;}
+.m-block{display: inline-block; float:left;width: 240px;height: 54px; margin-right:20px;}
 
 
 #hos-photo-div{height: 70px;}
@@ -27,8 +70,8 @@ select{width:230px;height:30px; }
 
 
 #manage-office-div{width: 760px;min-height:80px;height: auto;}
-.office-div{display:inline-block;width:365px;height:40px;float:left;margin:5px 5px;border:1px #e4e4e4 solid;text-align:center; }
-.office-div div{display: inline-block;}
+.divide-block{display:inline-block;width:365px;height:40px;float:left;margin:5px 5px;border:1px #e4e4e4 solid;text-align:center; }
+.divide-block div{display: inline-block;}
 .l-btn{width:60px;height:30px;display: inline-block;text-align: center; }
 .l-btn a{width: 60px;line-height: 30px;}
 .modify-btn{background:#04b50f;float: right; margin:5px 5px 0 0;}
@@ -43,7 +86,7 @@ select{width:230px;height:30px; }
 
 
 
-
+/*------------------------------编辑医生----------------------------*/
 
 
 
