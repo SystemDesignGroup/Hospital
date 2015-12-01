@@ -5,7 +5,8 @@ $values=array(
 	'name' => "Shanghai",
 	'province' => "Shanghai"
 );
+$var = 0;
 $db->insert_data_into_table('city',$values);
-$db->get_field_from_table('city','province','name','Shanghi');
-echo "Done";
+if($db->get_field_from_table(&$var,'city','province','name','Shanghi'))
+	echo "$var";
 ?>
