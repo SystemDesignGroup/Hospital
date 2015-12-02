@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<title>管理员登录</title>
+
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<link rel="shortcut icon" href="http://www.zhaotexiao.com/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" href="css/loginfont.css">
+	<script src="http://www.zhaotexiao.com/common/js/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+	<div class="login-nav fix">
+        <a>欢迎来到全国统一挂号平台</a>
+		<ul class="f-r">
+        <li><a href="home.html">返回首页</a></li>
+		</ul>
+	</div>
+	<div class="login-banner"></div>
+	<div class="login-box">
+        <form name='form1' action="admin/admin_login.php" method="post">
+			<div class="login-con f-l">
+				<div class="form-group">
+					<input type="text" name="user" placeholder="用户名非空即可"/>
+				</div>
+				<div class="form-group">
+					<input type="password" name="password" placeholder="密码">
+					<span class="error-notic">密码不正确</span>
+				</div>
+				<div class="form-group">
+					<button type="submit" class="tran pr">
+						<a href='javascript:document.form1.submit();' class="tran">登录</a>
+					</button>
+				</div>
+			</div>
+	</form>
+	</div>
+</body>
+</html>
