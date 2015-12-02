@@ -54,9 +54,9 @@ class database{
 			default					:echo "No Such Table In This Data Base<br />";
 		}
 	}
-	public function get_field_from_table($table,$field,$key_field,$key){//表名，待查询字段（需要的结果），查询依据的字段，查询所依据字段值
+	public function get_field_from_table($table,$field,$key_field,$key){//表名，待查询字段（需要的结果），查询依据的字段，查询所依据字段值;返回值为关联数组形式
 		$result = $this->connect->query("SELECT $field FROM $table WHERE $key_field='$key'");
-		$value = $rs->fetchAll();
+		$value = $result->fetchAll();
 		return $value;
 	}
 	public function update_table($table,$column,$value,$key_field,$key){//表名，待更改字段，待更改字段值，查询依据字段，查询依据字段值

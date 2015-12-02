@@ -2,10 +2,10 @@
 require_once 'database.php';
 $db = new database();
 $values=array(
-	'name' => "Shanghai",
-	'province' => "Shanghai"
+	'name' => "GuanFuHe",
+	'password' => "123456"
 );
-
-$db->insert_data_into_table('city',$values);
-
+$db->insert_data_into_table('users',$values);
+$db->get_field_from_table('users','*','name','不存在');
+$db->get_field_from_table('users','password','name','GuanFuHe');
 ?>
