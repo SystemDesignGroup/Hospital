@@ -31,7 +31,10 @@
 							<label>科室名称</label>
 							<input type="text" placeholder="请输入科室名称" name="office_name"/>
 					</div>
-					
+					<div id="office-belong-div" class="block">
+							<label>所属医院</label>
+							<input type="text" placeholder="请输入所属医院名称" name="belong_name"/>
+					</div>					
 					<div id="office-resume-div" class="block resume">					
 						<label>科室简介</label>
 						<textarea placeholder="请输入科室简介"></textarea>
@@ -41,7 +44,7 @@
 						<div class="m-block">
 								<label>科室等级</label>
 								<select id="office-grade-select">
-									<option>请选择医院等级</option>
+									<option>请选择科室等级</option>
 								</select>						
 						</div>
 						<div class="m-block">
@@ -49,23 +52,6 @@
 							<select>
 								<option>请选择父级科室</option></optgroup>							
 							</select>			
-						</div>
-					</div>
-					<div id="manage-doctor-div" class="block">
-						<label>管理医生</label>
-						<div class="divide-block">
-							<div>医生1</div>
-							<div class="l-btn modify-btn">
-									<a id="fast-reserve-btn" class="edit" href="javacript:void(0)">修改</a>
-							</div>	
-							<div class="l-btn delete-btn" >
-									<a id="fast-reserve-btn" class="edit" href="javacript:void(0)">删除</a>
-							</div>	
-						</div>
-						<div class="divide-block" >
-							<div id="add-btn-div">
-								<a id="add-office-btn" href="javascript:void(0)"><span class="icon-plus"></span>添加医生</a>
-							</div>					
 						</div>
 					</div>
 					
