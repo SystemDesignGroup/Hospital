@@ -12,6 +12,12 @@
 				<span>欢迎来到全国统一挂号平台</span>
 				<label>管理信息-编辑医院</label>
 			</div>
+			<center>
+			<div id="logo-title">
+				<img src="../image/small_logo.jpg" alt="挂号平台logo" id="logo"/>
+				<h1>全国统一挂号平台</h1>				
+			</div>
+			</center>
 			<?php 
 			$html_error_name = <<<HTML
 			<center>
