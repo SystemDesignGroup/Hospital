@@ -9,13 +9,13 @@
 		 <link type="text/css" rel="stylesheet" href="../css/admin.css"/>
 	</head>
 		<div id="head_div"> 
-			<span>欢迎来到全国统一挂号平台</span>
+			<span>欢迎来到全国统一挂号平台管理中心</span>
 		</div>
 		<center>
 		<div id="logo_div">
 			<div id="logo-title">
 				<img src="../image/small_logo.jpg" alt="挂号平台logo" id="logo"/>
-				<h1>全国统一挂号平台</h1>				
+				<h1>全国统一挂号平台管理中心</h1>				
 			</div>
 		</div>	
 		<div>
@@ -35,13 +35,13 @@ HTML;
 		 <link type="text/css" rel="stylesheet" href="../css/admin.css"/>
 	</head>
 		<div id="head_div"> 
-			<span>欢迎来到全国统一挂号平台</span>
+			<span>欢迎来到全国统一挂号平台管理中心</span>
 		</div>
 	<center>
 	<div id="logo_div">
 		<div id="logo-title">
 			<img src="../image/small_logo.jpg" alt="挂号平台logo" id="logo"/>
-			<h1>全国统一挂号平台</h1>				
+			<h1>全国统一挂号平台管理中心</h1>				
 		</div>
 	</div>
 	<div>

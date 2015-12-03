@@ -3,33 +3,33 @@
 <html>
 	<head>
 	 	<meta charset="UTF-8"/>
-	 	<title>管理员-编辑医生</title>
+	 	<title>管理员-编辑医生信息</title>
 		 <link type="text/css" rel="stylesheet" href="../css/admin.css"/>
 	</head>
 	
 		<body>
 			<div id="head_div"> 
-				<span>欢迎来到全国统一挂号平台</span>
-				<label>管理信息-编辑医生</label>
+				<span>欢迎来到全国统一挂号平台管理中心</span>
+				<label>管理信息-编辑医生信息</label>
 			</div>
 			
 				<div id="btn-div">
 					<div class="normal-btn" style="margin-left:300px;">
-							<a id="fast-reserve-btn" href="javacript:void(0)">编辑医院</a>
+							<a id="fast-reserve-btn" href="editHospital.html">编辑医院信息</a>
 					</div>	
 					<div class="normal-btn">
-							<a id="fast-reserve-btn" href="javacript:void(0)">编辑科室</a>
+							<a id="fast-reserve-btn" href="editOffice.html">编辑科室信息</a>
 					</div>	
 					<div class="normal-btn">
-							<a id="fast-reserve-btn" href="javacript:void(0)">编辑医生</a>
+							<a id="fast-reserve-btn" href="editDoctor.html">编辑医生信息</a>
 					</div>	
 				</div>
 				
-			
+			<form name='form1' action='editDoctor.php' method='post'>
 			<div id="edit-div">
 					<div id="doc-name-div" class="block">
 							<label>医生姓名</label>
-							<input type="text" placeholder="请输入医生名称"/>
+							<input type="text" placeholder="请输入医生名称" name="doctor_name"/>
 					</div>
 								
 										
@@ -63,13 +63,14 @@
 					
 					<div id="complete-div" class="block">
 							<div class="normal-btn" id="save" style="margin-left:300px;">
-									<a id="fast-reserve-btn" class="edit" href="javacript:void(0)">保存并关闭</a>
+									<a id="fast-reserve-btn" class="edit" href='javascript:document.form1.submit();'>保存并关闭</a>
 							</div>	
 							<div class="normal-btn" id="cancel">
 									<a id="fast-reserve-btn" class="edit" href="javacript:void(0)">取消此编辑</a>
 							</div>	
 					</div>
 			</div>
+			</form>
 		</body>
 		
 </html>

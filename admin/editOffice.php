@@ -3,14 +3,14 @@
 <html>
 	<head>
 	 	<meta charset="UTF-8"/>
-	 	<title>管理员-编辑医院信息</title>
+	 	<title>管理员-编辑科室信息</title>
 		 <link type="text/css" rel="stylesheet" href="../css/admin.css"/>
 	</head>
 	
 		<body>
 			<div id="head_div"> 
 				<span>欢迎来到全国统一挂号平台管理中心</span>
-				<label>管理信息-编辑医院信息</label>
+				<label>管理信息-编辑科室信息</label>
 			</div>
 			<center>
 			<div id="logo-title">
@@ -22,7 +22,7 @@
 			$html_error_name = <<<HTML
 			<center>
 			<div>
-				<font size="5"  color="red">缺少医院名称！</font>
+				<font size="5"  color="red">缺少科室名称！</font>
 			</div>
 			<br>
 			<div class="normal-btn">
@@ -33,7 +33,7 @@ HTML;
 $html_success = <<<HTML
 			<center>
 			<div>
-				<font size="5"  color="blue">医院信息添加成功！</font>
+				<font size="5"  color="blue">科室信息添加成功！</font>
 			</div>
 			<br>
 			<div class="normal-btn">
@@ -43,7 +43,7 @@ $html_success = <<<HTML
 HTML;
 			require_once '../database.php';
 
-			$hname=$_POST['hospital_name'];
+			$hname=$_POST['office_name'];
 			if(strlen($hname)<1)
 			{
 			echo $html_error_name;			
