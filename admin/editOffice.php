@@ -19,12 +19,19 @@
 			</div>
 			</center>
 			<?php 
-			$html_error_name = <<<HTML
+$html_error_a = <<<HTML
 			<center>
 			<div>
-				<font size="5"  color="red">缺少科室名称！</font>
+				<font size="5"  color="red">缺少
+HTML;
+			$html_error_b = <<<HTML
+！</font>
 			</div>
 			<br>
+			</center>
+HTML;
+			$html_error_return = <<<HTML
+			<center>
 			<div class="normal-btn">
 				<a href="javascript:history.back(-1)">返回修改</a>
 			</div>
@@ -37,18 +44,32 @@ $html_success = <<<HTML
 			</div>
 			<br>
 			<div class="normal-btn">
-				<a href="editHospital.html">继续工作</a>
+				<a href="editOffice.html">继续工作</a>
 			</div>
 			</center>
 HTML;
 			require_once '../database.php';
 
 			$hname=$_POST['office_name'];
+			$hbelong=$_POST['office_belong'];
+			$hintr=$_POST['office_intr'];
+			$succeed=true;
 			if(strlen($hname)<1)
 			{
-			echo $html_error_name;			
+			echo $html_error_a."科室名称".$html_error_b;	
+			$succeed=false;
 			}
-			else
+			if(strlen($hbelong)<1)
+			{
+			echo $html_error_a."科室所属医院".$html_error_b;	
+			$succeed=false;
+			}
+			if(strlen($hintr)<1)
+			{
+			echo $html_error_a."科室介绍".$html_error_b;	
+			$succeed=false;
+			}
+			if($succeed)
 			{
 			$db = new database();
 			$values=array(
@@ -64,8 +85,11 @@ HTML;
 			
 			echo $html_success;
 			}
+			else
+			{
+			echo $html_error_return;
+			}
 ?> 
-			
 		</body>
 		
 </html>

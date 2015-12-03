@@ -19,12 +19,19 @@
 			</div>
 			</center>
 			<?php 
-			$html_error_name = <<<HTML
+$html_error_a = <<<HTML
 			<center>
 			<div>
-				<font size="5"  color="red">缺少医院名称！</font>
+				<font size="5"  color="red">缺少
+HTML;
+			$html_error_b = <<<HTML
+！</font>
 			</div>
 			<br>
+			</center>
+HTML;
+			$html_error_return = <<<HTML
+			<center>
 			<div class="normal-btn">
 				<a href="javascript:history.back(-1)">返回修改</a>
 			</div>
@@ -44,11 +51,33 @@ HTML;
 			require_once '../database.php';
 
 			$hname=$_POST['hospital_name'];
+			$hcity=$_POST['hospital_city'];
+			$hlevel=$_POST['hospital_level'];
+			$haddr=$_POST['hospital_address'];
+			$htel=$_POST['hospital_telephone'];
+			$hintr=$_POST['hospital_intr'];
+			$succeed=true;
 			if(strlen($hname)<1)
 			{
-			echo $html_error_name;			
+			echo $html_error_a."医院名称".$html_error_b;	
+			$succeed=false;
 			}
-			else
+			if(strlen($haddr)<1)
+			{
+			echo $html_error_a."医院详细地址".$html_error_b;	
+			$succeed=false;
+			}
+			if(strlen($htel)<1)
+			{
+			echo $html_error_a."医院联系方式".$html_error_b;	
+			$succeed=false;
+			}
+			if(strlen($hintr)<1)
+			{
+			echo $html_error_a."医院介绍".$html_error_b;	
+			$succeed=false;
+			}
+			if($succeed)
 			{
 			$db = new database();
 			$values=array(
@@ -63,6 +92,10 @@ HTML;
 			$db->insert_data_into_table('hospital',$values);
 			
 			echo $html_success;
+			}
+			else
+			{
+			echo $html_error_return;
 			}
 ?> 
 			
