@@ -93,11 +93,11 @@ class database{
 	}
 	public function put_calendar_in_db($type,$detail,$off_start,$off_end){
 		$this->connect->exec( "INSERT INTO calendar(type,detail,off_start,off_end) VALUES".
-			"'$type','$detail','$off_start','$off_end')");
+			"('$type','$detail','$off_start','$off_end')");
 	}
 	public function put_order_hospital_in_db($user_id,$doctor_id,$order_date,$order_time,$order_status){
 		$this->connect->exec( "INSERT INTO order_hospital(user_id,doctor_id,order_date,order_time,order_status) VALUES".
-			"'$user_id','$doctor_id','$order_date','$order_time','$order_status')");
+			"('$user_id','$doctor_id','$order_date','$order_time','$order_status')");
 	}
 	
 }
