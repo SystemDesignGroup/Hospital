@@ -22,7 +22,7 @@
 			$html_error_a = <<<HTML
 			<center>
 			<div>
-				<font size="5"  color="red">缺少
+				<font size="4"  color="red">
 HTML;
 			$html_error_b = <<<HTML
 ！</font>
@@ -37,10 +37,13 @@ HTML;
 			</div>
 			</center>
 HTML;
-$html_success = <<<HTML
+$html_successa = <<<HTML
 			<center>
 			<div>
-				<font size="5"  color="blue">医生信息添加成功！</font>
+				<font size="4"  color="blue">
+HTML;
+$html_successb = <<<HTML
+			</font>
 			</div>
 			<br>
 			<div class="normal-btn">
@@ -54,43 +57,92 @@ HTML;
 			$hlevel=$_POST['doctor_level'];
 			$hospital=$_POST['hospital_belong'];
 			$office=$_POST['office_belong'];
+			$hmajor=$_POST['doctor_major'];
 			$hintr=$_POST['doctor_intr'];
 			$succeed=true;
 			if(strlen($hname)<1)
 			{
-			echo $html_error_a."医生名字".$html_error_b;	
+			echo $html_error_a."缺少医生名字".$html_error_b;	
 			$succeed=false;
 			}
 			if(strlen($hospital)<1)
 			{
-			echo $html_error_a."所属医院".$html_error_b;	
+			echo $html_error_a."缺少所属医院".$html_error_b;	
 			$succeed=false;
 			}
 			if(strlen($office)<1)
 			{
-			echo $html_error_a."所属科室".$html_error_b;	
+			echo $html_error_a."缺少所属科室".$html_error_b;	
 			$succeed=false;
 			}
 			if(strlen($hintr)<1)
 			{
-			echo $html_error_a."医生介绍".$html_error_b;	
+			echo $html_error_a."缺少医生介绍".$html_error_b;	
 			$succeed=false;
 			}
 			if($succeed)
 			{
-			$db = new database();
-			$values=array(
-				'name' => $hname,
-				'city' => "1",
-				'address'=>"UNKNOWN",
-				'major_id'=>"1",
-				'grade_id'=>"1",
-				'tel'=>"123456789",
-				'intro'=>"UNKNOWN"
-			);
-			$db->insert_data_into_table('hospital',$values);
-			
-			echo $html_success;
+				$db = new database();
+				//search grade
+				$grade_id=0;
+				$grade_re=$db->get_field_from_table('grade','id','detail',$hlevel);
+				if(count($grade_re)==0)
+				{
+					$valuesci=array('detail' => $hlevel);
+					$db->insert_data_into_table('grade',$valuesci);
+					$grade_re=$db->get_field_from_table('grade','id','detail',$hlevel);
+				}
+				$grade_id=$grade_re[0]['id'];
+				
+				//search major
+				$major_id=0;
+				$major_re=$db->get_field_from_table('major','id','name',$hmajor);
+				if(count($major_re)==0)
+				{
+					$valuesci=array('name' => $hmajor);
+					$db->insert_data_into_table('major',$valuesci);
+					$major_re=$db->get_field_from_table('major','id','name',$hmajor);
+				}
+				$major_id=$major_re[0]['id'];
+				
+				/////////////////////////////////
+				$hospital_id=0;
+				$hos_re=$db->get_field_from_table('hospital','id','name',$hospital);
+				$office_id=0;
+				$office_re=$db->get_field_from_table('department','id','name',$office);
+				if(count($hos_re)==0)
+				{
+					echo $html_error_a."未在数据库中发现所属医院信息（请确认信息正确或先添加所属医院信息）".$html_error_b;
+					echo $html_error_return;
+				}
+				else if(count($office_re)==0)
+				{
+					echo $html_error_a."未在数据库中发现所属科室信息（请确认信息正确或先添加所属医院信息）".$html_error_b;
+					echo $html_error_return;
+				}
+				else
+				{
+					$calendar_id=0;
+					$doid=$hospital."-".$office."-".$hname;
+					$date_t=date("Y-m-d");
+					$valuesca=array('type'=>1,'detail' => $doid,'off_start'=>$date_t,'off_end'=>$date_t);
+					$db->insert_data_into_table('calendar',$valuesca);
+					$cal_re=$db->get_field_from_table('calendar','id','detail',$doid);
+					$calendar_id=$cal_re[0]['id'];
+					$hospital_id=$hos_re[0]['id'];
+					$office_id=$office_re[0]['id'];
+					$values=array(
+					'name' => $hname,
+					'major_id' => $major_id,
+					'grade_id' => $grade_id,
+					'calendar_id' => $calendar_id,
+					'hospital_id' => $hospital_id,
+					'department_id' => $office_id,
+					'intro'=>$hintr
+					);
+					$db->insert_data_into_table('doctor',$values);
+					echo $html_successa.$hname."添加成功！".$html_successb;
+				}
 			}
 			else
 			{

@@ -22,7 +22,7 @@
 $html_error_a = <<<HTML
 			<center>
 			<div>
-				<font size="5"  color="red">缺少
+				<font size="4"  color="red">缺少
 HTML;
 			$html_error_b = <<<HTML
 ！</font>
@@ -37,10 +37,13 @@ HTML;
 			</div>
 			</center>
 HTML;
-$html_success = <<<HTML
+$html_successa = <<<HTML
 			<center>
 			<div>
-				<font size="5"  color="blue">医院信息添加成功！</font>
+				<font size="4"  color="blue">
+HTML;
+$html_successb = <<<HTML
+			</font>
 			</div>
 			<br>
 			<div class="normal-btn">
@@ -52,7 +55,8 @@ HTML;
 
 			$hname=$_POST['hospital_name'];
 			$hcity=$_POST['hospital_city'];
-			$hlevel=$_POST['hospital_level'];
+			$hgrade=$_POST['hospital_level'];
+			$hmajor=$_POST['hospital_major'];
 			$haddr=$_POST['hospital_address'];
 			$htel=$_POST['hospital_telephone'];
 			$hintr=$_POST['hospital_intr'];
@@ -60,6 +64,12 @@ HTML;
 			if(strlen($hname)<1)
 			{
 			echo $html_error_a."医院名称".$html_error_b;	
+			$succeed=false;
+			}
+			$nullcity="选择所在市";
+			if($hcity===$nullcity)
+			{
+			echo $html_error_a."医院所在省市".$html_error_b;	
 			$succeed=false;
 			}
 			if(strlen($haddr)<1)
@@ -79,23 +89,71 @@ HTML;
 			}
 			if($succeed)
 			{
-			$db = new database();
-			$values=array(
-				'name' => $hname,
-				'city' => "1",
-				'address'=>"UNKNOWN",
-				'major_id'=>"1",
-				'grade_id'=>"1",
-				'tel'=>"123456789",
-				'intro'=>"UNKNOWN"
-			);
-			$db->insert_data_into_table('hospital',$values);
-			
-			echo $html_success;
+				$db = new database();
+				//search city
+				$city_id=0;
+				$city_re=$db->get_field_from_table('city','id','name',$hcity);
+				if(count($city_re)==0)
+				{
+					$valuesci=array('name' => $hcity);
+					$db->insert_data_into_table('city',$valuesci);
+					$city_re=$db->get_field_from_table('city','id','name',$hcity);
+				}
+				$city_id=$city_re[0]['id'];
+				
+				//search grade
+				$grade_id=0;
+				$grade_re=$db->get_field_from_table('grade','id','detail',$hgrade);
+				if(count($grade_re)==0)
+				{
+					$valuesci=array('detail' => $hgrade);
+					$db->insert_data_into_table('grade',$valuesci);
+					$grade_re=$db->get_field_from_table('grade','id','detail',$hgrade);
+				}
+				$grade_id=$grade_re[0]['id'];
+				
+				//search major
+				$major_id=0;
+				$major_re=$db->get_field_from_table('major','id','name',$hmajor);
+				if(count($major_re)==0)
+				{
+					$valuesci=array('name' => $hmajor);
+					$db->insert_data_into_table('major',$valuesci);
+					$major_re=$db->get_field_from_table('major','id','name',$hmajor);
+				}
+				$major_id=$major_re[0]['id'];
+				
+				//insert
+				$hos_re=$db->get_field_from_table('hospital','id','name',$hname);
+				if(count($hos_re)==0)
+				{
+					$values=array(
+					'name' => $hname,
+					'city' => $city_id,
+					'address'=>$haddr,
+					'major_id'=>$major_id,
+					'grade_id'=>$grade_id,
+					'tel'=>$htel,
+					'intro'=>$hintr
+					);
+					$db->insert_data_into_table('hospital',$values);
+					echo $html_successa.$hname."添加成功！".$html_successb;
+				}
+				else
+				{
+					$hos_id=$hos_re[0]['id'];
+					$db->update_table('hospital','city',$city_id,'id',$hos_id);
+					$db->update_table('hospital','address',$haddr,'id',$hos_id);
+					$db->update_table('hospital','major_id',$major_id,'id',$hos_id);
+					$db->update_table('hospital','grade_id',$grade_id,'id',$hos_id);
+					$db->update_table('hospital','tel',$htel,'id',$hos_id);
+					$db->update_table('hospital','intro',$hintr,'id',$hos_id);
+					echo $html_successa.$hname."修改成功！".$html_successb;
+				}
 			}
 			else
 			{
-			echo $html_error_return;
+				echo $html_error_return;
 			}
 ?> 
 			

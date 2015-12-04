@@ -22,25 +22,28 @@
 $html_error_a = <<<HTML
 			<center>
 			<div>
-				<font size="5"  color="red">缺少
+				<font size="4"  color="red">
 HTML;
-			$html_error_b = <<<HTML
+$html_error_b = <<<HTML
 ！</font>
 			</div>
 			<br>
 			</center>
 HTML;
-			$html_error_return = <<<HTML
+$html_error_return = <<<HTML
 			<center>
 			<div class="normal-btn">
 				<a href="javascript:history.back(-1)">返回修改</a>
 			</div>
 			</center>
 HTML;
-$html_success = <<<HTML
+$html_successa = <<<HTML
 			<center>
 			<div>
-				<font size="5"  color="blue">科室信息添加成功！</font>
+				<font size="4"  color="blue">
+HTML;
+$html_successb = <<<HTML
+			</font>
 			</div>
 			<br>
 			<div class="normal-btn">
@@ -56,38 +59,45 @@ HTML;
 			$succeed=true;
 			if(strlen($hname)<1)
 			{
-			echo $html_error_a."科室名称".$html_error_b;	
+			echo $html_error_a."缺少科室名称".$html_error_b;	
 			$succeed=false;
 			}
 			if(strlen($hbelong)<1)
 			{
-			echo $html_error_a."科室所属医院".$html_error_b;	
+			echo $html_error_a."缺少科室所属医院".$html_error_b;	
 			$succeed=false;
 			}
 			if(strlen($hintr)<1)
 			{
-			echo $html_error_a."科室介绍".$html_error_b;	
+			echo $html_error_a."缺少科室介绍".$html_error_b;	
 			$succeed=false;
 			}
 			if($succeed)
 			{
-			$db = new database();
-			$values=array(
-				'name' => $hname,
-				'city' => "1",
-				'address'=>"UNKNOWN",
-				'major_id'=>"1",
-				'grade_id'=>"1",
-				'tel'=>"123456789",
-				'intro'=>"UNKNOWN"
-			);
-			$db->insert_data_into_table('hospital',$values);
-			
-			echo $html_success;
+				$db = new database();
+				//search hospital
+				$hospital_id=0;
+				$hos_re=$db->get_field_from_table('hospital','id','name',$hbelong);
+				if(count($hos_re)==0)
+				{
+					echo $html_error_a."未在数据库中发现所属医院信息（请确认信息正确或先添加所属医院信息）".$html_error_b;
+					echo $html_error_return;
+				}
+				else
+				{
+					$hospital_id=$hos_re[0]['id'];
+					$values=array(
+					'name' => $hname,
+					'hospital_id'=>$hospital_id,
+					'intro'=>$hintr
+					);
+					$db->insert_data_into_table('department',$values);
+					echo $html_successa.$hname."添加成功！".$html_successb;
+				}
 			}
 			else
 			{
-			echo $html_error_return;
+				echo $html_error_return;
 			}
 ?> 
 		</body>

@@ -47,19 +47,22 @@
 					<div id="hos-grade-div" class="block">
 						<label>选择医院等级</label>
 						<select id="hos-grade-select" name="hospital_level">
-							<option value ="30">三级特等</option>
-							<option value ="31">三级甲等</option>
-							<option value ="32">三级乙等</option>
-							<option value ="33">三级丙等</option>
-							<option value ="21">二级甲等</option>
-							<option value ="22">二级乙等</option>
-							<option value ="23">二级丙等</option>
-							<option value ="11">一级甲等</option>
-							<option value ="12">一级乙等</option>
-							<option value ="13">一级丙等</option>
+							<option value ="三级特等">三级特等</option>
+							<option value ="三级甲等">三级甲等</option>
+							<option value ="三级乙等">三级乙等</option>
+							<option value ="三级丙等">三级丙等</option>
+							<option value ="二级甲等">二级甲等</option>
+							<option value ="二级乙等">二级乙等</option>
+							<option value ="二级丙等">二级丙等</option>
+							<option value ="一级甲等">一级甲等</option>
+							<option value ="一级乙等">一级乙等</option>
+							<option value ="一级丙等">一级丙等</option>
 						</select>
 					</div>
-					
+					<div id="hos-addr-div" class="block"> 
+						<label>医院主治</label>
+						<input type="text" placeholder="请输入医院主治类型" name="hospital_major"/>
+					</div>
 					<div id="hos-addr-div" class="block"> 
 						<label>医院地址</label>
 						<input type="text" placeholder="请输入医院地址" name="hospital_address"/>
@@ -94,6 +97,7 @@
 			<script type="text/javascript">
     var list1 = new Array;
     var list2 = new Array;
+    list1[list1.length] = "选择所在省";
     list1[list1.length] = "北京市";
     list1[list1.length] = "天津市";
     list1[list1.length] = "河北省";
@@ -130,6 +134,7 @@
     list1[list1.length] = "台湾省";
     list1[list1.length] = "其它";
 
+    list2[list2.length] = new Array("选择所在市");
     list2[list2.length] = new Array("北京", "东城区", "西城区", "崇文区", "宣武区", "朝阳区", "丰台区", "石景山区", " 海淀区（中关村）", "门头沟区", "房山区", "通州区", "顺义区", "昌平区", "大兴区", "怀柔区", "平谷区", "密云县", "延庆县", " 其他");
     list2[list2.length] = new Array("和平区", "河东区", "河西区", "南开区", "红桥区", "塘沽区", "汉沽区", "大港区",
                 "西青区", "津南区", "武清区", "蓟县", "宁河县", "静海县", "其他");
@@ -231,7 +236,7 @@
         {
             var option = document.createElement("option");
             option.appendChild(document.createTextNode(list2element[i]));
-            option.value = list2element[i];
+            option.value = obj.value+list2element[i];
             ddlCity.appendChild(option);
         }
     }
