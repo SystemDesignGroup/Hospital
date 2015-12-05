@@ -18,11 +18,11 @@ class database{
 			$mysql_user,
 			$connect;
 	public function __construct(){//本地调试使用注释中的值
-		$this->mysql_host = SAE_MYSQL_HOST_M;//'localhost'
-		$this->mysql_db = SAE_MYSQL_DB;//'hospital'
-		$this->mysql_user = SAE_MYSQL_USER;//'YOURUSERNAME'
-		$this->mysql_password = SAE_MYSQL_PASS;//'YOURPASSWORD'
-		$this->mysql_port = SAE_MYSQL_PORT;	//3306
+		$this->mysql_host = '';//'localhost'
+		$this->mysql_db = '';//'hospital'
+		$this->mysql_user = '';//'YOURUSERNAME'
+		$this->mysql_password = '';//'YOURPASSWORD'
+		$this->mysql_port = 3306;	//3306
 		$this -> connect_to_db();
 	}
 	public function __destruct(){

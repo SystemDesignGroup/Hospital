@@ -4,37 +4,11 @@
 	<meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="../css/search.css"/>
 	<title>快速预约|挂号网</title>
-	<script type="text/javascript">
+	<script type="text/javascript" src="../js/q_order_js.js">
 		
 			window.onload=init;
-			function init()
-			{			
-						var length=document.getElementsByClassName("tabnav-tab").length;
-						console.log(length);
-						for(var i=0;i<length;i++)
-						{
-							var tab=document.getElementsByClassName("tabnav-tab")[i];
-							console.log(tab);
-  		  				 	tab.onmousedown=setRefAttribute(tab);
-  		  				 	if(tab.getAttribute("selected")=="true") break;
-  		  				 }
-			}
-			
-			function setRefAttribute(tab)
-			{
-				var isSelected=tab.getAttribute("selected");
-				console.log(tab.getAttribute("selected"));
-				if(isSelected=="true")
-				{
-						console.log(tab);
-						tab.style.color="#333";
-  		  				tab.style.backgroundColor="#fff";
-  		  				tab.style.borderColor="#ddd";
-  		  				tab.style.borderRadius="3px 3px 0 0";					 		
-				}	
-			}
 
-		</script>
+	</script>
 </head>
 <body>
 	<div id="head_div"> 
@@ -89,7 +63,8 @@
 		     		<div class="g-fastorder-box"> 
 						<div class="row g-clear" style="margin-top:60px;">
 							<label>地区：</label>
-							<select class="province js-province" name="province" style="width:300px">
+							<select class="province js-province" name="province" style="width:300px" id="province"
+							onchange="provinceChange(this)">
 								<option value="">请选择...</option>
 								<option value="">北京</option>
 								<option value="">天津</option>
@@ -124,54 +99,29 @@
 						</div>
 						<div class="row g-clear" style="margin-top:20px;margin-left:26px" >
 							<label>&nbsp;&nbsp;&nbsp;</label>
-							<select class="city js-city disabled" name="city" style="width:300px">
+							<select class="city js-city disabled" name="city" style="width:300px" id="city"
+							onchange="cityChange(this)">
 								<option value="">请选择...</option>
-								
-								<!-- <option value="">东城区</option>
-								<option value="">西城区</option>
-								<option value="">朝阳区</option>
-								<option value="">海淀区</option>
-								<option value="">石景山区</option>
-								<option value="">丰台区</option>
-								<option value="">通州区</option>
-								<option value="">顺义区</option>
-								<option value="">大兴区</option>
-								<option value="">昌平区</option>
-								<option value="">房山区</option>
-								<option value="">怀柔区</option>
-								<option value="">平谷区</option>
-								<option value="">门头沟区</option>
-								<option value="">密云区</option>
-								<option value="">延庆区</option>  -->
+
 							</select>	 	 
 						</div>
 						<div class="row g-clear" style="margin-top:20px;" >
 							<label>医院：</label>
-							<select class="js-hospital disabled" name="hospital" style="width:300px">
+							<select class="js-hospital disabled" name="hospital" style="width:300px" id="hospital"
+							onchange="hospitalChange(this)">
 								<option value="">请选择...</option>
 							</select>	 	 
 						</div>
 						<div class="row g-clear" style="margin-top:20px;">
 							<label>科室：</label>
-							<select class="js-dept disabled" name="hdid" style="width:300px">
+							<select class="js-dept disabled" name="hdid" style="width:300px" id="department"
+							onchange="departmentChange(this)">
 								<option value="">请选择...</option>
 							</select>	  
 						</div>
 						<div class="btn" style="width:200px;margin-left:350px;margin-top:20px;border:1px solid gray;background-color:#66CDAA;border-radius:5px;">
-							<a href="javascript:;" class="gbn gbt-green js-btn">预约挂号</a>
-						</div> 
-						<!-- <script>
-							function(){
-								var select1=document.getElementsByName("province")
-								var select2=document.getElementsByName("city");
-								var select3=document.getElementsByName("hospital");
-								var select3=document.getElementsByName("dept");
-								if(select1.value!=null)
-									{select2.removeAttribute("disabled")}
-								if(select2.value!="")
-									{select3.removeAttribute("disabled")}					
-							}
-						</script> -->
+							<a href="javascript:;" class="gbn gbt-green js-btn" onclick="goOrder()">预约挂号</a>
+						</div>
 					</div>
 	        	</div>
 			 	<div class="clear"></div>
