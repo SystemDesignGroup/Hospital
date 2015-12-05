@@ -91,7 +91,43 @@
 							<label>地区：</label>
 							<select class="province js-province" name="province" style="width:300px">
 								<option value="">请选择...</option>
-								<option value="">东城区</option>
+								<option value="">北京</option>
+								<option value="">天津</option>
+								<option value="">上海</option>
+								<option value="">河北</option>
+								<option value="">河南</option>
+								<option value="">山东</option>
+								<option value="">山西</option>
+								<option value="">黑龙江</option>
+								<option value="">辽宁</option>
+								<option value="">吉林</option>
+								<option value="">内蒙古</option>
+								<option value="">新疆</option>
+								<option value="">宁夏</option>
+								<option value="">陕西</option>
+								<option value="">甘肃</option>
+								<option value="">安徽</option>
+								<option value="">江苏</option>
+								<option value="">浙江</option>
+								<option value="">湖南</option>
+								<option value="">湖北</option>
+								<option value="">福建</option>
+								<option value="">广东</option>
+								<option value="">广西</option>
+								<option value="">江西</option>
+								<option value="">贵州</option>
+								<option value="">云南</option>
+								<option value="">青海</option>
+								<option value="">四川</option>
+								<option value="">西藏</option>
+							</select>	
+						</div>
+						<div class="row g-clear" style="margin-top:20px;margin-left:26px" >
+							<label>&nbsp;&nbsp;&nbsp;</label>
+							<select class="city js-city disabled" name="city" style="width:300px">
+								<option value="">请选择...</option>
+								
+								<!-- <option value="">东城区</option>
 								<option value="">西城区</option>
 								<option value="">朝阳区</option>
 								<option value="">海淀区</option>
@@ -106,24 +142,36 @@
 								<option value="">平谷区</option>
 								<option value="">门头沟区</option>
 								<option value="">密云区</option>
-								<option value="">延庆区</option>
-							</select>	 
+								<option value="">延庆区</option>  -->
+							</select>	 	 
 						</div>
 						<div class="row g-clear" style="margin-top:20px;" >
 							<label>医院：</label>
-							<select class="js-hospital disabled" disabled="disabled" name="hospital" style="width:300px">
+							<select class="js-hospital disabled" name="hospital" style="width:300px">
 								<option value="">请选择...</option>
 							</select>	 	 
 						</div>
 						<div class="row g-clear" style="margin-top:20px;">
 							<label>科室：</label>
-							<select class="js-dept disabled" disabled="disabled" name="hdid" style="width:300px">
+							<select class="js-dept disabled" name="hdid" style="width:300px">
 								<option value="">请选择...</option>
 							</select>	  
 						</div>
 						<div class="btn" style="width:200px;margin-left:350px;margin-top:20px;border:1px solid gray;background-color:#66CDAA;border-radius:5px;">
 							<a href="javascript:;" class="gbn gbt-green js-btn">预约挂号</a>
 						</div> 
+						<!-- <script>
+							function(){
+								var select1=document.getElementsByName("province")
+								var select2=document.getElementsByName("city");
+								var select3=document.getElementsByName("hospital");
+								var select3=document.getElementsByName("dept");
+								if(select1.value!=null)
+									{select2.removeAttribute("disabled")}
+								if(select2.value!="")
+									{select3.removeAttribute("disabled")}					
+							}
+						</script> -->
 					</div>
 	        	</div>
 			 	<div class="clear"></div>
