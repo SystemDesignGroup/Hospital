@@ -9,11 +9,14 @@ if(!isset($_POST['submit']))
 $username = $_POST['username'];
 $password = $_POST['password'];
 
+$db=new database();
+
 $check_query = mysql_query("select name from users where name='$username' and password='$password' limit 1");
 if($result = mysql_fetch_array($check_query))
 {
     //登录成功
     $_SESSION['username'] = $username;
+    $_SESSION['userid'] = $result['uid                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       '];
     echo $username,' 欢迎你！进入 <a href="home.html">用户中心</a><br />';
     echo '点击此处 <a href="login.php?action=logout">注销</a> 登录！<br />';
     exit;
