@@ -1,5 +1,5 @@
 *{box-sizing:content-box}
-body{	word-wrap: break-word;    
+body{	word-wrap: break-word;
 font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 color: #333;background-color: #fff;}
 .normal-btn{width:90px;height: 35px;display:inline-block;border-radius: 3px;background:#61ac46; text-align:center;font-size:16px;letter-spacing:2px; }
@@ -28,37 +28,41 @@ a{ text-decoration: none;color:white; }
 #nav-bar a{ text-align:center;font-size:20px; margin:0 20px; }
 .navb a:hover{ color:rgb(10,100,150);}
 
-.tabnav-tab {
-    display: inline-block;
-    padding: 8px 12px;
-    font-size: 14px;
-    line-height: 20px;
-    color: #222;
-    text-decoration: none;
-    border: 1px solid transparent;
-    border-bottom: 0;
-}
+.tabnav-tab {display: inline-block;padding: 8px 12px;font-size: 14px;line-height: 20px;
+    color: #111;text-decoration: none;border: 1px solid transparent;border-bottom: 0px;}
+
 
 /*--------------------------content-----------------------------------*/
-#content-div
-{
-	width:100%;
-	height: auto;
-	display: inline-block;
-	margin:0;
-}
+#content-div{width:100%;height: auto;display: inline-block;margin:0;}
 .area{ border:1px #e4e4e4 solid; }
-#area{height: 400px;}
+#area{height: 350px;}
 
-#reservation-div{width: 903px;height:425px;display:inline-block;margin:0 30px 40px 60px;}
+#reservation-div{width: 903px;height:375px;display:inline-block;margin:0 30px 40px 60px;}
 #reservation-div h3{ line-height: 25px;}
 #show-city-div div{display: inline;}
 #show-city-div img,.more{vertical-align: top;height: 20px;}
-#fast-reserve-div{ //background:rgb(10,100,10);
-float: left;border-width:0 1px 0 0;border-color:#e4e4e4;border-style: solid;width:250px;height: 400px;display: inline-block;}
+#fast-reserve-div{
+float: left;border-width:0 1px 0 0;border-color:#e4e4e4;border-style: solid;width:250px;height: 350px;display: inline-block;}
 #fast-reserve-div div{margin:20px 25px;}
 #show-city-div,#input-text{width: 200px;}
 label{font-size: 16px;}
+
+#reserve{ float:right;}
+form input{ width:200px;height:30px; margin-top:20px; }
+#recommend-div{float: left;width: 650px;height: 350px;display: inline-block;}
+#l-nav-div{min-width:650px;width: 650px;}
+#i-nav{margin:20px 0 0 50px;}
+
+#hospital-info{width:650px;display: inline-block;}
+#hospital-info ul{display:block; width:650px; list-style: none;}
+#hospital-info ul li{width:320px;display: inline-block}
+.hos-info-img{width:120px;height:100px;float:left;}
+.hos-info-div{width:190px;height:100px;display: inline-block;margin-left:10px;}
+.hos-info-div a{color:#3783ef;font-size:16px;}
+.hos-info-div a,.hos-info-div span{width:190px;display:block;}
+.hos-info-div :only-child{ margin:5px 0; }
+.hos-list a{color: black; line-height: 30px;font-size:15px;}
+
 @font-face {
 	font-family: 'icomoon';
 	src:url('font/icomoon.eot?lfytc2');
@@ -95,12 +99,6 @@ label{font-size: 16px;}
 .icon-plus:before {content: "\e902";}
 .icon-minus:before {content: "\e903";}
 
-
-#reserve{ float:right;}
-form input{ width:200px;height:30px; margin-top:20px; }
-#recommend-div{float: left;width: 650px;height: 400px;display: inline-block;}
-#l-nav-div{min-width:650px;width: 650px;}
-#i-nav{margin-left:50px;}
 
 
 /*--------------------------sidebar:notice---------------------------------*/

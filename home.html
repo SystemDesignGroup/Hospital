@@ -7,18 +7,18 @@
 		<script type="text/javascript">
 			window.onload=init;
 			function init()
-			{			
+			{
 						var length=document.getElementsByClassName("tabnav-tab").length;
 						console.log(length);
 						for(var i=0;i<length;i++)
 						{
 							var tab=document.getElementsByClassName("tabnav-tab")[i];
 							console.log(tab);
-  		  				 	tab.onmousedown=setRefAttribute(tab);
-  		  				 	if(tab.getAttribute("selected")=="true") break;
-  		  				 }
+  		  			tab.onmousedown=setRefAttribute(tab);
+  		  			//if(tab.getAttribute("selected")=="true") break;
+  		  		}
 			}
-			
+
 			function setRefAttribute(tab)
 			{
 				var isSelected=tab.getAttribute("selected");
@@ -27,50 +27,51 @@
 				{
 						console.log(tab);
 						tab.style.color="#018bba";
-  		  				tab.style.backgroundColor="#fff";
-  		  				tab.style.borderColor="#ddd";
-  		  				tab.style.borderRadius="3px 3px 0 0";					 		
-				}	
+  		  		tab.style.backgroundColor="#fff";
+  		  		tab.style.borderColor="#ddd";
+  		  		tab.style.borderRadius="3px 3px 0 0";
+				}
 			}
 
 		</script>
 	</head>
-	
+
 	<body>
-			<div id="head_div"> 
+			<div id="head_div">
 				<span>欢迎来到全国统一挂号平台</span>
 				<div id="regis_div">
 					<a href="#">登录</a>|<a href="#">注册</a>|<a href="login_for_admin.html">管理员登录</a>
 				</div>
 			</div>
-			
+
 			<div id="logo_div">
 				<div id="logo-title">
 					<img src="image/logo.jpg" alt="挂号平台logo" id="logo"/>
-					<h1>全国统一挂号平台</h1>				
+					<h1>全国统一挂号平台</h1>
 				</div>
 				<div id="search-bar">
 					<span class="icon-search"></span>
 					<input type="text"  placeholder="请输入医院名、科室名或医生名"/>
 					<div class="blue-normal-btn" >
 							<a id="search-btn" href="javacript:void(0)">查询</a>
-					</div>	
+					</div>
 				</div>
 			</div>
-			
+
 			<!--导航栏-->
 			<div class="tabnav">
 					<nav id="nav-bar" class="navb">
 						<a href="#" class="tabnav-tab" selected="true" role="tab">首页</a>
+						<a href="#" class="tabnav-tab" selected="false" role="tab">快速预约</a>
 						<a href="#" class="tabnav-tab" selected="false" role="tab">按医院预约</a>
 						<a href="#" class="tabnav-tab" selected="false" role="tab">按科室预约</a>
 						<a href="#" class="tabnav-tab" selected="false" role="tab">预约指南</a>
 						<a href="#" class="tabnav-tab" selected="false" role="tab">公告查看</a>
 						<a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a>
-					<nav>			
+					<nav>
 			</div>
-			
-			
+
+
 			<div id="content-div">
 				<div id="reservation-div">
 					<h3>预约挂号</h2>
@@ -92,29 +93,58 @@
 										<form action="">
 												<input type="text" id="hospital" placeholder="请输入您要预约的医院" />
 												<input type="text" id="office" placeholder="请输入科室" />
-										</form>	
+										</form>
 										<div class="normal-btn" id="reserve">
 												<a id="fast-reserve-btn" href="javacript:void(0)">快速挂号</a>
-										</div>					
-								</div>					
-							</div>			
+										</div>
+								</div>
+							</div>
 						 <div id="recommend-div">
 								<div class="tabnav"  id="l-nav-div">
 									<nav class="navb" id="i-nav">
 											<label>推荐医院</label>
-											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">北京</a>
-											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">上海</a>
-											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">广东</a>
-											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">浙江</a>
-											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">江苏</a>
-											<a href="javascript:void(0)" class="tabnav-tab" aria-selected="true" role="tab">其他地区<img class="more" src="image/more.png"/></a>
+											<a href="javascript:void(0)" class="tabnav-tab" selected="true" role="tab">北京</a>
+											<a href="javascript:void(0)" class="tabnav-tab" selected="false" role="tab">上海</a>
+											<a href="javascript:void(0)" class="tabnav-tab" selected="false" role="tab">广东</a>
+											<a href="javascript:void(0)" class="tabnav-tab" selected="false" role="tab">浙江</a>
+											<a href="javascript:void(0)" class="tabnav-tab" selected="false" role="tab">江苏</a>
+											<a href="javascript:void(0)" class="tabnav-tab" selected="false" role="tab">其他地区<img class="more" src="image/more.png"/></a>
 									</nav>
 								</div>
-						<div class="hospital-info"></div>
-					</div>
+								<div id="hospital-info">
+									<ul>
+										<li>
+											<a ><img class="hos-info-img" src="image/pku_hos.jpg" alt="hospital image"/></a>
+											<div class="hos-info-div">
+												<a href="javascript:void(0)">北京大学第三医院</a>
+												<span>X级Y等</span>
+												<span>联系电话：xxx-xxxxxxxx</span>
+											</div>
+										</li>
+										<li>
+											<a><img class="hos-info-img" src="image/xiehe_hos.png" alt="hospital image"/></a>
+											<div class="hos-info-div">
+												<a href="javascript:void(0)">北京协和医院</a>
+												<span>X级Y等</span>
+												<span>联系电话：xxx-xxxxxxxx</span>
+											</div>
+										</li>
+									</ul>
+									<ul>
+										<li class="hos-list"><a href="javascript:void(0)">北京建国医院</a></li>
+										<li class="hos-list"><a href="javascript:void(0)">北京中医院</a></li>
+										<li class="hos-list"><a href="javascript:void(0)">北京301医院</a></li>
+										<li class="hos-list"><a href="javascript:void(0)">北京京城皮肤病医院</a></li>
+										<li class="hos-list"><a href="javascript:void(0)">中国人民解放军海军总医院</a></li>
+										<li class="hos-list"><a href="javascript:void(0)">北京大学第一医院</a></li>
+										<li class="hos-list"><a href="javascript:void(0)">北京首大耳鼻喉医院</a></li>
+										<li class="hos-list"><a href="javascript:void(0)">北京丰台长峰医院</a></li>
+									</ul>
+								</div>
+							</div>
 					</div>
 				</div>
-				
+
 				<div class="area" id="new-notice-div">
 					<div id="notice-head">
 						<label><img src="image/notify.png"/>最新公告</label>
@@ -130,14 +160,14 @@
 					</div>
 				</div>
 			</div>
-				
+
 			<footer>
 				<div>
 					<label>@copyright : <a href="javascript:void(0)" target="_blank">北京航空航天大学软件学院</a></label>
-					<label>宏兴闪闪项目组</label>			
+					<label>宏兴闪闪项目组</label>
 					<span>京2015-12-31</span>
 				</div>
 			</footer>
 	</body>
-	
+
 </html>
