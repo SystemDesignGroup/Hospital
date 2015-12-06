@@ -1,4 +1,3 @@
-header("Content-type:text/html;charset=utf-8")；
 <?php
 class database{
 	/*const $table_structs=array(
