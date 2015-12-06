@@ -7,7 +7,7 @@ name varchar(50),
 password varchar(50),
 email varchar(50),
 role int,
-id_card char(18) unique,
+id_card char(18) unique primary key,
 tel char(11),
 status int,
 update_time timestamp
