@@ -1,15 +1,15 @@
 <?php
 class database{
 	/*const $table_structs=array(
-			'users' => "users(id,name,password,email,role,id_card,tel,status)",
-			'city' => "city(id,name,provinces)",
-			'grade' => "grade(id,detail)",
-			'major' => "major(id,name,intro)",
-			'hospital' => "hospital(id,name,city,address,major_id,grade_id,tel,intro)",
-			'department' => "department(id,name,hospital_id,intro)",
-			'doctor' => "doctor(id,name,department_id,major_id,grade_id,hospital_id,intro,calendar_id)",
-			'calendar' => "calendar(id,type,detail,off_start,off_end)",
-			'order_hospital' => "order_hospital(id,user_id,doctor_id,order_date,order_time,order_status)"
+			'users' => array('id'=>,'name'=>,'password'=>,'email'=>,'role,id_card'=>,'tel'=>,'status'=>)",
+			'city' => array('id'=>,'name'=>,'provinces'=>),
+			'grade' => array('id'=>,'detail'=>),
+			'major' => array('id'=>,'name'=>,'intro'=>),
+			'hospital' => array('id'=>,'name'=>,'city'=>,'address'=>,'major_id'=>,'grade_id'=>,'tel'=>,'intro'=>),
+			'department' => array('id'=>,'name'=>,'hospital_id'=>,'intro'=>),
+			'doctor' => array('id'=>,'name'=>,'department_id'=>,'major_id'=>,'grade_id'=>,'hospital_id'=>,'intro'=>,'calendar_id'=>),
+			'calendar' => array('id'=>,'type'=>,'detail'=>,'off_start'=>,'off_end'=>),
+			'order_hospital' => array('id'=>,'user_id'=>,'doctor_id'=>,'order_date'=>,'order_time'=>,'order_status'=>)
 		);*/
 	private $mysql_db,
 			$mysql_host,
@@ -54,8 +54,14 @@ class database{
 			default					:echo "No Such Table In This Data Base<br />";
 		}
 	}
-	public function get_field_from_table($table,$field,$key_field,$key){//表名，待查询字段（需要的结果），查询依据的字段，查询所依据字段值;返回值为关联数组形式
-		$result = $this->connect->query("SELECT $field FROM $table WHERE $key_field='$key'");
+	public function get_field_from_table($table,$field,$keys){//表名，待查询字段（需要的结果），查询依据的字段及字段值（为关联数组形式）;返回值为关联数组形式
+		$keys_index = array_keys($keys);
+		$str = 'WHERE ';
+		foreach($keys_index as $index){
+			$str += "$index = '$keys[$index]' AND ";
+		}
+		$str = substr($str,0,-4);
+		$result = $this->connect->query("SELECT $field FROM $table ");
 		$value = $result->fetchAll();
 		return $value;
 	}
