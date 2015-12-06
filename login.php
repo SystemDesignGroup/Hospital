@@ -2,9 +2,6 @@
 //登录
 require_once("database.php");
 
-$connection=new database();
-$connection->connect_to_db();
-$connection->__construct();
 if(!isset($_POST['submit']))
 {
     exit('非法访问!');
