@@ -61,7 +61,7 @@ class database{
 			$str += "$index = '$keys[$index]' AND ";
 		}
 		$str = substr($str,0,-4);
-		$result = $this->connect->query("SELECT $field FROM $table ");
+		$result = $this->connect->query("SELECT $field FROM $table "+$str);
 		$value = $result->fetchAll();
 		return $value;
 	}
