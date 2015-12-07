@@ -11,6 +11,7 @@ $values=array(
 $key_values=array(
 	'province'=>"北京市"
 );
-$results = $db->get_field_from_table('city','name',$key_values);
+print_r($key_values);
+$results = $db->get_field_from_table('city','*',$key_values);
 print_r($results);
 ?>
