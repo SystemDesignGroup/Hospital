@@ -56,7 +56,7 @@ class database{
 	}
 	public function get_field_from_table($table,$field,$keys){//表名，待查询字段（需要的结果），查询依据的字段及字段值（为关联数组形式）;返回值为关联数组形式
 		$keys_index = array_keys($keys);
-		$str = 'WHERE ';
+		$str = 'WHERE ';echo $str;
 		foreach($keys_index as $index){
 			$str = $str+"$index = '$keys[$index]' AND ";
 		}
