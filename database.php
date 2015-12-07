@@ -61,6 +61,7 @@ class database{
 			$str += "$index = '$keys[$index]' AND ";
 		}
 		$str = substr($str,0,-4);
+		print $str;
 		$result = $this->connect->prepare("SELECT $field FROM $table "+$str);
 		$result->execute();
 		$value = $result->fetchAll(PDO::FETCH_ASSOC);
