@@ -58,11 +58,11 @@ class database{
 		$keys_index = array_keys($keys);
 		$str = 'WHERE ';echo $str;
 		foreach($keys_index as $index){
-			$str = $str+"$index = '$keys[$index]' AND ";
+			$str = $str."$index = '$keys[$index]' AND ";
 		}echo $str;
 		$str = substr($str,0,-4);
 		echo $str;
-		$result = $this->connect->prepare("SELECT $field FROM $table "+$str);
+		$result = $this->connect->prepare("SELECT $field FROM $table ".$str);
 		$result->execute();
 		$value = $result->fetchAll(PDO::FETCH_ASSOC);
 		return $value;
