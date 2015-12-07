@@ -58,7 +58,7 @@ class database{
 		$keys_index = array_keys($keys);
 		$str = 'WHERE ';
 		foreach($keys_index as $index){
-			$str += "$index = '$keys[$index]' AND ";
+			$str = $str+"$index = '$keys[$index]' AND ";
 		}
 		$str = substr($str,0,-4);
 		echo $str;
