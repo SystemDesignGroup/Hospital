@@ -17,6 +17,7 @@ $password = $_POST['user_password'];
 $succeed = true;
 
 if($succeed) {
+
     $db = new database();
     $db->connect_to_db();
 
