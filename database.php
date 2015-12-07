@@ -59,7 +59,7 @@ class database{
 		$str = 'WHERE ';echo $str;
 		foreach($keys_index as $index){
 			$str = $str+"$index = '$keys[$index]' AND ";
-		}echo str;
+		}echo $str;
 		$str = substr($str,0,-4);
 		echo $str;
 		$result = $this->connect->prepare("SELECT $field FROM $table "+$str);
