@@ -63,6 +63,7 @@ class database{
 		$str = substr($str,0,-4);
 		$result = $this->connect->query("SELECT $field FROM $table "+$str);
 		$value = $result->fetchAll();
+		print_r($value);
 		return $value;
 	}
 	public function update_table($table,$column,$value,$key_field,$key){//表名，待更改字段，待更改字段值，查询依据字段，查询依据字段值
