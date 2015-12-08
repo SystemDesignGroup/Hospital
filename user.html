@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <head>
-<meta charset="utf-8" />
+<meta charset="utf-8">
 <title>个人中心</title>
-
 <link rel="stylesheet" href="css/user.css" />
 </head>
 
 <body>
-
 <div class="page">
 <header> 
 <div class="headl">     
     <hgroup>
+    <div id="head_div"> 
     <h1>个人中心</h1>
+	</div>
     </hgroup>
 </div>
 </header>
@@ -21,16 +21,14 @@
         <div class="one-col separator">
 			<div class="col">
 				
-				<h2>取消预约</h2>
-				<form name="form1" method="post" action="">
-				  <p>预约单号：<input type="text" name="id"></p>
-                  <p>手机号：<input type="text name="tel"></p>
-                  <p>密码：<input type="password" name="password"></p>
-				  <p><input type="submit" name="button" id="button" value="提交"></p>
-               </form>
+				<h2>个人信息</h2>
+				  <p>姓名：<span id="name"></span></p>
+                  <p">邮箱：<span id=email></span></p>
+                  <p>手机号：<span id=tel></span></p>
+				  <p>身份证号:<span id=id></span></p>
 			</div>
 		</div>
-		<!-- 更改密码 -->
+		<!-- 个人信息 -->
 		
 		
 		
@@ -39,7 +37,7 @@
 			  <h2 class="page">我的预约单</h2> 
 			</div>
 
-            <form id="checkOrder" action="order.php" name="order">
+            <form id="checkOrder" action="" name="order">
 			<input type="hidden" name="pageNo" value="1">
 			<label>
 					按状态筛选：
@@ -49,8 +47,7 @@
 						<option value="2">待就诊</option>
 						<option value="3">待确认</option>
 						<option value="1">待支付</option>
-				</select> 
-						 
+				</select> 		 
 			<label>
 				预约时间：
 			</label>
@@ -62,7 +59,9 @@
 				<input type="text" id="endTime" name="shiftDateEnd" class="text hasDatepicker" value="2015-12-07" readonly>
 				</span>
 				<input type="submit" name="button2" id="button2" value="查询">
-				  <table width="100%" border="0">
+            </form>
+				  
+                  <table width="100%" border="0">
             <thead>
 			  <tr>
 			    <th scope="col"><div align="center">预约单号</div></th>
@@ -70,7 +69,11 @@
 			    <th scope="col"><div align="center">预约人</div></th>
 			    <th scope="col"><div align="center">医生</div></th>
 			    <th scope="col"><div align="center">预约状态</div></th>
+                <th scope="col"><div align="center">操作</div></th>
 		      </tr>
+              <script type="text/javascript">
+              <>
+              </script>
             </thead>
           </table>
 </body>
