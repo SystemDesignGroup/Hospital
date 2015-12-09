@@ -42,16 +42,26 @@ class database{
 	public function insert_data_into_table($table,$datavalues){//$table为表名，$datavalues是所存数据，类型为关联数组，其中变量命名与下面函数一致
 		extract($datavalues);
 		switch($table){
-			case 'users'			:$this->put_user_in_db($name,$password,$email,$role,$id_card,$tel,$status);break;
-			case 'city'				:$this->put_city_in_db($name,$province);break;
-			case 'grade'			:$this->put_grade_in_db($detail);break;
-			case 'major'			:$this->put_major_in_db($name,$intro);break;
-			case 'hospital'			:$this->put_hospital_in_db($name,$city,$address,$major_id,$grade_id,$tel,$intro);break;
-			case 'department'		:$this->put_department_in_db($name,$hospital_id,$intro);break;
-			case 'doctor'			:$this->put_doctor_in_db($name,$department_id,$major_id,$grade_id,$hospital_id,$intro,$calendar_id);break;
-			case 'calendar'			:$this->put_calendar_in_db($type,$detail,$off_start,$off_end);break;
-			case 'order_hospital'	:$this->put_order_hospital_in_db($user_id,$doctor_id,$order_date,$order_time,$order_status);break;
-			default					:echo "No Such Table In This Data Base<br />";
+			case 'users':
+				$this->put_user_in_db($name,$password,$email,$role,$id_card,$tel,$status);break;
+			case 'city':
+				$this->put_city_in_db($name,$province);break;
+			case 'grade':
+				$this->put_grade_in_db($detail);break;
+			case 'major':
+				$this->put_major_in_db($name,$intro);break;
+			case 'hospital':
+				$this->put_hospital_in_db($name,$city,$address,$major_id,$grade_id,$tel,$intro);break;
+			case 'department':
+				$this->put_department_in_db($name,$hospital_id,$intro);break;
+			case 'doctor':
+				$this->put_doctor_in_db($name,$department_id,$major_id,$grade_id,$hospital_id,$intro,$calendar_id);break;
+			case 'calendar':
+				$this->put_calendar_in_db($type,$detail,$off_start,$off_end);break;
+			case 'order_hospital':
+				$this->put_order_hospital_in_db($user_id,$doctor_id,$order_date,$order_time,$order_status);break;
+			default:
+				echo "No Such Table In This Data Base<br />";
 		}
 	}
 	public function get_field_from_table($table,$field,$keys){//表名，待查询字段（需要的结果），查询依据的字段及字段值（为关联数组形式）;返回值为关联数组形式
