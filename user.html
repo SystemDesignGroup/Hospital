@@ -38,9 +38,18 @@
 <!--------------------------Blue div--------------------------------------->
 
 <div class="page">
+<header> 
+<div class="headl">     
+    <hgroup>
+    <div id="head_div"> 
+    <h1>个人中心</h1>
+	</div>
+    </hgroup>
+</div>
+</header>
 <!--标题-->
 		
-        <?php
+<?php
 /* search information for user's center */
 
 	require_once("database.php");
@@ -66,14 +75,14 @@
 	$vdoctor = array('doctor_id' => $rorder_doctor_id);	
 	$rdoctor_name = $db->get_field_from_table('doctor','name',$vdoctor);
 
-        <div class="one-col separator">
+	<div class="one-col separator">
 			<div class="col">
 				
 				<h2>个人信息</h2>
-				  <p>姓名：<span id="name"></span></p>
-                  <p">邮箱：<span id=email></span></p>
-                  <p>手机号：<span id=tel></span></p>
-				  <p>身份证号:<span id=id></span></p>
+			<p>姓名：$rname <span id="name"></span></p>
+                  <p>邮箱：$remail<span id=email></span></p>
+                  <p>手机号：$rtel<span id=tel></span></p>
+				  <p>身份证号:$rid_card<span id=id></span></p>
 			</div>
 		</div>
 		<!-- 个人信息 -->
@@ -81,7 +90,6 @@
 		
 		
 		<!--我的预约单-->
-
 			<div class="col">
 			  <h2 class="page">我的预约单</h2> 
 			</div>
@@ -113,11 +121,11 @@
                   <table width="100%" border="0">
             <thead>
 			  <tr>
-			    <th scope="col"><div align="center">预约单号</div></th>
-			    <th scope="col"><div align="center">预约时间</div></th>
-			    <th scope="col"><div align="center">预约人</div></th>
-			    <th scope="col"><div align="center">医生</div></th>
-			    <th scope="col"><div align="center">预约状态</div></th>
+			    <th scope="col"><div align="center">预约单号$roder_id</div></th>
+			    <th scope="col"><div align="center">预约时间$roder_time </div></th>
+			    <th scope="col"><div align="center">预约人$rname</div></th>
+			    <th scope="col"><div align="center">医生$rdoctor_name </div></th>
+			    <th scope="col"><div align="center">预约状态$rstatus</div></th>
                 <th scope="col"><div align="center">操作</div></th>
 		      </tr>
               <script type="text/javascript">
