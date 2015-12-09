@@ -1,17 +1,145 @@
 body
 {
+    font:1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	font-size: 13px;
 	line-height: 1.7;
 	margin: 0;
 	text-align: left;
+	color: #333;
+	background-color: #fff;
 }
-h1,h2,h3,h4{font-weight:400;color:#666;margin:0;}
-h1{font-size:40px;font-weight:700;margin:10px;padding:10px 0;}
-h2{font-size:22px;font-weight:700;}
-h3{font-size:18px;font-weight:700;}
-h4{font-size:16px;font-weight:700;}
+
+/*---------------------user-nav-----------------------*/
+.user-nav{
+	width: 100%;
+	height: 30px;
+	background-color: #f5f5f5;
+	color: #f5f5f5;
+}
+
+.nav-right{
+    float:right;
+    margin-right:30px;
+    line-height:5px;
+}
+
+.nav-left{
+    float:left;
+    margin-left:30px;
+    line-height:25px;
+    color:Black;
+}
+
+.nav-right-font{
+    color:Black;
+}
+    
+/*-------------------logo div-----------------*/
+#logo_div
+{
+ width: 100%;
+ height: 120px;
+ display: inline-block;
+ margin:10px 0 0 100px;
+ }
+
+#logo-title
+{
+    margin-top:5px;
+    width: 500px;
+    display: inline-block;
+}
+
+#logo-title img
+{ 
+    float:left;
+    width:128px;
+    height:72px;
+    margin-right:20px; 
+}
+#logo-title h1
+{
+    width:372px;
+    color: #3590e3;
+    margin-top: 20px;
+}
+#search-bar
+{
+    width: 510px;
+    height:35px;
+    display: inline-block;
+    border:3px solid #3591e3;
+    border-radius: 3px;
+    background:#3591e3;
+}
+#search-bar input
+{
+    height: 33px;
+    width: 395px;
+    border:none;
+    vertical-align: top;
+    font-size: 18px;
+}
+.blue-normal-btn
+{
+    width:90px;
+    height: 35px;
+    display:inline-block;
+    background:#3591e3;
+    margin-left: -4px;
+    text-align:center;
+    font-size:16px;
+}
+.icon-search
+{
+    font-size:20px;
+    height:35px;
+    float:left;
+    display: inline-block;
+    background:white;
+    color: #c0c0c0;
+}
+
+#search-btn
+{
+    color:White;
+    width:90px;
+    height: 35px;
+    display:inline-block;
+    border-radius: 3px; 
+    text-align:center;
+    font-size:16px;
+    letter-spacing:2px;
+    padding-top:4px;
+}
+
+/*------------------------------blue-div---------------------------*/
+.blue-div{
+	width: 100%;
+	height: 40px;
+	background-color:#7FFFD4;
+	margin-top:3px;
+}
+
+.blue-div-start
+{
+    color:#000000;
+    width:90px;
+    height: 35px;
+    display:inline-block;
+    font-size:14px;
+    letter-spacing:2px;
+    padding-top:6px;
+    padding-left:120px;
+}
+
+.blue-div-hosptial,.blue-div-keshi,.blue-div-search
+{
+    color:#0000FF;
+}
+
 p,ul,ol{line-height:140%;text-align:inherit;}
-a{color:#0078ff;text-decoration:none;}
+a{color:black;text-decoration:none;}
 header{width:1000px;height:120px;font-size:12px;text-align:left;border-bottom:2px solid gray;}
 .headl{float:left;}
 .headr{float:right;margin-top:55px;}

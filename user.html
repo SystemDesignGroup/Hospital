@@ -6,18 +6,66 @@
 </head>
 
 <body>
-<div class="page">
-<header> 
-<div class="headl">     
-    <hgroup>
-    <div id="head_div"> 
-    <h1>个人中心</h1>
-	</div>
-    </hgroup>
+<div class="user-nav">
+     <a class="nav-left">欢迎来到全国统一挂号平台</a>
+	 <ul class="nav-right">
+     <li><a href="home.html" class="nav-right-font">返回首页</a></li>
+     </ul>
 </div>
-</header>
+<!------------------页首---------------------->
+
+<div id="logo_div">
+		<div id="logo-title">
+			<img src="image/logo.jpg" alt="挂号平台logo" id="logo"/>
+			<h1>全国统一挂号平台</h1>
+		</div>
+		<div id="search-bar">
+		    <span class="icon-search"></span>
+		    <input type="text"  placeholder="请输入医院名、科室名或医生名"/>
+		<div class="blue-normal-btn" >
+				<a id="search-btn" href="javacript:void(0)">查询</a>
+		</div>
+		</div>
+</div>
+<!---------------------------LOGO及搜索栏--------------------------------->
+
+<div class="blue-div">
+    <label class="blue-div-start">快速预约：</label>
+    <a href="search.html" class="blue-div-hosptial">按医院找</a>
+    <a href="ksearch.html" class="blue-div-keshi">按科室找</a>
+    <a href="searchindex.html" class="blue-div-search">快速搜索</a>
+</div>
+<!--------------------------Blue div--------------------------------------->
+
+<div class="page">
 <!--标题-->
 		
+        <?php
+/* search information for user's center */
+
+	require_once("database.php");
+	$username = $_SESSION['username'];
+        $db = new database();
+	
+	$vuser = array(
+			'name' => $username
+		);
+	$rid = $db->get_field_from_table('users','id',$vuser);
+	$rname = $db->get_field_from_table('users','name',$vuser);
+	$remail = $db->get_field_from_table('users','email',$vuser);
+	$rtel = $db->get_field_from_table('users','tel',$vuser);
+	$rid_card = $db->get_field_from_table('users','id_card',$vuser);
+
+	$vorder = array(
+			'user_id' => $rid
+		);
+	$roder_id = $db->get_field_from_table('order_hospital','id',$vorder);
+	$roder_time = $db->get_field_from_table('order_hospital','order_date,order_time',$vorder);
+	$rstatus = $db->get_field_from_table('order_hospital','status',$vorder);
+	$rorder_doctor_id = $db->get_field_from_table('order_hospital','doctor_id',$vorder);
+	$vdoctor = array('doctor_id' => $rorder_doctor_id);	
+	$rdoctor_name = $db->get_field_from_table('doctor','name',$vdoctor);
+
         <div class="one-col separator">
 			<div class="col">
 				
@@ -33,6 +81,7 @@
 		
 		
 		<!--我的预约单-->
+
 			<div class="col">
 			  <h2 class="page">我的预约单</h2> 
 			</div>
