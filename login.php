@@ -1,27 +1,45 @@
 <?php
 //登录
-require_once("database.php");
+require_once '../database.php';
 
-if(!isset($_POST['submit']))
-{
-    exit('非法访问!');
-}
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$db=new database();
+$errmsg='';
+if(!empty($errmsg))  //yan zheng shu ju wei kong
+{
+    if(empty($username))
+        $errmsg="数据输入不完整";
+}
 
-$check_query = mysql_query("select name from users where name='$username' and password='$password' limit 1");
-if($result = mysql_fetch_array($check_query))
+if(empty($errmsg))
 {
-    //登录成功
-    $_SESSION['username'] = $username;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          '];
-    echo $username,' 欢迎你！进入 <a href="user.html">用户中心</a><br />';
-    echo '点击此处 <a href="login.php?action=logout">注销</a> 登录！<br />';
-    exit;
-} else
-{
-    exit('登录失败！点击此处 <a href="javascript:history.back(-1);">返回</a> 重试');
+    $db=new database();
+    $db->connect_to_db();
+    if(mysqli_connect_errno())
+    {
+        $errmsg="shu ju ku lian jie shi bai!<br>\n";
+    }
+    else
+    {
+        $realusername=$db->get_field_from_table('users','name','id_card');
+        $realpassword=$db->get_field_from_table('users','password','id_card');
+        if($username==$realusername && $password==$realpassword)
+        {
+            $errmsg="deng lu cheng gong";
+
+            session_start();
+            $_SESSION['uid']=$username;
+            if(empty($_SESSION['uid']))
+            {
+                echo"你还没有登录";
+            }
+        }
+        else
+        {
+            $errmsg="deng lu shi bai!";
+        }
+    }
 }
 ?>
+
