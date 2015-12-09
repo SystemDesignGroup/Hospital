@@ -133,7 +133,7 @@ function goOrder(){
     department = encodeURI(department);
     department = encodeURI(department);
 
-    window.location.href="order.php?province="+province+"&city="+city+
+    window.location.href="results.html?province="+province+"&city="+city+
     "&hospital="+hospital+"&department="+department;
 
 }
