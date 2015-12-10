@@ -23,7 +23,7 @@
 
 	require_once("database.php");
 	$username = $_SESSION['username'];
-        $db = new database();
+    $db = new database();
 	
 	$vuser = array(
 			'name' => $username
@@ -85,7 +85,7 @@ _END;
 
 	require_once("database.php");
 	$username = $_SESSION['username'];
-        $db = new database();	
+    $db = new database();	
 	$vorder = array(
 			'user_id' => $rid
 		);
