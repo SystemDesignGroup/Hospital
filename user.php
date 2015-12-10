@@ -19,7 +19,6 @@
 <!--标题-->
 
 <?php
-echo <<< _END
 /* search information for user's center */
 
 	require_once("database.php");
@@ -36,17 +35,16 @@ echo <<< _END
 	$rid_card = $db->get_field_from_table('users','id_card',$vuser);
 
 	
-
+echo <<< _END
 	<div class="one-col separator">
-			<div class="col">
-				
-				<h2>个人信息</h2>
-			<p>姓名： <?php echo $rname ?><span id="name"></span></p>
-                  <p>邮箱：<?php echo $remail ?><span id=email></span></p>
-                  <p>手机号：<?php echo $rtel ?><span id=tel></span></p>
-				  <p>身份证号:<?php echo $rid_card ?><span id=id></span></p>
-			</div>
+		<div class="col">
+			<h2>个人信息</h2>
+			<p>姓名：<?php echo $rname ?> <span id="name"></span></p>
+            <p>邮箱：<?php echo $remail ?><span id=email></span></p>
+            <p>手机号：<?php echo $rtel ?><span id=tel></span></p>
+			<p>身份证号:<?php echo $rid_card ?><span id=id></span></p>
 		</div>
+	</div>
 		<!-- 个人信息 -->
 		
 _END;
@@ -96,10 +94,11 @@ _END;
 	$rstatus = $db->get_field_from_table('order_hospital','status',$vorder);
 	$rorder_doctor_id = $db->get_field_from_table('order_hospital','doctor_id',$vorder);
 	$vdoctor = array('doctor_id' => $rorder_doctor_id);	
-	$rdoctor_name = $db->get_field_from_table('doctor','name',$vdoctor);            
+	$rdoctor_name = $db->get_field_from_table('doctor','name',$vdoctor);
+echo <<< _END
 	</form>
 				  
-                  <table width="100%" border="0">
+           <table width="100%" border="0">
             <thead>
 			  <tr>
 			    <th scope="col"><div align="center">预约单号<?php echo $roder_id ?></div></th>
@@ -114,7 +113,7 @@ _END;
               </script>
             </thead>
           </table>
-
+_END;
 ?>
 </body>
 </html>
