@@ -138,6 +138,114 @@ body
     color:#0000FF;
 }
 
+/*-----------------------------------µ¼º½À¸-----------------------------------*/
+.menu
+{
+    width: 17%;
+	height:1000px;
+	background-color: #f5f5f5;
+	color: #f5f5f5;
+    float:left;
+    margin-left:120px;
+}
+
+#menuul
+{
+    margin-left:-40px;
+    margin-top:0px;
+}
+.float-right{
+  float: right;
+}
+.fa{
+ font-size: .8em;
+  line-height: 22px !important;
+}
+
+dropdown{
+   display: inline-block; 
+}
+dropdown label{
+  display: block;
+  width: 225px;
+  background: #ECF0F1;
+  padding: 37px 20px;
+}
+dropdown ul li{
+  display: block;
+  width: 225px;
+  background: #ECF0F1;
+  padding: 25px 22px;
+  float:left;
+}
+dropdown label:hover, dropdown ul li:hover{
+  background: #1ABC9C;
+  color: white;
+  cursor: pointer;
+}
+dropdown label{
+  color: #1ABC9C;
+  border-left: 4px solid #1ABC9C;
+  border-radius: 0 5px 0 0; 
+  position: relative;
+  z-index: 2;
+}
+
+dropdown input{
+  display: none;
+}
+dropdown input ~ ul{
+  position: relative;
+  visibility: hidden;
+  opacity: 0;
+  top: -20px;
+  z-index: 1;
+}
+dropdown input:checked + label{
+  background: #1ABC9C;
+  color: white;
+}
+
+dropdown input:checked ~ ul{
+  visibility: visible;
+  opacity: 1;
+  top: 0;
+}
+$colors: #E74C3C, #0072B5, #2C3E50;
+
+@for $i from 1 through length($colors) {
+  dropdown ul li:nth-child(#{$i}) {
+    border-left: 4px solid nth($colors, $i);
+    .fa{
+      color: nth($colors, $i);
+    }
+    &:hover {
+        background: nth($colors, $i);
+        color: white;
+      .fa{
+        color: white; 
+      }
+    }
+  }
+}
+
+.animate{
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -ms-transition: all .3s;
+  transition: all .3s;  
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden; /* Chrome and Safari */
+  -moz-backface-visibility:hidden; /* Firefox */
+  -ms-backface-visibility:hidden; /* Internet Explorer */
+}
+/*----------------------------------------------------------------------------*/
+.page
+{
+    width:80%;
+    float:right;
+    }
 p,ul,ol{line-height:140%;text-align:inherit;}
 a{color:black;text-decoration:none;}
 header{width:1000px;height:120px;font-size:12px;text-align:left;border-bottom:2px solid gray;}
