@@ -49,7 +49,17 @@ HTML;
 	</div>
 	</center>
 HTML;
+		
 		$hname=$_POST['user'];
+
+		$password = $_POST['password'];
+
+		echo 'ehere';
+		print_r($hname);
+
+		print_R($password);
+		exit();
+
 		if(strlen($hname)<1)
 		{
 			echo $html_fail;			
