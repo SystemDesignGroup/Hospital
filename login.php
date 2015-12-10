@@ -10,8 +10,8 @@ if(!empty($errmsg))  //yan zheng shu ju wei kong
 {
     if(empty($username))
         $errmsg="数据输入不完整";
+        echo($errmsg);
 }
-
 if(empty($errmsg))
 {
     $db=new database();
@@ -19,6 +19,7 @@ if(empty($errmsg))
     if(mysqli_connect_errno())
     {
         $errmsg="shu ju ku lian jie shi bai!<br>\n";
+        echo($errmsg);
     }
     else
     {
@@ -27,7 +28,7 @@ if(empty($errmsg))
         if($username==$realusername && $password==$realpassword)
         {
             $errmsg="deng lu cheng gong";
-
+            echo($errmsg);
             session_start();
             $_SESSION['uid']=$username;
             if(empty($_SESSION['uid']))
@@ -38,6 +39,7 @@ if(empty($errmsg))
         else
         {
             $errmsg="deng lu shi bai!";
+            echo($errmsg);
         }
     }
 }
