@@ -19,6 +19,7 @@
 <!--标题-->
 
 <?php
+echo <<< _END
 /* search information for user's center */
 
 	require_once("database.php");
@@ -47,6 +48,8 @@
 			</div>
 		</div>
 		<!-- 个人信息 -->
+		
+_END;
 ?>
 		
 		
