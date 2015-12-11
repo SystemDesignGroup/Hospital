@@ -23,7 +23,7 @@ if(empty($errmsg))
     }
     else
     {
-        $key_username=array('username'=>$username);
+        $key_username=array('name'=>$username);
         $key_password=array('password'=>$username);
         $realusername=$db->get_field_from_table('users','name',$key_username);
         $realpassword=$db->get_field_from_table('users','password',$key_password);
