@@ -55,6 +55,7 @@ HTML;
 
 			$hname=$_POST['hospital_name'];
 			$hcity=$_POST['hospital_city'];
+			$hpro=$_POST['hospital_pro'];
 			$hgrade=$_POST['hospital_level'];
 			$hmajor=$_POST['hospital_major'];
 			$haddr=$_POST['hospital_address'];

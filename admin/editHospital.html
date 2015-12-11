@@ -35,7 +35,7 @@
 					<div id="address-div" class="block">
 						<div class="m-block">
 							<label>地区：省</label>
-							<select id="province" runat="server" onchange="selectprovince(this);"></select>
+							<select id="province" runat="server" onchange="selectprovince(this);" name="hospital_pro"></select>
 							</select>
 						</div>
 						<div class="m-block">
@@ -236,7 +236,7 @@
         {
             var option = document.createElement("option");
             option.appendChild(document.createTextNode(list2element[i]));
-            option.value = obj.value+list2element[i];
+            option.value = list2element[i];
             ddlCity.appendChild(option);
         }
     }
