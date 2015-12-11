@@ -25,24 +25,32 @@ if(empty($errmsg))
     {
         $key_username=array('name'=>$username);
         $key_password=array('password'=>$username);
-        $realusername=$db->get_field_from_table('users','name',$key_username);
-        $realpassword=$db->get_field_from_table('users','password',$key_password);
-        if($username==$realusername && $password==$realpassword)
+        $realuname=$db->get_field_from_table('users','users.name',$key_username);
+        $realpwd=$db->get_field_from_table('users','users.password',$key_password);
+        if(count($key_username)==0)
         {
-            $errmsg="deng lu cheng gong";
-            echo($errmsg);
-            session_start();
-            $_SESSION['uid']=$username;
-            if(empty($_SESSION['uid']))
-            {
-                echo"你还没有登录";
-                echo($errmsg);
-            }
+            echo "用户不存在";
         }
         else
         {
-            $errmsg="deng lu shi bai!";
-            echo($errmsg);
+            $realusername=$realuname[0]['name'];
+            $realpassword=$realpwd[0]['password'];
+            if($username==$realusername && $password==$realpassword)
+            {
+                $errmsg="deng lu cheng gong";
+                echo($errmsg);
+                session_start();
+                $_SESSION['uid']=$username;
+                if(empty($_SESSION['uid']))
+                {
+                    echo"你还没有登录";
+                }
+            }
+            else
+            {
+                $errmsg="deng lu shi bai!";
+                echo($errmsg);
+            }
         }
     }
 }
