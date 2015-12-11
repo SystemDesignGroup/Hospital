@@ -23,8 +23,10 @@ if(empty($errmsg))
     }
     else
     {
-        $realusername=$db->get_field_from_table('users','name','id_card');
-        $realpassword=$db->get_field_from_table('users','password','id_card');
+        $key_username=array('name'=>$username);
+        $key_password=array('password'=>$username);
+        $realusername=$db->get_field_from_table('users','name',$key_username);
+        $realpassword=$db->get_field_from_table('users','password',$key_password);
         if($username==$realusername && $password==$realpassword)
         {
             $errmsg="deng lu cheng gong";
@@ -34,6 +36,7 @@ if(empty($errmsg))
             if(empty($_SESSION['uid']))
             {
                 echo"你还没有登录";
+                echo($errmsg);
             }
         }
         else
