@@ -23,10 +23,10 @@ if(empty($errmsg))
     }
     else
     {
-        $realuname=$db->get_field_from_table('users','name','id_card');
-        $realpwd=$db->get_field_from_table('users','password','id_card');
-        $realusername=$realuname[0]['name'];
-        $realpassword=$realpwd[0]['password'];
+        $key_username=array('username'=>$username);
+        $key_password=array('password'=>$username);
+        $realusername=$db->get_field_from_table('users','name',$key_username);
+        $realpassword=$db->get_field_from_table('users','password',$key_password);
         if($username==$realusername && $password==$realpassword)
         {
             $errmsg="deng lu cheng gong";
