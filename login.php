@@ -1,8 +1,6 @@
 <?php
 //登录
-require_once '../database.php';
-ini_set("display_errors", "On");
-error_reporting(E_ALL | E_STRICT);
+require_once '../database.php'
 $username = $_POST['user'];
 $password = $_POST['password'];
 
