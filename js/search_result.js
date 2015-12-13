@@ -79,8 +79,8 @@ function searchDoctor(hospital,department){
             for(var i = 0;i<response.length;i++){
 
                 var listItem = "<li class='J_ListItem'>"+
-                "<div class='doc-box' style='display:inline'>"+
-                    "<div class='doc-info' style='float:left;width:50%;display:inline'>"+
+                "<div class='doc-box' style='display:inline;height:120px'>"+
+                    "<div class='doc-info' style='float:left;width:50%;display:inline;height:120px'>"+
                     "<div class='doc-base-info' style='float:left;width:45%;display:inline'>"+
                     "<a target='_blank'  href=''onmousedown='return _smartlog(this,'DOCP_1')' class='img' style='float:left'>"+
                     "<div hidden='hidden' id='docId'>"+response[i]['id']+"</div>"+
@@ -98,11 +98,11 @@ function searchDoctor(hospital,department){
                     "</dd>"+
                     "</dl>"+
                     "</div>"+
-                    "<div class='doc-skill' style='float:right;margin-right:20px;width:45%;border:1px solid black'>"+
+                    "<div class='doc-skill' style='float:right;margin-right:20px;width:45%'>"+
                     "<p><label>擅长：</label>"+response[i]['intro']+"</p>"+
                 "</div>"+
                 "</div>"+
-                "<div class='doc-data' style='float:left;width:20%;display:inline;margin-left:20px'>"+
+                "<div class='doc-data' style='float:left;width:20%;display:inline;margin-left:20px;height:120px'>"+
                     "<div class='order-num' style='float:left;width:30%'>"+
                     "<p class='num'>1000</p>"+
                     "<p>预约量</p>"+
@@ -112,7 +112,7 @@ function searchDoctor(hospital,department){
                 "<p><label>态度：</label><span>250%</span></p>"+
                 "</div>"+
                 "</div>"+
-                "<div class='doc-shiftcase J_ShiftCaseContent' style='float:right;margin-right:30px;width:20%'>"+
+                "<div class='doc-shiftcase J_ShiftCaseContent' style='float:right;margin-right:30px;width:20%;height:120px'>"+
                     "<div class='to-center' style='margin-top:60px;display:inline'>"+
                     "<a class='gbb gbt-blue addpadding' href='#' style='margin-left:10px' onclick='guahao()'>挂号</a>"+
                     "<a class='gbb gbt-blue addpadding' href='#' style='margin-left:10px' onclick='consult()'>咨询</a>"+
