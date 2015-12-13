@@ -39,17 +39,20 @@ if(empty($errmsg))
             {
                 $errmsg="deng lu cheng gong";
                 echo($errmsg);
+                header("refresh:0;url=home.html");
                 session_start();
                 $_SESSION['uid']=$username;
                 if(empty($_SESSION['uid']))
                 {
                     echo"你还没有登录";
                 }
+                exit;
             }
             else
             {
                 $errmsg="deng lu shi bai!";
                 echo($errmsg);
+                exit;
             }
         }
     }
