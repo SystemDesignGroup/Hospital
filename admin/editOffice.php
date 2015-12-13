@@ -55,8 +55,6 @@ HTML;
 
 			$hname=$_POST['office_name'];
 			$hbelong=$_POST['office_belong'];
-			$hcity=$_POST['hospital_city'];
-			$hpro=$_POST['hospital_pro'];
 			$hintr=$_POST['office_intr'];
 			$succeed=true;
 			if(strlen($hname)<1)
@@ -85,11 +83,10 @@ HTML;
 				$db = new database();
 				//search hospital
 				$hos_values=array(
-					'hospital.name' => $hbelong,
-					'city.name'=>$hcity
+					'name' => $hbelong,
 					);
 				$hospital_id=0;
-				$hos_re=$db->get_field_from_table('hospital,city','hospital.id',$hos_values);
+				$hos_re=$db->get_field_from_table('hospital','id',$hos_values);
 				if(count($hos_re)==0)
 				{
 					echo $html_error_a."未在数据库中发现所属医院信息（请确认信息正确或先添加所属医院信息）".$html_error_b;

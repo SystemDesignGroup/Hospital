@@ -45,7 +45,6 @@ HTML;
 			'name' => $name,
 			'password'=>$password
 			);
-		$hospital_id=0;
 		$hos_re=$db->get_field_from_table('users','role',$hos_values);
 		if($hos_re[0][role]==2)
 		{

@@ -93,39 +93,46 @@ HTML;
 				$db = new database();
 				//search city
 				$city_id=0;
-				$city_re=$db->get_field_from_table('city','id','name',$hcity);
+				$city_values=array('name' => $hcity);
+				$city_re=$db->get_field_from_table('city','id',$city_values);
 				if(count($city_re)==0)
 				{
 					$valuesci=array('name' => $hcity);
 					$db->insert_data_into_table('city',$valuesci);
-					$city_re=$db->get_field_from_table('city','id','name',$hcity);
+					$city_re=$db->get_field_from_table('city','id',$city_values);
 				}
 				$city_id=$city_re[0]['id'];
 				
 				//search grade
 				$grade_id=0;
-				$grade_re=$db->get_field_from_table('grade','id','detail',$hgrade);
+				$grade_values=array('detail' => $hgrade);
+				$grade_re=$db->get_field_from_table('grade','id',$grade_values);
 				if(count($grade_re)==0)
 				{
 					$valuesci=array('detail' => $hgrade);
 					$db->insert_data_into_table('grade',$valuesci);
-					$grade_re=$db->get_field_from_table('grade','id','detail',$hgrade);
+					$grade_re=$db->get_field_from_table('grade','id',$grade_values);
 				}
 				$grade_id=$grade_re[0]['id'];
 				
 				//search major
 				$major_id=0;
-				$major_re=$db->get_field_from_table('major','id','name',$hmajor);
+				$major_values=array('name' => $hmajor);
+				$major_re=$db->get_field_from_table('major','id',$major_values);
 				if(count($major_re)==0)
 				{
 					$valuesci=array('name' => $hmajor);
 					$db->insert_data_into_table('major',$valuesci);
-					$major_re=$db->get_field_from_table('major','id','name',$hmajor);
+					$major_re=$db->get_field_from_table('major','id',$major_values);
 				}
 				$major_id=$major_re[0]['id'];
 				
 				//insert
-				$hos_re=$db->get_field_from_table('hospital','id','name',$hname);
+				$hos_values=array(
+					'hospital.name' => $hname,
+					'city.name'=>$hcity
+					);
+				$hos_re=$db->get_field_from_table('hospital,city','hospital.id',$hos_values);
 				if(count($hos_re)==0)
 				{
 					$values=array(

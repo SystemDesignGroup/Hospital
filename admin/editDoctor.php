@@ -85,31 +85,29 @@ HTML;
 				$db = new database();
 				//search grade
 				$grade_id=0;
-				$grade_re=$db->get_field_from_table('grade','id','detail',$hlevel);
-				if(count($grade_re)==0)
-				{
-					$valuesci=array('detail' => $hlevel);
-					$db->insert_data_into_table('grade',$valuesci);
-					$grade_re=$db->get_field_from_table('grade','id','detail',$hlevel);
-				}
+				$grade_values=array('detail' => $hlevel);
+				$grade_re=$db->get_field_from_table('grade','id',$grade_values);
 				$grade_id=$grade_re[0]['id'];
 				
 				//search major
 				$major_id=0;
-				$major_re=$db->get_field_from_table('major','id','name',$hmajor);
+				$major_values=array('name' => $hmajor);
+				$major_re=$db->get_field_from_table('major','id',$major_values);
 				if(count($major_re)==0)
 				{
 					$valuesci=array('name' => $hmajor);
 					$db->insert_data_into_table('major',$valuesci);
-					$major_re=$db->get_field_from_table('major','id','name',$hmajor);
+					$major_re=$db->get_field_from_table('major','id',$major_values);
 				}
 				$major_id=$major_re[0]['id'];
-				
+
 				/////////////////////////////////
 				$hospital_id=0;
-				$hos_re=$db->get_field_from_table('hospital','id','name',$hospital);
+				$hh_values=array('name' => $hospital);
+				$hos_re=$db->get_field_from_table('hospital','id',$hh_values);
 				$office_id=0;
-				$office_re=$db->get_field_from_table('department','id','name',$office);
+				$of_values=array('name' => $office);
+				$office_re=$db->get_field_from_table('department','id',$of_values);
 				if(count($hos_re)==0)
 				{
 					echo $html_error_a."未在数据库中发现所属医院信息（请确认信息正确或先添加所属医院信息）".$html_error_b;
@@ -127,7 +125,8 @@ HTML;
 					$date_t=date("Y-m-d");
 					$valuesca=array('type'=>1,'detail' => $doid,'off_start'=>$date_t,'off_end'=>$date_t);
 					$db->insert_data_into_table('calendar',$valuesca);
-					$cal_re=$db->get_field_from_table('calendar','id','detail',$doid);
+					$ca_values=array('detail' => $doid);
+					$cal_re=$db->get_field_from_table('calendar','id',$ca_values);
 					$calendar_id=$cal_re[0]['id'];
 					$hospital_id=$hos_re[0]['id'];
 					$office_id=$office_re[0]['id'];
