@@ -25,11 +25,11 @@ a{ text-decoration: none;color:white; }
 /*----------------------navigation bar-------------------------*/
 .tabnav {margin-top: 0;margin-bottom: 15px;border-bottom: 1px solid #ddd;min-width: 1200px;width: 100%;}
 #nav-bar{border-bottom:-1px;margin-left: 60px;}
-#nav-bar a{ text-align:center;font-size:20px; margin:0 20px; }
+#nav-bar a{ text-align:center;font-size:20px; margin:0 20px; color:#000;}
 .navb a:hover{ color:rgb(10,100,150);}
 
 .tabnav-tab {display: inline-block;padding: 8px 12px;font-size: 14px;line-height: 20px;
-    color: #111;text-decoration: none;border: 1px solid transparent;border-bottom: 0px;}
+    color: #000;text-decoration: none;border: 1px solid transparent;border-bottom: 0px;}
 
 
 /*--------------------------content-----------------------------------*/
