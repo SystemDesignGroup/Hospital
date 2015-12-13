@@ -3,7 +3,8 @@
 require_once '../database.php';
 $username = $_POST['user'];
 $password = $_POST['password'];
-
+echo $username;
+echo $password;
 session_start();
 if(empty($username) or empty($password))
 {
@@ -34,7 +35,7 @@ else
             $realpassword=$realpwd[0]['password'];
             if($username==$realusername && $password==$realpassword)
             {
-                echo"登录成功!";
+                echo "登录!";
                 $_SESSION['uid']=$username;
                 if(empty($_SESSION['uid']))
                 {
