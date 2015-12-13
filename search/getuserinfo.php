@@ -9,8 +9,10 @@ require_once"../database.php";
 
 $conn = new database();
 
-$username = $_SESSION['username'];
+session_start();
+$username = $_SESSION['uid'];
 
+echo $username;
 $array = array("name"=>$username);
 
 $result = $conn->get_field_from_table("users","id",$array);

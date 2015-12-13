@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
+<meta charset="UTF-8"/>
 	<?php 
 	
 	$html_success = <<<HTML
 	<meta http-equiv="refresh" content="1; url=editHospital.html"> 
 <head>
-	 	<meta charset="UTF-8"/>
+
 	 	<title>管理员登录</title>
 		 <link type="text/css" rel="stylesheet" href="../css/admin.css"/>
 	</head>

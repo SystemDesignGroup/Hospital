@@ -4,37 +4,6 @@
 
 getDoctorInfo();
 
-function init()
-{
-    var length=document.getElementsByClassName("tabnav-tab").length;
-    console.log(length);
-    for(var i=0;i<length;i++)
-    {
-        var tab=document.getElementsByClassName("tabnav-tab")[i];
-        console.log(tab);
-        tab.onmousedown=setRefAttribute(tab);
-        if(tab.getAttribute("selected")=="true") break;
-    }
-
-    //var str = location.search;
-    //alert(str.split('?')[1]);
-
-}
-
-function setRefAttribute(tab)
-{
-    //var isSelected=tab.getAttribute("selected");
-    //console.log(tab.getAttribute("selected"));
-    //if(isSelected=="true")
-    //{
-    //    console.log(tab);
-    //    tab.style.color="#333";
-    //    tab.style.backgroundColor="#fff";
-    //    tab.style.borderColor="#ddd";
-    //    tab.style.borderRadius="3px 3px 0 0";
-    //}
-}
-
 function getDoctorInfo(){
     //alert(province+"\n"+city+"\n"+hospital+"\n"+department);
 
@@ -42,19 +11,19 @@ function getDoctorInfo(){
     var mstr = str.split('?')[1];
     var strArray = mstr.split('&');
 
-    var province = strArray[0].substr(9,strArray[0].length);
-    province = decodeURI(province);
-    province = decodeURI(province);
+    //var province = strArray[0].substr(9,strArray[0].length);
+    //province = decodeURI(province);
+    //province = decodeURI(province);
+    //
+    //var city = strArray[1].substr(5,strArray[1].length);
+    //city = decodeURI(city);
+    //city = decodeURI(city);
 
-    var city = strArray[1].substr(5,strArray[1].length);
-    city = decodeURI(city);
-    city = decodeURI(city);
-
-    var hospital = strArray[2].substr(9,strArray[2].length);
+    var hospital = strArray[0].substr(9,strArray[0].length);
     hospital = decodeURI(hospital);
     hospital = decodeURI(hospital);
 
-    var department = strArray[3].substr(11,strArray[3].length);
+    var department = strArray[1].substr(11,strArray[1].length);
     department = decodeURI(department);
     department = decodeURI(department);
 
@@ -114,7 +83,7 @@ function searchDoctor(hospital,department){
                 "</div>"+
                 "<div class='doc-shiftcase J_ShiftCaseContent' style='float:right;margin-right:30px;width:20%;height:120px'>"+
                     "<div class='to-center' style='margin-top:60px;display:inline'>"+
-                    "<a class='gbb gbt-blue addpadding' href='#' style='margin-left:10px' onclick='guahao()'>挂号</a>"+
+                    "<a class='gbb gbt-blue addpadding' href='#' style='margin-left:10px' onclick='guahao("+response[i]['id']+")'>挂号</a>"+
                     "<a class='gbb gbt-blue addpadding' href='#' style='margin-left:10px' onclick='consult()'>咨询</a>"+
                     "</div>"+
                     "</div>"+
@@ -134,10 +103,9 @@ function searchDoctor(hospital,department){
     xmlHttp.open("GET","search_doctor.php?hospital="+hospital+"&department="+department,true);
     xmlHttp.send();
 }
-function guahao(){
+function guahao(doctor_id){
     var xmlhttp;
     var user_id;
-    var doctor_id;
     var date;
 
     xmlhttp = new XMLHttpRequest();
@@ -153,13 +121,18 @@ function guahao(){
     xmlhttp.send();
 
     if(!user_id){
-        alert("请先登录");
+        var r = confirm("请先登录！");
+        if(r==true){
+            window.location.href='../login.html';
+        }else{
+
+        }
+    }else{
+        date = document.getElementById('date1').value;
+        //doctor_id = document.getElementById('docId').innerHTML;
+        //alert(doctor_id);
+        addOrder(user_id,doctor_id,date);
     }
-
-    date = document.getElementById('date1').value;
-    doctor_id = document.getElementById('docId').innerHTML;
-
-    addOrder(user_id,doctor_id,date);
 }
 function addOrder(user_id,doctor_id,date){
     var xmlhttp;

@@ -16,7 +16,7 @@
 
     //连接数据库
     $db = new database();
-    $db->connect_to_db();
+//    $db->connect_to_db();
 
     //insert
     $user_re = $db->get_field_from_table('users', 'id', $card);
