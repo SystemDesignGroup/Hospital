@@ -7,11 +7,11 @@
  */
 
     require_once "database.php";
-if(isset($_POST["submit"]) && $_POST["submit"] == "注册") {
+
     $email = $_POST['email'];
     $username = $_POST['name'];
     $tel = $_POST['tel'];
-    $card = $_POST['id_card'];
+    $card = $_POST['card'];
     $password = $_POST['password'];
 
     //连接数据库
@@ -19,7 +19,7 @@ if(isset($_POST["submit"]) && $_POST["submit"] == "注册") {
     $db->connect_to_db();
 
     //insert
-    $user_re = $db->get_field_from_table('users', 'id', 'id_card');
+    $user_re = $db->get_field_from_table('users', 'id', $card);
     if (count($user_re) != 0) //如果已经存在该用户
     {
         echo "<script>alert('用户名已存在'); history.go(-1);</script>";
@@ -35,11 +35,7 @@ if(isset($_POST["submit"]) && $_POST["submit"] == "注册") {
         $db->insert_data_into_table('users', $values);
         echo "<script>alert('注册成功！'); history.go(-1);</script>";
     }
-}
 
-else {
-    echo "<script>alert('提交未成功！'); history.go(-1);</script>";
-}
 
 ?>
 
