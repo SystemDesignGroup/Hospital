@@ -1,30 +1,30 @@
 <?php
 //登录
 require_once '../database.php';
+ini_set("display_errors", "On");
+error_reporting(E_ALL | E_STRICT);
 $username = $_POST['user'];
 $password = $_POST['password'];
-echo $username;
-echo $password;
+
 session_start();
-if(empty($username) or empty($password))
+if($username=="")
 {
-    echo "数据输入不完整!";
-    header("Location:login.html");
+    echo "请填写用户名<br>";
+    echo"<script type='text/javascript'>alert('请填写用户名');location='login.php';</script>";
+}
+elseif($password=="")
+{
+    echo "请填写密码<br><a href='login.php'>返回</a>";
+    echo"<script type='text/javascript'>alert('请填写密码');location='login.php';</script>";
 }
 else
 {
-    $db=new database();
-    $db->connect_to_db();
-    if(mysqli_connect_errno())
-    {
-        echo"shu ju ku lian jie shi bai!";
-    }
-    else
-    {
+    $my_db=new database();
+
         $key_username=array('users.name'=>$username);
         $key_password=array('users.password'=>$username);
-        $realuname=$db->get_field_from_table('users','users.name',$key_username);
-        $realpwd=$db->get_field_from_table('users','users.password',$key_password);
+        $realuname=$my_db->get_field_from_table('users','users.name',$key_username);
+        $realpwd=$my_db->get_field_from_table('users','users.password',$key_password);
         if(count($key_username)==0)
         {
             echo"用户不存在!";
@@ -49,6 +49,6 @@ else
                 exit;
             }
         }
-    }
+
 }
 ?>
