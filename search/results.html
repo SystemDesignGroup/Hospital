@@ -3,10 +3,10 @@
 <head>
 	<meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="../css/search.css"/>
-	<script type="text/javascript" src="../js/jquery.min.js">
-	</script>
-	<script type="text/javascript" src="../js/dateRange.js"></script>
-	<link rel="stylesheet" type="text/css" href="../css/dateRange.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/calendar.css" >
+	<script type="text/javascript" src="../js/calendar.js" ></script>  
+	<script type="text/javascript" src="../js/calendar-zh.js" ></script>
+	<script type="text/javascript" src="../js/calendar-setup.js"></script>
 	<title>|挂号网</title>
 	<script type="text/javascript">
 
@@ -40,6 +40,7 @@
 			<div class="tabnav">
 					<nav id="nav-bar" class="navb">
 						<a href="../home.html" class="tabnav-tab" selected="false" role="tab">首页</a>
+						<a href="quickorder.html" class="tabnav-tab" selected="false" role="tab">快速预约</a>
 						<a href="search.html" class="tabnav-tab" selected="false" role="tab">按医院预约</a>
 						<a href="ksearch.html" class="tabnav-tab" selected="false" role="tab">按科室预约</a>
 						<a href="#" class="tabnav-tab" selected="false" role="tab">预约指南</a>
@@ -79,10 +80,13 @@
              	<div class="gfm-inline gfm-thin top" > 
               		<div style="margin-top:10px;margin-left:-20px">
 							<span style="float:left;margin-right:10px">就诊日期</span>							
-							<div class="ta_date" id="div_date1">
-								<span class="date_title" id="date1"></span>
-							</div>
-					</div>
+							<input type="text" id="EntTime" name="EntTime" onclick="return showCalendar('EntTime', 'y-mm-dd');" style="width:90px;font-size:12px;" value="选择时间" />
+							<select style="font-size:12px;">
+								<option value="">请选择时间段</option>
+								<option value="">6:00-12:00</option>
+								<option value="">14:00-18:00</option>
+							</select>
+						</div>
 						<script type="text/javascript">
 							var dateRange1 = new pickerDateRange('date1', {
 							aRecent90Days : 'aRecent90Days', 
@@ -97,7 +101,7 @@
 						</script>
                </div>
                <!-- .doc-list -->
-				<ul class="g-expert-items indept-shiftcase-list J_DoctorList" id="docList">
+				<ul class="g-expert-items indept-shiftcase-list J_DoctorList" id="docList">    
 				</ul>
 				</div>
 			</div>
