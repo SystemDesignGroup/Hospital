@@ -1,6 +1,6 @@
 <?php
 //登录
-require_once '../database.php';
+require_once './database.php';
 $username = $_POST['user'];
 $password = $_POST['password'];
 
