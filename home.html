@@ -1,4 +1,4 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8"/>
@@ -8,12 +8,12 @@
 			window.onload=init;
 			function init()
 			{
-						var length=document.getElementsByClassName("tabnav-tab").length;
-						console.log(length);
-						for(var i=0;i<length;i++)
-						{
-							var tab=document.getElementsByClassName("tabnav-tab")[i];
-							console.log(tab);
+				var length=document.getElementsByClassName("tabnav-tab").length;
+				console.log(length);
+				for(var i=0;i<length;i++)
+				{
+					var tab=document.getElementsByClassName("tabnav-tab")[i];
+					console.log(tab);
   		  			tab.onmousedown=setRefAttribute(tab);
   		  			//if(tab.getAttribute("selected")=="true") break;
   		  		}
@@ -22,16 +22,31 @@
 			function setRefAttribute(tab)
 			{
 				var isSelected=tab.getAttribute("selected");
-				console.log(tab.getAttribute("selected"));
+				//console.log(tab.getAttribute("selected"));
 				if(isSelected=="true")
 				{
-						console.log(tab);
-						tab.style.color="#018bba";
-  		  		tab.style.backgroundColor="#fff";
-  		  		tab.style.borderColor="#ddd";
-  		  		tab.style.borderRadius="3px 3px 0 0";
+					/*console.log(tab);*/
+					tab.style.color="#018bba";
+  		  			tab.style.backgroundColor="#fff";
+  		  			tab.style.borderColor="#ddd";
+  		  			tab.style.borderRadius="3px 3px 0 0";
 				}
 			}
+
+			function showCityList()
+			{
+				var div=document.getElementById("city-list");
+				console.log("Get div");
+				div.style.display="block";
+			}
+
+			function hideCityList()
+			{
+				var div=document.getElementById("city-list");
+				console.log("Get div");
+				div.style.display="none";
+			}
+
 
 		</script>
 	</head>
@@ -61,14 +76,14 @@
 			<!--导航栏-->
 			<div class="tabnav">
 					<nav id="nav-bar" class="navb">
-						<a href="#" class="tabnav-tab" selected="true" role="tab">首页</a>
-						<a href="#" class="tabnav-tab" selected="false" role="tab">快速预约</a>
-						<a href="#" class="tabnav-tab" selected="false" role="tab">按医院预约</a>
-						<a href="#" class="tabnav-tab" selected="false" role="tab">按科室预约</a>
+						<a href="home.html" class="tabnav-tab" selected="true" role="tab">首页</a>
+						<a href="search/quickorder.html" class="tabnav-tab" selected="false" role="tab">快速预约</a>
+						<a href="search/search.html" class="tabnav-tab" selected="false" role="tab">按医院预约</a>
+						<a href="search/ksearch.html" class="tabnav-tab" selected="false" role="tab">按科室预约</a>
 						<a href="#" class="tabnav-tab" selected="false" role="tab">预约指南</a>
 						<a href="#" class="tabnav-tab" selected="false" role="tab">公告查看</a>
 						<a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a>
-					<nav>
+					</nav>
 			</div>
 
 
@@ -77,17 +92,72 @@
 					<h3>预约挂号</h2>
 					<div id="area" class="area">
 							<div id="fast-reserve-div">
-								<div id="show-city-div">
-										<div>
-												<img src="image/location.png"/>
+								<div id="show-city-div" class="fast-order">
+									<div style="display:inline-block" class="title">
+										<img src="image/location.png"/>
 												<!--<label id="city-label"><span class="icon-location2"></span>北京</label>-->
-												<label id="city-label">北京</label>
-										</div>
+										<label id="city-label">北京</label>
+										<a href="javascript:;" class="switch J_AreaSwitch" onclick="showCityList()">切换<i class="arrow-down"></i></a>
+									</div>
+									<div id="city-list" class="addr-wrap J_Area" style="z-index: 3500; display: none;">
+										<div class="stick"><a href="javascript:;" class="switch J_HideArea" onclick="hideCityList()">切换<i class="arrow-down"></i></a></div>
 										<div>
-										<label>切换</label>
-										<!--<a href="javascript:void(0)" style="color:black;"><span class="icon-grid"></span></a>-->
-										<a href="javascript:void(0)" ><img class="more" src="image/more.png"/></a>
+											<a href="javascript:void(0);" class="close" onclick="hideCityList()">关闭</a>
+											<div class="hot-city J_HotCity">
+												<label>热门：</label>
+												<ul>
+													<li><a href="javascript:void(0);" name="hotcity" province-id="2">上海</a></li>
+													<li><a href="javascript:void(0);" name="hotcity" city-id="79" province-id="29" province-name="广东">广州</a></li>
+													<li><a href="javascript:void(0);" name="hotcity" province-id="1">北京</a></li>
+													<li><a href="javascript:void(0);" name="hotcity" city-id="229" province-id="19" province-name="湖北">武汉</a></li>
+													<li><a href="javascript:void(0);" name="hotcity" city-id="422" province-id="8" province-name="山西">太原</a></li>
+												</ul>
+											</div>
+											<div class="area-content J_AreaContent">
+												<div class="province J_ProvinceContainer">
+													<p class="content-title">请选择省份:</p>
+													<ul class="J_ProvinceUl">
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="2" data-nosub="0" title="上海">上海</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink on" data-val="1" data-nosub="0" title="北京">北京</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="29" data-nosub="0" title="广东">广东</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="22" data-nosub="0" title="江苏">江苏</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="30" data-nosub="0" title="湖南">湖南</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="8" data-nosub="0" title="山西">山西</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="21" data-nosub="0" title="山东">山东</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="19" data-nosub="0" title="湖北">湖北</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="24" data-nosub="0" title="浙江">浙江</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="3" data-nosub="1" title="天津">天津</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="9" data-nosub="0" title="陕西">陕西</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="23" data-nosub="0" title="安徽">安徽</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="20" data-nosub="0" title="河南">河南</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="15" data-nosub="0" title="四川">四川</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="12" data-nosub="0" title="青海">青海</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="5" data-nosub="0" title="辽宁">辽宁</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="33" data-nosub="0" title="内蒙古">内蒙古</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="25" data-nosub="0" title="江西">江西</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="7" data-nosub="0" title="黑龙江">黑龙江</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="16" data-nosub="0" title="河北">河北</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="17" data-nosub="0" title="云南">云南</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="6" data-nosub="0" title="吉林">吉林</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="18" data-nosub="0" title="贵州">贵州</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="31" data-nosub="0" title="广西">广西</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="4" data-nosub="1" title="重庆">重庆</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="10" data-nosub="0" title="宁夏">宁夏</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="11" data-nosub="0" title="甘肃">甘肃</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="27" data-nosub="0" title="福建">福建</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="32" data-nosub="0" title="海南">海南</a></li>
+														<li><a href="javascript:void(0);" name="province" class="J_ProvinceLink" data-val="13" data-nosub="0" title="新疆">新疆</a></li>
+													</ul>
+												</div>
+												<div class="city J_CityContainer">
+													<p class="content-title">您当前选择省份：<span class="J_SelProvince"></span> <span class="back J_AreaBack">返回重选省份</span></p>
+													<div class="J_CityWrap">
+													</div>
+												</div>
+											</div>
 										</div>
+									</div>
+
 								</div>
 								<div id="input-text">
 										<form action="">

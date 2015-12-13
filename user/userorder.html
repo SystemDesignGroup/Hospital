@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>个人中心</title>
 <link rel="stylesheet" href="../css/user.css" />
-<link rel="stylesheet" href="../css/usermessage.css" />
+<link rel="stylesheet" href="../css/userorder.css" />
 </head>
 
 <body>
@@ -57,30 +57,30 @@
 <!-------------------------菜单栏----------------------------------------->
 <div class="page">
     <div>
-    <label class="start">个人中心-><span class="link">账号信息</span></label>
+    <label class="start">个人中心-><span class="link">我的预约单</span></label>
     </div>
 
     <div>
     <img class="set" src="../image/set.jpg" alt="更改密码图片" id="set"/>
-    <label class="passwordfont">账号信息</label>
+    <label class="passwordfont">我的预约单</label>
     </div>
 
     <div class="change-div">
     </div>
 
     <div class="mainpart">
-        <div class="message-line">
-        <span name="name">姓名：</span>
-        </div>
-        <div class="message-line">
-        <span name="email">邮箱：</span>
-        </div>
-        <div class="message-line">
-        <span name="tel">手机号：</span>
-        </div>
-        <div class="message-line">
-        <span name="ID">身份证号：</span>
-        </div>
+       <table width=100% border="0">
+            <thead>
+			  <tr>
+			    <th><div align="center">预约单号$roder_id</div></th>
+			    <th><div align="center">预约时间$roder_time </div></th>
+			    <th><div align="center">预约人$rname</div></th>
+			    <th><div align="center">医生$rdoctor_name </div></th>
+			    <th><div align="center">预约状态$rstatus</div></th>
+                <th><div align="center">操作</div></th>
+		      </tr>
+            </thead>
+          </table>
     </div>
 </div>
 
