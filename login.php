@@ -20,7 +20,7 @@ else
 {
     $key_values=array('name' => $username, 'password'=>$password);
     $key_re=$my_db->get_field_from_table('users','role',$key_values);
-    if($key_re[0][role]==2)
+    if($key_re[0][role]==1)
     {
         echo $html_success;
     }
