@@ -28,11 +28,12 @@
 	$vuser = array(
 			'name' => $username
 		);
-	$rid = $db->get_field_from_table('users','id',$vuser);
-	$rname = $db->get_field_from_table('users','name',$vuser);
-	$remail = $db->get_field_from_table('users','email',$vuser);
-	$rtel = $db->get_field_from_table('users','tel',$vuser);
-	$rid_card = $db->get_field_from_table('users','id_card',$vuser);
+  $userinfo = $db->get_field_from_table('users','id,name,email,tel,id_card',$vuser);
+	$rid = $userinfo['id'];
+	$rname = $usreinfo['name'];
+	$remail = $userinfo['email'];
+	$rtel = $userinfo['tel'];
+	$rid_card =$userinfo['id_card'];
 
 
 echo <<< _END
@@ -40,9 +41,9 @@ echo <<< _END
 		<div class="col">
 			<h2>个人信息</h2>
       <p>姓名：$rname  <span id="name"></span></p>
-      <p>邮箱： $remail <span id=email></span></p>
-      <p>手机号： $rtel <span id=tel></span></p>
-			<p>身份证号: $rid_card <span id=id></span></p>
+      <p>邮箱： $remail <span id="email"></span></p>
+      <p>手机号： $rtel <span id="tel"></span></p>
+			<p>身份证号: $rid_card <span id="id"></span></p>
 		</div>
 	</div>
 		<!-- 个人信息 -->
