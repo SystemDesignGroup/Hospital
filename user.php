@@ -29,20 +29,19 @@
 			'name' => 'GuanFuHe'
 		);
   $userinfo = $db->get_field_from_table('users','name,email,tel,id_card',$vuser);
-  #extract($userinfo[0]);
 	$rname = $userinfo[0]['name'];
-	#$remail = $email;
-	#$rtel = $tel;
-	#$rid_card =$id_card;
+	$remail = $userinfo[0]['email'];
+	$rtel = $userinfo[0]['tel'];
+	$rid_card =$userinfo[0]['id_card'];
 
 echo <<< _END
 	<div class="one-col separator">
 		<div class="col">
 			<h2>个人信息</h2>
       <p>姓名：<span id="name">$rname</span></p>
-      #<p>邮箱：<span id="email">$remail</span></p>
-      #<p>手机号：<span id="tel">$rtel</span></p>
-			#<p>身份证号:<span id="id">$rid_card</span></p>
+      <p>邮箱：<span id="email">$remail</span></p>
+      <p>手机号：<span id="tel">$rtel</span></p>
+			<p>身份证号:<span id="id">$rid_card</span></p>
 		</div>
 	</div>
 		<!-- 个人信息 -->
