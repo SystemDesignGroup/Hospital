@@ -34,7 +34,7 @@
 	$remail = $userinfo[0]['email'];
 	$rtel = $userinfo[0]['tel'];
 	$rid_card =$userinfo[0]['id_card'];
-  echo $rname;
+  print_r($rname);
 
 echo <<< _END
 	<div class="one-col separator">
