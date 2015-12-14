@@ -52,10 +52,10 @@
 				<div class="main-container">
 					<div id="g-breadcrumb" style="margin-left:-15px">
 	 					<a href="../home.html">首页</a>&gt;
-		    	 			<a href="search.html">北京</a>&gt;      
-		         			<a href="search.html">海淀区</a>&gt;  	
-       				 <a href=""></a>&gt;
-        				<a href=""></a>&gt; 	
+		    	 			<a href="search.html" id="result_province"></a>&gt;
+		         			<a href="search.html" id="result_city"></a>&gt;
+       				 <a href="" id="result_hospital"></a>&gt;
+        				<a href="" id="result_department"></a>&gt;
        				<span>排班信息</span>
 					</div>
 					<div class="filter-tip" style="border-bottom:1px solid #CDCDB4;margin-top:10px;height:30px">
@@ -80,25 +80,19 @@
              	<div class="gfm-inline gfm-thin top" > 
               		<div style="margin-top:10px;margin-left:-20px">
 							<span style="float:left;margin-right:10px">就诊日期</span>							
-							<input type="text" id="EntTime" name="EntTime" onclick="return showCalendar('EntTime', 'y-mm-dd');" style="width:90px;font-size:12px;" value="选择时间" />
-							<select style="font-size:12px;">
-								<option value="">请选择时间段</option>
-								<option value="">6:00-12:00</option>
-								<option value="">14:00-18:00</option>
+							<input type="text" id="EntTime" name="EntTime" onclick="return showCalendar('EntTime', 'y-mm-dd');" style="width:90px;font-size:12px;" value="请选择日期" />
+							<select style="font-size:12px;" id="select_time">
+								<option value="">请选择时间</option>
+								<option value="">6:00</option>
+								<option value="">8:00</option>
+								<option value="">10:00</option>
+								<option value="">12:00</option>
+								<option value="">14:00</option>
+								<option value="">16:00</option>
+								<option value="">18:00</option>
 							</select>
 						</div>
-						<script type="text/javascript">
-							var dateRange1 = new pickerDateRange('date1', {
-							aRecent90Days : 'aRecent90Days', 
-							startDate: '2015-12-1',
-							endDate: '2015-12-1',
-							needCompare : false,
-							defaultText : ' — ',
-							autoSubmit : false,
-							inputTrigger : 'input_trigger1',
-							theme : 'ta'
-							});
-						</script>
+
                </div>
                <!-- .doc-list -->
 					<ul class="g-expert-items indept-shiftcase-list J_DoctorList" id="docList">    
