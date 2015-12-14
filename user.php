@@ -26,14 +26,14 @@
   $db = new database();
 
 	$vuser = array(
-			'name' => 'GuanFuHe'
+			'name' => $username
 		);
-  $userinfo = $db->get_field_from_table('users','name,email,tel,id_card',$vuser);print_r($userinfo[0]['name']);
-	#$rid = $userinfo['id'];
-	$rname = $usreinfo[0]['name'];
-	$remail = $userinfo[0]['email'];
-	$rtel = $userinfo[0]['tel'];
-	$rid_card =$userinfo[0]['id_card'];
+  $userinfo = $db->get_field_from_table('users','name,email,tel,id_card',$vuser);
+  extract($userinfo[0]);
+	$rname = $name;
+	$remail = $email;
+	$rtel = $tel;
+	$rid_card =$id_card;
 
 echo <<< _END
 	<div class="one-col separator">
