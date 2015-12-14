@@ -23,11 +23,11 @@
 
 	require_once("database.php");
 	$username = $_SESSION['username'];
-    $db = new database();
+  $db = new database();
 
 	$vuser = array(
 			'name' => 'GuanFuHe'
-		);
+		);print_r($vuser);
   $userinfo = $db->get_field_from_table('users','id,name,email,tel,id_card',$vuser);
 	$rid = $userinfo['id'];
 	$rname = $usreinfo['name'];
