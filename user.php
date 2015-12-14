@@ -28,8 +28,8 @@
 	$vuser = array(
 			'name' => 'GuanFuHe'
 		);
-  $userinfo = $db->get_field_from_table('users',' id,name,email,tel,id_card ',$vuser);print_r($userinfo);
-	$rid = $userinfo['id'];
+  $userinfo = $db->get_field_from_table('users','name,email,tel,id_card',$vuser);print_r($userinfo);
+	#$rid = $userinfo['id'];
 	$rname = $usreinfo['name'];
 	$remail = $userinfo['email'];
 	$rtel = $userinfo['tel'];
