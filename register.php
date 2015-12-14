@@ -1,3 +1,5 @@
+<html>
+<meta charset="utf-8"/>
 <?php
 /**
  * Created by PhpStorm.
@@ -44,9 +46,8 @@
 //else {
     //echo "<script>alert('提交未成功！'); history.go(-1);</script>";
 //}
-
-
 ?>
+</html>
 
 
 
