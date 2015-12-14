@@ -28,22 +28,21 @@
 	$vuser = array(
 			'name' => 'GuanFuHe'
 		);
-  $userinfo = $db->get_field_from_table('users','name,email,tel,id_card',$vuser);print_r($userinfo[0]);
+  $userinfo = $db->get_field_from_table('users','name,email,tel,id_card',$vuser);print_r($userinfo[0]['name']);
 	#$rid = $userinfo['id'];
 	$rname = $usreinfo[0]['name'];
 	$remail = $userinfo[0]['email'];
 	$rtel = $userinfo[0]['tel'];
 	$rid_card =$userinfo[0]['id_card'];
-  print_r($rname);
 
 echo <<< _END
 	<div class="one-col separator">
 		<div class="col">
 			<h2>个人信息</h2>
-      <p>姓名：$rname  <span id="name"></span></p>
-      <p>邮箱： $remail <span id="email"></span></p>
-      <p>手机号： $rtel <span id="tel"></span></p>
-			<p>身份证号: $rid_card <span id="id"></span></p>
+      <p>姓名：<span id="name">$rname</span></p>
+      <p>邮箱：<span id="email">$remail</span></p>
+      <p>手机号：<span id="tel">$rtel</span></p>
+			<p>身份证号:<span id="id">$rid_card</span></p>
 		</div>
 	</div>
 		<!-- 个人信息 -->
