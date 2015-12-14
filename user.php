@@ -27,8 +27,8 @@
 
 	$vuser = array(
 			'name' => 'GuanFuHe'
-		);print_r($vuser);
-  $userinfo = $db->get_field_from_table('users','id,name,email,tel,id_card',$vuser);
+		);
+  $userinfo = $db->get_field_from_table('users','id,name,email,tel,id_card',$vuser);print_r($userinfo);
 	$rid = $userinfo['id'];
 	$rname = $usreinfo['name'];
 	$remail = $userinfo['email'];
