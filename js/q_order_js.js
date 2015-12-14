@@ -133,6 +133,6 @@ function goOrder(){
     department = encodeURI(department);
     department = encodeURI(department);
 
-    window.location.href="results.html?hospital="+hospital+"&department="+department;
+    window.location.href="results.html?province="+province+"&city="+city+"&hospital="+hospital+"&department="+department;
 
 }

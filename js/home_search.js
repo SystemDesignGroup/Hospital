@@ -2,9 +2,12 @@
  * Created by whx on 2015/12/13.
  */
 
-function search(){
-    var hospital,department;
 
+
+function search(){
+    var hospital,department,province;
+
+    province = document.getElementById('city-label').innerHTML;
     hospital = document.getElementById('hospital').value;
     department = document.getElementById('office').value;
 
@@ -15,5 +18,6 @@ function search(){
     department = encodeURI(department);
 
     //alert(hospital + " " +department);
-    window.location.href="./search/results.html?hospital="+hospital+"&department="+department;
+    window.location.href="./search/results.html?province="+province+"&city=''&hospital="+hospital+"&department="+department;
 }
+

@@ -11,23 +11,28 @@ function getDoctorInfo(){
     var mstr = str.split('?')[1];
     var strArray = mstr.split('&');
 
-    //var province = strArray[0].substr(9,strArray[0].length);
-    //province = decodeURI(province);
-    //province = decodeURI(province);
-    //
-    //var city = strArray[1].substr(5,strArray[1].length);
-    //city = decodeURI(city);
-    //city = decodeURI(city);
+    var province = strArray[0].substr(9,strArray[0].length);
+    province = decodeURI(province);
+    province = decodeURI(province);
 
-    var hospital = strArray[0].substr(9,strArray[0].length);
+    var city = strArray[1].substr(5,strArray[1].length);
+    city = decodeURI(city);
+    city = decodeURI(city);
+
+    var hospital = strArray[2].substr(9,strArray[2].length);
     hospital = decodeURI(hospital);
     hospital = decodeURI(hospital);
 
-    var department = strArray[1].substr(11,strArray[1].length);
+    var department = strArray[3].substr(11,strArray[3].length);
     department = decodeURI(department);
     department = decodeURI(department);
 
     searchDoctor(hospital,department);
+
+    document.getElementById('result_province').innerHTML=province;
+    document.getElementById('result_city').innerHTML=city;
+    document.getElementById('result_hospital').innerHTML=hospital;
+    document.getElementById('result_department').innerHTML=department;
 
 }
 function searchDoctor(hospital,department){
@@ -103,10 +108,12 @@ function searchDoctor(hospital,department){
     xmlHttp.open("GET","search_doctor.php?hospital="+hospital+"&department="+department,true);
     xmlHttp.send();
 }
+
 function guahao(doctor_id){
     var xmlhttp;
     var user_id;
     var date;
+    var time;
 
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function(){
@@ -117,9 +124,10 @@ function guahao(doctor_id){
     }
 
 
-    xmlhttp.open("GET","getuserinfo.php",true);
+    xmlhttp.open("GET","../search/getuserinfo.php",false);
     xmlhttp.send();
 
+    //alert(user_id);
     if(!user_id){
         var r = confirm("请先登录！");
         if(r==true){
@@ -128,13 +136,22 @@ function guahao(doctor_id){
 
         }
     }else{
-        date = document.getElementById('date1').value;
+        date = document.getElementById('EntTime').value;
+        time = document.getElementById('select_time').options[document.getElementById('select_time')
+            .selectedIndex].innerHTML;
+        if(date =='请选择日期'){
+            alert('请选择日期');
+        }else if(time == '请选择时间'){
+            alert('请选择时间');
+        }else{
+            addOrder(user_id,doctor_id,date,time);
+        }
+
         //doctor_id = document.getElementById('docId').innerHTML;
         //alert(doctor_id);
-        addOrder(user_id,doctor_id,date);
     }
 }
-function addOrder(user_id,doctor_id,date){
+function addOrder(user_id,doctor_id,date,time){
     var xmlhttp;
 
     xmlhttp = new XMLHttpRequest();
@@ -142,10 +159,11 @@ function addOrder(user_id,doctor_id,date){
 
         if(xmlhttp.readyState==4&&xmlhttp.status==200){
             alert(xmlhttp.responseText);
+            window.location.href="../user.html";
         }
     }
 
-    xmlhttp.open("GET","addorder.php?user_id="+user_id+"&doctor_id="+doctor_id+"&date="+date,true);
+    xmlhttp.open("GET","addorder.php?user_id="+user_id+"&doctor_id="+doctor_id+"&date="+date+"&time="+time,true);
     xmlhttp.send();
 }
 function consult(){
