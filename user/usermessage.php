@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>个人中心</title>
 <link rel="stylesheet" href="../css/user.css" />
-<link rel="stylesheet" href="../css/userorder.css" />
+<link rel="stylesheet" href="../css/usermessage.css" />
 </head>
 
 <body>
@@ -55,34 +55,56 @@
 </div>
 
 <!-------------------------菜单栏----------------------------------------->
+
+<?php
+/* search information for user's center */
+
+	require_once("database.php");
+	$username = $_SESSION['username'];
+  $db = new database();
+
+	$vuser = array(
+			'name' => $username
+		);
+  $userinfo = $db->get_field_from_table('users','name,email,tel,id_card',$vuser);
+	$rname = $userinfo[0]['name'];
+	$remail = $userinfo[0]['email'];
+	$rtel = $userinfo[0]['tel'];
+	$rid_card =$userinfo[0]['id_card'];
+
+echo <<< _END
+
 <div class="page">
     <div>
-    <label class="start">个人中心-><span class="link">我的预约单</span></label>
+    <label class="start">个人中心-><span class="link">账号信息</span></label>
     </div>
 
     <div>
     <img class="set" src="../image/set.jpg" alt="更改密码图片" id="set"/>
-    <label class="passwordfont">我的预约单</label>
+    <label class="passwordfont">账号信息</label>
     </div>
 
     <div class="change-div">
     </div>
 
     <div class="mainpart">
-       <table width=100% border="0">
-            <thead>
-			  <tr>
-			    <th><div align="center">预约单号$roder_id</div></th>
-			    <th><div align="center">预约时间$roder_time </div></th>
-			    <th><div align="center">预约人$rname</div></th>
-			    <th><div align="center">医生$rdoctor_name </div></th>
-			    <th><div align="center">预约状态$rstatus</div></th>
-                <th><div align="center">操作</div></th>
-		      </tr>
-            </thead>
-          </table>
+        <div class="message-line">
+        <span name="name">姓名：$rname </span>
+        </div>
+        <div class="message-line">
+        <span name="email">邮箱：<?php echo $remail ?></span>
+        </div>
+        <div class="message-line">
+        <span name="tel">手机号：$rtel</span>
+        </div>
+        <div class="message-line">
+        <span name="ID">身份证号：$rid_card</span>
+        </div>
     </div>
 </div>
+_END;
+?>
+
 
 </body>
 </html>

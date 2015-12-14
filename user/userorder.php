@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>个人中心</title>
 <link rel="stylesheet" href="../css/user.css" />
-<link rel="stylesheet" href="../css/usermessage.css" />
+<link rel="stylesheet" href="../css/userorder.css" />
 </head>
 
 <body>
@@ -55,34 +55,55 @@
 </div>
 
 <!-------------------------菜单栏----------------------------------------->
+
+<?php
+/* search information for user's center */
+
+	require_once("database.php");
+	$username = $_SESSION['username'];
+    $db = new database();
+	$vorder = array(
+			'user_id' => $rid
+		);
+	$roder_id = $db->get_field_from_table('order_hospital','id',$vorder);
+	$roder_time = $db->get_field_from_table('order_hospital','order_date,order_time',$vorder);
+	$rstatus = $db->get_field_from_table('order_hospital','status',$vorder);
+	$rorder_doctor_id = $db->get_field_from_table('order_hospital','doctor_id',$vorder);
+	$vdoctor = array('doctor_id' => $rorder_doctor_id);
+	$rdoctor_name = $db->get_field_from_table('doctor','name',$vdoctor);
+echo <<< _END
+
 <div class="page">
     <div>
-    <label class="start">个人中心-><span class="link">账号信息</span></label>
+    <label class="start">个人中心-><span class="link">我的预约单</span></label>
     </div>
 
     <div>
     <img class="set" src="../image/set.jpg" alt="更改密码图片" id="set"/>
-    <label class="passwordfont">账号信息</label>
+    <label class="passwordfont">我的预约单</label>
     </div>
 
     <div class="change-div">
     </div>
 
     <div class="mainpart">
-        <div class="message-line">
-        <span name="name">姓名：</span>
-        </div>
-        <div class="message-line">
-        <span name="email">邮箱：</span>
-        </div>
-        <div class="message-line">
-        <span name="tel">手机号：</span>
-        </div>
-        <div class="message-line">
-        <span name="ID">身份证号：</span>
-        </div>
+       <table width=100% border="0">
+            <thead>
+			  <tr>
+			    <th><div align="center">预约单号$roder_id</div></th>
+			    <th><div align="center">预约时间$roder_time </div></th>
+			    <th><div align="center">预约人$rname</div></th>
+			    <th><div align="center">医生$rdoctor_name </div></th>
+			    <th><div align="center">预约状态$rstatus</div></th>
+                <th><div align="center">操作</div></th>
+		      </tr>
+            </thead>
+          </table>
     </div>
 </div>
+
+_END;
+?>
 
 </body>
 </html>
