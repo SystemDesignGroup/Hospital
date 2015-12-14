@@ -47,7 +47,7 @@ HTML;
 			'password'=>$password
 			);
 		$hos_re=$db->get_field_from_table('users','role',$hos_values);
-		if($hos_re[0][role]==2)
+		if($hos_re[0]['role']==2)
 		{
 			echo $html_success;
 		}
