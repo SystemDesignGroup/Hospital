@@ -30,10 +30,10 @@
 		);
   $userinfo = $db->get_field_from_table('users','name,email,tel,id_card',$vuser);print_r($userinfo);
 	#$rid = $userinfo['id'];
-	$rname = $usreinfo['0']['name'];
-	$remail = $userinfo['0']['email'];
-	$rtel = $userinfo['0']['tel'];
-	$rid_card =$userinfo['0']['id_card'];
+	$rname = $usreinfo[0]['name'];
+	$remail = $userinfo[0]['email'];
+	$rtel = $userinfo[0]['tel'];
+	$rid_card =$userinfo[0]['id_card'];
   echo $rname, $remail, $rtel, $rid_card;
 
 echo <<< _END
