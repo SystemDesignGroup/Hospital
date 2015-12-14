@@ -29,7 +29,7 @@
 			'name' => $username
 		);
   $userinfo = $db->get_field_from_table('users','name,email,tel,id_card',$vuser);
-  extract($userinfo[0]);
+  extract($userinfo['0']);
 	$rname = $name;
 	$remail = $email;
 	$rtel = $tel;
