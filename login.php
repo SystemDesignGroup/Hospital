@@ -6,9 +6,19 @@
 require_once './database.php';
 $username = $_POST['user'];
 $password = $_POST['password'];
-
+session_start();
+$_SESSION["userflag"]=false;
 $my_db=new database();
-//$my_db->connect_to_db();
+if(isset($_SESSION["userflag"]) && $_SESSION["userflag"] === true)
+{
+    echo"您已经成功登陆";
+}
+else
+{
+    $_SESSION["userflag"] = false;
+    echo"<script type='text/javascript'>alert('请您还没有登录或者登录过期');location='login.html';</script>";
+}
+
 if($username == "")
 {
     echo"<script type='text/javascript'>alert('请填写用户名');location='login.html';</script>";
@@ -21,8 +31,9 @@ else
 {
     $key_values=array('name' => $username, 'password'=>$password);
     $key_re=$my_db->get_field_from_table('users','role',$key_values);
-    if($key_re[0]['role']==1)
+    if($key_re[0]['name'] == $username and $key_re[0]['password'] == $password and $key_re[0]['role'] == 1)
     {
+        $_SESSION["userflag"] = true;
         echo $html_success;
     }
     else
