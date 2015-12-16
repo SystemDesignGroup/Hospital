@@ -32,17 +32,20 @@ else
 {
     $key_values=array('name' => $username, 'password'=>$password);
     $key_re=$my_db->get_field_from_table('users','*',$key_values);
-    if($key_re[0]['password'] == $password and $key_re[0]['role'] == 1)
+    if($key_re[0]['role']!=1){
+        echo "<script type='text/javascript'>alert('如果您是管理员请前往管理员登录');location='home.html';</script>";
+    }else if($key_re[0]['status'] == 0)
+    {
+        echo "<script type='text/javascript'>alert('正在审核请您耐心等待');location='home.html';</script>";
+    }else if($key_re[0]['password'] == $password)
     {
         $lifeTime = 120;
         session_set_cookie_params($lifeTime);
         session_start();
         $_SESSION["username"] = $username;
         echo "<script type='text/javascript'>alert('登录成功');location='home.html';</script>";
-    }
-    else
-    {
-        //echo "$username + $password";
+
+    }else{
         echo "<script type='text/javascript'>alert('用户名或密码错误');location='login.html';</script>";
     }
 }

@@ -11,6 +11,7 @@ $conn = new database();
 
 $hospital =$_GET['hospital']; //"北京大学第三医院";
 $department =$_GET['department'];//"骨科";
+$grade = $_GET['grade'];
 
 $keys = array('name'=>$hospital);
 $hospital_id = $conn->get_field_from_table("hospital","id",$keys);
@@ -20,7 +21,19 @@ $keys1 = array('name'=>$department);
 $department_id = $conn->get_field_from_table("department","id",$keys1);
 $department_id_s = $department_id[0]['id'];
 
-$keys2 = array('hospital_id'=>$hospital_id_s,'department_id'=>$department_id_s);
-$doctor = $conn->get_field_from_table("doctor","*",$keys2);
-echo json_encode($doctor);
+if($grade==null || $grade==""){
+    $keys2 = array('hospital_id'=>$hospital_id_s,'department_id'=>$department_id_s);
+    $doctor = $conn->get_field_from_table("doctor","*",$keys2);
+    echo json_encode($doctor);
+}else{
+    $keys2= array('detail'=>$grade);
+    $grade_id = $conn->get_field_from_table('grade','id',$keys2);
+    $grade_id_s = $grade_id[0]['id'];
+
+    $keys3 = array('hospital_id'=>$hospital_id_s,'department_id'=>$department_id_s,'grade_id'=>$grade_id_s);
+    $doctor = $conn->get_field_from_table("doctor","*",$keys3);
+    echo json_encode($doctor);
+}
+
+
 //echo $doctor[0]['name'];
