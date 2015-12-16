@@ -58,7 +58,8 @@ HTML;
 				{$count=10;}
 				for($i=0;$i<$count;$i++)
 				{
-				echo "<tr><td HEIGHT=36>".$hos_re[$i]['name']."</td><td>".$hos_re[$i]['id_card']."</td><td>".$hos_re[$i]['email']."</td><td>".$hos_re[$i]['tel']."</td><td><div class=\"switch demo3\"><input type=\"checkbox\"><label></label></div></td></tr>";
+				echo "<tr><td HEIGHT=36>".$hos_re[$i]['name']."</td><td>".$hos_re[$i]['id_card']."</td><td>".$hos_re[$i]['email']."</td><td>".$hos_re[$i]['tel']."</td><td><div class=\"switch demo3\"><input type=\"checkbox\" name=\"boxes[]\" value=\"".$hos_re[$i]['id_card']."\"><label></label></div></td></tr>\n";
+				echo "<input type=\"hidden\" name=\"hids[]\" value=\"".$hos_re[$i]['id_card']."\"></div></td></tr>\n";
 				}
 				echo $html_table_b;
 				}
