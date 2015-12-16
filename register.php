@@ -37,7 +37,7 @@
             'role'=>1,
             'id_card' => $card,
             'tel' => $tel,
-            'status' => 0
+            'status' => 1
         );
         $db->insert_data_into_table('users', $values);
         echo "<script>alert('已提交信息请等待审核！'); location='home.html';</script>";
