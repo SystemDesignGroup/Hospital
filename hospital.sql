@@ -84,7 +84,7 @@ foreign key (calendar_id) references calendar(id)
 
 create table order_hospital(
 id int primary key AUTO_INCREMENT,
-user_id char(18),
+user_id char(19),
 doctor_id int,
 order_date Date,
 order_time time,
