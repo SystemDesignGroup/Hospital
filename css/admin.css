@@ -48,10 +48,135 @@ select{background:transparent;font-size: 15px;}
 a{ text-decoration: none;color:white; }
 .normal-btn{width:110px;height: 30px;display:inline-block;border-radius: 3px;background:rgb(10,100,150); text-align:center;font-size:16px;}
 .normal-btn a{ width:90px; line-height:30px;}
+.norma{}
+.norma a{}
 textarea,input{ height:30px;width:760px;font-size:18px; }
 textarea{min-height: 100px;resize: none;}
 select{width:230px;height:30px; }
 .icon-plus:before {content: "\e902";}
+
+.switch {
+  margin: 10px auto;
+  position: relative;
+}
+
+.switch label {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+.switch input {
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  left: 0;
+  opacity: 0;
+  z-index: 100;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.switch.demo3 {
+  width: 140px;
+  height: 24px;
+}
+
+.switch.demo3 label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #a5a39d;
+}
+
+.switch.demo3 label:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -8px; right: -8px; bottom: -8px; left: -8px;
+  border-radius: inherit;
+  background: #ababab;
+  background: -moz-linear-gradient(#f2f2f2, #ababab);
+  background: -ms-linear-gradient(#f2f2f2, #ababab);
+  background: -o-linear-gradient(#f2f2f2, #ababab);
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#ababab));
+  background: -webkit-linear-gradient(#f2f2f2, #ababab);
+  background: linear-gradient(#f2f2f2, #ababab);
+}
+
+.switch.demo3 label:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -18px; right: -18px; bottom: -18px; left: -18px;
+  border-radius: inherit;
+}
+
+.switch.demo3 label i {
+  display: block;
+  height: 100%;
+  width: 60%;
+  border-radius: inherit;
+  background: silver;
+  position: absolute;
+  z-index: 2;
+  right: 40%;
+  top: 0;
+  background: #b2ac9e;
+  background: -moz-linear-gradient(#f7f2f6, #b2ac9e);
+  background: -ms-linear-gradient(#f7f2f6, #b2ac9e);
+  background: -o-linear-gradient(#f7f2f6, #b2ac9e);
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#f7f2f6), to(#b2ac9e));
+  background: -webkit-linear-gradient(#f7f2f6, #b2ac9e);
+  background: linear-gradient(#f7f2f6, #b2ac9e);
+}
+
+.switch.demo3 label i:after {
+  content: "";
+  position: absolute;
+  left: 15%;
+  top: 25%;
+  width: 70%;
+  height: 50%;
+  background: #d2cbc3;
+  background: -moz-linear-gradient(#cbc7bc, #d2cbc3);
+  background: -ms-linear-gradient(#cbc7bc, #d2cbc3);
+  background: -o-linear-gradient(#cbc7bc, #d2cbc3);
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#cbc7bc), to(#d2cbc3));
+  background: -webkit-linear-gradient(#cbc7bc, #d2cbc3);
+  background: linear-gradient(#cbc7bc, #d2cbc3);
+  border-radius: inherit;
+}
+
+.switch.demo3 label i:before {
+  content: "";
+  font-style: normal;
+  font-weight: bold;
+  color: rgba(0,0,0,0.4);
+  text-shadow: 0 1px 0 #bcb8ae, 0 -1px 0 #97958e;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  margin-top: -12px;
+  right: -50%;
+}
+
+.switch.demo3 input:checked ~ label {
+  background: #9abb82;
+}
+
+.switch.demo3 input:checked ~ label i {
+  right: -1%;
+}
+
+.switch.demo3 input:checked ~ label i:before {
+  content: "";
+  right: 115%;
+}
 
 #btn-div{ width:1200px;height: 50px;margin:10px 0 10px 40px; border:1px #e4e4e4 solid;}
 #btn-div div{ display: inline-block;margin:10px 50px;}
