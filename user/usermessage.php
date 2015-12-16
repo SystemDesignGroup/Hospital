@@ -61,12 +61,12 @@
 
 	require_once("../database.php");
 	$username = $_SESSION['username'];
-  $db = new database();
+  	$db = new database();
 
 	$vuser = array(
 			'name' => $username
 		);
-  $userinfo = $db->get_field_from_table('users','name,email,tel,id_card',$vuser);
+  	$userinfo = $db->get_field_from_table('users','name,email,tel,id_card',$vuser);
 	$rname = $userinfo[0]['name'];
 	$remail = $userinfo[0]['email'];
 	$rtel = $userinfo[0]['tel'];
@@ -92,7 +92,7 @@ echo <<< _END
         <span name="name">姓名：$rname </span>
         </div>
         <div class="message-line">
-        <span name="email">邮箱：<?php echo $remail ?></span>
+        <span name="email">邮箱：$remail</span>
         </div>
         <div class="message-line">
         <span name="tel">手机号：$rtel</span>
@@ -102,6 +102,7 @@ echo <<< _END
         </div>
     </div>
 </div>
+
 _END;
 ?>
 

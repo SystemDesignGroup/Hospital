@@ -61,16 +61,26 @@
 
 	require_once("../database.php");
 	$username = $_SESSION['username'];
-    $db = new database();
+    	$db = new database();
+	
+	$vuser = array(
+			'name' => $username
+		);
+  	$userinfo = $db->get_field_from_table('users','id',$vuser);
+	$rid =$userinfo[0]['id'];
+	
 	$vorder = array(
 			'user_id' => $rid
 		);
-	$roder_id = $db->get_field_from_table('order_hospital','id',$vorder);
-	$roder_time = $db->get_field_from_table('order_hospital','order_date,order_time',$vorder);
-	$rstatus = $db->get_field_from_table('order_hospital','status',$vorder);
-	$rorder_doctor_id = $db->get_field_from_table('order_hospital','doctor_id',$vorder);
+	$orderinfo = $db->get_field_from_table('order_hospital','id,order_date,order_time,status,doctor_id',$vorder);
+	$roder_id = $orderinfo[0]['id'];
+	$roder_time = $orderinfo[0]['order_date'];
+	$rstatus = $orderinfo[0]['status'];
+	$rorder_doctor_id = $orderinfo[0]['doctor_id'];
+	
 	$vdoctor = array('doctor_id' => $rorder_doctor_id);
-	$rdoctor_name = $db->get_field_from_table('doctor','name',$vdoctor);
+	$doctorinfo = $db->get_field_from_table('doctor','name',$vdoctor);
+	$rdoctor_name = $doctorinfo[0]['name'];
 echo <<< _END
 
 <div class="page">

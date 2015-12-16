@@ -23,12 +23,12 @@
 
 	require_once("database.php");
 	$username = $_SESSION['username'];
-  $db = new database();
+  	$db = new database();
 
 	$vuser = array(
 			'name' => $username
 		);
-  $userinfo = $db->get_field_from_table('users','name,email,tel,id_card',$vuser);
+  	$userinfo = $db->get_field_from_table('users','name,email,tel,id_card',$vuser);
 	$rname = $userinfo[0]['name'];
 	$remail = $userinfo[0]['email'];
 	$rtel = $userinfo[0]['tel'];
@@ -84,7 +84,7 @@ _END;
 
 	require_once("database.php");
 	$username = $_SESSION['username'];
-    $db = new database();
+    	$db = new database();
 	$vorder = array(
 			'user_id' => $rid
 		);
