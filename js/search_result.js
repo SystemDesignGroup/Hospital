@@ -51,7 +51,14 @@ function searchDoctor(hospital,department){
             docCount.innerHTML = response.length;
 
             for(var i = 0;i<response.length;i++){
-
+                var zhicheng;
+                if(response[i]['grade_id']=='4'){
+                        zhicheng = '主任医师';
+                }else if(response[i]['grade_id']=='5'){
+                    zhicheng = '副主任医师';
+                }else if(response[i]['grade_id']=='6'){
+                    zhicheng = '主治医师';
+                }
                 var listItem = "<li class='J_ListItem'>"+
                 "<div class='doc-box' style='display:inline;height:120px'>"+
                     "<div class='doc-info' style='float:left;width:50%;display:inline;height:120px'>"+
@@ -65,7 +72,7 @@ function searchDoctor(hospital,department){
                     "<a href='' class='name'>"+response[i]['name']+"</a>"+
                     "</dt>"+
                     "<dd>"+
-                    "<p class='doc-grade'><span class='level'>xx医师</span></p>"+
+                    "<p class='doc-grade'><span class='level'>"+zhicheng+"</span></p>"+
                     "<p class='doc-hosp-dept'>"+
                     "<a href=''>"+response[i]['department_id']+"</a>"+
                     "</p>"+
@@ -159,7 +166,7 @@ function addOrder(user_id,doctor_id,date,time){
 
         if(xmlhttp.readyState==4&&xmlhttp.status==200){
             alert(xmlhttp.responseText);
-            window.location.href="../user.html";
+            window.location.href="../user/userorder.php";
         }
     }
 

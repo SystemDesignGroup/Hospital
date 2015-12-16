@@ -37,10 +37,10 @@
             'role'=>1,
             'id_card' => $card,
             'tel' => $tel,
-            'status' => 5
+            'status' => 0
         );
         $db->insert_data_into_table('users', $values);
-        echo "<script>alert('注册成功！'); history.go(-1);</script>";
+        echo "<script>alert('已提交信息请等待审核！'); location='home.html';</script>";
     }
 //}
 //else {

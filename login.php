@@ -42,7 +42,7 @@ else
     }
     else
     {
-        echo "$username + $password";
+        //echo "$username + $password";
         echo "<script type='text/javascript'>alert('用户名或密码错误');location='login.html';</script>";
     }
 }

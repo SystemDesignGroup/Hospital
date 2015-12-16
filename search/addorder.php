@@ -16,9 +16,9 @@ $conn = new database();
 
 //$username = $_SESSION['username'];
 $array0 = array('name'=>$user_id);
-$result = $conn->get_field_from_table("users","id",$array0);
+$result = $conn->get_field_from_table("users","id_card",$array0);
 
-$array = array("user_id"=>$result[0]['id'],"doctor_id"=>$doctor_id,"order_date"=>$date,"order_time"=>$time,"order_status"=>1);
+$array = array("user_id"=>$result[0]['id_card'],"doctor_id"=>$doctor_id,"order_date"=>$date,"order_time"=>$time,"order_status"=>1);
 
 $conn->insert_data_into_table("order_hospital",$array);
 

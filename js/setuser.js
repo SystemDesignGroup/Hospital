@@ -29,6 +29,6 @@ function jump(text){
     if(text == "登录"){
         window.location.href="login.html";
     }else{
-        window.location.href="user.html";
+        window.location.href="./user/userorder.php";
     }
 }
