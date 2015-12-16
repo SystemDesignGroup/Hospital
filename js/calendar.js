@@ -34,13 +34,13 @@ Calendar = function (mondayFirst, dateStr, onSelected, onClose) {
 	// one-time initializations
 	if (!Calendar._DN3) {
 		// table of short day names
-		var ar = new Array();
+		var ar = [];
 		for (var i = 8; i > 0;) {
 			ar[--i] = Calendar._DN[i].substr(0, 3);
 		}
 		Calendar._DN3 = ar;
 		// table of short month names
-		ar = new Array();
+		ar = [];
 		for (var i = 12; i > 0;) {
 			ar[--i] = Calendar._MN[i].substr(0, 3);
 		}
@@ -100,7 +100,7 @@ Calendar.removeClass = function(el, className) {
 		return;
 	}
 	var cls = el.className.split(" ");
-	var ar = new Array();
+	var ar = [];
 	for (var i = cls.length; i > 0;) {
 		if (cls[--i] != className) {
 			ar[ar.length] = cls[i];
@@ -518,7 +518,7 @@ Calendar.cellClick = function(el) {
 				date.setDate(max);
 			}
 			date.setMonth(m);
-		};
+		}
 		switch (el.navtype) {
 		    case -2:
 			if (year > cal.minYear) {
@@ -907,7 +907,7 @@ Calendar.prototype._init = function (mondayFirst, date) {
 	var hasToday = ((today.getFullYear() == year) && (today.getMonth() == month));
 	var todayDate = today.getDate();
 	var week_number = date.getWeekNumber();
-	var ar_days = new Array();
+	var ar_days = [];
 	for (var i = 0; i < 6; ++i) {
 		if (iday > no_days) {
 			row.className = "emptyrow";
@@ -1239,9 +1239,8 @@ Calendar.prototype.hideShowCovered = function () {
 			}
 		}
 		return value;
-	};
-
-	var tags = new Array("applet", "iframe", "select");
+	}
+	var tags = ["applet", "iframe", "select"];
 	var el = this.element;
 
 	var p = Calendar.getAbsolutePos(el);
@@ -1335,7 +1334,7 @@ Calendar.prototype._dragStart = function (ev) {
 // BEGIN: DATE OBJECT PATCHES
 
 /** Adds the number of days array to the Date object. */
-Date._MD = new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+Date._MD = [31,28,31,30,31,30,31,31,30,31,30,31];
 
 /** Constants used for time computations */
 Date.SECOND = 1000 /* milliseconds */;
@@ -1377,19 +1376,19 @@ Date.prototype.equalsTo = function(date) {
 
 /** Prints the date in a string according to the given format. */
 Date.prototype.print = function (frm) {
-	var str = new String(frm);
+	var str = String(frm);
 	var m = this.getMonth();
 	var d = this.getDate();
 	var y = this.getFullYear();
 	var wn = this.getWeekNumber();
 	var w = this.getDay();
-	var s = new Array();
+	var s = [];
 	s["d"] = d;
 	s["dd"] = (d < 10) ? ("0" + d) : d;
 	s["m"] = 1+m;
 	s["mm"] = (m < 9) ? ("0" + (1+m)) : (1+m);
 	s["y"] = y;
-	s["yy"] = new String(y).substr(2, 2);
+	s["yy"] = String(y).substr(2, 2);
 	s["w"] = wn;
 	s["ww"] = (wn < 10) ? ("0" + wn) : wn;
 	with (Calendar) {
