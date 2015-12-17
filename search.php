@@ -48,8 +48,13 @@ function lisfile($dir,$keyword,&$array){
 $array=array();
 //执行函数
 lisfile(".","$keyword",$array);
-foreach($array as $value){//拆分并输出
-    list($filedir,$title)=preg_split("[]",$value,2);
-    echo "<a href=$filedir target=_blank>$title</a>"."<br>";
+if($array!=null) {//当array不为空时
+    foreach ($array as $value) {//拆分并输出
+        list($filedir, $title) = preg_split("[]", $value, 2);
+        echo "<a href=$filedir target=_blank>$title</a>" . "<br>";
+    }
+    }
+    else{
+        echo "<script type='text/javascript'>alert('无搜索结果');location='search.html';</script>";
 }
 ?>
