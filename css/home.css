@@ -1,5 +1,5 @@
 *{box-sizing:content-box}
-body{	word-wrap: break-word;
+body{	word-wrap: break-word; overflow-x: hidden;
 font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 color: #333;background-color: #fff;}
 .normal-btn{width:90px;height: 35px;display:inline-block;border-radius: 3px;background:#61ac46; text-align:center;font-size:16px;letter-spacing:2px; }
