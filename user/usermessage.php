@@ -64,7 +64,7 @@
   	$db = new database();
 
 	$vuser = array(
-			'name' => $username
+			'name' => 'GuanFuHe'
 		);
   	$userinfo = $db->get_field_from_table('users','name,email,tel,id_card',$vuser);
 	$rname = $userinfo[0]['name'];
@@ -89,7 +89,7 @@ echo <<< _END
 
     <div class="mainpart">
         <div class="message-line">
-        <span name="name">姓名： $username </span>
+        <span name="name">姓名： $rname </span>
         </div>
         <div class="message-line">
         <span name="email">邮箱： $remail</span>
