@@ -26,7 +26,7 @@
   	$db = new database();
 
 	$vuser = array(
-			'name' => $username
+			'name' => 'GuanFuHe'
 		);
   	$userinfo = $db->get_field_from_table('users','name,email,tel,id_card',$vuser);
 	$rname = $userinfo[0]['name'];
