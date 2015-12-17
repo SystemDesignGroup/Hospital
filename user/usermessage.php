@@ -89,7 +89,7 @@ echo <<< _END
 
     <div class="mainpart">
         <div class="message-line">
-        <span name="name">姓名： $rname </span>
+        <span name="name">姓名： $username </span>
         </div>
         <div class="message-line">
         <span name="email">邮箱： $remail</span>
