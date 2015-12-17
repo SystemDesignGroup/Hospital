@@ -89,16 +89,16 @@ echo <<< _END
 
     <div class="mainpart">
         <div class="message-line">
-        <span name="name">姓名：$rname </span>
+        <span name="name">姓名： $rname </span>
         </div>
         <div class="message-line">
-        <span name="email">邮箱：$remail</span>
+        <span name="email">邮箱： $remail</span>
         </div>
         <div class="message-line">
-        <span name="tel">手机号：$rtel</span>
+        <span name="tel">手机号： $rtel</span>
         </div>
         <div class="message-line">
-        <span name="ID">身份证号：$rid_card</span>
+        <span name="ID">身份证号： $rid_card</span>
         </div>
     </div>
 </div>

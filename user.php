@@ -26,9 +26,9 @@
   	$db = new database();
 
 	$vuser = array(
-			'name' => 'GuanFuHe'
+			'name' => $username
 		);
-  	$userinfo = $db->get_field_from_table('users','name,email,tel,id_card',$vuser);print_r($userinfo);
+  	$userinfo = $db->get_field_from_table('users','name,email,tel,id_card',$vuser);
 	$rname = $userinfo[0]['name'];
 	$remail = $userinfo[0]['email'];
 	$rtel = $userinfo[0]['tel'];
@@ -38,10 +38,10 @@ echo <<< _END
 	<div class="one-col separator">
 		<div class="col">
 			<h2>个人信息</h2>
-      <p>姓名：<span id="name"> $username </span></p>
-      <p>邮箱：<span id="email"> $remail </span></p>
-      <p>手机号：<span id="tel"> $rtel </span></p>
-			<p>身份证号:<span id="id"> $rid_card </span></p>
+      <p>姓名：<span id="name">$rname</span></p>
+      <p>邮箱：<span id="email">$remail</span></p>
+      <p>手机号：<span id="tel">$rtel</span></p>
+			<p>身份证号:<span id="id">$rid_card</span></p>
 		</div>
 	</div>
 		<!-- 个人信息 -->
