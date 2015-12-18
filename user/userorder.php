@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -92,7 +92,7 @@ echo <<< _END
 
 <div class="page">
     <div>
-    <label class="start">个人中心-><span class="link">我的预约单</span></label>
+    <label class="start"><span class="link"></span></label>
     </div>
 
     <div>
