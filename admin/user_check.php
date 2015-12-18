@@ -53,19 +53,15 @@ HTML;
 				echo "<p align=\"right\"><font size=\"2\"  color=\"blue\">当前待审核用户</font><font size=\"3\"  color=\"red\">".$count."</font><font size=\"2\"  color=\"blue\">位</font></p>\n";
 				if($count!=0)
 				{
-				echo $html_table_a;
-				if($count>10)
-				{$count=10;}
-				for($i=0;$i<$count;$i++)
-				{
-				echo "<tr><td HEIGHT=36>".$hos_re[$i]['name']."</td><td>".$hos_re[$i]['id_card']."</td><td>".$hos_re[$i]['email']."</td><td>".$hos_re[$i]['tel']."</td><td><div class=\"switch demo3\"><input type=\"checkbox\" name=\"boxes[]\" value=\"".$hos_re[$i]['id_card']."\"><label></label></div></td></tr>\n";
-				echo "<input type=\"hidden\" name=\"hids[]\" value=\"".$hos_re[$i]['id_card']."\"></div></td></tr>\n";
-				}
-				echo $html_table_b;
-				}
-				else
-				{
-					echo $html_successa.$hname."添加成功！".$html_successb;
+					echo $html_table_a;
+					if($count>10)
+					{$count=10;}
+					for($i=0;$i<$count;$i++)
+					{
+						echo "<tr><td HEIGHT=36>".$hos_re[$i]['name']."</td><td>".$hos_re[$i]['id_card']."</td><td>".$hos_re[$i]['email']."</td><td>".$hos_re[$i]['tel']."</td><td><div class=\"switch demo3\"><input type=\"checkbox\" name=\"boxes[]\" value=\"".$hos_re[$i]['id_card']."\"><label></label></div></td></tr>\n";
+						echo "<input type=\"hidden\" name=\"hids[]\" value=\"".$hos_re[$i]['id_card']."\"></div></td></tr>\n";
+					}
+					echo $html_table_b;
 				}
 ?> 
 					<div id="complete-div" class="block">
