@@ -60,6 +60,7 @@
 /* search information for user's center */
 
 	require_once("../database.php");
+	session_start();
 	$username = $_SESSION['username'];
   	$db = new database();
 
