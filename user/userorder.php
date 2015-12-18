@@ -115,14 +115,18 @@ echo <<< _END
 
 			//循环
 			for($i = 0;i < count($orderinfo);i++){			
-			<tr>
-				<th><div align="center">$orderinfo[$i]['id']</div></th>
+			<form>
+            <tr>
+				<th><input align="center" type=hidden name="exitID" id="getId">$orderinfo[$i]['id']</th>
 				<th><div align="center"> $orderinfo[$i]['order_date']</div></th>
 			        <th><div align="center">$username</div></th>
 			        <th><div align="center">$doctorinfo[$i]['name'] </div></th>
 			        <th><div align="center">$orderinfo[$i]['order_status']</div></th>
-                		<th><div align="center"></div></th>
+                		<th>
+                        <div align="center"><button class="button" type="submit"><a>取消订单</a> </button></div>
+                        </th>
 		        </tr>
+                </form>
 			}
             </thead>
           </table>
