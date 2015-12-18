@@ -67,27 +67,25 @@
 	$vuser = array(
 			'name' => $username
 		);
-	//数据库表曾做过修改，user的主键变成了id_card
   	$userinfo = $db->get_field_from_table('users','id_card',$vuser);
 	$rid =$userinfo[0]['id_card'];
 	
 	$vorder = array(
 			'user_id' => $rid
 		);
-	//是order_status不是status
 	$orderinfo = $db->get_field_from_table('order_hospital','id,order_date,order_time,order_status,doctor_id',$vorder);
 	$roder_id = $orderinfo[0]['id'];
 	$roder_time = $orderinfo[0]['order_date'];
 	$rstatus = $orderinfo[0]['order_status'];
 	$rorder_doctor_id = $orderinfo[0]['doctor_id'];
 
-	//在医生表里是id不是doctor_id
+	
 	$vdoctor = array('id' => $rorder_doctor_id);
 	$doctorinfo = $db->get_field_from_table('doctor','name',$vdoctor);
 	$rdoctor_name = $doctorinfo[0]['name'];
 
-	//另外，预约单不止一个，即使不都显示出来也要显示一定数量的
-//echo "<script text='javascript'>alert('".$username."');</script>";
+	
+
 echo <<< _END
 
 <div class="page">
@@ -107,13 +105,25 @@ echo <<< _END
        <table width=100% border="0">
             <thead>
 			  <tr>
-			    <th><div align="center">预约单号$roder_id</div></th>
-			    <th><div align="center">预约时间$roder_time </div></th>
-			    <th><div align="center">预约人$username</div></th>
-			    <th><div align="center">医生$rdoctor_name </div></th>
-			    <th><div align="center">预约状态$rstatus</div></th>
-                <th><div align="center">操作</div></th>
-		      </tr>
+			    <th><div align="center">预约单号</div></th>
+			    <th><div align="center">预约时间 </div></th>
+			    <th><div align="center">预约人</div></th>
+			    <th><div align="center">医生 </div></th>
+			    <th><div align="center">预约状态</div></th>
+                	<th><div align="center">操作</div></th>
+			</tr>
+
+			//循环
+			for($i = 0;i < count($orderinfo);i++){			
+			<tr>
+				<th><div align="center">$orderinfo[$i]['id']</div></th>
+				<th><div align="center"> $orderinfo[$i]['order_date']</div></th>
+			        <th><div align="center">$username</div></th>
+			        <th><div align="center">$doctorinfo[$i]['name'] </div></th>
+			        <th><div align="center">$orderinfo[$i]['order_status']</div></th>
+                		<th><div align="center"></div></th>
+		        </tr>
+			}
             </thead>
           </table>
     </div>
