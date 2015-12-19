@@ -134,29 +134,38 @@ form input{ width:200px;height:30px; margin-top:20px; }
 
 /*--------------------------sidebar:notice---------------------------------*/
 #new-notice-div{ float:right;display:inline-block;width:220px;height:425px;margin-left:10px;margin-right:5%;margin-top:0;
-	background: #3590e3 }
+	background: #3590e3 ;box-shadow:-2px 0 12px 0 #666;}
 #notice-head{width: inherit;height: 30px;text-align: center;margin-top:5px;}
 #notice-head label  { text-align: center;/*color: #b5aa51;*/color:#fff;font-size: 1.8em;}
 #notice-head img{vertical-align: top;margin-right: 5px;}
 #notice-content ul{margin-left:-40px;list-style: none;}
 #notice-content ul li{line-height: 30px;text-align: left;border:1px solid #cdcdcd;border-width: 0 0 1px 0;}
 #notice-content ul li a{color: #fff;margin-left:8px;font-size: 1.6em;}
+#side-bar{
+	display:none;
+	position:fixed;
+	width:60px;
+	height:120px;
+	right:0;
+	top:45%;
+	z-index: 1000;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 4px 0 0 4px;
+}
+
+#side-bar a{font-size:2em;font-family: "Microsoft YaHei", "Simsun", Tahoma, Arial, "Helvetica Neue", "Hiragino Sans GB", "sans-self"}
 @media screen and (max-width: 1200px)
 {
-	#new-notice-div{
-		display:none;
-	}
+	#new-notice-div{  display:none;  }
+	#nav-bar{  margin-left:110px;  }
+	#reservation-div{  margin-left:110px;  }
 
-	#nav-bar{
-		margin-left:110px;
-	}
-
-	#reservation-div{
-		margin-left:110px;
-	}
+	#side-bar{  display:inline-block;  height: auto;  background:#4a4a4a;  background:rgba(74,74,74,.4); box-shadow: 1px 0 12px #777;  }
+	#side-bar-btn {margin:20px 0 20px 0;}
 }
 
 /*---------------------------------------footer----------------------------------------*/
 footer{ width:100%;min-height:70px;height: auto;display: inline-block; background:#f5f5f5 }
-footer div{width:1200px;margin:40px 0 10px 300px;}
+footer div{width:1200px;margin:40px 0 10px 300px; }
 footer a{color:black;}
