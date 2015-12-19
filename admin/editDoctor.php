@@ -55,6 +55,7 @@ HTML;
 
 			$hname=$_POST['doctor_name'];
 			$hlevel=$_POST['doctor_level'];
+			$hticket=$_POST['doctor_ticket'];
 			$hospital=$_POST['hospital_belong'];
 			$office=$_POST['office_belong'];
 			$hmajor=$_POST['doctor_major'];
@@ -134,6 +135,7 @@ HTML;
 					'name' => $hname,
 					'major_id' => $major_id,
 					'grade_id' => $grade_id,
+					'tickets' => $hticket,
 					'calendar_id' => $calendar_id,
 					'hospital_id' => $hospital_id,
 					'department_id' => $office_id,
