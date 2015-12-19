@@ -76,6 +76,18 @@ class database{
 		$value = $result->fetchAll(PDO::FETCH_ASSOC);
 		return $value;
 	}
+	public function another_get_field_from_table($table,$field,$keys,$op){//表名，待查询字段（需要的结果），查询依据的字段及字段值（为关联数组形式）;返回值为关联数组形式
+		$keys_index = array_keys($keys);
+		$str = 'WHERE ';
+		foreach($keys_index as $index){
+			$str = $str."$index = $keys[$index] AND ";
+		}
+		$str = substr($str,0,-4);
+		$result = $this->connect->prepare("SELECT $field FROM $table ".$str);
+		$result->execute();
+		$value = $result->fetchAll(PDO::FETCH_ASSOC);
+		return $value;
+	}
 	public function update_table($table,$column,$value,$key_field,$key){//表名，待更改字段，待更改字段值，查询依据字段，查询依据字段值
 		$result = $this->connect->exec("UPDATE $table SET $column='$value' WHERE $key_field='$key'");
 	}

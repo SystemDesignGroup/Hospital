@@ -50,7 +50,7 @@ HTML;
 				require_once '../database.php';
 				$db = new database();
 				$chk_values=array(
-					'status' => 1,
+					'status' => 0,
 					);
 				$hos_re=$db->get_field_from_table('users','name,email,id_card,tel',$chk_values);
 				$count=count($hos_re);
