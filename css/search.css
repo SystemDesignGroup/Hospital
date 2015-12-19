@@ -4,11 +4,22 @@ font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean,
 color: #333;background-color: #fff;}
 .normal-btn{width:90px;height: 35px;display:inline-block;border-radius: 3px;background:#61ac46; text-align:center;font-size:16px;letter-spacing:2px; }
 .normal-btn a,.blue-normal-btn a { width:90px; line-height:35px;}
-#head_div{width: 100%;height: 30px;display: inline-block;background: #f5f5f5;}
+#head_div{width: 100%;height: 30px;display: inline;background: #f5f5f5;}
 #regis_div{float: right;margin-right: 15px;}
 #head_div span{margin-left: 40px;}
 
 #regis_div a{ font-size: 15px; color: #333333;}
+
+/*-------------------logo div-----------------*/
+#logo_div{width: 100%;height: 120px;display: inline-block;margin:10px 0 0 100px;}
+#logo-title{width: 500px;display: inline-block;}
+#logo-title img{ float:left;width:128px;height:72px;margin-right:20px; }
+#logo-title h1{width:372px;color: #3590e3;margin-top: 20px;;}
+#search-bar{width: 510px;height:35px;display: inline-block;border:3px solid #3591e3;border-radius: 3px;background:#3591e3;}
+#search-bar input{height: 33px;width: 395px;border:none;vertical-align: top;font-size: 1.8em;}
+.blue-normal-btn{width:90px;height: 35px;display:inline-block;background:#3591e3;margin-left: -4px;text-align:center;font-size:1.6em;}
+.icon-search{font-size:2em;height:35px;float:left;display: inline-block;background:white;color: #c0c0c0;}
+
 
 
 a{text-decoration:none;}
@@ -79,7 +90,7 @@ h2{
 .main-container
 {
 	margin-left:40px;
-	margin-right:280px;
+	width:80%;
 	border-right:1px solid #CDCDB4;
 }
 .search-wrap
@@ -147,7 +158,7 @@ h2{
 }
 .ks-left
 {
-	width:300px;
+	width:27%;
 	float:left;
 	background-color:#EEEEE0;
 }
@@ -157,9 +168,8 @@ h2{
 }
 .ks-middle
 {
-	width:600px;
-	height:100%;
-	margin-left:340px;
+	width:60%;
+	margin-left:300px;
 	background-color:#EEEEE0;
 }
 .g_jb_right_conect
@@ -173,14 +183,15 @@ h2{
 }
 .content
 {
-	margin-top:10px;
+	margin-top:5px;
 	margin-left:20px;
-	border:1px solid #DBDBDB;
+	width:100%;
+	border-top:1px solid #DBDBDB;
 }
 .contentLeft
 {
 	
-	margin-left:100px;
+	margin-left:80px;
 	width:20%;
 	border-right:1px solid #DBDBDB;
 }
@@ -189,7 +200,6 @@ h2{
 	margin-right:20px;
 	width:70%;
 	text-align:center;
-	border-right:1px solid #DBDBDB;
 }
 .note
 {

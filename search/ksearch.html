@@ -39,7 +39,7 @@
 	<div id="head_div"> 
 				<span>欢迎来到全国统一挂号平台</span>
 				<div id="regis_div">
-					<a href="javascript:;" id="user" onclick="jump(this.innerHTML)">登录</a>|<a href="../login.html">注册</a>
+					<a href="javascript:;" onclick="jump(this.innerHTML)">登录</a>|<a href="../login.html">注册</a>|<a href="../login_for_admin.html">管理员登录</a>
 				</div>
 			</div>
 			
@@ -66,8 +66,8 @@
 						<a href="ksearch.html" class="tabnav-tab" selected="true" role="tab">按科室预约</a>
 						<a href="#" class="tabnav-tab" selected="false" role="tab">预约指南</a>
 						<a href="#" class="tabnav-tab" selected="false" role="tab">公告查看</a>
-						<a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a>
-					<nav>			
+						<!-- <a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a> -->
+					</nav>			
 			</div>
 			<div id="gp-search-bydept">
 			<div class="main-container" >
@@ -83,17 +83,17 @@
 							<nav class="navb" id="i-nav">
 								<li>
 									<div class="g_menu_ks">
-										<a href="#" title="内科" class="tabnav-tab" aria-selected="true" role="tab"><font>内科</font></a>
+										<a href="#" title="内科" class="tabnav-tab" onmouseover="show('ksa');hide('ksb');hide('ksc');" aria-selected="true" role="tab"><font>内科</font></a>
 									</div>
 								</li>
 								<li>
 									<div class="g_menu_ks">
-										<a href="#" title="外科" class="tabnav-tab" aria-selected="true" role="tab"><font>外科</font></a>
+										<a href="#" title="外科" class="tabnav-tab" onmouseover="show('ksb');hide('ksa');hide('ksc');" aria-selected="true" role="tab"><font>外科</font></a>
 									</div>
 								</li>
 								<li>
 									<div class="g_menu_ks">
-										<a href="#" title="骨科" class="tabnav-tab" aria-selected="true" role="tab"><font>骨科</font></a>
+										<a href="#" title="骨科" class="tabnav-tab" onmouseover="show('ksc');hide('ksa');hide('ksb');" aria-selected="true" role="tab"><font>骨科</font></a>
 									</div>
 								</li>
 								<li>
@@ -161,103 +161,114 @@
 					</div>
 				</div>
 				<div class="ks-middle g_jb_right">
-				<div class="g_jb_right_ks" id="g_tab_content">			
-					<div class="g_jb_right_ks_content" style="display:none">
-						<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
-							class="jb-font-18 jb-color-333">内科二级科室</span>
-						<div class="hide_zoom">
+					<div class="g_jb_right_ks" id="g_tab_content">			
+						<div class="g_jb_right_ks_content" id="ksa" onmouseleave="hide('ksa')" style="display:none">
+							<h2 style="margin-top:10px">>内科二级科室</h2>
+							<div class="hide_zoom">
+							<ul class="g_jb_right_ul">
+							<nav class="navb" id="i-nav"> 
+							<li>
+								<a href="#" class="tabnav-tab" title="感染科" aria-selected="true" role="tab">感染科</a>
+								<a href="#" class="tabnav-tab" title="呼吸内科" aria-selected="true" role="tab">呼吸内科</a> 
+								<a href="#" class="tabnav-tab" title="消化内科" aria-selected="true" role="tab">消化内科</a> 
+								<a href="#" class="tabnav-tab" title="神经内科" aria-selected="true" role="tab">神经内科</a> 
+								<a href="#" class="tabnav-tab" title="肾内科" aria-selected="true" role="tab">肾内科</a> 
+								<a href="#" class="tabnav-tab" title="血液科" aria-selected="true" role="tab">血液科</a> 
+								<a href="#" class="tabnav-tab" title="风湿免疫科" aria-selected="true" role="tab">风湿免疫科</a> 
+								<a href="#" class="tabnav-tab" title="心血管内科" aria-selected="true" role="tab">心血管内科</a> 
+								<a href="#" class="tabnav-tab" title="内分泌科" aria-selected="true" role="tab">内分泌科</a> 
+								<a href="#" class="tabnav-tab" title="过敏反应科" aria-selected="true" role="tab">过敏反应科</a> 
+								<a href="#" class="tabnav-tab" title="普通内科" aria-selected="true" role="tab">普通内科</a>
+							</li>
+							</nav>
+							</ul>
+							<div class="clear"></div>
+						</div>
+						</div>
+						<div class="g_jb_right_ks_content " id="ksb" onmouseleave="hide('ksb')" style="display:none">
+							<h2 style="margin-top:10px">>外科二级科室</h2>
+							<div class="hide_zoom">
+							<ul class="g_jb_right_ul">
+							<nav class="navb" id="i-nav"> 
+							<li>
+								<a href="#" class="tabnav-tab" title="普外科" aria-selected="true" role="tab">普外科</a>
+								<a href="#" class="tabnav-tab" title="胸外科" aria-selected="true" role="tab">胸外科</a> <a
+								href="#" class="tabnav-tab" title="心血管外科" aria-selected="true" role="tab">心血管外科</a> <a
+								href="#" class="tabnav-tab" title="神经外科" aria-selected="true" role="tab">神经外科</a> <a
+								href="#" title="肝胆外科" class="tabnav-tab" aria-selected="true" role="tab">肝胆外科</a> <a
+								href="#" title="肛肠外科" class="tabnav-tab" aria-selected="true" role="tab">肛肠外科</a> <a
+								href="#" title="泌尿外科" class="tabnav-tab" aria-selected="true" role="tab">泌尿外科</a> <a
+								href="#" title="血管外科" class="tabnav-tab" aria-selected="true" role="tab">血管外科</a> <a
+								href="#" title="整形外科" class="tabnav-tab" aria-selected="true" role="tab">整形外科</a> <a
+								href="#" title="乳腺外科" class="tabnav-tab" aria-selected="true" role="tab">乳腺外科</a> <a
+								href="#" title="烧伤科" class="tabnav-tab" aria-selected="true" role="tab">烧伤科</a> <a
+								href="#" title="器官移植" class="tabnav-tab" aria-selected="true" role="tab">器官移植</a>
+							</li>
+							</nav>
+							</ul>
+							<div class="clear"></div>
+						</div>
+						</div>
+						<div class="g_jb_right_ks_content" id="ksc" onmouseleave="hide('ksc')" style="display:none">
+							<h2 style="margin-top:10px">>骨科二级科室</h2>
 						<ul class="g_jb_right_ul">
-							<li><a href="#" class="tabnav-tab" title="感染科">感染科</a>
-								<a href="#" class="tabnav-tab" title="呼吸内科">呼吸内科</a> <a
-								href="#" class="tabnav-tab" title="消化内科">消化内科</a> <a
-								href="#" class="tabnav-tab" title="神经内科">神经内科</a> <a
-								href="#" class="tabnav-tab" title="肾内科">肾内科</a> <a
-								href="#" class="tabnav-tab" title="血液科">血液科</a> <a
-								href="#" class="tabnav-tab" title="风湿免疫科">风湿免疫科</a> <a
-								href="#" class="tabnav-tab" title="心血管内科">心血管内科</a> <a
-								href="#" class="tabnav-tab" title="内分泌科">内分泌科</a> <a
-								href="#" class="tabnav-tab" title="过敏反应科">过敏反应科</a> <a
-								href="#" class="tabnav-tab" title="普通内科">普通内科</a></li>
+							<nav class="navb" id="i-nav"> 
+							<li>
+								<a href="#" title="脊柱外科" class="tabnav-tab" aria-selected="true" role="tab">脊柱外科</a>
+								<a href="#" title="关节外科" class="tabnav-tab" aria-selected="true" role="tab">关节外科</a> <a
+								href="#" title="手外科" class="tabnav-tab" aria-selected="true" role="tab">手外科</a> <a
+								href="#" title="创伤骨科" class="tabnav-tab" aria-selected="true" role="tab">创伤骨科</a> <a
+								href="#" title="矫形骨科" class="tabnav-tab" aria-selected="true" role="tab">矫形骨科</a> <a
+								href="#" title="骨质疏松科" class="tabnav-tab" aria-selected="true" role="tab">骨质疏松科</a>
+							</li>
 						</ul>
 						<div class="clear"></div>
 					</div>
+						</div>
+						<div class="g_jb_right_ks_content" style="display:none">
+							<h2 style="margin-top:0px">>妇科二级科室</h2>
+							<div class="hide_zoom">
+						<ul class="g_jb_right_ul">
+							<nav class="navb" id="i-nav"> 
+							<li>
+								<a href="#" title="妇科" class="tabnav-tab" aria-selected="true" role="tab">妇科</a>
+								<a href="#" title="计划生育科" class="tabnav-tab" aria-selected="true" role="tab">计划生育科</a>
+								<a href="#" title="产科" class="tabnav-tab" aria-selected="true" role="tab">产科</a>
+								<a	href="#" title="产前检查科" class="tabnav-tab" aria-selected="true" role="tab">产前检查科</a> 
+								<a	href="#" title="生殖与遗传" class="tabnav-tab" aria-selected="true" role="tab">生殖与遗传</a> 
+								<a href="#" title="妇女保健科" class="tabnav-tab" aria-selected="true" role="tab">妇女保健科</a>
+							</li>
+							</nav>
+						</ul>
+						<div class="clear"></div>
 					</div>
+						</div>
 				<div class="g_jb_right_ks_content" style="display:none">
-					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
-						class="jb-font-18 jb-color-333">外科二级科室</span>
+					<h2 style="margin-top:0px">>儿科二级科室</h2>
 					<div class="hide_zoom">
 						<ul class="g_jb_right_ul">
-							<li><a href="#" class="tabnav-tab" title="普外科">普外科</a>
-								<a href="#" class="tabnav-tab" title="胸外科">胸外科</a> <a
-								href="#" class="tabnav-tab" title="心血管外科">心血管外科</a> <a
-								href="#" class="tabnav-tab" title="神经外科">神经外科</a> <a
-								href="#" title="肝胆外科" class="tabnav-tab">肝胆外科</a> <a
-								href="#" title="肛肠外科" class="tabnav-tab">肛肠外科</a> <a
-								href="#" title="泌尿外科" class="tabnav-tab">泌尿外科</a> <a
-								href="#" title="血管外科" class="tabnav-tab">血管外科</a> <a
-								href="#" title="整形外科" class="tabnav-tab">整形外科</a> <a
-								href="#" title="乳腺外科" class="tabnav-tab">乳腺外科</a> <a
-								href="#" title="烧伤科" class="tabnav-tab">烧伤科</a> <a
-								href="#" title="器官移植" class="tabnav-tab">器官移植</a></li>
+							<nav class="navb" id="i-nav"> 
+							<li>
+								<a href="" title="小儿心血管内科" class="tabnav-tab" aria-selected="true" role="tab">小儿心血管内科</a> 
+								<a href="#" title="小儿呼吸内科" class="tabnav-tab" aria-selected="true" role="tab">小儿呼吸内科</a>
+								<a href="#" title="小儿消化科" class="tabnav-tab" aria-selected="true" role="tab">小儿消化科</a>
+								<a href="#" title="小儿肾内科" class="tabnav-tab" aria-selected="true" role="tab">小儿肾内科</a>
+								<a href="#" title="小儿免疫科" class="tabnav-tab" aria-selected="true" role="tab">小儿免疫科</a>
+								<a href="#" title="小儿血液科" class="tabnav-tab" aria-selected="true" role="tab">小儿血液科</a>
+								<a href="#" title="小儿神经内科" class="tabnav-tab" aria-selected="true" role="tab">小儿神经内科</a>
+								<a href="#" title="小儿内分泌科" class="tabnav-tab" aria-selected="true" role="tab">小儿内分泌科</a>
+								<a href="#" title="小儿感染科" class="tabnav-tab" aria-selected="true" role="tab">小儿感染科</a>
+								<a href="#" title="小儿普外科" class="tabnav-tab" aria-selected="true" role="tab">小儿普外科</a>							
+								<a href="#" title="小儿精神科" class="tabnav-tab" aria-selected="true" role="tab">小儿精神科</a>
+								<a href="#" title="新生儿科" class="tabnav-tab" aria-selected="true" role="tab">新生儿科</a> 
+							</li>
+							</nav>
 						</ul>
 						<div class="clear"></div>
 					</div>
 				</div>
 				<div class="g_jb_right_ks_content" style="display:none">
-					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
-						class="jb-font-18 jb-color-333">骨科二级科室</span>
-					<div class="hide_zoom">
-						<ul class="g_jb_right_ul">
-							<li><a href="#" title="脊柱外科" class="tabnav-tab">脊柱外科</a>
-								<a href="#" title="关节外科" class="tabnav-tab">关节外科</a> <a
-								href="#" title="手外科" class="tabnav-tab">手外科</a> <a
-								href="#" title="创伤骨科" class="tabnav-tab">创伤骨科</a> <a
-								href="#" title="矫形骨科" class="tabnav-tab">矫形骨科</a> <a
-								href="#" title="骨质疏松科" class="tabnav-tab">骨质疏松科</a></li>
-						</ul>
-						<div class="clear"></div>
-					</div>
-				</div>
-				<div class="g_jb_right_ks_content" style="display:none">
-					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
-						class="jb-font-18 jb-color-333">妇产科二级科室</span>
-					<div class="hide_zoom">
-						<ul class="g_jb_right_ul">
-							<li><a href="#" title="妇科" class="tabnav-tab">妇科</a>
-								<a href="#" title="计划生育科" class="tabnav-tab">计划生育科</a>
-								<a href="#" title="产科" class="tabnav-tab">产科</a> <a
-								href="#" title="产前检查科" class="tabnav-tab">产前检查科</a> <a
-								href="#" title="生殖与遗传" class="tabnav-tab">生殖与遗传</a> <a
-								href="#" title="妇女保健科" class="tabnav-tab">妇女保健科</a></li>
-						</ul>
-						<div class="clear"></div>
-					</div>
-				</div>
-				<div class="g_jb_right_ks_content" style="display:none">
-					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
-						class="jb-font-18 jb-color-333">儿科二级科室</span>
-					<div class="hide_zoom">
-						<ul class="g_jb_right_ul">
-							<li><a href=""
-								title="小儿心血管内科" class="tabnav-tab">小儿心血管内科</a> <a
-								href="#" title="小儿呼吸内科" class="tabnav-tab">小儿呼吸内科</a>
-								<a href="#" title="小儿消化科" class="tabnav-tab">小儿消化科</a>
-								<a href="#" title="小儿肾内科" class="tabnav-tab">小儿肾内科</a>
-								<a href="#" title="小儿免疫科" class="tabnav-tab">小儿免疫科</a>
-								<a href="#" title="小儿血液科" class="tabnav-tab">小儿血液科</a>
-								<a href="#" title="小儿神经内科" class="tabnav-tab">小儿神经内科</a>
-								<a href="#" title="小儿内分泌科" class="tabnav-tab">小儿内分泌科</a>
-								<a href="#" title="小儿感染科" class="tabnav-tab">小儿感染科</a>
-								<a href="#" title="小儿普外科" class="tabnav-tab">小儿普外科</a>							
-								<a href="#" title="小儿精神科" class="tabnav-tab">小儿精神科</a>
-								<a href="#" title="新生儿科" class="tabnav-tab">新生儿科</a> </li>
-						</ul>
-						<div class="clear"></div>
-					</div>
-				</div>
-				<div class="g_jb_right_ks_content" style="display:none">
-					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
-						class="jb-font-18 jb-color-333">眼科二级科室</span>
+					<h2 style="margin-top:0px">>眼科二级科室</h2>
 					<div class="hide_zoom">
 						<ul class="g_jb_right_ul">
 							<li></li>
@@ -270,42 +281,39 @@
 						class="jb-font-18 jb-color-333">耳鼻咽喉头颈科二级科室</span>
 					<div class="hide_zoom">
 						<ul class="g_jb_right_ul">
-							<li><a href="#" title="耳鼻咽喉科" class="tabnav-tab">耳鼻咽喉科</a>
-								<a href="#" title="头颈外科" class="tabnav-tab">头颈外科</a></li>
+							<li><a href="#" title="耳鼻咽喉科" class="tabnav-tab" aria-selected="true" role="tab">耳鼻咽喉科</a>
+								<a href="#" title="头颈外科" class="tabnav-tab" aria-selected="true" role="tab">头颈外科</a></li>
 						</ul>
 						<div class="clear"></div>
 					</div>
 				</div>
 				<div class="g_jb_right_ks_content" style="display:none">
-					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
-						class="jb-font-18 jb-color-333">口腔科二级科室</span>
+					<h2 style="margin-top:0px">>牙科二级科室</h2>
 					<div class="hide_zoom">
 						<ul class="g_jb_right_ul">
-							<li><a href="#" title="口腔种植科" class="tabnav-tab">口腔种植科</a>
-								<a href="#" title="牙体牙髓科" class="tabnav-tab">牙体牙髓科</a>
-								<a href="#" title="牙周病科" class="tabnav-tab">牙周病科</a>  
-								<a href="#" title="口腔正畸科" class="tabnav-tab">口腔正畸科</a> 
-								<a href="#" title="口腔预防科" class="tabnav-tab">口腔预防科</a>
-								<a href="h#" title="口腔病理科" class="tabnav-tab">口腔病理科</a>
+							<li><a href="#" title="口腔种植科" class="tabnav-tab" aria-selected="true" role="tab">口腔种植科</a>
+								<a href="#" title="牙体牙髓科" class="tabnav-tab" aria-selected="true" role="tab">牙体牙髓科</a>
+								<a href="#" title="牙周病科" class="tabnav-tab" aria-selected="true" role="tab">牙周病科</a>  
+								<a href="#" title="口腔正畸科" class="tabnav-tab" aria-selected="true" role="tab">口腔正畸科</a> 
+								<a href="#" title="口腔预防科" class="tabnav-tab" aria-selected="true" role="tab">口腔预防科</a>
+								<a href="h#" title="口腔病理科" class="tabnav-tab" aria-selected="true" role="tab">口腔病理科</a>
 							</li>
 						</ul>
 						<div class="clear"></div>
 					</div>
 				</div>
 				<div class="g_jb_right_ks_content" style="display:none">
-					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
-						class="jb-font-18 jb-color-333">皮肤性病科二级科室</span>
+					<h2 style="margin-top:0px">>皮肤性病科二级科室</h2>
 					<div class="hide_zoom">
 						<ul class="g_jb_right_ul">
-							<li><a href="#" title="皮肤科" class="tabnav-tab">皮肤科</a>
-								<a href="#" title="性病科" class="tabnav-tab">性病科</a></li>
+							<li><a href="#" title="皮肤科" class="tabnav-tab" aria-selected="true" role="tab">皮肤科</a>
+								<a href="#" title="性病科" class="tabnav-tab" aria-selected="true" role="tab">性病科</a></li>
 						</ul>
 						<div class="clear"></div>
 					</div>
 				</div>
 				<div class="g_jb_right_ks_content" style="display:none">
-					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
-						class="jb-font-18 jb-color-333">肿瘤科二级科室</span>
+					<h2 style="margin-top:0px">>肿瘤科二级科室</h2>
 					<div class="hide_zoom">
 						<ul class="g_jb_right_ul">
 							<li>
@@ -315,8 +323,7 @@
 					</div>
 				</div>
 				<div class="g_jb_right_ks_content" style="display:none">
-					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
-						class="jb-font-18 jb-color-333">麻醉科二级科室</span>
+					<h2 style="margin-top:0px">>麻醉科二级科室</h2>
 					<div class="hide_zoom">
 						<ul class="g_jb_right_ul">
 							<li><a href="#" title="麻醉科" class="tabnav-tab">麻醉科</a>
@@ -326,19 +333,17 @@
 					</div>
 				</div>
 				<div class="g_jb_right_ks_content" style="display:none">
-					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
-						class="jb-font-18 jb-color-333">疼痛科二级科室</span>
+					<h2 style="margin-top:0px">>疼痛科二级科室</h2>
 					<div class="hide_zoom">
 						<ul class="g_jb_right_ul">
-							<li><a href="http://www.guahao.com/search?q=疼痛科" title="疼痛科">疼痛科</a>
+							<li><a href="#" title="疼痛科">疼痛科</a>
 							</li>
 						</ul>
 						<div class="clear"></div>
 					</div>
 				</div>
 				<div class="g_jb_right_ks_content" style="display:none">
-					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
-						class="jb-font-18 jb-color-333">医学影像科二级科室</span>
+					<h2 style="margin-top:0px">>医学镜像科二级科室</h2>
 					<div class="hide_zoom">
 						<ul class="g_jb_right_ul">
 							<li></li>
@@ -347,8 +352,7 @@
 					</div>
 				</div>
 				<div class="g_jb_right_ks_content" style="display:none">
-					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
-						class="jb-font-18 jb-color-333">中医科二级科室</span>
+					<h2 style="margin-top:0px">>中医科二级科室</h2>
 					<div class="hide_zoom">
 						<ul class="g_jb_right_ul">
 							<li></li>
@@ -357,8 +361,7 @@
 					</div>
 				</div>
 				<div class="g_jb_right_ks_content" style="display:none">
-					<img src="http://img.guahao.cn/area/img/g-jt.gif" class="c-con5"><span
-						class="jb-font-18 jb-color-333">其他二级科室</span>
+					<h2 style="margin-top:0px">>其他二级科室</h2>
 					<div class="hide_zoom">
 						<ul class="g_jb_right_ul">
 							<li></li>
@@ -366,28 +369,21 @@
 						<div class="clear"></div>
 					</div>
 				</div>
-		</div> 	
-	</div>
-	<div class="clear"></div>
-	</div>
-	<script type="text/javascript">
-			$GF.push(function() {
-			var page = $("#gp-search-bydept");
-			var J_jbks = page.find(".g-jb-ks");
-			var J_tabcontent = page.find("#g_tab_content");
-			J_jbks.find("li div").hover(
-				function() {
-					if (!$(this).hasClass("g_menu_ks")) {
-						J_jbks.find("li div").removeClass("g_menu_ks");
-						$(this).addClass("g_menu_ks");
-						J_tabcontent.find(".g_jb_right_ks_content").hide();
-						J_tabcontent.find(".g_jb_right_ks_content").eq(
-								$(this).parent().index()).show();
-					}
-				});
-	})
-	</script>
-</div>
-	<script type="text/javascript" src="../js/setuser.js"></script>
+					</div> 	
+				</div>
+				<script type="text/javascript" >
+        			function show(id) {
+        				
+           	 		var divlist = document.getElementById(id);
+            		divlist.style.display = "block";
+        			}
+        			function hide(id){
+						var divlist = document.getElementById(id);
+            		divlist.style.display = "none";        			
+        			}
+    			</script>
+				<div class="clear"></div>
+			</div>
+			<script type="text/javascript" src="../js/setuser.js"></script>
 </body>
 </html>

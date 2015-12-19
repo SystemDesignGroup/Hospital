@@ -91,6 +91,8 @@ function searchDoctor(){
                     "<div class='order-num' style='float:left;width:30%'>"+
                     "<p class='num'>1000</p>"+
                     "<p>预约量</p>"+
+                    "<p class='order_num'>9</p>"+
+                    "<p>可预约量</p>"+
                     "</div>"+
                     "<div class='doc-comment' style='margin-left:80px;width:40%'>"+
                     "<p><label>疗效：</label><span>250%</span></p>"+
