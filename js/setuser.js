@@ -16,7 +16,13 @@ function setuser(){
         }
     }
 
-    xmlhttp.open("GET","./search/getuserinfo.php",false);
+    var b = location.href;
+    var l = b.split('/')[4];
+    if(l=='home.html'){
+        xmlhttp.open("GET","./search/getuserinfo.php",false);
+    }else{
+        xmlhttp.open("GET","../search/getuserinfo.php",false);
+    }
     xmlhttp.send();
 
     if(username){
@@ -27,7 +33,14 @@ function setuser(){
 }
 function jump(text){
     if(text == "登录"){
-        window.location.href="login.html";
+        var b = location.href;
+        var l = b.split('/')[4];
+        if(l=='home.html'){
+            window.location.href="login.html";
+        }else{
+            window.location.href='../login.html';
+        }
+
     }else{
         window.location.href="./user/userorder.php";
     }
