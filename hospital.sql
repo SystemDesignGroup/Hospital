@@ -10,6 +10,7 @@ role int,
 id_card char(18) unique primary key,
 tel char(11),
 status int,
+level int,
 update_time timestamp
 );
 
@@ -72,6 +73,7 @@ department_id int,
 major_id int,
 grade_id int,
 hospital_id int,
+tickets int,
 intro text,
 calendar_id int,
 update_time timestamp,

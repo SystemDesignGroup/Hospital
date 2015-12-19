@@ -43,7 +43,7 @@ class database{
 		extract($datavalues);
 		switch($table){
 			case 'users':
-				$this->put_user_in_db($name,$password,$email,$role,$id_card,$tel,$status);break;
+				$this->put_user_in_db($name,$password,$email,$role,$id_card,$tel,$status,$level);break;
 			case 'city':
 				$this->put_city_in_db($name,$province);break;
 			case 'grade':
@@ -55,7 +55,7 @@ class database{
 			case 'department':
 				$this->put_department_in_db($name,$hospital_id,$intro);break;
 			case 'doctor':
-				$this->put_doctor_in_db($name,$department_id,$major_id,$grade_id,$hospital_id,$intro,$calendar_id);break;
+				$this->put_doctor_in_db($name,$department_id,$major_id,$grade_id,$hospital_id,$intro,$calendar_id,$tickets);break;
 			case 'calendar':
 				$this->put_calendar_in_db($type,$detail,$off_start,$off_end);break;
 			case 'order_hospital':
@@ -80,9 +80,9 @@ class database{
 		$result = $this->connect->exec("UPDATE $table SET $column='$value' WHERE $key_field='$key'");
 	}
 	//以下函数不建议直接使用
-	public function put_user_in_db($name,$password,$email,$role,$id_card,$tel,$status){
-		$this->connect->exec("INSERT INTO users(name,password,email,role,id_card,tel,status) VALUES".
-		"('$name','$password','$email','$role','$id_card','$tel','$status')");
+	public function put_user_in_db($name,$password,$email,$role,$id_card,$tel,$status,$level){
+		$this->connect->exec("INSERT INTO users(name,password,email,role,id_card,tel,status,level) VALUES".
+		"('$name','$password','$email','$role','$id_card','$tel','$status','$level')");
 	}
 	public function put_city_in_db($name,$province){
 		$this->connect->exec("INSERT INTO city(name,province) VALUES".
@@ -104,9 +104,9 @@ class database{
 		$this->connect->exec( "INSERT INTO department(name,hospital_id,intro) VALUES".
 		"('$name','$hospital_id','$intro')");
 	}
-	public function put_doctor_in_db($name,$department_id,$major_id,$grade_id,$hospital_id,$intro,$calendar_id){
-		$this->connect->exec( "INSERT INTO doctor(name,department_id,major_id,grade_id,hospital_id,intro,calendar_id) VALUES".
-		"('$name','$department_id','$major_id','$grade_id','$hospital_id','$intro','$calendar_id')");
+	public function put_doctor_in_db($name,$department_id,$major_id,$grade_id,$hospital_id,$intro,$calendar_id,$tickets){
+		$this->connect->exec( "INSERT INTO doctor(name,department_id,major_id,grade_id,hospital_id,intro,tickets,calendar_id) VALUES".
+		"('$name','$department_id','$major_id','$grade_id','$hospital_id','$intro','$tickets','$calendar_id')");
 	}
 	public function put_calendar_in_db($type,$detail,$off_start,$off_end){
 		$this->connect->exec( "INSERT INTO calendar(type,detail,off_start,off_end) VALUES".
