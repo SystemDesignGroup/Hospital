@@ -1,14 +1,14 @@
 *{box-sizing:content-box}
 body{	word-wrap: break-word; overflow-x: hidden;
 font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-color: #333;background-color: #fff;}
-.normal-btn{width:90px;height: 35px;display:inline-block;border-radius: 3px;background:#61ac46; text-align:center;font-size:16px;letter-spacing:2px; }
+color: #333;background-color: #fff;font-size:62.5%;}
+.normal-btn{width:90px;height: 35px;display:inline-block;border-radius: 3px;background:#61ac46; text-align:center;font-size:1.6em;letter-spacing:2px; }
 .normal-btn a,.blue-normal-btn a { width:90px; line-height:35px;}
 #head_div{width: 100%;height: 30px;display: inline-block;background: #f5f5f5;}
 #regis_div{float: right;margin-right: 15px;}
 #head_div span{margin-left: 40px;}
 a{ text-decoration: none;color:white; }
-#regis_div a{ font-size: 15px; color: #333333;}
+#regis_div a{ font-size: 1.5em; color: #333333;}
 
 
 /*-------------------logo div-----------------*/
@@ -17,18 +17,18 @@ a{ text-decoration: none;color:white; }
 #logo-title img{ float:left;width:128px;height:72px;margin-right:20px; }
 #logo-title h1{width:372px;color: #3590e3;margin-top: 20px;;}
 #search-bar{width: 510px;height:35px;display: inline-block;border:3px solid #3591e3;border-radius: 3px;background:#3591e3;}
-#search-bar input{height: 33px;width: 395px;border:none;vertical-align: top;font-size: 18px;}
-.blue-normal-btn{width:90px;height: 35px;display:inline-block;background:#3591e3;margin-left: -4px;text-align:center;font-size:16px;}
-.icon-search{font-size:20px;height:35px;float:left;display: inline-block;background:white;color: #c0c0c0;}
+#search-bar input{height: 33px;width: 395px;border:none;vertical-align: top;font-size: 1.8em;}
+.blue-normal-btn{width:90px;height: 35px;display:inline-block;background:#3591e3;margin-left: -4px;text-align:center;font-size:1.6em;}
+.icon-search{font-size:2em;height:35px;float:left;display: inline-block;background:white;color: #c0c0c0;}
 
 
 /*----------------------navigation bar-------------------------*/
-.tabnav {margin-top: 0;margin-bottom: 15px;border-bottom: 1px solid #ddd;min-width: 1200px;width: 100%;}
+.tabnav {margin-top: 0;margin-bottom: 15px;border-bottom: 1px solid #ddd;width: 100%;}
 #nav-bar{border-bottom:-1px;margin-left: 60px;}
-#nav-bar a{ text-align:center;font-size:20px; margin:0 20px; color:#000;}
+#nav-bar a{ text-align:center;font-size:20px; margin:0 15px; color:#000;}
 .navb a:hover{ color:rgb(10,100,150);}
 
-.tabnav-tab {display: inline-block;padding: 8px 12px;font-size: 14px;line-height: 20px;
+.tabnav-tab {display: inline-block;padding: 8px 12px;font-size: 1.4em;line-height: 20px;
     color: #000;text-decoration: none;border: 1px solid transparent;border-bottom: 0px;}
 
 
@@ -44,13 +44,13 @@ a{ text-decoration: none;color:white; }
 #fast-reserve-div{ float: left;border-width:0 1px 0 0;border-color:#e4e4e4;border-style: solid;width:250px;height: 350px;display: inline-block;}
 #show-city-div,#input-text,#reserve{margin:20px 25px;}
 #show-city-div,#input-text{width: 200px;}
-.title label{font-size: 16px;}
+.title label{font-size: 1.6em;}
 
 .fast-order .title .switch { position: relative;  display: inline-block;  margin-left: 27px;  color: #888;  }
 .fast-order .title .switch .arrow-down {  position: absolute;  top: 7px;  right: -15px;  width: 0;  height: 0;
 	border: 4px solid transparent;  border-top-color: #bcbcbc;  }
 
-.addr-wrap { font-size: 12px;  position: absolute;  width: 395px;
+.addr-wrap { font-size: 1.2em;  position: absolute;  width: 395px;
 	background-color: #fff; top:333px;  left: 156px;
 	padding: 15px 0 12px 20px;  border: 1px solid #bdd0e8;  }
 .addr-wrap .stick {  position: absolute;  left: -1px;  top: -40px;  width: 80px;  height: 39px;
@@ -89,10 +89,10 @@ form input{ width:200px;height:30px; margin-top:20px; }
 #hospital-info ul li{width:320px;display: inline-block}
 .hos-info-img{width:120px;height:100px;float:left;}
 .hos-info-div{width:190px;height:100px;display: inline-block;margin-left:10px;}
-.hos-info-div a{color:#3783ef;font-size:16px;}
+.hos-info-div a{color:#3783ef;font-size:1.6em;}
 .hos-info-div a,.hos-info-div span{width:190px;display:block;}
 .hos-info-div :only-child{ margin:5px 0; }
-.hos-list a{color: black; line-height: 30px;font-size:15px;}
+.hos-list a{color: black; line-height: 30px;font-size:1.5em;}
 
 @font-face {
 	font-family: 'icomoon';
@@ -135,11 +135,11 @@ form input{ width:200px;height:30px; margin-top:20px; }
 /*--------------------------sidebar:notice---------------------------------*/
 #new-notice-div{ float:right;display:inline-block;width:250px;height:425px;margin-right:35px;margin-top:0; }
 #notice-head{width: inherit;height: 30px;text-align: center;background:#f5f5f5 ;margin-top:5px;}
-#notice-head label  { text-align: center;color: #b5aa51;font-size: 18px;}
+#notice-head label  { text-align: center;color: #b5aa51;font-size: 1.8em;}
 #notice-head img{vertical-align: top;margin-right: 5px;}
 #notice-content ul{margin-left:-40px;list-style: none;}
 #notice-content ul li{line-height: 30px;text-align: left;border:1px solid #cdcdcd;border-width: 0 0 1px 0;}
-#notice-content ul li a{color: black;margin-left:8px;font-size: 16px;}
+#notice-content ul li a{color: black;margin-left:8px;font-size: 1.6em;}
 
 
 /*---------------------------------------footer----------------------------------------*/

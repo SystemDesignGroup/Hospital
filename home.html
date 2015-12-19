@@ -2,9 +2,11 @@
 <html>
 	<head>
 		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"  />
 		<title>全国统一挂号系统</title>
 		<link href="css/home.css" type="text/css" rel="stylesheet"/>
 		<script type="text/javascript" src="./js/home_search.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
 		<script type="text/javascript">
 			window.onload=init;
 			function init()
@@ -14,10 +16,23 @@
 				for(var i=0;i<length;i++)
 				{
 					var tab=document.getElementsByClassName("tabnav-tab")[i];
-					console.log(tab);
+					//console.log(tab);
   		  			tab.onmousedown=setRefAttribute(tab);
   		  			//if(tab.getAttribute("selected")=="true") break;
   		  		}
+
+				$('.J_ProvinceUl li a').click(function()
+				{
+					var text=$(this).text();
+					$("#city-label").html(text);
+
+				});
+				$('.J_HotCity ul li a').click(function()
+				{
+					var text=$(this).text();
+					$("#city-label").html(text);
+
+				});
 			}
 
 			function setRefAttribute(tab)
@@ -96,8 +111,8 @@
 								<div id="show-city-div" class="fast-order">
 									<div style="display:inline-block" class="title">
 										<img src="image/location.png"/>
-												<!--<label id="city-label"><span class="icon-location2"></span>北京</label>-->
-										<label id="city-label">北京</label>
+										<!--<label id="city-label"><span class="icon-location2"></span>北京</label>-->
+										<span class="city-name"><label id="city-label">北京</label></span>
 										<a href="javascript:;" class="switch J_AreaSwitch" onclick="showCityList()">切换<i class="arrow-down"></i></a>
 									</div>
 									<div id="city-list" class="addr-wrap J_Area" style="z-index: 3500; display: none;">
@@ -167,8 +182,7 @@
 
 										</form>
 										<div class="normal-btn" id="reserve">
-											<button id="fast-reserve-btn" class="normal-btn" onclick="search()">快速挂号</button>
-
+											<a href="javascript:search()" id="fast-reserve-btn">快速挂号</a>
 										</div>
 
 								</div>
