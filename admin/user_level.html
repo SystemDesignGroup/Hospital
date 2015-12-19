@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	 	<meta charset="UTF-8"/>
+	 	<title>管理员-编辑科室信息</title>
+		 <link type="text/css" rel="stylesheet" href="../css/admin.css"/>
+	</head>
+	
+		<body>
+			<div id="head_div"> 
+				<span>欢迎来到全国统一挂号平台管理中心</span>
+				<label>管理信息-编辑科室信息</label>
+			</div>
+			
+				<div id="btn-div">
+					<div class="normal-btn" style="margin-left:100px">
+							<a id="fast-reserve-btn" href="editHospital.html">编辑医院信息</a>
+					</div>	
+					<div class="normal-btn">
+							<a id="fast-reserve-btn" href="editOffice.html">编辑科室信息</a>
+					</div>	
+					<div class="normal-btn">
+							<a id="fast-reserve-btn" href="editDoctor.html">编辑医生信息</a>
+					</div>	
+					<div class="normal-btn">
+							<a id="fast-reserve-btn" href="user_check.php">用户审核</a>
+					</div>	
+					<div class="normal-btn">
+							<a id="fast-reserve-btn" href="user_level.html">设定用户等级</a>
+					</div>	
+				</div>
+				</div>
+				
+			<form name='form1' action='user_level.php' method='post'>
+			<div id="edit-div">
+			<center>
+				<table  WIDTH=1100>
+				<tr>
+				<th WIDTH=50% HEIGHT=50>用户身份证号</th>
+				<th WIDTH=10% HEIGHT=50>信用等级变化</th>
+				<th WIDTH=40% HEIGHT=50>操作理由</th>
+				</tr>
+				<tr>
+				<td>
+				<input type="text" name="uid0" style="width:550px" />
+				</td>
+				<td>
+							<select id="doc-grade-select" name="ulevel0" style="width:100px">
+							<option value ="-10">-10</option>
+							<option value ="-9">-9</option>
+							<option value ="-8">-8</option>
+							<option value ="-7">-7</option>
+							<option value ="-6">-6</option>
+							<option value ="-5">-5</option>
+							<option value ="-4">-4</option>
+							<option value ="-3">-3</option>
+							<option value ="-2">-2</option>
+							<option value ="-1">-1</option>
+							<option value ="+1">+1</option>
+							<option value ="+2">+2</option>
+							<option value ="+3">+3</option>
+							<option value ="+4">+4</option>
+							<option value ="+5">+5</option>
+							<option value ="+6">+6</option>
+							<option value ="+7">+7</option>
+							<option value ="+8">+8</option>
+							<option value ="+9">+9</option>
+							<option value ="+10">+10</option>
+							</select>
+				</td>
+				<td>
+				<input type="text" style="width:400px" />
+				</td>
+				</tr>
+				<tr>
+				<td>
+				<input type="text" name="uid1" style="width:550px" />
+				</td>
+				<td>
+							<select id="doc-grade-select" name="ulevel1" style="width:100px">
+							<option value ="-10">-10</option>
+							<option value ="-9">-9</option>
+							<option value ="-8">-8</option>
+							<option value ="-7">-7</option>
+							<option value ="-6">-6</option>
+							<option value ="-5">-5</option>
+							<option value ="-4">-4</option>
+							<option value ="-3">-3</option>
+							<option value ="-2">-2</option>
+							<option value ="-1">-1</option>
+							<option value ="+1">+1</option>
+							<option value ="+2">+2</option>
+							<option value ="+3">+3</option>
+							<option value ="+4">+4</option>
+							<option value ="+5">+5</option>
+							<option value ="+6">+6</option>
+							<option value ="+7">+7</option>
+							<option value ="+8">+8</option>
+							<option value ="+9">+9</option>
+							<option value ="+10">+10</option>
+							</select>
+				</td>
+				<td>
+				<input type="text" style="width:400px" />
+				</td>
+				</tr>
+				<tr>
+				<td>
+				<input type="text" name="uid2" style="width:550px" />
+				</td>
+				<td>
+							<select id="doc-grade-select" name="ulevel2" style="width:100px">
+							<option value ="-10">-10</option>
+							<option value ="-9">-9</option>
+							<option value ="-8">-8</option>
+							<option value ="-7">-7</option>
+							<option value ="-6">-6</option>
+							<option value ="-5">-5</option>
+							<option value ="-4">-4</option>
+							<option value ="-3">-3</option>
+							<option value ="-2">-2</option>
+							<option value ="-1">-1</option>
+							<option value ="+1">+1</option>
+							<option value ="+2">+2</option>
+							<option value ="+3">+3</option>
+							<option value ="+4">+4</option>
+							<option value ="+5">+5</option>
+							<option value ="+6">+6</option>
+							<option value ="+7">+7</option>
+							<option value ="+8">+8</option>
+							<option value ="+9">+9</option>
+							<option value ="+10">+10</option>
+							</select>
+				</td>
+				<td>
+				<input type="text" style="width:400px" />
+				</td>
+				</tr>
+				<tr>
+				<td>
+				<input type="text" name="uid3" style="width:550px" />
+				</td>
+				<td>
+							<select id="doc-grade-select" name="ulevel3" style="width:100px">
+							<option value ="-10">-10</option>
+							<option value ="-9">-9</option>
+							<option value ="-8">-8</option>
+							<option value ="-7">-7</option>
+							<option value ="-6">-6</option>
+							<option value ="-5">-5</option>
+							<option value ="-4">-4</option>
+							<option value ="-3">-3</option>
+							<option value ="-2">-2</option>
+							<option value ="-1">-1</option>
+							<option value ="+1">+1</option>
+							<option value ="+2">+2</option>
+							<option value ="+3">+3</option>
+							<option value ="+4">+4</option>
+							<option value ="+5">+5</option>
+							<option value ="+6">+6</option>
+							<option value ="+7">+7</option>
+							<option value ="+8">+8</option>
+							<option value ="+9">+9</option>
+							<option value ="+10">+10</option>
+							</select>
+				</td>
+				<td>
+				<input type="text"style="width:400px" />
+				</td>
+				</tr>
+				<tr>
+				<td>
+				<input type="text" name="uid4" style="width:550px" />
+				</td>
+				<td>
+							<select id="doc-grade-select" name="ulevel4" style="width:100px">
+							<option value ="-10">-10</option>
+							<option value ="-9">-9</option>
+							<option value ="-8">-8</option>
+							<option value ="-7">-7</option>
+							<option value ="-6">-6</option>
+							<option value ="-5">-5</option>
+							<option value ="-4">-4</option>
+							<option value ="-3">-3</option>
+							<option value ="-2">-2</option>
+							<option value ="-1">-1</option>
+							<option value ="+1">+1</option>
+							<option value ="+2">+2</option>
+							<option value ="+3">+3</option>
+							<option value ="+4">+4</option>
+							<option value ="+5">+5</option>
+							<option value ="+6">+6</option>
+							<option value ="+7">+7</option>
+							<option value ="+8">+8</option>
+							<option value ="+9">+9</option>
+							<option value ="+10">+10</option>
+							</select>
+				</td>
+				<td>
+				<input type="text" style="width:400px" />
+				</td>
+				</tr>
+				</table>
+			</center>
+					
+					
+					<div id="complete-div" class="block">
+								<div class="normal-btn" id="save" style="margin-left: 300px;">
+										<a id="fast-reserve-btn" class="edit" href='javascript:document.form1.submit();'>提交修改</a>
+								</div>			
+							<div class="normal-btn" id="cancel">
+									<a id="fast-reserve-btn" class="edit" href="javascript:history.go(0)">取消此编辑</a>
+							</div>	
+					</div>							
+			</div>
+			</form>
+		</body>
+</html>
