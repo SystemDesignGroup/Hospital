@@ -112,10 +112,10 @@ echo <<< _END
 			    <th><div align="center">预约状态</div></th>
                 	<th><div align="center">操作</div></th>
 			</tr>
-_END;			//循环
+_END;
 
-for($i = 0;$i < count($orderinfo);$i++)
-echo <<< _END			
+for($i = 0;$i < count($orderinfo);$i++){
+echo <<< _FOR
 			<form>
             <tr>
 				<th><input align="center" type=hidden name="exitID" id="getId">$orderinfo[$i]['id']</th>
@@ -128,17 +128,17 @@ echo <<< _END
                         </th>
 		        </tr>
                 </form>
-_END;
+_FOR;
+}
 
 
-
-echo <<< _END
+echo <<< _TAIL
             </thead>
           </table>
     </div>
 </div>
 
-_END;
+_TAIL;
 ?>
 
 </body>
