@@ -101,6 +101,9 @@ echo <<< _END
         <div class="message-line">
         <span name="ID">身份证号： $rid_card</span>
         </div>
+	<div class="message-line">
+        <span name="level">信用等级：</span>
+        </div>
     </div>
 </div>
 

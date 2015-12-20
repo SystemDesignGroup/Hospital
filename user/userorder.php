@@ -124,7 +124,8 @@ echo <<< _FOR
 			        <th><div align="center">$doctorinfo[$i]['name'] </div></th>
 			        <th><div align="center">$orderinfo[$i]['order_status']</div></th>
                 		<th>
-                        <div align="center"><button class="button" type="submit"><a>取消订单</a> </button></div>
+                        <div align="center"><button class="button" action="" type="submit"><a>取消订单</a> </button></div>
+                        <div align="center"><button class="button2" onclick="pay()"><a>支付</a> </button></div>
                         </th>
 		        </tr>
                 </form>
@@ -135,11 +136,21 @@ _FOR;
 echo <<< _TAIL
             </thead>
           </table>
+	<div align="center"><button class="button3" onclick="print()"><a>打印预约单</a> </button></div>
+</div>
     </div>
 </div>
-
 _TAIL;
 ?>
 
+<script>
+    function pay() {
+        alert("支付成功");
+    }
+
+    function print() {
+        alert("已打印预约单");
+    }
+</script>
 </body>
 </html>
