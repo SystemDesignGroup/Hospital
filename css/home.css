@@ -175,3 +175,12 @@ form input{ width:200px;height:30px; margin-top:20px; }
 footer{ width:100%;min-height:70px;height: auto;display: inline-block; background:#f5f5f5 }
 footer div{width:1200px;margin:40px 0 10px 300px; }
 footer a{color:black;}
+
+
+.notice-content
+{
+	display:block;
+	min-width:1024px;
+	height:auto;
+	box-shadow:0 4px 7px #555;
+}
