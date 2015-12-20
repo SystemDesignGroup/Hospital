@@ -42,6 +42,13 @@ function jump(text){
         }
 
     }else{
-        window.location.href="./user/userorder.php";
+        var b = location.href;
+        var l = b.split('/')[4];
+        if(l=='home.html'){
+            window.location.href="./user/userorder.php";
+        }else{
+            window.location.href="../user/userorder.php";
+        }
+
     }
 }
