@@ -1,10 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title></title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"  />
+    <title>全国统一挂号系统</title>
+    <link href="../css/home.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../js/home_search.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="../js/home.js"></script>
 </head>
-<body>
 
+<body>
+<div id="head_div">
+    <span>欢迎来到全国统一挂号平台</span>
+    <div id="regis_div">
+        <a href="javascript:;" id="user" onclick="jump(this.innerHTML)">登录</a>|<a href="login.html">注册</a>|<a href="login_for_admin.html">管理员登录</a>
+    </div>
+</div>
+
+<div id="logo_div">
+    <div id="logo-title">
+        <img src="../image/logo.jpg" alt="挂号平台logo" id="logo"/>
+        <h1>全国统一挂号平台</h1>
+    </div>
+</div>
+
+<center>
+    <!--导航栏-->
+    <div class="tabnav">
+        <nav id="nav-bar" class="navb">
+            <a href="../home.html" class="tabnav-tab" selected="false" role="tab">首页</a>
+            <a href="../search/quickorder.html" class="tabnav-tab" selected="false" role="tab">快速预约</a>
+            <a href="../search/search.html" class="tabnav-tab" selected="false" role="tab">按医院预约</a>
+            <a href="../search/ksearch.html" class="tabnav-tab" selected="false" role="tab">按科室预约</a>
+            <a href="../reserve_guide/guide.html" class="tabnav-tab" selected="false" role="tab">预约指南</a>
+            <a href="notice_view/notice.html" class="tabnav-tab" selected="true" role="tab">公告查看</a>
+        </nav>
+    </div>
+</center>
+
+
+<div id="content-div">
+
+</div>
+
+<footer>
+    <div>
+        <label>&copy;Copyright: <a href="javascript:void(0)" target="_blank">北京航空航天大学软件学院</a></label>
+        <label>宏兴闪闪项目组</label>
+        <span>京2015-12-21</span>
+    </div>
+</footer>
+<script type="text/javascript" src="./js/setuser.js"></script>
 </body>
 </html>

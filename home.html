@@ -7,64 +7,7 @@
 		<link href="css/home.css" type="text/css" rel="stylesheet"/>
 		<script type="text/javascript" src="./js/home_search.js"></script>
 		<script type="text/javascript" src="./js/jquery-1.8.2.js"></script>
-		<script type="text/javascript">
-			window.onload=init;
-			function init()
-			{
-				var length=document.getElementsByClassName("tabnav-tab").length;
-				console.log(length);
-				for(var i=0;i<length;i++)
-				{
-					var tab=document.getElementsByClassName("tabnav-tab")[i];
-					//console.log(tab);
-  		  			tab.onmousedown=setRefAttribute(tab);
-  		  			//if(tab.getAttribute("selected")=="true") break;
-  		  		}
-
-				$('.J_ProvinceUl li a').click(function()
-				{
-					var text=$(this).text();
-					$("#city-label").html(text);
-
-				});
-				$('.J_HotCity ul li a').click(function()
-				{
-					var text=$(this).text();
-					$("#city-label").html(text);
-
-				});
-			}
-
-			function setRefAttribute(tab)
-			{
-				var isSelected=tab.getAttribute("selected");
-				//console.log(tab.getAttribute("selected"));
-				if(isSelected=="true")
-				{
-					/*console.log(tab);*/
-					tab.style.color="#018bba";
-  		  			tab.style.backgroundColor="#fff";
-  		  			tab.style.borderColor="#ddd";
-  		  			tab.style.borderRadius="3px 3px 0 0";
-				}
-			}
-
-			function showCityList()
-			{
-				var div=document.getElementById("city-list");
-				console.log("Get div");
-				div.style.display="block";
-			}
-
-			function hideCityList()
-			{
-				var div=document.getElementById("city-list");
-				console.log("Get div");
-				div.style.display="none";
-			}
-
-
-		</script>
+		<script type="text/javascript" src="js/home.js"></script>
 	</head>
 
 	<body>
@@ -97,9 +40,8 @@
 						<a href="search/quickorder.html" class="tabnav-tab" selected="false" role="tab">快速预约</a>
 						<a href="search/search.html" class="tabnav-tab" selected="false" role="tab">按医院预约</a>
 						<a href="search/ksearch.html" class="tabnav-tab" selected="false" role="tab">按科室预约</a>
-						<a href="#" class="tabnav-tab" selected="false" role="tab">预约指南</a>
-						<a href="#" class="tabnav-tab" selected="false" role="tab">公告查看</a>
-						<!--<a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a>-->
+						<a href="reserve_guide/guide.html" class="tabnav-tab" selected="false" role="tab">预约指南</a>
+						<a href="notice_view/notice.html" class="tabnav-tab" selected="false" role="tab">公告查看</a>
 					</nav>
 			</div>
 			</center>
