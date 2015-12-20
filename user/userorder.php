@@ -114,7 +114,7 @@ echo <<< _END
 			</tr>
 _END;			//循环
 
-			for($i = 0;i < count($orderinfo);i++){
+			for($i = 0;$i < count($orderinfo);$i++){
 echo <<< _END			
 			<form>
             <tr>
