@@ -1,14 +1,16 @@
 *{box-sizing:content-box}
-body{	word-wrap: break-word;    
+body{	word-wrap: break-word;overflow-x: hidden;  
 font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 color: #333;background-color: #fff;}
-.normal-btn{width:90px;height: 35px;display:inline-block;border-radius: 3px;background:#61ac46; text-align:center;font-size:16px;letter-spacing:2px; }
+.normal-btn{width:90px;height: 35px;display:inline-block;border-radius: 3px;
+	background:#61ac46; text-align:center;font-size:1.6em;letter-spacing:2px;box-shadow:0 2px 6px #666; }
 .normal-btn a,.blue-normal-btn a { width:90px; line-height:35px;}
-#head_div{width: 100%;height: 30px;display: inline;background: #f5f5f5;}
+#head_div{width: 100%;height: 30px;display: inline-block;background: #f5f5f5;}
 #regis_div{float: right;margin-right: 15px;}
 #head_div span{margin-left: 40px;}
 
-#regis_div a{ font-size: 15px; color: #333333;}
+#regis_div a{ font-size: 1.5em; color: #333333;}
+
 
 /*-------------------logo div-----------------*/
 #logo_div{width: 100%;height: 120px;display: inline-block;margin:10px 0 0 100px;}
@@ -21,6 +23,14 @@ color: #333;background-color: #fff;}
 .icon-search{font-size:2em;height:35px;float:left;display: inline-block;background:white;color: #c0c0c0;}
 
 
+/*----------------------navigation bar-------------------------*/
+.tabnav {margin-top: 0;margin-bottom: 15px;border-bottom: 1px solid #ddd;min-width:1100px;width: 100%;}
+#nav-bar{border-bottom:-1px;margin-left: 60px;}
+#nav-bar a{ text-align:center;font-size:20px; margin:0 15px; color:#000;}
+.navb a:hover,#nav-bar a:hover{ color:#0096da;}
+
+.tabnav-tab {display: inline-block;padding: 8px 12px;font-size: 1.4em;line-height: 20px;
+    color: #000;text-decoration: none;border: 1px solid transparent;border-bottom: 0px;}
 
 a{text-decoration:none;}
 li{
@@ -64,11 +74,7 @@ h2{
     border: 1px solid transparent;
     border-bottom: 0;
 }
-.navb a:hover
- {
-    /*color: #333;background-color: #fff;border-color: #ddd;border-radius: 3px 3px 0 0;*/
-    color:rgb(10,100,150);
-}
+
 #g-breadcrumb a:hover{color:rgb(10,100,150);}
 #g-breadcrumb a{color: #333333;}
 .nav
@@ -219,3 +225,7 @@ h2{
 	font-family:"楷体";
 	background-color:#6495ED;
 }
+/*---------------------------------------footer----------------------------------------*/
+footer{ width:100%;min-height:70px;height: auto;display: inline-block; background:#f5f5f5 }
+footer div{width:1200px;margin:40px 0 10px 300px;font-size:72%; }
+footer a{color:black;}

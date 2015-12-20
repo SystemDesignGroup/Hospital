@@ -3,37 +3,9 @@
 <head>
 	<meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="../css/search.css"/>
+	<script type="text/javascript" src="../js/home.js"></script>
 	<title>科室搜索|挂号网</title>
-	<script type="text/javascript">
-			window.onload=init;
-			function init()
-			{			
-						var length=document.getElementsByClassName("tabnav-tab").length;
-						console.log(length);
-						for(var i=0;i<length;i++)
-						{
-							var tab=document.getElementsByClassName("tabnav-tab")[i];
-							console.log(tab);
-  		  				 	tab.onmousedown=setRefAttribute(tab);
-  		  				 	if(tab.getAttribute("selected")=="true") break;
-  		  				 }
-			}
-			
-			function setRefAttribute(tab)
-			{
-				var isSelected=tab.getAttribute("selected");
-				console.log(tab.getAttribute("selected"));
-				if(isSelected=="true")
-				{
-						console.log(tab);
-						tab.style.color="#333";
-  		  				tab.style.backgroundColor="#fff";
-  		  				tab.style.borderColor="#ddd";
-  		  				tab.style.borderRadius="3px 3px 0 0";					 		
-				}	
-			}
-
-		</script>
+	
 </head>
 <body>
 	<div id="head_div"> 
@@ -58,6 +30,7 @@
 			</div>
 			
 			<!--导航栏-->
+			<center>
 			<div class="tabnav">
 					<nav id="nav-bar" class="navb">
 						<a href="../home.html" class="tabnav-tab" selected="false" role="tab">首页</a>
@@ -69,6 +42,7 @@
 						<!-- <a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a> -->
 					</nav>			
 			</div>
+			</center>
 			<div id="gp-search-bydept">
 			<div class="main-container" >
 				<div id="g-breadcrumb">
@@ -211,37 +185,37 @@
 						</div>
 						<div class="g_jb_right_ks_content" id="ksc" onmouseleave="hide('ksc')" style="display:none">
 							<h2 style="margin-top:10px">>骨科二级科室</h2>
-						<ul class="g_jb_right_ul">
-							<nav class="navb" id="i-nav"> 
-							<li>
-								<a href="#" title="脊柱外科" class="tabnav-tab" aria-selected="true" role="tab">脊柱外科</a>
-								<a href="#" title="关节外科" class="tabnav-tab" aria-selected="true" role="tab">关节外科</a> <a
-								href="#" title="手外科" class="tabnav-tab" aria-selected="true" role="tab">手外科</a> <a
-								href="#" title="创伤骨科" class="tabnav-tab" aria-selected="true" role="tab">创伤骨科</a> <a
-								href="#" title="矫形骨科" class="tabnav-tab" aria-selected="true" role="tab">矫形骨科</a> <a
-								href="#" title="骨质疏松科" class="tabnav-tab" aria-selected="true" role="tab">骨质疏松科</a>
-							</li>
-						</ul>
-						<div class="clear"></div>
-					</div>
+							<ul class="g_jb_right_ul">
+								<nav class="navb" id="i-nav"> 
+								<li>
+									<a href="#" title="脊柱外科" class="tabnav-tab" aria-selected="true" role="tab">脊柱外科</a>
+									<a href="#" title="关节外科" class="tabnav-tab" aria-selected="true" role="tab">关节外科</a> <a
+									href="#" title="手外科" class="tabnav-tab" aria-selected="true" role="tab">手外科</a> <a
+									href="#" title="创伤骨科" class="tabnav-tab" aria-selected="true" role="tab">创伤骨科</a> <a
+									href="#" title="矫形骨科" class="tabnav-tab" aria-selected="true" role="tab">矫形骨科</a> <a
+									href="#" title="骨质疏松科" class="tabnav-tab" aria-selected="true" role="tab">骨质疏松科</a>
+								</li>
+							</ul>
+							<div class="clear"></div>
 						</div>
+						
 						<div class="g_jb_right_ks_content" style="display:none">
 							<h2 style="margin-top:0px">>妇科二级科室</h2>
 							<div class="hide_zoom">
-						<ul class="g_jb_right_ul">
-							<nav class="navb" id="i-nav"> 
-							<li>
-								<a href="#" title="妇科" class="tabnav-tab" aria-selected="true" role="tab">妇科</a>
-								<a href="#" title="计划生育科" class="tabnav-tab" aria-selected="true" role="tab">计划生育科</a>
-								<a href="#" title="产科" class="tabnav-tab" aria-selected="true" role="tab">产科</a>
-								<a	href="#" title="产前检查科" class="tabnav-tab" aria-selected="true" role="tab">产前检查科</a> 
-								<a	href="#" title="生殖与遗传" class="tabnav-tab" aria-selected="true" role="tab">生殖与遗传</a> 
-								<a href="#" title="妇女保健科" class="tabnav-tab" aria-selected="true" role="tab">妇女保健科</a>
-							</li>
-							</nav>
-						</ul>
-						<div class="clear"></div>
-					</div>
+							<ul class="g_jb_right_ul">
+								<nav class="navb" id="i-nav"> 
+								<li>
+									<a href="#" title="妇科" class="tabnav-tab" aria-selected="true" role="tab">妇科</a>
+									<a href="#" title="计划生育科" class="tabnav-tab" aria-selected="true" role="tab">计划生育科</a>
+									<a href="#" title="产科" class="tabnav-tab" aria-selected="true" role="tab">产科</a>
+									<a	href="#" title="产前检查科" class="tabnav-tab" aria-selected="true" role="tab">产前检查科</a> 
+									<a	href="#" title="生殖与遗传" class="tabnav-tab" aria-selected="true" role="tab">生殖与遗传</a> 
+									<a href="#" title="妇女保健科" class="tabnav-tab" aria-selected="true" role="tab">妇女保健科</a>
+								</li>
+								</nav>
+							</ul>
+							<div class="clear"></div>
+							</div>
 						</div>
 				<div class="g_jb_right_ks_content" style="display:none">
 					<h2 style="margin-top:0px">>儿科二级科室</h2>
@@ -360,16 +334,23 @@
 						<div class="clear"></div>
 					</div>
 				</div>
-				<div class="g_jb_right_ks_content" style="display:none">
-					<h2 style="margin-top:0px">>其他二级科室</h2>
-					<div class="hide_zoom">
-						<ul class="g_jb_right_ul">
-							<li></li>
-						</ul>
-						<div class="clear"></div>
+					<div class="g_jb_right_ks_content" style="display:none">
+						<h2 style="margin-top:0px">>其他二级科室</h2>
+						<div class="hide_zoom">
+							<ul class="g_jb_right_ul">
+								<li></li>
+							</ul>
+							<div class="clear"></div>
+						</div>
 					</div>
-				</div>
-					</div> 	
+					</div>
+						
+					<!--显示搜索结果-->
+					<div class="ks-search-results">
+						<ul>
+							
+						</ul>
+					</div>
 				</div>
 				<script type="text/javascript" >
         			function show(id) {
@@ -385,5 +366,12 @@
 				<div class="clear"></div>
 			</div>
 			<script type="text/javascript" src="../js/setuser.js"></script>
+			<footer>
+				<div>
+					<label>@copyright : <a href="javascript:void(0)" target="_blank">北京航空航天大学软件学院</a></label>
+					<label>宏兴闪闪项目组</label>
+					<span>京2015-12-31</span>
+				</div>
+			</footer>
 </body>
 </html>

@@ -91,6 +91,7 @@ function searchDoctor(){
                     "<div class='order-num' style='float:left;width:30%'>"+
                     "<p class='num'>1000</p>"+
                     "<p>预约量</p>"+
+                    "<p class='order_num'>可预约量: "+response[i]['tickets']+"</p>"+
                     "</div>"+
                     "<div class='doc-comment' style='margin-left:80px;width:40%'>"+
                     "<p><label>疗效：</label><span>250%</span></p>"+
@@ -168,11 +169,11 @@ function addOrder(user_id,doctor_id,date,time){
     xmlhttp.onreadystatechange = function(){
 
         if(xmlhttp.readyState==4&&xmlhttp.status==200){
-            if(xmlhttp.responseText==0){
-                alert('该医生接诊人数已满');
-            }else{
+            if(xmlhttp.responseText==1){
                 alert('预约成功');
                 window.location.href="../user/userorder.php";
+            }else{
+                alert(xmlhttp.responseText);
             }
         }
     }

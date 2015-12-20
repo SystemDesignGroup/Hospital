@@ -3,39 +3,9 @@
 <head>
 	<meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="../css/search.css"/>
-	
+	<script type="text/javascript" src="../js/home.js"></script>
 	<title>搜索|挂号网</title>
-	<script type="text/javascript">
-		
-			window.onload=init;
-			function init()
-			{			
-						var length=document.getElementsByClassName("tabnav-tab").length;
-						console.log(length);
-						for(var i=0;i<length;i++)
-						{
-							var tab=document.getElementsByClassName("tabnav-tab")[i];
-							console.log(tab);
-  		  				 	tab.onmousedown=setRefAttribute(tab);
-  		  				 	if(tab.getAttribute("selected")=="true") break;
-  		  				 }
-			}
-			
-			function setRefAttribute(tab)
-			{
-				var isSelected=tab.getAttribute("selected");
-				console.log(tab.getAttribute("selected"));
-				if(isSelected=="true")
-				{
-						console.log(tab);
-						tab.style.color="#333";
-  		  				tab.style.backgroundColor="#fff";
-  		  				tab.style.borderColor="#ddd";
-  		  				tab.style.borderRadius="3px 3px 0 0";					 		
-				}	
-			}
-
-		</script>
+	
 	
 </head>
 <body>
@@ -61,6 +31,7 @@
 			</div>
 			
 			<!--导航栏-->
+			<center>
 			<div class="tabnav">
 					<nav id="nav-bar" class="navb">
 						<a href="../home.html" class="tabnav-tab" selected="false" role="tab">首页</a>
@@ -71,7 +42,8 @@
 						<a href="#" class="tabnav-tab" selected="false" role="tab">公告查看</a>
 						<!-- <a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a> -->
 					<nav>			
-			</div>	
+			</div>
+			</center>	
 	<div id="mainmain">
 	<div class="main-container">
 		<div id="g-breadcrumb">
@@ -387,8 +359,14 @@
 	</div>
 	</div>
 
-
-
+		
+			<footer>
+				<div>
+					<label>@copyright : <a href="javascript:void(0)" target="_blank">北京航空航天大学软件学院</a></label>
+					<label>宏兴闪闪项目组</label>
+					<span>京2015-12-31</span>
+				</div>
+			</footer>
 	<script type="text/javascript" src="../js/setuser.js"></script>
 
 </body>
