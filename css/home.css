@@ -156,7 +156,7 @@ form input{ width:200px;height:30px; margin-top:20px; }
 }
 
 #side-bar a{font-size:2em;font-family: "Microsoft YaHei", "Simsun", Tahoma, Arial, "Helvetica Neue", "Hiragino Sans GB", "sans-self"}
-@media screen and (max-width: 1200px)
+@media screen and (max-width: 1300px)
 {
 	#new-notice-div{  display:none;  }
 	#nav-bar{  margin-left:110px;  }
