@@ -1,4 +1,4 @@
-﻿﻿<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -75,13 +75,6 @@
 		);
 	$orderinfo = $db->get_field_from_table('order_hospital','id,order_date,order_time,order_status,doctor_id',$vorder);
 
-	
-	$vdoctor = array('id' => $rorder_doctor_id);
-	$doctorinfo = $db->get_field_from_table('doctor','name',$vdoctor);
-	
-
-	
-
 echo <<< _END
 
 <div class="page">
@@ -118,10 +111,10 @@ for($i = 0;$i < count($orderinfo);$i++){
 
 		$vdoctor = array('id' => $odoctor_id);
 		$doctorinfo = $db->get_field_from_table('doctor','name',$vdoctor);
-		$odoctor_name = $doctorinfo[$i]['name'];
+		$odoctor_name = $doctorinfo[0]['name'];
 		
 echo <<< _FOR
-			<form>
+			<form action="userorder.php" method="post">
             <tr>
 				<th class="table-first-line"><input align="center" type=hidden name="exitID" id="getId"> $oid </th>
 				<th class="table-normal-line"><div align="center"> $otime </div></th>
@@ -130,8 +123,8 @@ echo <<< _FOR
 			        <th class="table-normal-line"><div align="center"> $ostatus </div></th>
                 		<th class="table-last-line">
                         <table align="center">
-                        <th><div align="center"><button class="button" action="userorder.php" type="submit"><a>取消订单</a> </button></div></th>
-                        <th><div align="center"><button class="button2" onclick="pay()"><a>支付</a> </button></div></th>
+                        <th><div align="center"><button class="orderbutton" action="userorder.php" type="submit" onclick="return check()"><a class="button white">取消订单</a> </button></div></th>
+                        <th><div align="center"><button class="orderbutton" onclick="pay()"><a class="button white">支付</a> </button></div></th>
                         </table>
                         </th>
 		        </tr>
@@ -143,13 +136,19 @@ _FOR;
 echo <<< _TAIL
             </thead>
           </table>
-	<div align="center"><button class="button3" onclick="print()"><a>打印预约单</a> </button></div>
+	<div align="center"><button class="button3" onclick="print()"><a class="button white">打印预约单</a> </button></div>
 </div>
     </div>
 </div>
 _TAIL;
 ?>
-
+  
+<?php
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+		$db->delete_index_from_table($order,$_POST['exitID']);	//取消预约
+	}
+?>
 <script>
     function pay() {
         alert("支付成功");
@@ -157,6 +156,12 @@ _TAIL;
 
     function print() {
         alert("已打印预约单");
+    }
+    function check() {
+        if (confirm("是否取消订单")) {
+            return true;
+         }
+        else {return false; }
     }
 </script>
 </body>
