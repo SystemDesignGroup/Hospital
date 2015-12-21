@@ -172,28 +172,66 @@
     				<div style="margin-left:100px;margin-right:100px;margin-top:20px">
     					<span>相关科室</span>
     				</div>
-    				<div class="hos-ks-content" style="display:inline">
-    					<ul>
-    						<nav class="navb" id="i-nav">
-    							<li>
-    								<div class="hos-ks-box" style="float:left">
-    									
-    								</div>
-    							</li>
-    							<li>
-    								<div class="hos-ks-box" style="float:left">
-    								
-    								</div>
-    							</li>
-    							<li>
-    								<div class="hos-ks-box" style="float:left">
-    									
-    								</div>
-    							</li>
-    						</nav>
-    					</ul>
-    				</div>
-    			</div>
+					<div class="hos-ks-content">
+						<div class="hos-ks-type" id="box" style="display:inline">
+							<ul>
+								<nav class="navb" id="i-nav">
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >心血管科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >肿瘤科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >妇产科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >耳鼻喉科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >口腔科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >骨科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >传染病科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >肛肠科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >精神病科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >皮肤科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >整形科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >脑科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >肺科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >肝胆外科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >泌尿科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >男科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >不孕不育科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >中医科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >小儿科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >神经科</a></li>
+									<li><a href="javascript:void(0);"   class="tabnav-tab" data-code="SXYL" data-val="1" name="ht" >疼痛科</a></li>
+								</nav>
+							</ul>
+						</div>
+						<div class="condition-options" style="float:right">
+							<nav class="navb" id="i-nav">
+								<a id="icon" href="javascript:;" class="tabnav-tab" style="float:right;margin-right:-10px;margin-top:-30px">展开</a>
+							</nav>
+						</div>
+						<script>
+							function show(){
+								var box = document.getElementById("box");
+								var text = box.innerHTML;
+								var newBox = document.createElement("div");
+								var btn = document.getElementById("icon");
+								newBox.innerHTML = text.substring(0,1700);
+								btn.innerHTML = text.length > 1700 ? "展开" : "";
+								btn.href = "###";
+								btn.onclick = function(){
+									if (btn.innerHTML == "展开"){
+										btn.innerHTML = "收起";
+										newBox.innerHTML = text;
+									}
+									else{
+										btn.innerHTML = "展开";
+										newBox.innerHTML = text.substring(0,1700);
+									}
+								}
+								box.innerHTML = "";
+								box.appendChild(newBox);
+								box.appendChild(btn);
+							}
+							show();
+						</script>
+					</div>
+				</div>
 			</div>
 			<footer>
 				<div>
