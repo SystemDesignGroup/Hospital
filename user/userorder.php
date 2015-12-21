@@ -138,7 +138,6 @@ echo <<< _FOR
                         </th>
 		        </tr>
                 </form>
-
 _FOR;
 }
 		if($_SERVER["REQUEST_METHOD"] == "POST")
