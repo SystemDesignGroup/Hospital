@@ -89,8 +89,7 @@ function searchDoctor(){
                 "</div>"+
                 "<div class='doc-data' style='float:left;width:30%;display:inline;margin-left:20px;height:100px;border-bottom:1px solid #DBDBDB'>"+
                     "<div class='order-num' style='float:left;width:30%'>"+
-                    "<p class='num'>1000</p>"+
-                    "<p>预约量</p>"+
+                    "<p class='num'>预约量：1000</p>"+
                     "<p class='order_num'>可预约量: "+response[i]['tickets']+"</p>"+
                     "</div>"+
                     "<div class='doc-comment' style='float:right;width:45%'>"+
@@ -208,47 +207,47 @@ function shaixuan(zhicheng){
                 } else if (response[i]['grade_id'] == '6') {
                     zhicheng = '主治医师';
                 }
-                var listItem = "<li class='J_ListItem'>" +
-                    "<div class='doc-box' style='display:inline;height:120px'>" +
-                    "<div class='doc-info' style='float:left;width:50%;display:inline;height:120px'>" +
-                    "<div class='doc-base-info' style='float:left;width:45%;display:inline'>" +
-                    "<a target='_blank'  href=''onmousedown='return _smartlog(this,'DOCP_1')' class='img' style='float:left'>" +
-                    "<img src='../image/touxiang.png' alt='' title=''  onerror='' style='width: 90px;height: 90px'/>" +
-                    "</a>" +
-                    "<dl style='float:left;margin-left:0px;text-align:center'>" +
-                    "<dt>" +
-                    "<a href='' class='name'>" + response[i]['name'] + "</a>" +
-                    "</dt>" +
-                    "<dd>" +
-                    "<p class='doc-grade'>" + zhicheng + "</p>" +
-                    "<p class='doc-hosp-dept'>" +
-                    "<a href=''>" + department + "</a>" +
-                    "</p>" +
-                    "</dd>" +
-                    "</dl>" +
-                    "</div>" +
-                    "<div class='doc-skill' style='float:right;margin-right:20px;width:45%'>" +
-                    "<p><label>擅长：</label>" + response[i]['intro'] + "</p>" +
-                    "</div>" +
-                    "</div>" +
-                    "<div class='doc-data' style='float:left;width:20%;display:inline;margin-left:20px;height:120px'>" +
-                    "<div class='order-num' style='float:left;width:30%'>" +
-                    "<p class='num'>1000</p>" +
-                    "<p>预约量</p>" +
-                    "</div>" +
-                    "<div class='doc-comment' style='margin-left:80px;width:40%'>" +
-                    "<p><label>疗效：</label><span>250%</span></p>" +
-                    "<p><label>态度：</label><span>250%</span></p>" +
-                    "</div>" +
-                    "</div>" +
-                    "<div class='doc-shiftcase J_ShiftCaseContent' style='float:right;margin-right:30px;width:20%;height:120px'>" +
-                    "<div class='to-center' style='margin-top:60px;display:inline'>" +
-                    "<a class='gbb gbt-blue addpadding' href='#' style='margin-left:10px' onclick='guahao(" + response[i]['id'] + ")'>挂号</a>" +
-                    "<a class='gbb gbt-blue addpadding' href='#' style='margin-left:10px' onclick='consult()'>咨询</a>" +
-                    "</div>" +
-                    "</div>" +
-                    "<div class='clear'></div>" +
-                    "</div>" +
+                var listItem = "<li class='J_ListItem'>"+
+                    "<div class='doc-box' style='display:inline;height:120px'>"+
+                    "<div class='doc-info' style='float:left;width:45%;display:inline;height:100px;border-bottom:1px solid #DBDBDB'>"+
+                    "<div class='doc-base-info' style='float:left;width:53%;display:inline'>"+
+                    "<a target='_blank'  href=''onmousedown='return _smartlog(this,'DOCP_1')' class='img' style='float:left'>"+
+                    "<img src='../image/touxiang.png' alt='' title=''  onerror='' style='width: 90px;height: 90px'/>"+
+                    "</a>"+
+                    "<dl style='float:left;margin-left:0px;text-align:center'>"+
+                    "<dt>"+
+                    "<a href='' class='name'>"+response[i]['name']+"</a>"+
+                    "</dt>"+
+                    "<dd>"+
+                    "<p class='doc-grade'>"+zhicheng+"</p>"+
+                    "<p class='doc-hosp-dept'>"+
+                    "<a href=''>"+department+"</a>"+
+                    "</p>"+
+                    "</dd>"+
+                    "</dl>"+
+                    "</div>"+
+                    "<div class='doc-skill' style='float:right;margin-right:0px;width:43%'>"+
+                    "<p><label>擅长：</label>"+response[i]['intro']+"</p>"+
+                    "</div>"+
+                    "</div>"+
+                    "<div class='doc-data' style='float:left;width:30%;display:inline;margin-left:20px;height:100px;border-bottom:1px solid #DBDBDB'>"+
+                    "<div class='order-num' style='float:left;width:30%'>"+
+                    "<p class='num'>预约量：1000</p>"+
+                    "<p class='order_num'>可预约量: "+response[i]['tickets']+"</p>"+
+                    "</div>"+
+                    "<div class='doc-comment' style='float:right;width:45%'>"+
+                    "<p><label>疗效：</label><span>250%</span></p>"+
+                    "<p><label>态度：</label><span>250%</span></p>"+
+                    "</div>"+
+                    "</div>"+
+                    "<div class='doc-shiftcase J_ShiftCaseContent' style='float:right;margin-right:30px;width:18%;height:100px;border-bottom:1px solid #DBDBDB'>"+
+                    "<div class='to-center' style='margin-top:60px;display:inline'>"+
+                    "<a class='gbb gbt-blue addpadding' href='#' style='margin-left:10px' onclick='guahao("+response[i]['id']+")'>挂号</a>"+
+                    "<a class='gbb gbt-blue addpadding' href='#' style='margin-left:10px' onclick='consult()'>咨询</a>"+
+                    "</div>"+
+                    "</div>"+
+                    "<div class='clear'></div>"+
+                    "</div>"+
                     "</li>";
 
                 docList.innerHTML += listItem;
