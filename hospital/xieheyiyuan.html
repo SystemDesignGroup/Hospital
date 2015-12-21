@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="../css/search.css"/>
+    <script type="text/javascript" src="../js/home.js"></script>
+    <title>搜索|挂号网</title>
+
+
+</head>
+<body>
+<div id="head_div">
+    <span>欢迎来到全国统一挂号平台</span>
+    <div id="regis_div">
+        <a href="#" id="user" onclick="jump(this.innerHTML)">登录</a>|<a href="../login.html">注册</a>|<a href="../login_for_admin.html">管理员登录</a>
+    </div>
+</div>
+
+<div id="logo_div">
+    <div id="logo-title">
+        <img src="../image/logo.jpg" alt="挂号平台logo" id="logo"/>
+        <h1>全国统一挂号平台</h1>
+    </div>
+    <div id="search-bar">
+        <span class="icon-search"></span>
+        <input type="text"  placeholder="请输入医院名、科室名或医生名"/>
+        <div class="blue-normal-btn" >
+            <a id="search-btn" href="javacript:void(0)">查询</a>
+        </div>
+    </div>
+</div>
+
+<!--导航栏-->
+<center>
+    <div class="tabnav">
+        <nav id="nav-bar" class="navb">
+            <a href="../home.html" class="tabnav-tab" selected="false" role="tab">首页</a>
+            <a href="../search/quickorder.html" class="tabnav-tab" selected="false" role="tab">快速预约</a>
+            <a href="../search/search.html" class="tabnav-tab" selected="false" role="tab">按医院预约</a>
+            <a href="../search/ksearch.html" class="tabnav-tab" selected="false" role="tab">按科室预约</a>
+            <a href="../reserve_guide/guide.html" class="tabnav-tab" selected="false" role="tab">预约指南</a>
+            <a href="../notice_view/notice.html" class="tabnav-tab" selected="false" role="tab">公告查看</a>
+            <!-- <a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a> -->
+            <nav>
+    </div>
+</center>
+<div class="hos-main-content" style="height:auto;display:block">
+    <div class="hos-content" style="height:170px;margin-top:20px;margin-left:100px;margin-right:80px;background-color:#F0FFF0;border:0.5px;solid gray;display:block">
+        <div class="summary" style="float:left;margin-left:40px;width:15%">
+            <p>
+                <img src="http://img.guahao.com/images/hospital/hlarge_2ca8fbf2-0d86-42cc-86f2-83d45c8cbbdf.jpg" alt="北京大学第三医院(北京平台)"class="hos-photo"/>
+            </p>
+        </div>
+        <div class="detail word-break" style="float:left;margin-left:40px;width:40%">
+            <h2>
+                <strong><a href="">北京协和医院</a></strong>
+                <span style="font-size:18px;color:#8B8B8B">&nbsp;&nbsp;三级甲等</span>
+            </h2>
+            <div class="address">
+                <b>地址：</b>
+                		<span title="东城区东单帅府园1号(东院);西城区大木仓胡同41号(西院)">
+                			东城区东单帅府园1号(东院);西城区大木仓胡同41号(西院)
+                		</span>
+            </div>
+            <div class="tel">
+                <b>电话：</b>
+                <span>010-69156114(总机)</span>
+            </div>
+            <div class="website">
+                <b>官网：</b>
+                <span>&nbsp;http://www.pumch.cn/</span>
+            </div>
+        </div>
+    </div>
+    <div class="hos-doctor" style="display:block;">
+        <div style="margin-left:100px;margin-right:100px;margin-top:40px">
+            <span>相关医生</span>
+        </div>
+        <div class="hos-doctor-content" style="margin-left:100px;">
+            <ul>
+                <nav class="navb" id="i-nav">
+                    <li class='J_ListItem ' >
+                        <div class='doc-box' style='margin-top:20px;width:80%;display:inline;height:120px'>
+                            <div class='doc-info' style='float:left;width:45%;display:inline;height:100px;border-bottom:1px solid #DBDBDB'>
+                                <div class='doc-base-info' style='margin-top:5px;float:left;width:46%;display:inline'>
+                                    <a target='_blank'  href=''onmousedown='return _smartlog(this,'DOCP_1')' class='img' style='float:left'>
+                                    <img src='../image/touxiang.png' alt='' title='' onerror='' style='width: 90px;height: 90px'/>
+                                    </a>
+                                    <dl style='float:left;margin-left:0px;text-align:center'>
+                                        <dt>
+                                            <a href='javascript:void(0);' class='name'>王琦</a>
+                                        </dt>
+                                        <dd>
+                                            <p class='doc-grade'>重症患者</p>
+                                            <p class='doc-hosp-dept'>
+                                                <a href='javascript:void(0);'>脑残科</a>
+                                            </p>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class='doc-skill' style='float:right;margin-right:20px;width:50%'>
+                                    <p><label>擅长：</label>吃喝玩乐</p>
+                                </div>
+                            </div>
+                            <div class='doc-data' style='float:left;width:30%;display:inline;margin-left:10px;height:100px;border-bottom:1px solid #DBDBDB'>
+                                <div class='order-num' style='float:left;width:43%'>
+                                    <p class='num'>预约量：1000</p>
+                                    <p class='order_num'>可预约量: 10</p>
+                                </div>
+                                <div class='doc-comment' style='float:right;width:45%'>
+                                    <p><label>疗效：</label><span>250%</span></p>
+                                    <p><label>态度：</label><span>250%</span></p>
+                                </div>
+                            </div>
+                            <div class='doc-shiftcase J_ShiftCaseContent' style='float:right;margin-right:60px;width:18%;height:100px;border-bottom:1px solid #DBDBDB'>
+                                <div class='to-center' style='margin-top:60px;display:inline'>
+                                    <a class='gbb gbt-blue addpadding' href='#' style='margin-left:10px' onclick=''>挂号</a>
+                                    <a class='gbb gbt-blue addpadding' href='#' style='margin-left:10px' onclick='consult()'>咨询</a>
+                                </div>
+                            </div>
+                            <div class='clear'></div>
+                        </div>
+                    </li>
+                    <li class='J_ListItem ' >
+                        <div class='doc-box' style='width:80%;display:inline;height:120px'>
+                            <div class='doc-info' style='float:left;width:45%;display:inline;height:100px;border-bottom:1px solid #DBDBDB'>
+                                <div class='doc-base-info' style='margin-top:5px;float:left;width:46%;display:inline'>
+                                    <a target='_blank'  href=''onmousedown='return _smartlog(this,'DOCP_1')' class='img' style='float:left'>
+                                    <img src='../image/touxiang.png' alt='' title='' onerror='' style='width: 90px;height: 90px'/>
+                                    </a>
+                                    <dl style='float:left;margin-left:0px;text-align:center'>
+                                        <dt>
+                                            <a href='javascript:void(0);' class='name'>柏杨</a>
+                                        </dt>
+                                        <dd>
+                                            <p class='doc-grade'>重症患者</p>
+                                            <p class='doc-hosp-dept'>
+                                                <a href='javascript:void(0);'>脑残科</a>
+                                            </p>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class='doc-skill' style='float:right;margin-right:20px;width:50%'>
+                                    <p><label>擅长：</label>吃喝玩乐</p>
+                                </div>
+                            </div>
+                            <div class='doc-data' style='float:left;width:30%;display:inline;margin-left:10px;height:100px;border-bottom:1px solid #DBDBDB'>
+                                <div class='order-num' style='float:left;width:43%'>
+                                    <p class='num'>预约量：1000</p>
+                                    <p class='order_num'>可预约量: 10</p>
+                                </div>
+                                <div class='doc-comment' style='float:right;width:45%'>
+                                    <p><label>疗效：</label><span>250%</span></p>
+                                    <p><label>态度：</label><span>250%</span></p>
+                                </div>
+                            </div>
+                            <div class='doc-shiftcase J_ShiftCaseContent' style='float:right;margin-right:60px;width:18%;height:100px;border-bottom:1px solid #DBDBDB'>
+                                <div class='to-center' style='margin-top:60px;display:inline'>
+                                    <a class='gbb gbt-blue addpadding' href='#' style='margin-left:10px' onclick='guahao("+response[i]['id']+")'>挂号</a>
+                                    <a class='gbb gbt-blue addpadding' href='#' style='margin-left:10px' onclick='consult()'>咨询</a>
+                                </div>
+                            </div>
+                            <div style="clear:both"></div>
+                        </div>
+                    </li>
+                </nav>
+            </ul>
+        </div>
+        <div style='clear'></div>
+    </div>
+    <div class="hos-ks">
+        <div style="margin-left:100px;margin-right:100px;margin-top:20px">
+            <span>相关科室</span>
+        </div>
+        <div class="hos-ks-content" style="display:inline">
+            <ul>
+                <nav class="navb" id="i-nav">
+                    <li>
+                        <div class="hos-ks-box" style="float:left">
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hos-ks-box" style="float:left">
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hos-ks-box" style="float:left">
+
+                        </div>
+                    </li>
+                </nav>
+            </ul>
+        </div>
+    </div>
+</div>
+<footer>
+    <div>
+        <label>@copyright : <a href="javascript:void(0)" target="_blank">北京航空航天大学软件学院</a></label>
+        <label>宏兴闪闪项目组</label>
+        <span>京2015-12-31</span>
+    </div>
+</footer>
+<script type="text/javascript" src="../js/setuser.js"></script>
+</body>
+</html>
