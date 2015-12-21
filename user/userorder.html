@@ -118,14 +118,16 @@ for($i = 0;$i < count($orderinfo);$i++){
 echo <<< _FOR
 			<form>
             <tr>
-				<th><input align="center" type=hidden name="exitID" id="getId"> $oid </th>
-				<th><div align="center"> $otime </div></th>
-			        <th><div align="center"> $username </div></th>
-			        <th><div align="center"> $odoctor_name </div></th>
-			        <th><div align="center"> $ostatus </div></th>
-                		<th>
-                        <div align="center"><button class="button" action="userorder.php" type="submit"><a>取消订单</a> </button></div>
-                        <div align="center"><button class="button2" onclick="pay()"><a>支付</a> </button></div>
+				<th class="table-first-line"><input align="center" type=hidden name="exitID" id="getId"> $oid </th>
+				<th class="table-normal-line"><div align="center"> $otime </div></th>
+			        <th class="table-normal-line"><div align="center"> $username </div></th>
+			        <th class="table-normal-line"><div align="center"> $odoctor_name </div></th>
+			        <th class="table-normal-line"><div align="center"> $ostatus </div></th>
+                		<th class="table-last-line">
+                        <table align="center">
+                        <th><div align="center"><button class="button" action="userorder.php" type="submit"><a>取消订单</a> </button></div></th>
+                        <th><div align="center"><button class="button2" onclick="pay()"><a>支付</a> </button></div></th>
+                        </table>
                         </th>
 		        </tr>
                 </form>

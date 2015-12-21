@@ -16,7 +16,7 @@
 
 .button,.button2
 {
-    width:100px;
+    width:70px;
     height:25px;
     background-color:#00CCCC;
     font-size:16px;
@@ -32,5 +32,20 @@
     background-color:#00CCCC;
     font-size:16px;
     font-family:KaiTi_GB2312;
+}
+
+.table-first-line
+{
+    width:200px;
+}
+
+.table-normal-line
+{
+    width:150px;
+}
+
+.table-last-line
+{
+    width:300px;
 }
 /*-------------------------------------------------*/
