@@ -39,8 +39,7 @@ color: #333;background-color: #fff;}
     border: 1px solid transparent;
     border-bottom: 0;
 }
-
-a{text-decoration:none;}
+a{text-decoration:none;color:#333333;}
 li{
 	display:inline;
 	margin-left:4px;
@@ -205,8 +204,15 @@ h2{
 	text-align:center;
 	font-size:20px;
 	font-family:"楷体";
-	background-color:#6495ED;
+	background-color:#7EC0EE;
 }
+/*------------------医院信息---------------------------*/
+.hos-ks-box{
+	width:24%;
+	margin-left:5px;
+}
+
+
 /*---------------------------------------footer----------------------------------------*/
 footer{ width:100%;min-height:70px;height: auto;display: inline-block; background:#f5f5f5 }
 footer div{width:1200px;margin:40px 0 10px 300px;font-size:72%; }
