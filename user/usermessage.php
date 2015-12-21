@@ -67,11 +67,12 @@
 	$vuser = array(
 			'name' => $username
 		);
-  	$userinfo = $db->get_field_from_table('users','name,email,tel,id_card',$vuser);
+  	$userinfo = $db->get_field_from_table('users','name,email,tel,id_card,level',$vuser);
 	$rname = $userinfo[0]['name'];
 	$remail = $userinfo[0]['email'];
 	$rtel = $userinfo[0]['tel'];
 	$rid_card =$userinfo[0]['id_card'];
+	$rlevel = $userinfo[0]['level'];
 
 echo <<< _END
 
@@ -102,7 +103,7 @@ echo <<< _END
         <span name="ID">身份证号： $rid_card</span>
         </div>
 	<div class="message-line">
-        <span name="level">信用等级：</span>
+        <span name="level">信用等级： $rlevel</span>
         </div>
     </div>
 </div>

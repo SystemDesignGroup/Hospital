@@ -74,15 +74,11 @@
 			'user_id' => $rid
 		);
 	$orderinfo = $db->get_field_from_table('order_hospital','id,order_date,order_time,order_status,doctor_id',$vorder);
-	$roder_id = $orderinfo[0]['id'];
-	$roder_time = $orderinfo[0]['order_date'];
-	$rstatus = $orderinfo[0]['order_status'];
-	$rorder_doctor_id = $orderinfo[0]['doctor_id'];
 
 	
 	$vdoctor = array('id' => $rorder_doctor_id);
 	$doctorinfo = $db->get_field_from_table('doctor','name',$vdoctor);
-	$rdoctor_name = $doctorinfo[0]['name'];
+	
 
 	
 
@@ -115,14 +111,18 @@ echo <<< _END
 _END;
 
 for($i = 0;$i < count($orderinfo);$i++){
+		$oid = $orderinfo[$i]['id'];
+		$otime = $orderinfo[$i]['order_date'];
+		$ostatus = $orderinfo[$i]['order_status'];
+		$odoctor_name = $doctorinfo[$i]['name'];
 echo <<< _FOR
 			<form>
             <tr>
-				<th><input align="center" type=hidden name="exitID" id="getId">$orderinfo[$i]['id']</th>
-				<th><div align="center"> $orderinfo[$i]['order_date']</div></th>
-			        <th><div align="center">$username</div></th>
-			        <th><div align="center">$doctorinfo[$i]['name'] </div></th>
-			        <th><div align="center">$orderinfo[$i]['order_status']</div></th>
+				<th><input align="center" type=hidden name="exitID" id="getId"> $oid </th>
+				<th><div align="center"> $otime </div></th>
+			        <th><div align="center"> $username </div></th>
+			        <th><div align="center"> $odoctor_name </div></th>
+			        <th><div align="center"> $ostatus </div></th>
                 		<th>
                         <div align="center"><button class="button" action="" type="submit"><a>取消订单</a> </button></div>
                         <div align="center"><button class="button2" onclick="pay()"><a>支付</a> </button></div>
