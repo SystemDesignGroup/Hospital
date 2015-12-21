@@ -114,7 +114,12 @@ for($i = 0;$i < count($orderinfo);$i++){
 		$oid = $orderinfo[$i]['id'];
 		$otime = $orderinfo[$i]['order_date'];
 		$ostatus = $orderinfo[$i]['order_status'];
+		$odoctor_id = $userinfo[$i]['doctor_id'];		
+
+		$vdoctor = array('id' => $odoctor_id);
+		$doctorinfo = $db->get_field_from_table('doctor','name',$vdoctor);
 		$odoctor_name = $doctorinfo[$i]['name'];
+		
 echo <<< _FOR
 			<form>
             <tr>
