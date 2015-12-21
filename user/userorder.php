@@ -107,11 +107,11 @@ for($i = 0;$i < count($orderinfo);$i++){
 		$otime = $orderinfo[$i]['order_date'];
 		$ostatus = $orderinfo[$i]['order_status'];
 		if($ostatus == '0'){
-			$status = '新建'；
+			$status = '新建';
 		}else if($ostatus == '1'){
-			$status = '已到场'；
+			$status = '已到场';
 		}else if($ostatus == '2'){
-			$status = '已到期'；
+			$status = '已到期';
 		}
 		
 		$odoctor_id = $orderinfo[$i]['doctor_id'];		
@@ -142,7 +142,7 @@ _FOR;
 }
 		if($_SERVER["REQUEST_METHOD"] == "POST")
 		{
-			$db->delete_index_from_table($order,$_POST['exitID']);	//取消预约
+			$db->delete_index_from_table('order_hospital',$_POST['exitID']);	//取消预约
 		}
 
 echo <<< _TAIL
