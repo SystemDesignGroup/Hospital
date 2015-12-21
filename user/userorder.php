@@ -123,8 +123,8 @@ echo <<< _FOR
 			        <th class="table-normal-line"><div align="center"> $ostatus </div></th>
                 		<th class="table-last-line">
                         <table align="center">
-                        <th><div align="center"><button class="button"  type="submit"><a>取消订单</a> </button></div></th>
-                        <th><div align="center"><button class="button2" onclick="pay()"><a>支付</a> </button></div></th>
+                        <th><div align="center"><button class="orderbutton" action="userorder.php" type="submit" onclick="return check()"><a class="button white">取消订单</a> </button></div></th>
+                        <th><div align="center"><button class="orderbutton" onclick="pay()"><a class="button white">支付</a> </button></div></th>
                         </table>
                         </th>
 		        </tr>
@@ -136,7 +136,7 @@ _FOR;
 echo <<< _TAIL
             </thead>
           </table>
-	<div align="center"><button class="button3" onclick="print()"><a>打印预约单</a> </button></div>
+	<div align="center"><button class="button3" onclick="print()"><a class="button white">打印预约单</a> </button></div>
 </div>
     </div>
 </div>
@@ -156,6 +156,12 @@ _TAIL;
 
     function print() {
         alert("已打印预约单");
+    }
+    function check() {
+        if (confirm("是否取消订单")) {
+            return true;
+         }
+        else {return false; }
     }
 </script>
 </body>
