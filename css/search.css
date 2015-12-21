@@ -207,10 +207,13 @@ h2{
 	background-color:#7EC0EE;
 }
 /*------------------医院信息---------------------------*/
-.hos-ks-box{
-	width:24%;
-	margin-left:5px;
+.hos-ks-content{
+	margin-left:100px;
+	margin-right:100px;
+	background-color:#F0FFF0;
+	font-size:22px;
 }
+
 
 
 /*---------------------------------------footer----------------------------------------*/
