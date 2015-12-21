@@ -124,6 +124,7 @@ HTML;
 					$calendar_id=0;
 					$doid=$hospital."-".$office."-".$hname;
 					$date_t=date("Y-m-d");
+					//$date_t_e = $date_t+20;
 					$valuesca=array('type'=>1,'detail' => $doid,'off_start'=>$date_t,'off_end'=>$date_t);
 					$db->insert_data_into_table('calendar',$valuesca);
 					$ca_values=array('detail' => $doid);
