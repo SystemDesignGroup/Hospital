@@ -44,7 +44,7 @@ function searchDoctor(){
     var docCount;var docList;
     zc = '全部';
     //docDiv = document.getElementById('mainmain');
-    alert(zc+""+date);
+    //alert(zc+""+date);
     docList = document.getElementById('docList');
     docCount = document.getElementById('J_ResultNum');
 
@@ -187,7 +187,7 @@ function shaixuan(zhicheng){
     var docCount;var docList;
     zc=zhicheng;
     //docDiv = document.getElementById('mainmain');
-    alert(zc+""+date);
+    //alert(zc+""+date);
     docList = document.getElementById('docList');
     docCount = document.getElementById('J_ResultNum');
 
@@ -265,7 +265,7 @@ function doctor_date(){
     var docCount;var docList;
 
     date = document.getElementById('EntTime').value;
-    alert(zc+""+date);
+    //alert(zc+""+date);
     //docDiv = document.getElementById('mainmain');
     docList = document.getElementById('docList');
     docCount = document.getElementById('J_ResultNum');

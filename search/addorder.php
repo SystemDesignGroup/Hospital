@@ -29,7 +29,7 @@ if($time=='上午'){
         echo '该医生上午预约人数已满,请选择其他时间';
     }else{
         $a_count--;
-        $array = array("user_id"=>$result[0]['id_card'],"doctor_id"=>$doctor_id,"order_date"=>$date,"order_time"=>"6:00","order_status"=>1);
+        $array = array("user_id"=>$result[0]['id_card'],"doctor_id"=>$doctor_id,"order_date"=>$date,"order_time"=>"6:00","order_status"=>0);
         $conn->insert_data_into_table("order_hospital",$array);
 
         $conn->update_table('doctor','tickets',($a_count+$p_count),'id',$doctor_id);
@@ -41,7 +41,7 @@ if($time=='上午'){
         echo '该医生下午预约人数已满，请选择其他时间';
     }else{
         $p_count--;
-        $array = array("user_id"=>$result[0]['id_card'],"doctor_id"=>$doctor_id,"order_date"=>$date,"order_time"=>"14:00","order_status"=>1);
+        $array = array("user_id"=>$result[0]['id_card'],"doctor_id"=>$doctor_id,"order_date"=>$date,"order_time"=>"14:00","order_status"=>0);
         $conn->insert_data_into_table("order_hospital",$array);
 
         $conn->update_table('doctor','tickets',($a_count+$p_count),'id',$doctor_id);
