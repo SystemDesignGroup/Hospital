@@ -47,9 +47,8 @@
   <li><a href="../user/usermessage.php" class="animate">账号信息</a></li>
   <li><a href="../user/userpassword.html" class="animate">更改密码</a> </li>
   <li><a href="../search/quickorder.html" class="animate">快速预约</a></li>
-  <li><a href="#" class="animate">预约指南</a></li>
-  <li><a href="#" class="animate">公告查看</a></li>
-  <li><a href="#" class="animate">意见反馈</a></li>
+  <li><a href="../reserve_guide/guide.html" class="animate">预约指南</a></li>
+  <li><a href="../notice_view/notice.html" class="animate">公告查看</a></li>
 </ul>
 </dropdown>
 </div>

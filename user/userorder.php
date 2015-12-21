@@ -47,9 +47,8 @@
   <li><a href="../user/usermessage.php" class="animate">账号信息</a></li>
   <li><a href="../user/userpassword.html" class="animate">更改密码</a> </li>
   <li><a href="../search/quickorder.html" class="animate">快速预约</a></li>
-  <li><a href="#" class="animate">预约指南</a></li>
-  <li><a href="#" class="animate">公告查看</a></li>
-  <li><a href="#" class="animate">意见反馈</a></li>
+  <li><a href="../reserve_guide/guide.html" class="animate">预约指南</a></li>
+  <li><a href="../notice_view/notice.html" class="animate">公告查看</a></li>
 </ul>
 </dropdown>
 </div>
@@ -91,7 +90,7 @@ echo <<< _END
     </div>
 
     <div class="mainpart">
-       <table width=100% border="0">
+       <table width=100% border="0" class="bordered">
             <thead>
 			  <tr>
 			    <th><div align="center">预约单号</div></th>
@@ -116,13 +115,13 @@ for($i = 0;$i < count($orderinfo);$i++){
 echo <<< _FOR
 			<form action="userorder.php" method="post">
             <tr>
-				<th class="table-first-line"><input align="center" type=hidden name="exitID" id="getId"> $oid </th>
+				<th class="table-first-line"><div  align="center"><input type=hidden name="exitID" id="getId"> $oid </div></th>
 				<th class="table-normal-line"><div align="center"> $otime </div></th>
 			        <th class="table-normal-line"><div align="center"> $username </div></th>
 			        <th class="table-normal-line"><div align="center"> $odoctor_name </div></th>
 			        <th class="table-normal-line"><div align="center"> $ostatus </div></th>
                 		<th class="table-last-line">
-                        <table align="center">
+                        <table align="center" class="bordered">
                         <th><div align="center"><button class="orderbutton" action="userorder.php" type="submit" onclick="return check()"><a class="button white">取消订单</a> </button></div></th>
                         <th><div align="center"><button class="orderbutton" onclick="pay()"><a class="button white">支付</a> </button></div></th>
                         </table>
