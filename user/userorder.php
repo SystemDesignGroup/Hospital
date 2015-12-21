@@ -106,9 +106,19 @@ for($i = 0;$i < count($orderinfo);$i++){
 		$oid = $orderinfo[$i]['id'];
 		$otime = $orderinfo[$i]['order_date'];
 		$ostatus = $orderinfo[$i]['order_status'];
-		$odoctor_id = $userinfo[$i]['doctor_id'];		
+		if($ostatus == '0'){
+			$status = '新建'；
+		}else if($ostatus == '1'){
+			$status = '已到场'；
+		}else if($ostatus == '2'){
+			$status = '已到期'；
+		}
+		
+		$odoctor_id = $orderinfo[$i]['doctor_id'];		
 
-		$vdoctor = array('id' => $odoctor_id);
+		$vdoctor = array(
+			'id' => $odoctor_id
+		);
 		$doctorinfo = $db->get_field_from_table('doctor','name',$vdoctor);
 		$odoctor_name = $doctorinfo[0]['name'];
 		
@@ -119,7 +129,7 @@ echo <<< _FOR
 				<th class="table-normal-line"><div align="center"> $otime </div></th>
 			        <th class="table-normal-line"><div align="center"> $username </div></th>
 			        <th class="table-normal-line"><div align="center"> $odoctor_name </div></th>
-			        <th class="table-normal-line"><div align="center"> $ostatus </div></th>
+			        <th class="table-normal-line"><div align="center"> $status </div></th>
                 		<th class="table-last-line">
                         <table align="center" class="bordered">
                         <th><div align="center"><button class="orderbutton" action="userorder.php" type="submit" onclick="return check()"><a class="button white">取消订单</a> </button></div></th>
@@ -130,7 +140,10 @@ echo <<< _FOR
                 </form>
 _FOR;
 }
-
+		if($_SERVER["REQUEST_METHOD"] == "POST")
+		{
+			$db->delete_index_from_table($order,$_POST['exitID']);	//取消预约
+		}
 
 echo <<< _TAIL
             </thead>
@@ -142,12 +155,7 @@ echo <<< _TAIL
 _TAIL;
 ?>
   
-<?php
-	if($_SERVER["REQUEST_METHOD"] == "POST")
-	{
-		$db->delete_index_from_table($order,$_POST['exitID']);	//取消预约
-	}
-?>
+
 <script>
     function pay() {
         alert("支付成功");
