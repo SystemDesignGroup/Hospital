@@ -124,7 +124,7 @@ echo <<< _FOR
 			        <th><div align="center"> $odoctor_name </div></th>
 			        <th><div align="center"> $ostatus </div></th>
                 		<th>
-                        <div align="center"><button class="button" action="" type="submit"><a>取消订单</a> </button></div>
+                        <div align="center"><button class="button" action="userorder.php" type="submit"><a>取消订单</a> </button></div>
                         <div align="center"><button class="button2" onclick="pay()"><a>支付</a> </button></div>
                         </th>
 		        </tr>
