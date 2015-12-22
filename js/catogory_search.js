@@ -11,7 +11,7 @@ function showdoc(keshi){
     var doctorlist;
     department=keshi;
 
-    doctorlist=document.getElementById('doctorList');
+    docList=document.getElementById('doctorList');
     docList.innerHTML = '';
 
     xmlHttp = new XMLHttpRequest();
