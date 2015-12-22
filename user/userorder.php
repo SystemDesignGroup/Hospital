@@ -3,7 +3,7 @@
 		$database = new database();
 		if($_SERVER["REQUEST_METHOD"] == "POST")
 		{
-			$database->delete_index_from_table('order_hospital',$_POST["exitID"]);	//取消预约
+			$database->delete_index_from_table('order_hospital',$_POST);	//取消预约
 		}
 ?>
 <!DOCTYPE html>
