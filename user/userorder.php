@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html>
+﻿<?php
+		require_once("../database.php");
+		$database = new database();
+		if($_SERVER["REQUEST_METHOD"] == "POST")
+		{
+			$database->delete_index_from_table('order_hospital',$_POST["exitID"]);	//取消预约
+		}
+?>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -140,10 +148,7 @@ echo <<< _FOR
                 </form>
 _FOR;
 }
-		if($_SERVER["REQUEST_METHOD"] == "POST")
-		{
-			$db->delete_index_from_table('order_hospital',$_POST['exitID']);	//取消预约
-		}
+		
 
 echo <<< _TAIL
             </thead>
