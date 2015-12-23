@@ -3,7 +3,8 @@ require_once("../database.php");
 $database = new database();
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-	$database->delete_index_from_table('order_hospital',$_POST);	//取消预约
+	$test = $database->delete_index_from_table('order_hospital',$_POST);	//取消预约
+	echo $test;
 }
 ?>
 <!DOCTYPE html>
@@ -38,7 +39,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	</div>
 </div>
 <!---------------------------LOGO及搜索栏--------------------------------->
-
 <div class="blue-div">
 	<label class="blue-div-start">快速预约：</label>
 	<a href="../search/search.html" class="blue-div-hosptial">按医院找</a>
@@ -60,43 +60,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 		</ul>
 	</dropdown>
 </div>
-
 <!-------------------------菜单栏----------------------------------------->
-
 <?php
 /* search information for user's center */
-
 require_once("../database.php");
 session_start();
 $username = $_SESSION['username'];
 $db = new database();
-
 $vuser = array(
 		'name' => $username
 );
 $userinfo = $db->get_field_from_table('users','id_card',$vuser);
 $rid =$userinfo[0]['id_card'];
-
 $vorder = array(
 		'user_id' => $rid
 );
 $orderinfo = $db->get_field_from_table('order_hospital','id,order_date,order_time,order_status,doctor_id',$vorder);
-
 echo <<< _END
-
 <div class="page">
     <div>
     <label class="start"><span class="link"></span></label>
     </div>
-
     <div>
     <img class="set" src="../image/set.jpg" alt="更改密码图片" id="set"/>
     <label class="passwordfont">我的预约单</label>
     </div>
-
     <div class="change-div">
     </div>
-
     <div class="mainpart">
        <table width=100%  class="bordered">
             <thead>
@@ -120,9 +110,7 @@ for($i = 0;$i < count($orderinfo);$i++){
 	}else if($ostatus == '2'){
 		$status = '已到期';
 	}
-
 	$odoctor_id = $orderinfo[$i]['doctor_id'];
-
 	$vdoctor = array(
 			'id' => $odoctor_id
 	);
@@ -156,13 +144,10 @@ echo <<< _TAIL
     </div>
 _TAIL;
 ?>
-
-
 <script>
 	function pay() {
 		alert("支付成功");
 	}
-
 	function print() {
 		alert("已打印预约单");
 	}
