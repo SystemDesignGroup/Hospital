@@ -5,7 +5,7 @@ $db=new database();
 $db->connect_to_db();
 
 //获取相关医院信息
-$tab='感染科';//$_GET['tab'];
+$tab=$_GET['tab'];
 $leibie=$_GET['leibie'];
 
 $text=array('name'=>$tab);
@@ -26,9 +26,5 @@ if($leibie=='hos'&&$result_hos!=null){
 if($leibie=='doc'&&$result_doc!=null){
     echo json_encode($result_doc);
 }
-
-$test=array('name'=>'外科');
-$result=$db->get_field_from_table("department","hospital_id",$test);
-echo json_encode($result);
 
 ?>

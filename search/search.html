@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="../css/search.css"/>
+	<script type="text/javascript" src="../js/jquery-1.8.2.js"></script>
 	<script type="text/javascript" src="../js/home.js"></script>
 	<title>搜索|挂号网</title>
 	
@@ -47,12 +48,12 @@
 	<div id="mainmain">
 	<div class="main-container">
 		<div id="g-breadcrumb">
-	 		<span>>快速预约</span> 
+	 		<span>>快速预约</span>
 		</div>
 		<div class="search-wrap">
       	<div class="top-left">
          	<span class="addr-icon">北京</span>
-            <span class="J_Province" id="address">海淀区</span>
+            <span class="J_Province" id="address"><label id="city-label">海淀区</label></span>        
             <a href="javascript:void(0)" class="tabnav-tab" onclick = "document.getElementById('light').style.display='block';">切换</a>
          </div>
          <div id="light" class="white_content">
@@ -61,11 +62,9 @@
     			<a href="javascript:void(0);" class="close"></a>
     			<div class="area-content J_AreaContent">
     				<p class="content-title" style="font-size:12px">请选择地区:</p>
-      			<ul class="J_ProvinceUl"></ul>
      			</div>
    			</div>         	
-         	<ul>
-					<nav class="navb" id="i-nav">         		
+         	<ul class="J_ProvinceUl">       		
          		<li><a href="javascript:byCity('东城区');" class="addr-name tabnav-tab">东城区</a></li>
          		<li><a href="javascript:byCity('西城区');" class="addr-name tabnav-tab">西城区</a></li>
          		<li><a href="javascript:byCity('朝阳区');" class="addr-name tabnav-tab">朝阳区</a></li>
@@ -82,10 +81,9 @@
          		<li><a href="javascript:byCity('延庆区');" class="addr-name tabnav-tab">延庆区</a></li>
          		<li><a href="javascript:byCity('石景山');" class="addr-name tabnav-tab">石景山</a></li>
          		<li><a href="javascript:byCity('门头沟区');" class="addr-name tabnav-tab">门头沟区</a></li>
-         		</nav>
          	</ul>
          </div>
-         <script>
+         <!-- <script>
 				function show(){         	
          		var btn=document.getElementsByClassName("addr-name");
          		var lab=document.getElementById("address");
@@ -95,17 +93,7 @@
          		}
          	}
          	show(); 
-         </script>
-        	
-         <!-- <script>
-         	var btn1=document.getElementById("ad-exc");
-         	var btn2=document.getElementById()
-         	var box1=document.getElementById();
-         	btn1.onclick=function(){
-         		
-         	}
          </script> -->
-			
 		</div>
 		<div class="filter-new J_Filter">
       	<form name="fform" action="search">
@@ -219,7 +207,7 @@
         	</form>
     	</div>
     	<div class="hospital-items" >
-    		<ul class="hos_ul" id="hospitals">
+    		<ul class="hos_ul">
     			<li class="g-hospital-item J_hospitalItem">
 					<div class="hos-total">
   						<div class="info g-left" style="float:left">

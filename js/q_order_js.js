@@ -23,7 +23,7 @@ function setRefAttribute(tab)
     if(isSelected=="true")
     {
         console.log(tab);
-        tab.style.color="#333";
+        tab.style.color="#018bba";
         tab.style.backgroundColor="#fff";
         tab.style.borderColor="#ddd";
         tab.style.borderRadius="3px 3px 0 0";
