@@ -91,7 +91,7 @@ function byCity(city){
             }
         }
     }
-    xmlHttp.open("GET","search_by_hos.php?tab="+City+"&Grade="+grade+"&Major="+major,true);
+    xmlHttp.open("GET","search_by_hos.php?tab="+City,true);
     xmlHttp.send();
 }
 
