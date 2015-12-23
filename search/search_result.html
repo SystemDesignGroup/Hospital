@@ -44,74 +44,72 @@
             </nav>
     </div>
 </center>
+<div class="hos-main-content" style="height:auto;display:block">
 <div class="hos-doctor" style="display:block;">
     <div style="margin-left:100px;margin-right:100px;margin-top:40px">
         <span>相关医院</span>
     </div>
-    <div class="hos-doctor-content" style="margin-left:100px;">
+    <div class="hos-doctor-content" style=";">
         <ul>
             <nav class="navb" id="hospitals">
-
+					<!-- <li class='J_ListItem'>
+                    		<div class='hos-content' style='height:170px;margin-left:60px;margin-right:80px;background-color:#F0FFF0;border:0.5px;solid gray;display:block'>
+                        <div class='detail word-break' style='float:left;margin-left:40px;width:40%'>
+                        <h2>
+                        <strong><a href=''>"+response[0][j]['h_name']+"</a></strong>
+                        <span style='font-size:18px;color:#8B8B8B'>&nbsp;&nbsp;"+response[0][j]['detail']+"</span>
+                        </h2>
+                    <div class='address'>
+                        <b>地址：</b>
+                    <span title=''>
+                        response[0][j]['address'
+                    </span>
+                    </div>
+                    <div class='tel'>
+                        <b>电话：</b>
+                    <span>"+response[0][j]['tel']+"</span>
+                    </div>
+                    <div class='website'>
+                        <b>简介：</b>
+                    <span>&nbsp;"+response[0][j]['intro']+"</span>
+                        </div>
+                    </div>
+                    </div>
+                    </li>
+                     -->
             </nav>
         </ul>
     </div>
     <div style='clear()'></div>
 </div>
-    <div class="hos-doctor" style="display:block;">
-        <div style="margin-left:100px;margin-right:100px;margin-top:100px">
+    <div class="hos-doctor" style="display:block">
+        <div style="margin-left:100px;margin-right:100px;margin-top:10px">
             <span>相关医生</span>
         </div>
         <div class="hos-doctor-content" style="margin-left:100px;">
             <ul>
                 <nav class="navb" id="doctors">
-
+							
                 </nav>
             </ul>
         </div>
-        <div style='clear()'></div>
+        <div style='clear'></div>
     </div>
-    <div class="hos-ks">
+    <div class="hos-ks" >
         <div style="margin-left:100px;margin-right:100px;margin-top:20px">
             <span>相关科室</span>
         </div>
         <div class="hos-ks-content">
-            <div class="hos-ks-type" id="box" style="display:inline">
+            <div class="hos-ks-type" id="box">
                 <ul>
                     <nav class="navb" id="departments">
+                    		
                     </nav>
                 </ul>
             </div>
-            <div class="condition-options" style="float:right">
-                <nav class="navb" id="i-nav">
-                    <a id="icon" href="javascript:;" class="tabnav-tab" style="float:right;margin-right:-10px;margin-top:-30px">展开</a>
-                </nav>
-            </div>
-            <script>
-                function show(){
-                    var box = document.getElementById("box");
-                    var text = box.innerHTML;
-                    var newBox = document.createElement("div");
-                    var btn = document.getElementById("icon");
-                    newBox.innerHTML = text.substring(0,1700);
-                    btn.innerHTML = text.length > 1700 ? "展开" : "";
-                    btn.href = "###";
-                    btn.onclick = function(){
-                        if (btn.innerHTML == "展开"){
-                            btn.innerHTML = "收起";
-                            newBox.innerHTML = text;
-                        }
-                        else{
-                            btn.innerHTML = "展开";
-                            newBox.innerHTML = text.substring(0,1700);
-                        }
-                    }
-                    box.innerHTML = "";
-                    box.appendChild(newBox);
-                    box.appendChild(btn);
-                }
-                show();
-            </script>
+            
         </div>
+        
     </div>
 </div>
 <footer>
