@@ -98,7 +98,7 @@ echo <<< _END
     </div>
 
     <div class="mainpart">
-       <table width=100% border="0" class="bordered">
+       <table width=100%  class="bordered">
             <thead>
 			  <tr>
 			    <th><div align="center">预约单号</div></th>
@@ -106,10 +106,9 @@ echo <<< _END
 			    <th><div align="center">预约人</div></th>
 			    <th><div align="center">医生 </div></th>
 			    <th><div align="center">预约状态</div></th>
-                	<th><div align="center">操作</div></th>
+                <th><div align="center">操作</div></th>
 			</tr>
 _END;
-
 for($i = 0;$i < count($orderinfo);$i++){
 	$oid = $orderinfo[$i]['id'];
 	$otime = $orderinfo[$i]['order_date'];
@@ -129,11 +128,11 @@ for($i = 0;$i < count($orderinfo);$i++){
 	);
 	$doctorinfo = $db->get_field_from_table('doctor','name',$vdoctor);
 	$odoctor_name = $doctorinfo[0]['name'];
-
 	echo <<< _FOR
-			<form action="userorder.php" method="post">
+
+			<form class="formline" action="userorder.php" method="post">
             <tr>
-				<th class="table-first-line"><div  align="center"><input type=checkbox><input type=hidden name="id" id="getId" value=$oid> $oid </div></th>
+				<th class="table-first-line"><div align="center"><input type=checkbox><input type=hidden name="id" id="getId" value=$oid> $oid </div></th>
 				<th class="table-normal-line"><div align="center"> $otime </div></th>
 			        <th class="table-normal-line"><div align="center"> $username </div></th>
 			        <th class="table-normal-line"><div align="center"> $odoctor_name </div></th>
@@ -146,17 +145,15 @@ for($i = 0;$i < count($orderinfo);$i++){
                         </th>
 		        </tr>
                 </form>
+
 _FOR;
 }
-
-
 echo <<< _TAIL
             </thead>
           </table>
 	<div align="center"><button class="button3" onclick="print()"><a class="button white">打印预约单</a> </button></div>
 </div>
     </div>
-</div>
 _TAIL;
 ?>
 
