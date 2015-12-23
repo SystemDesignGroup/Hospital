@@ -143,9 +143,15 @@ h2{
 	display:inline;
 	text-align:center;	
 }
+.ks-main-container
+{
+	margin-left:40px;
+	width:100%;
+	border-right:1px solid #CDCDB4;
+}
 .ks-left
 {
-	width:27%;
+	width:20%;
 	float:left;
 	background-color:#EEEEE0;
 }
@@ -155,8 +161,10 @@ h2{
 }
 .ks-middle
 {
-	width:60%;
-	margin-left:300px;
+	width:74%;
+	margin-left:280px;
+}
+.g_jb_right_ks{
 	background-color:#EEEEE0;
 }
 .g_jb_right_conect
