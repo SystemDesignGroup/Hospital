@@ -99,8 +99,8 @@ class database{
             $str = $str."$index = $keyvalue[$index] AND ";
         }
         $str = substr($str, 0, -4);
-        $result = $this->connect->odbc_prepare("DELETE FROM $table".$str);
-		//$result->execute();
+        $result = $this->connect->prepare("DELETE FROM $table".$str);
+		$result->execute();
     }
 	//以下函数不建议直接使用
 	public function put_user_in_db($name,$password,$email,$role,$id_card,$tel,$status,$level){
