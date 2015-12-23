@@ -80,7 +80,7 @@ function showdoc(keshi){
                 docList.innerHTML += listItem;
             }
         }
-    }
+    };
     xmlHttp.open("GET","search_by_department.php?tab="+department+"&leibie=doc",false);
     xmlHttp.send();
 
@@ -92,7 +92,7 @@ function showhos(keshi){
     var hospitallist;
     //department=keshi;
 
-    hospitallist=document.getElementById('hospitallist');
+    hospitallist=document.getElementById('hospitalList');
     hospitallist.innerHTML = '';
 
     xmlHttp=new XMLHttpRequest();
@@ -135,8 +135,8 @@ function showhos(keshi){
                 hospitallist.innerHTML+=listItem;
             }
         }
-    }
-    xmlHttp.open("GET","search_by_department.php?tab="+department+"&leibie=hos",true);
+    };
+    xmlHttp.open("GET","search_by_department.php?tab="+keshi+"&leibie=hos",true);
     xmlHttp.send();
 }
 function check(keshi){
