@@ -1,31 +1,30 @@
 /**
  * Created by xjf13211016 on 15-12-20.
  */
-gethosinfo();
-getdocinfo();
+//gethosinfo();
+//getdocinfo();
 var hospital,department;
 var date= document.getElementById('EntTime').value;
-function getdocinfo(){
+/*function getdocinfo(){
     var str=location.search;
     var mstr = str.split('?')[1];
     var strArray = mstr.split('&');
-}
+}*/
 function showdoc(keshi){
     var xmlHttp;
     var response;
-    var docList;
+    var doctorlist;
     department=keshi;
-    //alert('aaa');
     //showhos(keshi);
-    docList=document.getElementById('doctorlist');
-    docList.innerHTML = '';
+    doctorlist=document.getElementById('doctorlist');
+    doctorlist.innerHTML = '';
 
     xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
-            response = eval(xmlHttp.response);
+            //response = eval(xmlHttp.response);
 
-            for(var i = 0;i<response.length;i++){
+            //for(var i = 0;i<response.length;i++){
                 var zhicheng;
                 if(response[i]['grade_id']=='4'){
                     zhicheng = '主任医师';
@@ -77,8 +76,8 @@ function showdoc(keshi){
                     "</div>"+
                     "</li>";
 
-                docList.innerHTML += listItem;
-            }
+                doctorlist.innerHTML += listItem;
+            //}
         }
     }
     xmlHttp.open("GET","search_by_department.php?tab="+department+"&liebie='doc'",true);

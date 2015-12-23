@@ -16,13 +16,19 @@ $result_hos= $db->get_field_from_table("hospital","id,name,address,tel,intro",$k
 //获取相关医生信息
 $department_id=$db->get_field_from_table("department","id",$text);
 $department_id_s = $department_id[0]['id'];
-$keys1 = array('department_id'=>$department_id_s);
-$result_doc= $db->get_field_from_table("doctor","id,name,grade_id,intro,tickets",$keys1);
+$keys2 = array('department_id'=>$department_id_s);
+$result_doc= $db->get_field_from_table("doctor","id,name,grade_id,intro,tickets",$keys2);
 
 if($leibie=='hos'&&$result_hos!=null){
     echo json_encode($result_hos);
 }
+
 if($leibie=='doc'&&$result_doc!=null){
     echo json_encode($result_doc);
 }
+
+$test=array('name'=>'外科');
+$result=$db->get_field_from_table("department","hospital_id",$test);
+echo json_encode($result);
+
 ?>
