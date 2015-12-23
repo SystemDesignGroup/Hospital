@@ -4,19 +4,18 @@
 
 getHospitalInfo();
 
-<<<<<<< HEAD
 var hospital,City,Grade,Major;
 
 var date = document.getElementById('EntTime').value;
 function getHospitalInfo(){
     //alert(province+"\n"+city+"\n"+grade+"\n"+major);
-=======
+
 var hospital,department;
 
 var date = document.getElementById('EntTime').value;
 function getHospitalInfo(){
     //alert(province+"\n"+city+"\n"+major+"\n"+grade);
->>>>>>> origin/master
+
 
     var str = location.search;
     var mstr = str.split('?')[1];
@@ -46,7 +45,7 @@ function getHospitalInfo(){
     document.getElementById('result_major').innerHTML=major;
 }
 
-<<<<<<< HEAD
+
 function byCity(city){
     var xmlHttp;
     var response;
@@ -72,7 +71,7 @@ function byCity(city){
                     "<dt>"+
                     "<a href='' class='name'>" + response[i]['name'] + "</a>" +
                     "<em class='em2'>"+response[i]['grade']+"</em>"+
-=======
+
 function searchHospital(){
     var xmlHttp,response;
     var hosList;
@@ -103,17 +102,17 @@ function searchHospital(){
                     "<p class='hos-city'>" + city + "</p>" +
                     "<p class='hos-grade'>" + grade + "</p>" +
                     "<p class='hos-major'>" + major + "</p>" +
->>>>>>> origin/master
+
                     "<img src='http://img.guahao.cn/portal/img/guahao.png'>"+
                     "</dt>"+
                     "<dd>"+
                     "<p class='tel'>"+
                     "<i>"+"</i>"+
-<<<<<<< HEAD
+
                     "<span title=''>"+responese[i]['tel']+"</span>"+
-=======
+
                     "<span title=''>"+response[i]['tel']+"</span>"+
->>>>>>> origin/master
+
                     "</p>"+
                     "<p class='addr'>"+
                     "<i>"+"</i>"+
@@ -130,7 +129,7 @@ function searchHospital(){
                     "</div>"+
                     "<a class='cover-bg' target='_blank' href='http://www.guahao.com/hospital/5cee04f9-4cc8-4499-a35b-6f37f2dd8a74000'>"+"</a>"+
                     " </li>";
-<<<<<<< HEAD
+
             }
         }
     }
