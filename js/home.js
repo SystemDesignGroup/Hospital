@@ -1,5 +1,5 @@
 /**
- * Created by ìÏ on 2015/12/20.
+ * Created by ï¿½ï¿½ on 2015/12/20.
  */
 window.onload=init;
 function init()
@@ -54,4 +54,16 @@ function hideCityList()
     var div=document.getElementById("city-list");
     console.log("Get div");
     div.style.display="none";
+}
+function search(){
+    var search_key,search_key_t='%';
+    search_key = document.getElementById('search_key').value;
+
+    for(var i=0;i<search_key.length;i++){
+        search_key_t = search_key_t+search_key[i]+'%';
+    }
+
+    search_key_t = encodeURI(search_key_t);
+    search_key_t = encodeURI(search_key_t);
+    window.location.href="./search/search_result.html?key="+search_key_t;
 }

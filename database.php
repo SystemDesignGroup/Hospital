@@ -77,10 +77,11 @@ class database{
 		return $value;
 	}
 	public function another_get_field_from_table($table,$field,$keys,$op){//表名，待查询字段（需要的结果），查询依据的字段及字段值（为关联数组形式）;返回值为关联数组形式
+		$this->connect->setAttribute(PDO::CASE_NATURAL);
 		$keys_index = array_keys($keys);
 		$str = 'WHERE ';
 		foreach($keys_index as $index){
-			$str = $str."$index= $keys[$index] AND ";
+			$str = $str."$index $keys[$index] AND ";
 		}
 		$str = substr($str,0,-4);
 		$result = $this->connect->prepare("SELECT $field FROM $table ".$str);
@@ -98,7 +99,8 @@ class database{
             $str = $str."$index = $keyvalue[$index] AND ";
         }
         $str = substr($str, 0, -4);
-        $result = $this->$connect->odbc_prepare("DELETE FROM $table".$str);
+        $result = $this->connect->odbc_prepare("DELETE FROM $table".$str);
+		//$result->execute();
     }
 	//以下函数不建议直接使用
 	public function put_user_in_db($name,$password,$email,$role,$id_card,$tel,$status,$level){
