@@ -93,14 +93,13 @@ class database{
 		$result = $this->connect->exec("UPDATE $table SET $column='$value' WHERE $key_field='$key'");
 	}
     public function delete_index_from_table($table,$keyvalue){
-        $str = 'WHERE';
+        $str = 'WHERE ';
         $key_index = array_keys($keyvalue);
         foreach ($key_index as $index){
             $str = $str."$index = $keyvalue[$index] AND ";
         }
         $str = substr($str, 0, -4);
-        $result = $this->connect->prepare("DELETE FROM $table".$str);
-		$result->execute();
+        $this->connect->exec("DELETE FROM $table".$str);
     }
 	//以下函数不建议直接使用
 	public function put_user_in_db($name,$password,$email,$role,$id_card,$tel,$status,$level){
