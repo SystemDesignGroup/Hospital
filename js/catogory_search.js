@@ -1,16 +1,21 @@
 /**
  * Created by xjf13211016 on 15-12-20.
  */
-
+gethosinfo();
+getdocinfo();
 var hospital,department;
 var date= document.getElementById('EntTime').value;
-
+function getdocinfo(){
+    var str=location.search;
+    var mstr = str.split('?')[1];
+    var strArray = mstr.split('&');
+}
 function showdoc(keshi){
     var xmlHttp;
     var response;
     var doctorlist;
     department=keshi;
-
+    showhos(keshi);
     docList=document.getElementById('doctorList');
     docList.innerHTML = '';
 
@@ -75,14 +80,13 @@ function showdoc(keshi){
             }
         }
     }
-    xmlHttp.open("GET","search_by_department.php?tab="+department+"&liebie=doc",true);
+    xmlHttp.open("GET","search_by_department.php?tab="+department+"&liebie='doc'",true);
     xmlHttp.send();
 }
 function showhos(keshi){
     var xmlHttp;
     var response;
     var hospitallist;
-
     department=keshi;
 
     hospitallist=document.getElementById('hospitalList');
@@ -125,9 +129,13 @@ function showhos(keshi){
                 "</div>"+
                 "<a class='cover-bg' target='_blank' href='http://www.guahao.com/hospital/5cee04f9-4cc8-4499-a35b-6f37f2dd8a74000'>"+"</a>"+
                 " </li>";
+                hospitallist.innerHTML+=listItem;
             }
         }
     }
-    xmlHttp.open("GET","search_by_department.php?tab="+department+"&liebie=hos",true);
+    xmlHttp.open("GET","search_by_department.php?tab="+department+"&liebie='hos'",true);
     xmlHttp.send();
+}
+function check(keshi){
+    alert("确认"+keshi)
 }

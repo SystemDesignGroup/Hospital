@@ -18,6 +18,7 @@ $department_id=$db->get_field_from_table("department","id",$text);
 $department_id_s = $department_id[0]['id'];
 $keys1 = array('department_id'=>$department_id_s);
 $result_doc= $db->get_field_from_table("doctor","id,name,grade_id,intro,tickets",$keys1);
+
 if($leibie=='hos'&&$result_hos!=null){
     echo json_encode($result_hos);
 }
