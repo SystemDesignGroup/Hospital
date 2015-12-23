@@ -6,6 +6,7 @@ getHospitalInfo();
 
 var hospital,City,Grade,Major;
 
+Grade = '';Major='';
 function getHospitalInfo(){
     //alert(province+"\n"+city+"\n"+major+"\n"+grade);
 
@@ -100,7 +101,7 @@ function byGrade(grade){
     var response;
     var hospitallist;
 
-    Grade=grade;
+    //Grade=grade;
 
     hospitallist=document.getElementById('hospitalList');
     hospitallist.innerHTML = '';
@@ -145,7 +146,7 @@ function byGrade(grade){
             }
         }
     }
-    xmlHttp.open("GET","search_by_hos.php?tab="+Grade,true);
+    xmlHttp.open("GET","search_by_hos.php?tab="+grade+"&major=",true);
     xmlHttp.send();
 }
 
@@ -154,7 +155,6 @@ function byMajor(major){
     var response;
     var hospitallist;
 
-    Major=major;
 
     hospitallist=document.getElementById('hospitalList');
     hospitallist.innerHTML = '';
@@ -199,6 +199,6 @@ function byMajor(major){
             }
         }
     }
-    xmlHttp.open("GET","search_by_hos.php?tab="+Major,true);
+    xmlHttp.open("GET","search_by_hos.php?tab=&major="+major,true);
     xmlHttp.send();
 }
