@@ -36,7 +36,7 @@ function showdoc(keshi){
                 }
                 var listItem = "<li class='J_ListItem'>"+
                     "<div class='doc-box' style='display:inline;height:120px'>"+
-                    "<div class='doc-info' style='float:left;width:45%;display:inline;height:100px;border-bottom:1px solid #DBDBDB'>"+
+                    "<div class='doc-info' style='float:left;width:54%;display:inline;height:100px;border-bottom:1px solid #DBDBDB'>"+
                     "<div class='doc-base-info' style='float:left;width:53%;display:inline'>"+
                     "<a target='_blank'  href=''onmousedown='return _smartlog(this,'DOCP_1')' class='img' style='float:left'>"+
                     "<img src='../image/touxiang.png' alt='' title=''  onerror='' style='width: 90px;height: 90px'/>"+
@@ -57,8 +57,8 @@ function showdoc(keshi){
                     "<p><label>擅长：</label>"+response[i]['intro']+"</p>"+
                     "</div>"+
                     "</div>"+
-                    "<div class='doc-data' style='float:left;width:30%;display:inline;margin-left:20px;height:100px;border-bottom:1px solid #DBDBDB'>"+
-                    "<div class='order-num' style='float:left;width:30%'>"+
+                    "<div class='doc-data' style='float:left;width:21%;display:inline;margin-left:20px;height:100px;border-bottom:1px solid #DBDBDB'>"+
+                    "<div class='order-num' style='float:left;width:50%'>"+
                     "<p class='num'>预约量：1000</p>"+
                     "<p class='order_num'>可预约量: "+response[i]['tickets']+"</p>"+
                     "</div>"+
@@ -104,7 +104,7 @@ function showhos(keshi){
                     "<div class='hos-total'>"+
                     "<div class='info g-left' style='float:left'>"+
                     "<a target='_blank' href='http://www.guahao.com/hospital/5cee04f9-4cc8-4499-a35b-6f37f2dd8a74000' onmousedown='return _smartlog(this,HPTP_1)' class='img' style='float:left'>"+
-                    "<img src='../image/pku_hos.jpg' alt='' title=''/>"+
+                    "<img style='height:180px;width:260px' src='../image/pku_hos.jpg'/>"+
                     "</a>"+
                     "<dl style='float:left;margin-left:0px;text-align:center'>" +
                     "<dt>"+
@@ -125,7 +125,7 @@ function showhos(keshi){
                     "</dl>"+
                     "<p><label>医院简介：</label>" + response[i]['intro'] + "</p>" +
                     "</div>"+
-                    "<div class='comment' style='float:left margin-right:920px;margin-top:200'>"+
+                    "<div class='comment' style='float:right margin-right:100px;margin-top:20'>"+
                     "累计 <label>133.0万</label> 次预约<div class='pd15'> "+"</div>"+
                     "累计 <label>6.1万</label> 条患者评价"+
                 "</div>"+
