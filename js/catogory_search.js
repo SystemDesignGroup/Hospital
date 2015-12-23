@@ -101,10 +101,10 @@ function showhos(keshi){
             response=eval(xmlHttp.response);
             for(var i=0;i<response.length;i++){
                 var listItem="<li class='g-hospital-item J_hospitalItem'>"+
-                    "<div class='hos-total'>"+
+                    "<div class='hos-total' style='height:145px;border-bottom:1px solid #DBDBDB'>"+
                     "<div class='info g-left' style='float:left'>"+
                     "<a target='_blank' href='http://www.guahao.com/hospital/5cee04f9-4cc8-4499-a35b-6f37f2dd8a74000' onmousedown='return _smartlog(this,HPTP_1)' class='img' style='float:left'>"+
-                    "<img style='height:180px;width:260px' src='../image/pku_hos.jpg'/>"+
+                    "<img style='height:140px;width:220px' src='../image/pku_hos.jpg'/>"+
                     "</a>"+
                     "<dl style='float:left;margin-left:0px;text-align:center'>" +
                     "<dt>"+
@@ -125,7 +125,7 @@ function showhos(keshi){
                     "</dl>"+
                     "<p><label>医院简介：</label>" + response[i]['intro'] + "</p>" +
                     "</div>"+
-                    "<div class='comment' style='float:right margin-right:100px;margin-top:20'>"+
+                    "<div class='comment' style='float:right;margin-right:200px;margin-top:40px'>"+
                     "累计 <label>133.0万</label> 次预约<div class='pd15'> "+"</div>"+
                     "累计 <label>6.1万</label> 条患者评价"+
                 "</div>"+

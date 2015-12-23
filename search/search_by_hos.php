@@ -12,16 +12,22 @@ $db = new database();
 $db -> connect_to_db();
 
 //获取医院信息
-$city = '海淀区';//$_GET['city'];
-$grade = $_GET['tab'];
+$city = $_GET['city'];//'海淀区';
+$grade = $_GET['tab'];//'三级甲等';
 $major = $_GET['major'];
 
 //$tab3 = $_GET['tab3'];
+
 $array = array('name'=>$city);
 $city_id = $db->get_field_from_table('city','id',$array);
 $city_id_i = $city_id[0]['id'];
 
-if($grade == ''){
+if($city != ''&&$grade == ''&&$major==''){
+    $key = array('city'=>$city_id_i);
+    $result = $db->get_field_from_table('hospital','name,address,tel,intro',$key);
+    echo json_encode($result);
+}
+if($grade == ''&&$major!=''){
     $array0 = array('name'=>$major);
     $m_result = $db->get_field_from_table('major','id',$array0);
 
@@ -31,8 +37,8 @@ if($grade == ''){
     echo json_encode($result);
 
 }
-if($major == ''){
-    $array0 = array('name'=>$grade);
+if($major == ''&&$grade!=''){
+    $array0 = array('detail'=>$grade);
     $m_result = $db->get_field_from_table('grade','id',$array0);
 
     $key = array('major_id'=>$m_result[0]['id'],'city'=>$city_id_i);
