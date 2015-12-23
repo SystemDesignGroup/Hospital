@@ -4,27 +4,28 @@
 //gethosinfo();
 //getdocinfo();
 var hospital,department;
-var date= document.getElementById('EntTime').value;
-/*function getdocinfo(){
+//var date= document.getElementById('EntTime').value;
+function getdocinfo(){
     var str=location.search;
     var mstr = str.split('?')[1];
     var strArray = mstr.split('&');
-}*/
+}
 function showdoc(keshi){
     var xmlHttp;
     var response;
-    var doctorlist;
+    var docList;
     department=keshi;
+    //alert('aaa');
     //showhos(keshi);
-    doctorlist=document.getElementById('doctorlist');
-    doctorlist.innerHTML = '';
+    docList=document.getElementById('doctorlist');
+    docList.innerHTML = '';
 
     xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
-            //response = eval(xmlHttp.response);
+            response = eval(xmlHttp.response);
 
-            //for(var i = 0;i<response.length;i++){
+            for(var i = 0;i<response.length;i++){
                 var zhicheng;
                 if(response[i]['grade_id']=='4'){
                     zhicheng = '主任医师';
@@ -76,20 +77,22 @@ function showdoc(keshi){
                     "</div>"+
                     "</li>";
 
-                doctorlist.innerHTML += listItem;
-            //}
+                docList.innerHTML += listItem;
+            }
         }
     }
-    xmlHttp.open("GET","search_by_department.php?tab="+department+"&liebie='doc'",true);
+    xmlHttp.open("GET","search_by_department.php?tab="+department+"&leibie=doc",false);
     xmlHttp.send();
+
+    showhos(department);
 }
 function showhos(keshi){
     var xmlHttp;
     var response;
     var hospitallist;
-    department=keshi;
+    //department=keshi;
 
-    hospitallist=document.getElementById('hospitalList');
+    hospitallist=document.getElementById('hospitallist');
     hospitallist.innerHTML = '';
 
     xmlHttp=new XMLHttpRequest();
@@ -112,7 +115,7 @@ function showhos(keshi){
                     "<dd>"+
                     "<p class='tel'>"+
                     "<i>"+"</i>"+
-                    "<span title=''>"+responese[i]['tel']+"</span>"+
+                    "<span title=''>"+response[i]['tel']+"</span>"+
                     "</p>"+
                     "<p class='addr'>"+
                     "<i>"+"</i>"+
@@ -133,7 +136,7 @@ function showhos(keshi){
             }
         }
     }
-    xmlHttp.open("GET","search_by_department.php?tab="+department+"&liebie='hos'",true);
+    xmlHttp.open("GET","search_by_department.php?tab="+department+"&leibie=hos",true);
     xmlHttp.send();
 }
 function check(keshi){

@@ -99,6 +99,7 @@ function search_r(){
                         "</dl>"+
                         "</div>"+
                         "<div class='doc-skill' style='float:right;margin-right:0px;width:43%'>"+
+                        "<p>所在医院："+response[2][j]['h_name']+"</p>"+
                         "<p><label>擅长：</label>"+response[2][j]['intro']+"</p>"+
                         "</div>"+
                         "</div>"+
