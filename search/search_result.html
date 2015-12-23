@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="../css/search.css"/>
+    <script type="text/javascript" src="../js/home.js"></script>
+    <title>搜索|挂号网</title>
+
+
+</head>
+<body>
+<div id="head_div">
+    <span>欢迎来到全国统一挂号平台</span>
+    <div id="regis_div">
+        <a href="#" id="user" onclick="jump(this.innerHTML)">登录</a>|<a href="../login.html">注册</a>|<a href="../login_for_admin.html">管理员登录</a>
+    </div>
+</div>
+
+<div id="logo_div">
+    <div id="logo-title">
+        <img src="../image/logo.jpg" alt="挂号平台logo" id="logo"/>
+        <h1>全国统一挂号平台</h1>
+    </div>
+    <div id="search-bar">
+        <span class="icon-search"></span>
+        <input type="text"  placeholder="请输入医院名、科室名或医生名"/>
+        <div class="blue-normal-btn" >
+            <a id="search-btn" href="javacript:void(0)">查询</a>
+        </div>
+    </div>
+</div>
+
+<!--导航栏-->
+<center>
+    <div class="tabnav">
+        <nav id="nav-bar" class="navb">
+            <a href="../home.html" class="tabnav-tab" selected="false" role="tab">首页</a>
+            <a href="../search/quickorder.html" class="tabnav-tab" selected="false" role="tab">快速预约</a>
+            <a href="../search/search.html" class="tabnav-tab" selected="false" role="tab">按医院预约</a>
+            <a href="../search/ksearch.html" class="tabnav-tab" selected="false" role="tab">按科室预约</a>
+            <a href="../reserve_guide/guide.html" class="tabnav-tab" selected="false" role="tab">预约指南</a>
+            <a href="../notice_view/notice.html" class="tabnav-tab" selected="false" role="tab">公告查看</a>
+            <!-- <a href="#" class="tabnav-tab" selected="false" role="tab">意见反馈</a> -->
+            </nav>
+    </div>
+</center>
+<div class="hos-doctor" style="display:block;">
+    <div style="margin-left:100px;margin-right:100px;margin-top:40px">
+        <span>相关医院</span>
+    </div>
+    <div class="hos-doctor-content" style="margin-left:100px;">
+        <ul>
+            <nav class="navb" id="hospitals">
+
+            </nav>
+        </ul>
+    </div>
+    <div style='clear()'></div>
+</div>
+    <div class="hos-doctor" style="display:block;">
+        <div style="margin-left:100px;margin-right:100px;margin-top:100px">
+            <span>相关医生</span>
+        </div>
+        <div class="hos-doctor-content" style="margin-left:100px;">
+            <ul>
+                <nav class="navb" id="doctors">
+
+                </nav>
+            </ul>
+        </div>
+        <div style='clear()'></div>
+    </div>
+    <div class="hos-ks">
+        <div style="margin-left:100px;margin-right:100px;margin-top:20px">
+            <span>相关科室</span>
+        </div>
+        <div class="hos-ks-content">
+            <div class="hos-ks-type" id="box" style="display:inline">
+                <ul>
+                    <nav class="navb" id="departments">
+                    </nav>
+                </ul>
+            </div>
+            <div class="condition-options" style="float:right">
+                <nav class="navb" id="i-nav">
+                    <a id="icon" href="javascript:;" class="tabnav-tab" style="float:right;margin-right:-10px;margin-top:-30px">展开</a>
+                </nav>
+            </div>
+            <script>
+                function show(){
+                    var box = document.getElementById("box");
+                    var text = box.innerHTML;
+                    var newBox = document.createElement("div");
+                    var btn = document.getElementById("icon");
+                    newBox.innerHTML = text.substring(0,1700);
+                    btn.innerHTML = text.length > 1700 ? "展开" : "";
+                    btn.href = "###";
+                    btn.onclick = function(){
+                        if (btn.innerHTML == "展开"){
+                            btn.innerHTML = "收起";
+                            newBox.innerHTML = text;
+                        }
+                        else{
+                            btn.innerHTML = "展开";
+                            newBox.innerHTML = text.substring(0,1700);
+                        }
+                    }
+                    box.innerHTML = "";
+                    box.appendChild(newBox);
+                    box.appendChild(btn);
+                }
+                show();
+            </script>
+        </div>
+    </div>
+</div>
+<footer>
+    <div>
+        <label>@copyright : <a href="javascript:void(0)" target="_blank">北京航空航天大学软件学院</a></label>
+        <label>宏兴闪闪项目组</label>
+        <span>京2015-12-31</span>
+    </div>
+</footer>
+<script type="text/javascript" src="../js/setuser.js"></script>
+<script type="text/javascript" src="../js/home_search.js"></script>
+</body>
+</html>
