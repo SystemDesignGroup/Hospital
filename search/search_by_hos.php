@@ -28,10 +28,7 @@ $hospital_id_s = $hospital_id[0]['hospital_id'];
 $keysl = array('hospital_id' => $hospital_id_s);
 $result_hospital = $db -> get_field_from_table("hospital", "id, name, address, tel, intro", $keysl);
 
-if($result_hospital != null) {
-    echo json_encode($result_hospital);
-} else {
-    echo "找不到相关医院";
-}
+
+echo json_encode($result_hospital);
 
 ?>
