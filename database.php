@@ -99,7 +99,7 @@ class database{
             $str = $str."$index = $keyvalue[$index] AND ";
         }
         $str = substr($str, 0, -4);
-        $this->connect->exec("DELETE FROM $table".$str.";");
+        $this->connect->exec("DELETE FROM $table ".$str);
 
     }
 	//以下函数不建议直接使用
