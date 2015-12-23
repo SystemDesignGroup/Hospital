@@ -5,7 +5,7 @@ $db=new database();
 $db->connect_to_db();
 
 //获取相关医院信息
-$tab=$_GET['tab'];
+$tab='感染科';//$_GET['tab'];
 $leibie=$_GET['leibie'];
 
 $text=array('name'=>$tab);

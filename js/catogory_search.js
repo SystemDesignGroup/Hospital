@@ -1,10 +1,10 @@
 /**
  * Created by xjf13211016 on 15-12-20.
  */
-gethosinfo();
-getdocinfo();
+//gethosinfo();
+//getdocinfo();
 var hospital,department;
-var date= document.getElementById('EntTime').value;
+//var date= document.getElementById('EntTime').value;
 function getdocinfo(){
     var str=location.search;
     var mstr = str.split('?')[1];
@@ -81,16 +81,18 @@ function showdoc(keshi){
             }
         }
     }
-    xmlHttp.open("GET","search_by_department.php?tab="+department+"&liebie='doc'",true);
+    xmlHttp.open("GET","search_by_department.php?tab="+department+"&leibie=doc",false);
     xmlHttp.send();
+
+    showhos(department);
 }
 function showhos(keshi){
     var xmlHttp;
     var response;
     var hospitallist;
-    department=keshi;
+    //department=keshi;
 
-    hospitallist=document.getElementById('hospitalList');
+    hospitallist=document.getElementById('hospitallist');
     hospitallist.innerHTML = '';
 
     xmlHttp=new XMLHttpRequest();
@@ -113,7 +115,7 @@ function showhos(keshi){
                     "<dd>"+
                     "<p class='tel'>"+
                     "<i>"+"</i>"+
-                    "<span title=''>"+responese[i]['tel']+"</span>"+
+                    "<span title=''>"+response[i]['tel']+"</span>"+
                     "</p>"+
                     "<p class='addr'>"+
                     "<i>"+"</i>"+
@@ -134,7 +136,7 @@ function showhos(keshi){
             }
         }
     }
-    xmlHttp.open("GET","search_by_department.php?tab="+department+"&liebie='hos'",true);
+    xmlHttp.open("GET","search_by_department.php?tab="+department+"&leibie=hos",true);
     xmlHttp.send();
 }
 function check(keshi){
