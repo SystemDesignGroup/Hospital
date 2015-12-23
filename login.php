@@ -43,7 +43,7 @@ else
         session_set_cookie_params($lifeTime);
         session_start();
         $_SESSION["username"] = $username;
-        echo "<script type='text/javascript'>alert('登录成功');location='home.html';</script>";
+        echo "<script type='text/javascript'>location='home.html';</script>";
 
     }else{
         echo "<script type='text/javascript'>alert('用户名或密码错误');location='login.html';</script>";

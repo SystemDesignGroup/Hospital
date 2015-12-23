@@ -65,5 +65,30 @@ function search(){
 
     search_key_t = encodeURI(search_key_t);
     search_key_t = encodeURI(search_key_t);
-    window.location.href="./search/search_result.html?key="+search_key_t;
+
+    var b = location.href;
+    var l = b.split('/')[4];
+    if(l=='home.html'){
+        window.location.href="./search/search_result.html?key="+search_key_t;
+    }else{
+        window.location.href="search_result.html?key="+search_key_t;
+    }
+
+}
+function k_search(){
+
+    var hospital,department,province;
+
+    province = document.getElementById('city-label').innerHTML;
+    hospital = document.getElementById('hospital').value;
+    department = document.getElementById('office').value;
+
+    hospital = encodeURI(hospital);
+    hospital = encodeURI(hospital);
+
+    department = encodeURI(department);
+    department = encodeURI(department);
+
+    //alert(hospital + " " +department);
+    window.location.href="./search/results.html?province="+province+"&city=''&hospital="+hospital+"&department="+department;
 }

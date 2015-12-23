@@ -13,10 +13,11 @@ function getdocinfo(){
 function showdoc(keshi){
     var xmlHttp;
     var response;
-    var doctorlist;
+    var docList;
     department=keshi;
-    showhos(keshi);
-    docList=document.getElementById('doctorList');
+    //alert('aaa');
+    //showhos(keshi);
+    docList=document.getElementById('doctorlist');
     docList.innerHTML = '';
 
     xmlHttp = new XMLHttpRequest();
