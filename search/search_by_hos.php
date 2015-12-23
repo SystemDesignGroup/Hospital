@@ -11,21 +11,27 @@ require_once'../database.php';
 $db = new database();
 $db -> connect_to_db();
 
-//获取标签内容
-
 //获取医院信息
-$tab = $_GET['tab'];
-//$leibie=$_GET['leibie'];
+$tab1 = $_GET['tab1'];
+$tab2 = $_GET['tab2'];
+$tab3 = $_GET['tab3'];
 
-$test = array('name' => $tab);
-$hospital_id1 = $db -> get_field_from_table("province", "hospital_id", $test);
-$hospital_id2 = $db -> get_field_from_table("city", "hospital_id", $test);
-$hospital_id3 = $db -> get_field_from_table("grade", "hospital_id", $test);
-$hospital_id4 = $db -> get_field_from_table("major", "hospital_id", $test);
+$test1 = array('name' => $tab1);
+$test2 = array('name' => $tab2);
+$test3 = array('name' => $tab3);
 
-$hospital_id = array_intersect_assoc($hospital_id1, $hospital_id2, $hospital_id3, $hospital_id4);
-$hospital_id_s = $hospital_id[0]['hospital_id'];
-$keysl = array('hospital_id' => $hospital_id_s);
+$hospital1 = $db -> get_field_from_table("海淀区", "hospital_id");
+$hospital2 = $db -> get_field_from_table("grade", "hospital_id");
+$hospital3 = $db -> get_field_from_table("major", "hospital_id");
+
+$hospital1 = $db -> get_field_from_table("city", "hospital_id", $test1);
+$hospital2 = $db -> get_field_from_table("grade", "hospital_id", $test2);
+$hospital3 = $db -> get_field_from_table("major", "hospital_id", $test3);
+
+
+$hospital0 = array_intersect_assoc($hospital1, $hospital2, $hospital3);
+$hospital0_s = $hospital0[0]['hospital_id'];
+$keysl = array('hospital_id' => $hospital0_s);
 $result_hospital = $db -> get_field_from_table("hospital", "id, name, address, tel, intro", $keysl);
 
 

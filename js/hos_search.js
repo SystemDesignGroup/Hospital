@@ -6,13 +6,6 @@ getHospitalInfo();
 
 var hospital,City,Grade,Major;
 
-var date = document.getElementById('EntTime').value;
-function getHospitalInfo(){
-    //alert(province+"\n"+city+"\n"+grade+"\n"+major);
-
-var hospital,department;
-
-var date = document.getElementById('EntTime').value;
 function getHospitalInfo(){
     //alert(province+"\n"+city+"\n"+major+"\n"+grade);
 
@@ -51,9 +44,11 @@ function byCity(city){
     var response;
     var hospitallist;
 
-    City=city;
+    City=document.getElementById('address').innerHTML;
+    //Grade=grade;
+    //Major=major;
 
-    hospitallist=document.getElementById('hospitalList');
+    hospitallist=document.getElementById('hospitals');
     hospitallist.innerHTML = '';
 
     xmlHttp=new XMLHttpRequest();
@@ -76,7 +71,7 @@ function byCity(city){
                     "<dd>"+
                     "<p class='tel'>"+
                     "<i>"+"</i>"+
-                    "<span title=''>"+responese[i]['tel']+"</span>"+
+                    "<span title=''>"+response[i]['tel']+"</span>"+
                     "</p>"+
                     "<p class='addr'>"+
                     "<i>"+"</i>"+
@@ -96,7 +91,7 @@ function byCity(city){
             }
         }
     }
-    xmlHttp.open("GET","search_by_department.php?tab="+City,true);
+    xmlHttp.open("GET","search_by_hos.php?tab="+City+"&Grade="+grade+"&Major="+major,true);
     xmlHttp.send();
 }
 
@@ -130,7 +125,7 @@ function byGrade(grade){
                     "<dd>"+
                     "<p class='tel'>"+
                     "<i>"+"</i>"+
-                    "<span title=''>"+responese[i]['tel']+"</span>"+
+                    "<span title=''>"+response[i]['tel']+"</span>"+
                     "</p>"+
                     "<p class='addr'>"+
                     "<i>"+"</i>"+
@@ -150,7 +145,7 @@ function byGrade(grade){
             }
         }
     }
-    xmlHttp.open("GET","search_by_department.php?tab="+Grade,true);
+    xmlHttp.open("GET","search_by_hos.php?tab="+Grade,true);
     xmlHttp.send();
 }
 
@@ -184,7 +179,7 @@ function byMajor(major){
                     "<dd>"+
                     "<p class='tel'>"+
                     "<i>"+"</i>"+
-                    "<span title=''>"+responese[i]['tel']+"</span>"+
+                    "<span title=''>"+response[i]['tel']+"</span>"+
                     "</p>"+
                     "<p class='addr'>"+
                     "<i>"+"</i>"+
@@ -204,6 +199,6 @@ function byMajor(major){
             }
         }
     }
-    xmlHttp.open("GET","search_by_department.php?tab="+Major,true);
+    xmlHttp.open("GET","search_by_hos.php?tab="+Major,true);
     xmlHttp.send();
 }
